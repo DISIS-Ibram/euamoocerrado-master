@@ -1,0 +1,127 @@
+@import mixen-and-variables
+
+.input-selecao-modelo{
+  position:relative;
+
+  .edit-icon{
+    position:absolute;
+    left:-1em;
+    top:1em;
+    cursor:pointer;
+    opacity: 0
+    transition:200ms
+  }
+
+  &:hover{
+    .edit-icon{
+        opacity: 80
+        transition:200ms
+    }
+  }
+
+}
+
+
+.placeholder .input-selecao-modelo .edit-icon{
+  top:2.1em;
+}
+
+
+
+.ui.selection.dropdown  //o dropdown em si funciona como o input, pois o input mesmo muda de tamanho conforme adiciona elementos no multiple
+  @extends .f-input-elemento 
+  input
+    reset()
+    padding: 0.4em 0.5em 0.1em 0.4em !important;
+  
+  &:hover
+    @extends .f-input-elemento-hover
+  
+  / .campo.active ^[1..-1]
+    // @extends .f-input-elemento-focus
+
+  .ui.label
+    @extends .f-input-select-multiple-label
+
+
+
+  .text  //é o texto que fica em cima do input
+      @extends .f-input-elemento
+      border: transparent !important
+      background: transparent
+      padding:0 !important
+      margin:0
+  
+  // input.search
+  //     width: initial;
+      
+
+
+
+  .ui.selection.dropdown .dropdown.icon
+      @extends .f-input-icone
+      font-size: 1.1em
+      right: 0.7em
+      top: 0.2em
+    // color:lighten(black,0.3)
+
+
+  .ui.search.dropdown.norender
+    @extends  .f-input
+  
+  // transition: box-shadow 0.1s ease, width 0.1s ease;
+  input.search
+    // reset()
+    @extends .f-input-elemento
+    line-height 1.3em !important
+    
+    &:hover
+      @extends .f-input-elemento-hover
+
+    &:focus
+      @extends .f-input-elemento-focus
+      
+  .menu.transition.visible
+    border none
+    margin-top: 1px !important;
+    box-shadow 4px 14px 8px rgba(black, .35)
+ 
+  .text  //é o texto que fica em cima do input
+    @extends .f-input-elemento
+    border: transparent !important
+    background: transparent
+    
+  .dropdown.icon
+    @extends .f-input-icone
+    font-size: 1.1em
+    right: 0.7em
+    top: 0.2em
+    color:lighten(black,0.3)
+    
+  .ui.label
+    @extends .f-input-select-multiple-label
+    
+    
+  
+.ui.dropdown 
+  .menu 
+    .active.item
+      background cor-laranja !important
+      color white
+      font-weight 500
+    .selected.item,
+    .item:hover 
+      background lighten(cor-azul,70%) !important
+      color black
+      font-weight 500
+    .selected.active.item
+      background cor-laranja !important
+      color white
+      font-weight 500
+      
+
+.ui.multiple.search.dropdown > input.search
+    max-width: 100%
+    width: 2.2em
+    border:none !important
+    background: none !important

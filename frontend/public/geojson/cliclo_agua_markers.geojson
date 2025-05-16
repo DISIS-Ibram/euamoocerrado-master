@@ -1,0 +1,237 @@
+{
+    "type": "FeatureCollection",
+    "name": "cliclo_agua_markers",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Trilha Virtual do Ciclo da Água",
+                "color":"#ff0000",
+                "description": "<img src=\"https://doc-08-0c-mymaps.googleusercontent.com/untrusted/hostedimage/67ht0gn364521qiheeia79564g/8rodasacbr07h8o526586ncb5c/1623960900000/Rw75OfL1eXfFTEAVVYpQTyYAzwFq6gBc/*/6AOlzF5bH79ZXLsgCobOKjE7D2ADwyzQKndYh_pubwJLXNU5HY4w8HL2Vv8bKMcZgy0_AYMwY7h2inrmnlhqhtLFW6XIoiEOFgmAwtB6H9TyAzDj7vCGvaCZKtc8jXxrfTB5wpxkmxuJ1D-_htFKWERZGerWS1pIVRgBjGpt4oLx5KLwTf-92jFKyTre_NA78TGaX4rU?session=0&fife\" height=\"200\" width=\"auto\" /><br><br>Placa Virtual 01 - A trilha virtual do ciclo da água foi criada para ser um Produto educacional de aprendizagem do  mestrado profissional em ensino das ciências ambientais -PROFCIAMB - UnB. \\tendo como mestrando idealizador  : Eduardo Santos e sobre orientação do professor Gustavo Baptista. Em cada ponto no mapa o usuário tem acesso a placa com uma QR CODE, que ligará há um vídeo explicativo no youtube sobre cada componente do ciclo da água.. Link de acesso ao vídeo: https://www.youtube.com/watch?v=Rj_N0U16xz0<br><br><a href=\"https://www.youtube.com/watch?v=Rj_N0U16xz0\"><img src=\"https://img.youtube.com/vi/Rj_N0U16xz0/hqdefault.jpg\" height=\"200\" width=\"auto\" /></a><br><br><a href=\"https://www.youtube.com/embed/Rj_N0U16xz0\">https://www.youtube.com/embed/Rj_N0U16xz0</a>",
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": "-1",
+                "extrude": "0",
+                "visibility": "-1",
+                "drawOrder": null,
+                "icon": null,
+                "gx_media_links": "https://doc-08-0c-mymaps.googleusercontent.com/untrusted/hostedimage/67ht0gn364521qiheeia79564g/8rodasacbr07h8o526586ncb5c/1623960900000/Rw75OfL1eXfFTEAVVYpQTyYAzwFq6gBc/*/6AOlzF5bH79ZXLsgCobOKjE7D2ADwyzQKndYh_pubwJLXNU5HY4w8HL2Vv8bKMcZgy0_AYMwY7h2inrmnlhqhtLFW6XIoiEOFgmAwtB6H9TyAzDj7vCGvaCZKtc8jXxrfTB5wpxkmxuJ1D-_htFKWERZGerWS1pIVRgBjGpt4oLx5KLwTf-92jFKyTre_NA78TGaX4rU?session=0&fife https://www.youtube.com/embed/Rj_N0U16xz0"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -48.0246675,
+                    -15.8875508
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Precipitação",
+                "color":"#ff9900",
+                "description": "<img src=\"https://doc-0g-0c-mymaps.googleusercontent.com/untrusted/hostedimage/67ht0gn364521qiheeia79564g/t33nnonlag44p567q4op4tlrkc/1623960900000/Rw75OfL1eXfFTEAVVYpQTyYAzwFq6gBc/*/6AOlzF5Ymdu1ynQOgJdknF2T4MksvBGvHdTcxEv7q8Tt0XzCBiTUjtkWT6Gz8vSLAu44XRHvx2yJa-vMkqo9CSlHy_XLvZeQjRzNAAFQcI5FLiXxnnqafeAk8liokNdRthK58sDdS0GFUK02Mer20QILysasgNh6-UqgKu-IUPLEMY-wjY3Gi_TIMYDvR2_P89MYxf_I?session=0&fife\" height=\"200\" width=\"auto\" /><br><br>Placa Virtual 02-  Explicação sobre o ciclo da água a partir da precipitação da chuva na superfície terrestre do parque. Link do Vídeo: https://www.youtube.com/watch?v=E7FKbahXXBQ&list=PLJ4ikgb2RYKvJn-BuWa7-D8MdmldUEV86&index=9<br><br><a href=\"https://www.youtube.com/watch?v=E7FKbahXXBQ\"><img src=\"https://img.youtube.com/vi/E7FKbahXXBQ/hqdefault.jpg\" height=\"200\" width=\"auto\" /></a><br><br><a href=\"https://www.youtube.com/embed/E7FKbahXXBQ\">https://www.youtube.com/embed/E7FKbahXXBQ</a>",
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": "-1",
+                "extrude": "0",
+                "visibility": "-1",
+                "drawOrder": null,
+                "icon": null,
+                "gx_media_links": "https://doc-0g-0c-mymaps.googleusercontent.com/untrusted/hostedimage/67ht0gn364521qiheeia79564g/t33nnonlag44p567q4op4tlrkc/1623960900000/Rw75OfL1eXfFTEAVVYpQTyYAzwFq6gBc/*/6AOlzF5Ymdu1ynQOgJdknF2T4MksvBGvHdTcxEv7q8Tt0XzCBiTUjtkWT6Gz8vSLAu44XRHvx2yJa-vMkqo9CSlHy_XLvZeQjRzNAAFQcI5FLiXxnnqafeAk8liokNdRthK58sDdS0GFUK02Mer20QILysasgNh6-UqgKu-IUPLEMY-wjY3Gi_TIMYDvR2_P89MYxf_I?session=0&fife https://www.youtube.com/embed/E7FKbahXXBQ"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -48.0259925,
+                    -15.8880461
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Água Subterrânea",
+                "color":"#ffd966",
+                "description": "<img src=\"https://doc-0c-0c-mymaps.googleusercontent.com/untrusted/hostedimage/67ht0gn364521qiheeia79564g/9b84htdeftdvq8l1bta6bu10cc/1623960900000/Rw75OfL1eXfFTEAVVYpQTyYAzwFq6gBc/*/6AOlzF5aqZ2_ldoMNWcyc-EnV8svNC268-GGABlhCbVe-FMMAGUgn0TxstOjmOEW4leMHXgEdXQNaNEz1vdb-W7Z8Eg1IXQaYxD-GGAhR8mLSAhRygVkeXqvD-zjKL3hjRnVLJbZbp94yowGOmYV5aTyV4ezpl_LxyYzRx6y9dG32OAAn_NcCsYyiZfsaYKIH25nR5So?session=0&fife\" height=\"200\" width=\"auto\" /><br><br>Placa Virtual 03- Explicação de todo processo de formação de água subterrânea e um processo didático lúdico sobre temática. Link de acesso ao vídeo: https://www.youtube.com/watch?v=x9V9kbu3sbs&list=PLJ4ikgb2RYKvJn-BuWa7-D8MdmldUEV86&index=8<br><br><a href=\"https://www.youtube.com/watch?v=x9V9kbu3sbs\"><img src=\"https://img.youtube.com/vi/x9V9kbu3sbs/hqdefault.jpg\" height=\"200\" width=\"auto\" /></a><br><br><a href=\"https://www.youtube.com/embed/x9V9kbu3sbs\">https://www.youtube.com/embed/x9V9kbu3sbs</a>",
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": "-1",
+                "extrude": "0",
+                "visibility": "-1",
+                "drawOrder": null,
+                "icon": null,
+                "gx_media_links": "https://doc-0c-0c-mymaps.googleusercontent.com/untrusted/hostedimage/67ht0gn364521qiheeia79564g/9b84htdeftdvq8l1bta6bu10cc/1623960900000/Rw75OfL1eXfFTEAVVYpQTyYAzwFq6gBc/*/6AOlzF5aqZ2_ldoMNWcyc-EnV8svNC268-GGABlhCbVe-FMMAGUgn0TxstOjmOEW4leMHXgEdXQNaNEz1vdb-W7Z8Eg1IXQaYxD-GGAhR8mLSAhRygVkeXqvD-zjKL3hjRnVLJbZbp94yowGOmYV5aTyV4ezpl_LxyYzRx6y9dG32OAAn_NcCsYyiZfsaYKIH25nR5So?session=0&fife https://www.youtube.com/embed/x9V9kbu3sbs"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -48.0262285,
+                    -15.8877159
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Interceptação",
+                "color":"#4a86e8",
+                "description": "<img src=\"https://doc-0o-0c-mymaps.googleusercontent.com/untrusted/hostedimage/67ht0gn364521qiheeia79564g/0jm9e8ed1bk9bigkokepvkhid8/1623960900000/Rw75OfL1eXfFTEAVVYpQTyYAzwFq6gBc/*/6AOlzF5bOXk_l_HR_D0U0jWrXekSl1r_herpgApJ9HceM1ZsY8NYNuxR3BJXs2gqoJmRuYyxc6vgeZ_wx5MDiKrFGy8HHbtv2O9kRfK1r0m-uaPx4s0U3V9R4yv2kP9w1Nupyd6DIMyJScb-mqp0b6giH-PoST7liJFw-kGBi1cBZ4qPCDrWcvMLTyDSrom03PIBmnyk?session=0&fife\" height=\"200\" width=\"auto\" /><br><br>Placa Virtual 05 - Explicação  do processo da interceptação da durante a precipitação dentro da mata de galeria no bioma cerrado. Link de acesso ao vídeo: https://www.youtube.com/watch?v=BAq0biBH_WY&list=PLJ4ikgb2RYKvJn-BuWa7-D8MdmldUEV86&index=6<br><br><a href=\"https://www.youtube.com/watch?v=BAq0biBH_WY\"><img src=\"https://img.youtube.com/vi/BAq0biBH_WY/hqdefault.jpg\" height=\"200\" width=\"auto\" /></a><br><br><a href=\"https://www.youtube.com/embed/BAq0biBH_WY\">https://www.youtube.com/embed/BAq0biBH_WY</a>",
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": "-1",
+                "extrude": "0",
+                "visibility": "-1",
+                "drawOrder": null,
+                "icon": null,
+                "gx_media_links": "https://doc-0o-0c-mymaps.googleusercontent.com/untrusted/hostedimage/67ht0gn364521qiheeia79564g/0jm9e8ed1bk9bigkokepvkhid8/1623960900000/Rw75OfL1eXfFTEAVVYpQTyYAzwFq6gBc/*/6AOlzF5bOXk_l_HR_D0U0jWrXekSl1r_herpgApJ9HceM1ZsY8NYNuxR3BJXs2gqoJmRuYyxc6vgeZ_wx5MDiKrFGy8HHbtv2O9kRfK1r0m-uaPx4s0U3V9R4yv2kP9w1Nupyd6DIMyJScb-mqp0b6giH-PoST7liJFw-kGBi1cBZ4qPCDrWcvMLTyDSrom03PIBmnyk?session=0&fife https://www.youtube.com/embed/BAq0biBH_WY"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -48.0268522,
+                    -15.887218
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Infiltração",
+                "color":"#8e7cc3",
+                "description": "<img src=\"https://doc-0c-0c-mymaps.googleusercontent.com/untrusted/hostedimage/67ht0gn364521qiheeia79564g/1hvr0tqdpac2silkvgussgeol4/1623960900000/Rw75OfL1eXfFTEAVVYpQTyYAzwFq6gBc/*/6AOlzF5bWyS4URqj8RrWG0gyKqShAceX2Mns7F4h3G9j1TwbNtCJex-MJYKwRQ0wj2DEI1e7RyBc4enBlGnfcdhMEosZFd_V4or9Lu6Xa-FTGarz0KXeIwXWMAfGRPAUSjJlgXpl8t9Aww8k-2nIGfrFzAlEySrb_6pvWALQKbu_sP_1ctnxWMn_Gl-b8TuJsH56kmrk?session=0&fife\" height=\"200\" width=\"auto\" /><br><br>Placa Virtual 07 - Explicação do processo de infiltração da água durante o processo precipitação até uma contribuição para os aquíferos e  evapotranspiração . Link de acesso ao vídeo : https://www.youtube.com/watch?v=Y4P2s8LKqcQ&list=PLJ4ikgb2RYKvJn-BuWa7-D8MdmldUEV86&index=4<br><br><a href=\"https://www.youtube.com/watch?v=nLUwmZCUefY\"><img src=\"https://img.youtube.com/vi/nLUwmZCUefY/hqdefault.jpg\" height=\"200\" width=\"auto\" /></a><br><br><a href=\"https://www.youtube.com/embed/nLUwmZCUefY\">https://www.youtube.com/embed/nLUwmZCUefY</a>",
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": "-1",
+                "extrude": "0",
+                "visibility": "-1",
+                "drawOrder": null,
+                "icon": null,
+                "gx_media_links": "https://doc-0c-0c-mymaps.googleusercontent.com/untrusted/hostedimage/67ht0gn364521qiheeia79564g/1hvr0tqdpac2silkvgussgeol4/1623960900000/Rw75OfL1eXfFTEAVVYpQTyYAzwFq6gBc/*/6AOlzF5bWyS4URqj8RrWG0gyKqShAceX2Mns7F4h3G9j1TwbNtCJex-MJYKwRQ0wj2DEI1e7RyBc4enBlGnfcdhMEosZFd_V4or9Lu6Xa-FTGarz0KXeIwXWMAfGRPAUSjJlgXpl8t9Aww8k-2nIGfrFzAlEySrb_6pvWALQKbu_sP_1ctnxWMn_Gl-b8TuJsH56kmrk?session=0&fife https://www.youtube.com/embed/nLUwmZCUefY"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -48.0280655,
+                    -15.8893931
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Nascente Córrego Riacho Fundo",
+                "color":"#cc4125",
+                "description": null,
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": "-1",
+                "extrude": "0",
+                "visibility": "-1",
+                "drawOrder": null,
+                "icon": null,
+                "gx_media_links": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -48.0495049,
+                    -15.8842252
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Escoamento Superficial",
+                "color":"#ffff00",
+                "description": "<img src=\"https://doc-10-0c-mymaps.googleusercontent.com/untrusted/hostedimage/67ht0gn364521qiheeia79564g/t5ep2l28okfqgo14u6hpjbc3fs/1623960900000/Rw75OfL1eXfFTEAVVYpQTyYAzwFq6gBc/*/6AOlzF5ZupKCzsS5vMShGvAYSq3_dtppb3uGiWVMHhgWYqPiFnjPW9WerMuG28cD2P-m8nJn-nSrj2u6EpPjGNQf3cFXaYjTcWgN8ExGzGeinpjzyTFpeWlaz2Juxes59jOV8NrPdt0gNFjq2V89eCjN4hPsiTWYWBiinVtZWOtFH-O7oPKid_8KtqOGs17tnPt8Q8GM?session=0&fife\" height=\"200\" width=\"auto\" /><br><br>Placa Virtual 04 - Explicação do processo de precipitação a partir do escoamento superficial e sua consequência para ambiente do parque. Link de acesso ao vídeo: https://www.youtube.com/watch?v=Zzj348rbII0&list=PLJ4ikgb2RYKvJn-BuWa7-D8MdmldUEV86&index=7<br><br><a href=\"https://www.youtube.com/watch?v=Zzj348rbII0\"><img src=\"https://img.youtube.com/vi/Zzj348rbII0/hqdefault.jpg\" height=\"200\" width=\"auto\" /></a><br><br><a href=\"https://www.youtube.com/embed/Zzj348rbII0\">https://www.youtube.com/embed/Zzj348rbII0</a>",
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": "-1",
+                "extrude": "0",
+                "visibility": "-1",
+                "drawOrder": null,
+                "icon": null,
+                "gx_media_links": "https://doc-10-0c-mymaps.googleusercontent.com/untrusted/hostedimage/67ht0gn364521qiheeia79564g/t5ep2l28okfqgo14u6hpjbc3fs/1623960900000/Rw75OfL1eXfFTEAVVYpQTyYAzwFq6gBc/*/6AOlzF5ZupKCzsS5vMShGvAYSq3_dtppb3uGiWVMHhgWYqPiFnjPW9WerMuG28cD2P-m8nJn-nSrj2u6EpPjGNQf3cFXaYjTcWgN8ExGzGeinpjzyTFpeWlaz2Juxes59jOV8NrPdt0gNFjq2V89eCjN4hPsiTWYWBiinVtZWOtFH-O7oPKid_8KtqOGs17tnPt8Q8GM?session=0&fife https://www.youtube.com/embed/Zzj348rbII0"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -48.0262192,
+                    -15.8870942
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Evapotranspiração",
+                "color":"#93c47d",
+                "description": "<img src=\"https://doc-0s-0c-mymaps.googleusercontent.com/untrusted/hostedimage/67ht0gn364521qiheeia79564g/sjkg4iomnimpf6blq9qacvt7co/1623960900000/Rw75OfL1eXfFTEAVVYpQTyYAzwFq6gBc/*/6AOlzF5afltbw7gEaVzYcTcQVu41jz42wUuOHQ7_5rZJwRyHsKjlrg7Q_0y33qvegZdmcF-Zt1tADtCsvJDoCrKot0HoQldPZIcbsJphRzSjKr9OKmgr4_oDaEJMq--K9WsQ2ytgKNBlvUq7S5Q4Ah1X6QIHaQVMleyC4IJDXsi7je7MYCo6wsHiAIVRJK8yfNHjbfI8?session=0&fife\" height=\"200\" width=\"auto\" /><br><br>Placa Virtual 06- Explicação do processo de evaporação da água a partir do solo e das folhas das árvores. (transpiração)<br><br><a href=\"https://www.youtube.com/watch?v=7VoUIiusH1U\"><img src=\"https://img.youtube.com/vi/7VoUIiusH1U/hqdefault.jpg\" height=\"200\" width=\"auto\" /></a><br><br><a href=\"https://www.youtube.com/embed/7VoUIiusH1U\">https://www.youtube.com/embed/7VoUIiusH1U</a>",
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": "-1",
+                "extrude": "0",
+                "visibility": "-1",
+                "drawOrder": null,
+                "icon": null,
+                "gx_media_links": "https://doc-0s-0c-mymaps.googleusercontent.com/untrusted/hostedimage/67ht0gn364521qiheeia79564g/sjkg4iomnimpf6blq9qacvt7co/1623960900000/Rw75OfL1eXfFTEAVVYpQTyYAzwFq6gBc/*/6AOlzF5afltbw7gEaVzYcTcQVu41jz42wUuOHQ7_5rZJwRyHsKjlrg7Q_0y33qvegZdmcF-Zt1tADtCsvJDoCrKot0HoQldPZIcbsJphRzSjKr9OKmgr4_oDaEJMq--K9WsQ2ytgKNBlvUq7S5Q4Ah1X6QIHaQVMleyC4IJDXsi7je7MYCo6wsHiAIVRJK8yfNHjbfI8?session=0&fife https://www.youtube.com/embed/7VoUIiusH1U"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -48.0276658,
+                    -15.8874583
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bacia do Córrego Riacho Fundo I",
+                "color":"#cc4125",
+                "description": "<img src=\"https://doc-04-0c-mymaps.googleusercontent.com/untrusted/hostedimage/67ht0gn364521qiheeia79564g/koqt14j2lcp9p93g3i3m2382ss/1623960900000/Rw75OfL1eXfFTEAVVYpQTyYAzwFq6gBc/*/6AOlzF5Y_Ou_DKgu8T8KEiKfh6FrcaJjWBtrMshRqAhHkYGODdxIo5NHFE8niSrMi7J1N0wE00rxmJF7rYeESOliMh5FRsbHDobu94EVDY2kF7sKSb_wwJL9nPOpL6xmZKtVswtwSG5FHwYJgoAe3a-66djfnXDwUnzJ6xWKHFASR7IEP6fYwO25rQM191S5yrTc48BU?session=0&fife\" height=\"200\" width=\"auto\" /><br><br>Placa Virtual 08 -O ponto explica a importância da bacia hidrográfica que corta o parque ecológico  para o processo do ciclo da água, e também, de forma didática um explanação da formação de hidrográfica ( bacia do córrego Riacho Fundo ) . Link de acesso ao vídeo : https://www.youtube.com/watch?v=U7HRt5aTkUg&list=PLJ4ikgb2RYKvJn-BuWa7-D8MdmldUEV86&index=3<br><br><a href=\"https://www.youtube.com/watch?v=U7HRt5aTkUg\"><img src=\"https://img.youtube.com/vi/U7HRt5aTkUg/hqdefault.jpg\" height=\"200\" width=\"auto\" /></a><br><br><a href=\"https://www.youtube.com/embed/U7HRt5aTkUg\">https://www.youtube.com/embed/U7HRt5aTkUg</a>",
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": "-1",
+                "extrude": "0",
+                "visibility": "-1",
+                "drawOrder": null,
+                "icon": null,
+                "gx_media_links": "https://doc-04-0c-mymaps.googleusercontent.com/untrusted/hostedimage/67ht0gn364521qiheeia79564g/koqt14j2lcp9p93g3i3m2382ss/1623960900000/Rw75OfL1eXfFTEAVVYpQTyYAzwFq6gBc/*/6AOlzF5Y_Ou_DKgu8T8KEiKfh6FrcaJjWBtrMshRqAhHkYGODdxIo5NHFE8niSrMi7J1N0wE00rxmJF7rYeESOliMh5FRsbHDobu94EVDY2kF7sKSb_wwJL9nPOpL6xmZKtVswtwSG5FHwYJgoAe3a-66djfnXDwUnzJ6xWKHFASR7IEP6fYwO25rQM191S5yrTc48BU?session=0&fife https://www.youtube.com/embed/U7HRt5aTkUg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -48.0278963,
+                    -15.8902132
+                ]
+            }
+        }
+    ]
+}

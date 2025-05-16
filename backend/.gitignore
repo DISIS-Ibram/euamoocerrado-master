@@ -1,0 +1,7 @@
+__pycache__
+media/geo_temp/
+.vscode/
+media/
+.vscode/launch.json
+.vscode/settings.json
+eac_venv/

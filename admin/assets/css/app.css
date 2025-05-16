@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Signika");
+body {
+  background: #c4c4c4 !important;
+}
+.main.container {
+  margin-left: 250px !important;
+}
+a.active {
+  color: #f00 !important;
+}
+#si3 input {
+  background: none;
+  border: none;
+  border-bottom: 1px dashed #9e9e9e;
+}
+#si3 input:hover {
+  background: rgba(255,255,255,0.5);
+}
+#si3 input:focus {
+  background: #fff;
+}

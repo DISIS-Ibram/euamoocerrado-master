@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i");
+@import url("https://fonts.googleapis.com/css?family=Signika");
+.view-resumo {
+  padding: 0;
+  border-radius: 0 25px;
+  background: rgba(125,91,86,0);
+}
+.view-header {
+  position: relative;
+  margin-bottom: 0;
+  padding: 0.5em 1em;
+  border-radius: 0 25px 0 0;
+  background: rgba(125,91,86,0);
+  border-bottom: 1px dotted #9e9e9e;
+}
+.view-header h3 {
+  display: inline-block;
+  color: rgba(66,66,66,0.7) !important;
+}
+.view-header h3 small {
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+}
+.view-header .ui.button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+.view-header:hover .ui.button {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+.view-content {
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  background: rgba(125,91,86,0);
+  padding: 0.7em 1.2em;
+  border-radius: 0 0 15px 15px;
+}
+.view-group {
+  margin-bottom: 1em;
+}
+.view-group label {
+  color: #7d5b56;
+  font-size: 0.8rem;
+}
+.view-group .view-texto {
+  color: #424242;
+}

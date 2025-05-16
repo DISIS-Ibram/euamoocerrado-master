@@ -1,0 +1,1193 @@
+@import mixen-and-variables
+
+
+
+//======================================================
+//     FORMULARIOS CONFIGURACAO
+//======================================================
+//  vou fazer uma definicao global, 
+//  e depois aplico a minha estrutura qual quer que seja
+//  assim posso mudar de frameswork sem problems
+
+
+//--------------------------------------
+// ESTRUTURA DE UM ELEMENTO FORMULARIO
+//------------------------------------
+/*
+
+ .formulario - TIPO: [ normal | placeholder (o label é inline e depois emcima) | compacto (menor espacamento) | mini (compacto e fonte menor) | popup  |  como nada ]
+ |           ESTADOS: [ .erro | .alerta | .alterado | .valido | .enviando ]
+ |
+ |__.aviso.cima [ alerta | erro | texto ]
+ |
+ |__.campogrupo  -  TIPO: [ normal | compacto | mini | invertido | subgrupo]
+ |   |
+ |   |__.titulo
+ |   |
+ |   |__.campo - TIPO:    [ requerido | normal | placeholder (o label é inline e depois emcima) | compacto (menor espacamento) | mini (compacto e fonte menor) | invertido  ]  
+ |         |   - ESTADOS: [ .erro | .alerta | .alterado | .valido ]
+ |         |
+ |         |__ .rotulo
+ |         |    |__ .icone
+ |         |    |__ .icone-erro
+ |         |    |__ .icone-requerido
+ |         |    |__ .texto/elemento
+ |         |    |__ .icone-descricao
+ |         |           |__ .descricao
+ |         |
+ |         |__ .input-wrap  [ hover | focus ]
+ |         |    |__ .icone
+ |         |    |__ .elemento - descrever os varios tipos possiveis depois
+ |         |    |__ .elemento-complemento -  são os popup dos elementos quando selecionados.
+ |         |
+ |         |__ .dica
+ |         |    |__ .icone
+ |         |
+ |         |__ .erro
+ |         |__ .erro-icone
+ |         |
+ |         |__ .warn
+ |         |__ .warn-icone
+ |   
+ |__.aviso.baixo [ alerta | erro | texto ]
+ |
+ |__.erro-contagem
+ |   |_.butao.cima
+ |   |_.contagem
+ |   |_.butao.baixo
+ | 
+ |     
+ |__.acoes
+     |
+     |_.botao
+        |_.icone
+        |_.texto
+        
+*/
+
+
+
+
+
+
+//---------------------------
+// DEFINICOES VARIAVEIS CORES
+//---------------------------
+
+cor-campogrupo = none
+cor-campogrupo-fundo = none
+
+cor-campo = none
+cor-campo-fundo = none
+
+cor-label-texto =  cor-marrom
+cor-label-fundo = none
+
+cor-dica = none
+cor-dica-fundo = none
+
+
+cor-invertido-fundo = cor-marrom
+cor-invertido-label = black
+cor-invertido-label-erro = lighten(red,40%);
+cor-invertido-input-elemento = lighten(cor-azul,40%)
+
+
+//---------------------------
+// DEFINICAO DOS BLOCOS
+//---------------------------
+
+
+// FORMULARIO
+//**********
+
+    
+  .f-formulario{
+    reset()
+    box rel
+    margin-top: 1rem
+    margin-bottom: 2rem
+    
+    font-size:16px;
+
+    &.popup{
+      display:block !important;  //sop pq o popup o semantic react fas display none
+    }
+
+    .hidden{
+      display:none;
+    }
+    
+  }
+
+
+  .f-formulario-compacto{
+    box rel
+    margin-top: 1rem
+    margin-bottom: 2rem
+    
+    font-size:16px;
+    
+  }
+
+
+  .f-formulario-mini{
+
+  }
+
+
+  .f-formulario-placeholder{
+    
+  }
+  
+  .f-formulario-invertido{
+      background: cor-invertido-fundo;
+
+  }
+
+
+
+  // CAMPOGRUPO
+  //**********
+  .f-campogrupo{
+      reset()
+      box rel
+      margin-top: 2em  //margin top precisa ser igual do campo para quando tiver um campo grupo como subgrupo
+      margin-bottom: 2em
+  }
+
+  .f-campogrupo-placeholder{
+      margin-top: 0.5em
+      margin-bottom: 0.5em
+  }
+
+  .f-campogrupo-compacto{
+      margin-top: 0.5em
+      margin-bottom: 0.5em
+  }
+
+  .f-campogrupo-mini{
+    @extends .f-campogrupo-compacto
+    
+    font-size:12px;
+  }
+
+
+  // TIPOS - SUBGRUPO
+  .f-campogrupo-subgrupo{
+    margin-left: 0em;  
+    margin-bottom: 2em;
+    margin-top: 2em;
+    padding-top:0.7em;
+    padding-bottom:1.5em;
+    border: 1px dotted rgba(black,0.04);
+    border-radius:5px;
+    background:rgba(cor-marrom,0.04);
+    // background:rgba(white,0.5);
+    padding-right:1em;
+    
+    .campo{
+      margin-left:20px;
+    }
+
+  }
+
+
+  .f-campogrupo-titulo{
+      reset()
+      box rel
+      margin-top:2px
+      margin-bottom:2px
+      padding-left: 0em
+      color:cor-label-texto
+      
+      font-size:0.9em
+      font-weight: 900
+
+
+  }
+
+
+
+
+
+  // CAMPO
+  //**********
+
+  .f-campo{
+    reset()
+    box rel
+    margin-top:2.0em
+    margin-bottom:1.5em
+    
+    text-align: left;
+    
+    // background: rgba(red,0.1);
+  }
+
+
+  .f-campo-placeholder{
+    margin-top: 0.5em;
+    margin-bottom:0em;
+    margin-left:0.5em;
+  }
+
+  .f-campo-compacto{
+      margin-top:5px
+      margin-bottom:10px
+  }
+
+
+  .f-campo-mini{
+      margin-top:5px
+      margin-bottom:0px
+  }
+
+  .f-campo-placeholder-mini{
+      margin-top:0px
+      margin-bottom:0px
+  }
+
+
+
+
+
+
+
+  // CAMPO | UI.INPUT
+  //**********
+  .f-input{
+    reset()
+    box rel
+    
+    font-size: 1.05em
+    font-family fonte-texto !important;
+    font-weight 500
+    
+    // background: rgba(blue,0.1);
+  }
+
+
+  .f-input-placeholder{
+    padding-top: 1em;
+    
+    ::-webkit-input-placeholder {
+         color: transparent !important;
+    }
+  }
+
+  .f-input-compacto{
+     // height 1.2rem
+  }
+
+
+  .f-input-mini{
+    // height 0.9rem
+    // font-size: 0.8em
+    // padding-top: 2px;
+  }
+
+  .f-input-placeholder-mini{
+      padding-top: 0em;
+  }
+
+
+
+
+
+
+
+
+  // CAMPO | ROTULO
+  //**********
+
+  .f-rotulo{
+    reset()
+    box rel
+    margin-top:2px
+    margin-bottom:2px
+    padding-left: 0.4em
+    
+    color:cor-label-texto
+    
+    font-size:0.9em
+    font-weight: 600
+    
+    // background: rgba(green,0.1);
+  }
+
+
+  //TIPOS
+
+  .f-rotulo-compacto{
+  //
+  }
+
+  .f-rotulo-mini{
+
+  }
+
+
+  //tipo: - PLACEHOLDER - quando o label aparece como placeholder
+  .f-rotulo-placeholder{
+     box abs 
+     top: 1.5em;
+     z-index: 2;
+     // margin-left:10px;
+     color: darken(cor-cinza,10%) !important;
+     // padding-left:0px;
+     transition: 0.2s;
+     font-weight: 400;
+   
+  }
+
+  .f-rotulo-placeholder-preenchido{
+      @extends .f-rotulo-placeholder
+      font-size:0.7em;
+      top: 3px
+      transition: 0.2s;
+      // pointer-events: initial !important;
+  }
+
+
+  .f-rotulo-placeholder-mini{
+    top: 0.5em;
+  }
+
+  .f-rotulo-placeholder-mini-preenchido{
+      opacity: 0;
+      transition: 0.2s;
+      // top: -0.2em;
+  }
+
+
+  .f-rotulo-requerido{
+    color: saturation(darken(cor-label-texto,-5%),20%)
+    // font-weight: 600
+  }
+
+  .f-rotulo-erro{
+    color: darken(red,0%) !important 
+    // font-weight: bolder
+  }
+
+  .f-rotulo-icone-requerido{
+    @extends .f-rotulo-requerido
+    color: cor-cinza //saturation(darken(cor-label-texto,-25%),50%)
+    box abs t 0.15em l -0.2em
+    // margin-left:-0.9em
+  }
+
+  .f-rotulo-icone-descricao{
+      color:cor-label-texto;
+      opacity:0.5;
+      display:inline-block;
+      margin-left:5px;
+      opacity:0;
+      cursor:pointer;
+      transition:opacity 400ms;
+      position:relative;
+      z-index:100;
+  }
+
+  .f-rotulo-icone-descricao-hover{
+      opacity:0.8;
+      transition:opacity 400ms
+  }
+
+
+  .f-rotulo-icone-erro{
+    @extends .f-rotulo-requerido
+    color: gray //saturation(darken(cor-label-texto,-25%),50%)
+    box abs t 0.15em l -0.5em
+  }
+    
+
+  .f-rotulo-erro-invertido{
+     color: cor-invertido-label-erro !important;
+  }
+  
+  .f-rotulo-icone-erro-invertido{
+    color: cor-invertido-label-erro 
+  }
+
+
+  .f-rotulo-invertido{
+     color: rgba(cor-invertido-label,0.8) !important;
+  }
+  
+  .f-rotulo-invertido-placeholder{
+     color: rgba(cor-invertido-label,0.6) !important;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // CAMPO | UI.INPUT | ELEMENTO
+  //**********
+    
+  .f-input-elemento-texto{
+      font-family: fonte-texto !important;
+      font-size 1em
+      line-height 1.3em !important
+      color: cor-azul-escuro !important
+  }
+  
+  .f-input-elemento{
+      reset()
+      @extends .f-input-elemento-texto
+      width 100%
+      height auto;
+     // tem qeu ser um pq o text area interfere com isso e o input nao
+         
+      padding: inputelementopadding = 0.4em 0.5em 0.1em 0.4em !important;
+        
+     
+
+      border: 1px solid transparent 
+      border-bottom 1px dashed rgba(black,0.3)
+      // margin-bottom:1px;
+        
+      transition: 0.5s background
+      resize none
+  }
+
+
+
+
+  .f-input-elemento-placeholder{
+    // padding-left:10px;
+    //removo qualquer placeholder que exista 
+    ::-webkit-input-placeholder {
+        color: transparent !important;
+    }
+  }
+
+  .f-input-elemento-compacto{
+     font-size 1em !important;
+     padding: 0em 0.2em 0.05em 0.15em !important;;
+  }
+
+  .f-input-elemento-mini{
+     // font-size 1em;
+     padding: 0.1em 0.5em 0.1em 0.4em !important;;
+     line-height 1em !important
+  }
+
+  .f-input-elemento-placeholder-mini{
+      padding: 0.35em 0.5em 0.35em 0.3em !important;;
+  }
+
+
+
+
+  .f-input-elemento-erro{
+
+     border-bottom 1px dashed red !important
+
+  }
+  
+  .f-input-elemento-erro-invertido{
+           border-bottom 1px dashed cor-invertido-label-erro !important
+}
+
+  .f-input-elemento-hover{
+      background rgba(white, 0.5)
+      transition: 0.5s background
+  }
+
+  .f-input-elemento-focus{
+      background white !important
+  }
+
+
+  //INVERTIDO
+  .f-input-elemento-invertido{
+        color cor-invertido-input-elemento !important;
+        border-bottom 1px dashed rgba(cor-invertido-label,0.8) !important
+  }
+  
+  .f-input-elemento-invertido-hover{
+         background rgba(cor-invertido-label,0.3) !important
+  }
+
+  .f-input-elemento-invertido-focus{
+        background rgba(cor-invertido-label,0.6) !important
+  }
+
+
+
+
+
+
+// CAMPO | UI.INPUT | RADIO
+//*********
+
+.f-input-elemento-radiogroupo{
+    padding: 0.4em 0.5em 0.1em 0.4em !important;
+   display:block !important
+}
+
+.f-input-elemento-radio{
+   padding: 0em !important;
+   margin: 0.1em 0em !important;
+   display:block-block !important
+   font-size: 1em;
+   
+
+}
+
+.f-input-elemento-radio-label{
+  @extends .f-input-elemento-texto
+  font-weight: normal !important
+  outline-color:none;
+  &:after{
+    background cor-azul-escuro !important;
+  }
+}
+
+.f-input-elemento-radio-label-checked{
+    font-weight: 600 !important
+}
+
+
+
+
+
+// CAMPO | UI.INPUT | SELECT MULTIPLE-LABEL
+//*********
+
+.f-input-select-multiple-label{
+  reset()
+  font-size:1em;
+  background: saturation(lighten(cor-azul-escuro,85%),10%);
+  color:cor-azul-escuro;
+  border: 0px solid  saturation(lighten(cor-azul-escuro,70%),20%);
+  padding: 0.1em 0.6em
+  border-radius: 0.2em;
+  margin: 0 10px 3px 0
+  transition 0.2s
+  line-height 1.3em !important 
+  font-weight: 500
+  &:hover{
+      background: saturation(lighten(cor-azul-escuro,60%),20%);
+      transition 0.2s
+      // color:white;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+// CAMPO | INPUT | ELEMENTO-COMPLEMENTO
+//**********
+
+  .f-elemento-complemento{
+    reset()
+    &:before{
+        seta(20px,cor-cinza,"top",90%)
+        // box-shadow 5px 5px 10px 5px rgba(black,0.4)
+    }
+    box abs l 10px t 100%
+    min-height 200px;
+    margin-top: 25px;
+    z-index: 20;
+    & > div{
+      position: relative !important;
+      float:left;
+    }
+    border: 5px solid cor-cinza;
+    // background: cor-cinza;
+    box-shadow 5px 5px 8px 5px rgba(black,0.1)
+
+    .f-dica{
+          position: relative !important;
+           display: block !important;
+        float: left !important;
+        color: white !important;
+        top: initial !important;
+    }
+  } 
+
+
+
+
+
+
+
+  // CAMPO | INPUT | ICONE
+  //**********
+  .f-input-icone{
+    reset()
+    box abs t 0.5em r 0.5em
+    color: cor-cinza
+    transition: 0.5s color
+    font-size:0.8em;
+  }
+
+  .f-input-icone-hover{
+    color: darken(cor-cinza,10%)
+    transition: 0.5s color
+  }
+  
+
+  .f-input-icone-invertido{
+     color: rgba(black,0.4)
+  }
+  .f-input-icone-invertido-hover{
+     color: rgba(black,0.6)
+  }
+
+
+
+
+
+
+  // CAMPO | INPUT | DICA
+  //**********
+  .f-dica{
+    reset()
+    box abs l 0.5em;
+    margin-top: 0.5em;
+    width: auto;
+    font-size:12px;
+    line-height 1.1em !important;
+    font-weight 500
+    font-style italic
+    
+    background transparent !important;
+    color rgba(cor-cinza,1)
+    
+    border-radius 5px;
+    opacity 0;
+    visibility: hidden;
+    transition 0.4s
+    text-align left
+    pointer-events: none !important
+     
+  }
+
+  .f-dica-visible{
+    opacity 1;
+    visibility: visible;
+    transition 0.2s
+   }
+
+
+  .f-dica-compacto{
+      &:after{
+          seta(8px,lighten(cor-cinza,30%),"top",20%)
+      }
+      margin-top: 0.8em;
+      padding: 0.5em 0.8em;
+      border-radius: 5px;
+      background lighten(cor-cinza,30%) !important;
+      color:white;
+      z-index:15
+      font-weight 100
+      font-style normal
+      font-size:10px;
+  }
+
+
+
+
+
+
+  // CAMPO | ERRO
+  //**********
+  .f-erro{
+      reset()
+      
+      &:after{
+          seta(8px,red,"top",80%)
+      }
+      
+      position:absolute;
+      right:0
+      margin-top:3px;
+      
+      background:red !important;
+      color:white !important;
+      
+      font-size: 0.9em
+
+      padding: 0.6em 0.8em;
+      
+      border-radius: 5px;
+
+  }
+
+
+  .f-erro-invertido{
+      &:after{
+          seta(8px,cor-invertido-label-erro,"top",80%)
+      }
+     background:cor-invertido-label-erro !important;
+  }
+
+
+
+
+// CAMPO | ERRO-ICONE
+//**********
+
+.f-erro-icone{
+      box l -20 t 2
+      color red+15%
+      display none
+}
+
+.f-erro-icone-show{
+      display block
+}
+
+
+
+
+
+
+
+//OUTROS TIPOS GRUPOS
+
+
+
+
+
+
+// // //======================================================
+// // //     APLICACAO A MINHA ESTRUTURA DO APP
+// // //======================================================
+
+#si3 .formulario{
+      
+    @extend .f-formulario
+     
+     &.formulario-invertido{
+         @extend .f-formulario-invertido
+     }
+
+     //PADRAO 
+       
+     .campogrupo{
+          @extends .f-campogrupo
+          
+          //subugrupo de nivel 3 mostro paddings
+          .campogrupo{
+                  @extends .f-campogrupo-subgrupo
+          }
+      }
+      
+
+     .campo{
+        @extend .f-campo
+    
+        
+        .rotulo{
+              @extends .f-rotulo
+              
+              .requerido{
+                @extend .f-rotulo-icone-requerido
+              }
+              
+              ../../.formulario-invertido ^[1..-1],
+              ../.invertido ^[1..-1]{
+                  @extends .f-rotulo-invertido
+              }
+
+
+
+              
+              i.icon.icone-descricao{
+                  @extends .f-rotulo-icone-descricao
+                  
+                  ../../.active ^[-1..-1],
+                  ../../:hover ^[-1..-1]{
+                      @extends .f-rotulo-icone-descricao-hover;
+                  }
+              
+              }
+
+              
+          }  
+
+       }  
+
+      
+     
+      
+      .requerio .rotulo{
+        @extends .f-rotulo-requerido
+      }
+
+
+      .titulo{
+          @extend .f-rotulo
+      }
+
+      
+      .input-wrap{
+          position:relative
+          @extend .f-input
+          
+          input, textarea{
+             @extend .f-input-elemento
+              
+              &:focus{
+                @extends .f-input-elemento-focus
+                ../../../ .formulario-invertido ^[1..-1]{
+                   @extends .f-input-elemento-invertido-focus
+                }
+              }
+              
+              ../../ .formulario-invertido ^[1..-1]{
+                  @extends .f-input-elemento-invertido
+              }
+
+          }
+
+          
+          .icone{
+              @extend .f-input-icone
+              
+              ../../ .formulario-invertido ^[1..-1]{
+                   @extend .f-input-icone-invertido
+                }
+          }
+
+      }
+
+      
+
+    .elemento-complemento{
+        @extends .f-elemento-complemento
+    }
+
+
+     .dica{
+          @extend .f-dica
+          
+          // ../ .f-campo:hover > ^[1..-1],
+          ../ .f-campo.active  > ^[1..-1]{
+                @extend .f-dica-visible
+           }
+
+
+          ../ .formulario-compacto ^[1..-1],
+          ../ .formulario-placeholder ^[1..-1],
+          ../ .formulario-mini ^[1..-1]{
+               @extend .f-dica-compacto
+          }
+            
+      }
+
+
+
+      //ESTADOS DOS CAMPOS
+      
+      //campo requerido
+      .campo.requerido{
+            .ui.label{
+                @extends .f-rotulo-requerido
+            }
+      }
+      
+
+      .erro-icone{
+            @extends .f-erro-icone
+      }
+
+
+
+      //ERRO
+      .campo.erro{
+
+        .ui.label{
+              @extends .f-rotulo-erro
+        }
+        .input-wrap{
+            input, textarea{
+              @extend .f-input-elemento-erro
+            }
+         }
+         .erro{
+            @extends .f-erro
+         }
+         
+         .erro-icone{
+            @extends .f-erro-icone-show
+         }
+      }
+      
+    //ERRO invertido
+       .formulario-invertido .campo.erro{
+
+        .ui.label{
+              @extends .f-rotulo-erro-invertido
+        }
+        .input-wrap{
+            input, textarea{
+              @extend .f-input-elemento-erro-invertido
+            }
+         }
+         .erro{
+            @extends .f-erro-invertido
+         }
+         
+      
+
+      }
+
+
+
+
+
+
+
+
+
+      // TIPOS FORMULARIOS / CAOMPOS GRUPOS
+        
+       &.formulario-placeholder, .placeholder{
+          
+          @extend .f-formulario-compacto
+          
+          .campogrupo{
+            @extends .f-campogrupo-placeholder
+            
+
+
+          }
+          
+          .campo{
+            @extends .f-campo-placeholder
+          }
+          
+          .rotulo{
+            @extends .f-rotulo-placeholder
+          }
+         .requerio .rotulo{
+            @extends .f-rotulo-placeholder
+          }
+          
+         .preenchido, .dirty,.active{
+              .rotulo{
+                  @extends .f-rotulo-placeholder-preenchido
+              }  
+          }
+
+          
+          
+          .input-wrap {
+            @extends .f-input-placeholder
+            input,textarea{
+              @extends .f-input-elemento-placeholder
+            }
+          }
+          
+          
+      }
+
+
+      &.formulario-compacto, .compacto{
+          @extend .f-formulario-compacto
+          
+          .campogrupo{
+            @extends .f-campogrupo-compacto
+          }
+          
+          .campo{
+            @extends .f-campo-compacto
+          }
+          
+          .input-wrap {
+             @extends .f-input-compacto
+            input,textarea{
+              @extends .f-input-elemento-compacto
+            }
+          }
+          
+          .rotulo {
+             @extends .f-rotulo-compacto
+          }
+          
+      }
+      
+      &.formulario-mini, .mini{
+          @extend .f-formulario-mini
+          
+          .campogrupo{
+            @extends .f-campogrupo-mini
+          }
+          
+          .campo{
+            @extends .f-campo-mini
+            // @extends .f-campo-placeholder
+          }
+          
+          .input-wrap {
+            @extends .f-input-mini
+            input,textarea{
+              @extends .f-input-elemento-mini
+            }
+          }
+          
+          .rotulo {
+             @extends .f-rotulo-mini
+          }
+          
+      }
+      
+
+       &.formulario-mini.formulario-placeholder, .mini.placeholder{
+          @extend .f-formulario-mini
+          
+          .campogrupo{
+            @extends .f-campogrupo-mini
+          }
+          
+          .campo{
+            @extends .f-campo-placeholder-mini
+            // @extends .f-campo-placeholder
+          }
+          
+          .input-wrap {
+            @extends .f-input-placeholder-mini
+            input,textarea{
+              @extends .f-input-elemento-placeholder-mini
+            }
+          }
+          
+          .rotulo {
+             @extends .f-rotulo-placeholder-mini
+          }
+          
+          .preenchido{
+              .rotulo{
+                  @extends .f-rotulo-placeholder-mini-preenchido
+              }  
+          }
+          
+      }
+
+
+      
+     
+
+      .campo.semsubgrupo:hover > .input-wrap{
+          input, textarea{
+            @extend .f-input-elemento-hover
+          }
+          .icone{
+             @extend .f-input-icone-hover
+          }
+      }
+      
+
+       .formulario-invertido .campo.semsubgrupo:hover > .input-wrap{
+          input, textarea{
+            @extend .f-input-elemento-invertido-hover
+          }
+          .icone{
+             @extend .f-input-icone-invertido-hover
+          }
+      }
+      
+
+
+
+  
+    // RADIO GRUPO
+     .campo.radiogroup .input-wrap{
+         @extends .f-input-elemento-radiogroupo
+         
+         .radio{
+           
+            @extends .f-input-elemento-radio
+            
+            label{
+                @extends .f-input-elemento-radio-label
+                
+                ../.checked ^[-1..-1]{
+                    @extends .f-input-elemento-radio-label-checked
+                }
+                  
+                
+              }
+              
+
+         }
+         
+
+      }
+
+
+
+
+
+      
+
+
+     &.edit{
+    .field.dirty{
+      .input-wrap{
+        input,textarea{
+          color:cor-azul
+          opacity 1;
+          font-width 900 !important
+        }
+          .ui.checkbox{
+            .ui.label{
+              color:cor-azul !important
+              font-width 900 !important
+            }
+          }
+          
+          .radio.checked{
+            label{
+              color:cor-azul !important
+              font-width 900 !important
+            }
+          }
+          
+
+      }
+      }
+      }
+
+
+
+
+
+      .acao{
+        display:inline-block;
+      }
+
+
+
+
+    //======================================================
+    //     FORMS FIELDS
+    //======================================================
+    @require './formfields/*'
+
+
+
+
+}

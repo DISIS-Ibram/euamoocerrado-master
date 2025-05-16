@@ -1,0 +1,214 @@
+@require "nib"
+
+
+//======================================================
+//    REGRAS
+//     • em portugues tudo
+//     • substantivo-advetico: EX cor-azul, fonte-titulo, cor-titulo;
+//======================================================
+
+
+
+
+fonte-titulo  = 'Signika', sans-serif
+fonte-texto = 'Source Sans Pro', sans-serif
+
+//LETODO - definir os tamanhos
+
+
+//---------------------------
+// CORES POR NOME
+//---------------------------
+
+cor-marrom = #7d5b56
+cor-bege = #d4caaa
+cor-azul = #3481a8
+cor-azul-escuro = #33515f
+cor-verde = #7da94d
+cor-laranja = #ed5e49
+cor_cinza =  #9e9e9e
+cor-cinza =  #9e9e9e
+cor-cinza-escuro =  #424242
+cor-titulo = #88807d
+cor-cabecalho = #e9e7e3
+cor-vermelho = #AF090D
+
+
+
+//---------------------------
+// CORES POR FUNCAO
+//---------------------------
+cor-botao = cor-laranja;
+cor-sombra = rgb(19, 4, 15);
+
+
+
+
+
+
+cores = {
+  cor-marrom: cor-marrom 
+  cor-bege: cor-bege 
+  cor-azul: cor-azul 
+  cor-azul-escuro: cor-azul-escuro 
+  cor-verde: cor-verde 
+  cor-laranja : cor-laranja 
+  cor_cinza: cor_cinza 
+  cor-cinza: cor-cinza 
+  cor-cinza-escuro: cor-cinza-escuro 
+  cor-titulo: cor-titulo 
+  cor-cabecalho: cor-cabecalho 
+  cor-botao : cor-botao 
+  cor-sombra: cor-sombra
+  cor-branco: white
+  cor-preto: black
+  white: white
+  black: black
+  preto: black
+  branco: black
+  
+  m: cor-marrom 
+  bg: cor-bege 
+  a: cor-azul 
+  ae: cor-azul-escuro 
+  v: cor-verde 
+  l : cor-laranja 
+  c: cor-cinza 
+  ce: cor-cinza-escuro 
+  t: cor-titulo 
+  b: white
+  p: black
+  w: white
+  b: black
+  t: transparent
+}
+
+
+
+
+/*
+# Mixen
+----
+*/
+checkPx(arg)
+  if unit(arg, 'px')
+    arg+0px
+  else
+    arg
+
+posabs(t,r,b,l)
+  position absolute
+  if t is defined || t != ""
+    top:t
+  if r is defined || r != ""
+    right:r
+  if b is defined || b != ""
+    bottom: b
+  if l is defined || l != ""
+    left: l
+    
+
+
+/*
+#box
+**box** t 0 b 0 r 0 l 0 w 0 h 0
+*/
+box(arg)
+  position absolute
+  i = 0
+  for num in arguments
+    i = i+1
+    val = arguments[i]
+    
+    if num == full
+      position absolute !important  
+      top 0
+      left 0
+      right 0
+      bottom 0
+    if num == abs
+      position absolute !important
+    if num == rel
+      position relative !important
+    if num == t 
+      top checkPx(val)
+    if num == b 
+      bottom checkPx(val)
+    if num == l 
+      left checkPx(val)
+    if num == r 
+      right checkPx(val)
+    if num == w 
+      width checkPx(val)
+    if num == h 
+      height checkPx(val)
+
+
+bcolor(cor)
+  .borda, .bd
+    border-color cor !important
+    &:after,&:before
+      border-color cor !important
+
+gpu()
+  transform translate3d(0, 0, 0)
+
+
+
+reset()
+  margin: 0
+  padding: 0
+  border: 0
+  outline: 0
+  min-height initial
+  min-width initial
+  max-height initial
+  max-width initial
+  
+
+  font-weight: inherit
+  font-style: inherit
+  // font-family: inherit //pq pode ser fonte de icone
+  font-size: 100%
+  vertical-align: baseline
+
+  line-height: 1
+  color: black;
+  
+  background none
+  border none
+  border-radius 0
+  outline:none
+  
+  word-wrap: break-word
+  box-shadow: none;
+
+
+
+
+
+
+seta(size,color,pos,offset = 50%)
+  content:''
+  width 0
+  height 0
+  sizeNeg = - size       
+  border checkPx(size) solid transparent;
+  if pos == "top"
+    border-bottom checkPx(size) solid color;
+    box abs t (2 * sizeNeg) l offset
+    margin-left: -(size)
+  if pos == "left"
+    border-right checkPx(size) solid color;
+    box abs t offset l (2 * sizeNeg)
+    margin-top: -(size)
+  if pos == "right"
+    border-left checkPx(size) solid color;
+    box abs t offset r (2 * sizeNeg)
+    margin-top: -(size)
+  if pos == "bottom"
+    border-top checkPx(size) solid color;
+    box abs b (2 * sizeNeg) l offset
+    margin-left: -(size)
+
+

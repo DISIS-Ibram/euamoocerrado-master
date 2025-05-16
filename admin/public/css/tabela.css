@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i");
+@import url("https://fonts.googleapis.com/css?family=Signika");
+/*
+
+ .tabela - TIPO: [ normal | placeholder (o label é inline e depois emcima) | compacto (menor espacamento) | mini (compacto e fonte menor) | popup  |  como nada ]
+ |  
+ | .acima
+    | .busca
+    | .filtro
+    | .filtros-ativos
+
+ | .filtros-selecionados
+ 
+ | .head-row
+ |     .head-col
+ |_.row
+   |_.col
+         .col-filter
+         .col-conteudo
+         .col-actions
+         
+ 
+ |
+ |__.aviso.cima [ alerta | erro | texto ]
+ |
+ |__.campogrupo  -  TIPO: [ normal | compacto | mini | invertido | subgrupo]
+ |   |
+ |   |__.titulo
+ |   |
+ |   |__.campo - TIPO:    [ requerido | normal | placeholder (o label é inline e depois emcima) | compacto (menor espacamento) | mini (compacto e fonte menor) | invertido  ]  
+ |         |   - ESTADOS: [ .erro | .alerta | .alterado | .valido ]
+ |         |
+ |         |__ .rotulo
+ |         |    |__ .icone
+ |         |    |__ .icone-erro
+ |         |    |__ .icone-requerido
+ |         |    |__ .texto/elemento
+ |         |    |__ .descricao
+ |         |
+ |         |__ .input  [ hover | focus ]
+ |         |    |__ .icone
+ |         |    |__ .elemento - descrever os varios tipos possiveis depois
+ |         |    |__ .elemento-complemento -  são os popup dos elementos quando selecionados.
+ |         |
+ |         |__ .dica
+ |         |    |__ .icone
+ |         |
+ |         |__ .erro
+ |         |__ .erro-icone
+ |         |
+ |         |__ .warn
+ |         |__ .warn-icone
+ |   
+ |__.aviso.baixo [ alerta | erro | texto ]
+ |
+ |__.erro-contagem
+ |   |_.butao.cima
+ |   |_.contagem
+ |   |_.butao.baixo
+ | 
+ |     
+ |__.acoes
+     |
+     |_.botao
+        |_.icone
+        |_.texto
+        
+*/
+.t-tabela {
+  display: block;
+  position: relative;
+  overflow: auto;
+}
+.t-tabela table {
+  margin-left: 15px !important;
+}
+.t-tabela tr {
+  position: relative;
+}
+.t-tabela tr .delataIcon {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 0px;
+  text-align: center;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: 200ms;
+  -moz-transition: 200ms;
+  -o-transition: 200ms;
+  -ms-transition: 200ms;
+  transition: 200ms;
+}
+.t-tabela tr:hover .delataIcon {
+  opacity: 50;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=5000)";
+  filter: alpha(opacity=5000);
+  -webkit-transition: 200ms;
+  -moz-transition: 200ms;
+  -o-transition: 200ms;
+  -ms-transition: 200ms;
+  transition: 200ms;
+}
+.t-tabela tr .delataIcon:hover {
+  opacity: 100;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10000)";
+  filter: alpha(opacity=10000);
+  -webkit-transition: 200ms;
+  -moz-transition: 200ms;
+  -o-transition: 200ms;
+  -ms-transition: 200ms;
+  transition: 200ms;
+}
+.t-tabela table tbody tr {
+  background: none !important;
+  border: none !important;
+}
+.t-tabela table tbody tr:nt-child(2n) {
+  background: none !important;
+  border: none !important;
+}

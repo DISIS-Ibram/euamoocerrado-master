@@ -1,0 +1,802 @@
+@require "mixen-and-variables"
+
+
+//---------------------------
+// FONTES
+//---------------------------
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Signika')
+
+
+
+
+
+html,body,#app,.si3
+	height: 100% !important
+	min-height: 100% !important
+
+#si3
+	*{
+		-webkit-font-smoothing: antialiased;
+	}
+	#app
+		height: 100% !important
+		min-height: 100% !important
+	min-height: 100%
+	.bg-none, .transp
+		background none !important
+	//funcss para cores
+
+
+	for key, val in cores
+		.bg-{key}
+			background val !important
+		.cl-{key}
+			color val !important
+		.bg-o-{key}
+			*
+				background val !important	
+		.cl-o-{key}
+			*
+				color val !important
+		.h-bg-{key}:hover
+			background val !important
+		.h-cl-{key}:hover
+			color val !important
+		.h-bg-o-{key}:hover
+			*
+				background val !important	
+		.h-cl-o-{key}:hover
+			*
+				color val !important
+		
+		for num in (0..10)
+			opkey = num
+			if(num == 0)
+				opkey = '0'
+			else if(num < 10)
+				opkey = '0'+num
+			else
+				opkey = 1
+		
+			.bg-{key}{opkey}
+				background rgba(val,(num/10)) !important
+			
+			.cl-{key}{opkey}
+				color rgba(val,(num/10)) !important
+			
+			.bg-o-{key}{opkey}
+				*
+					background rgba(val,(num/10)) !important
+			
+			.cl-o-{key}{opkey}
+				*
+					color rgba(val,(num/10)) !important
+
+			.h-bg-{key}{opkey}:hover
+				background rgba(val,(num/10)) !important
+			
+			.h-cl-{key}{opkey}:hover
+				color rgba(val,(num/10)) !important
+		
+			.h-bg-o-{key}{opkey}:hover
+				*
+					background val !important	
+			.h-cl-o-{key}{opkey}:hover
+				*
+					color val !important
+
+
+
+
+/*
+# Mixen
+----
+*/
+checkPx(arg)
+	if unit(arg, 'px')
+		arg+0px
+	else
+		arg
+
+posabs(t,r,b,l)
+	position absolute
+	if t is defined || t != ""
+		top:t
+	if r is defined || r != ""
+		right:r
+	if b is defined || b != ""
+		bottom: b
+	if l is defined || l != ""
+		left: l
+		
+
+
+/*
+#box
+**box** t 0 b 0 r 0 l 0 w 0 h 0
+*/
+box(arg)
+	position absolute
+	i = 0
+	for num in arguments
+		i = i+1
+		val = arguments[i]
+		
+		if num == full
+			position absolute !important	
+			top 0
+			left 0
+			right 0
+			bottom 0
+		if num == abs
+			position absolute !important
+		if num == rel
+			position relative !important
+		if num == t	
+			top checkPx(val)
+		if num == b	
+			bottom checkPx(val)
+		if num == l	
+			left checkPx(val)
+		if num == r	
+			right checkPx(val)
+		if num == w	
+			width checkPx(val)
+		if num == h	
+			height checkPx(val)
+
+actter
+bcolor(cor)
+	.borda, .bd
+		border-color cor !important
+		&:after,&:before
+			border-color cor !important
+
+gpu()
+	transform translate3d(0, 0, 0)
+
+//inicio do namespace
+
+#si3
+
+	//RESETS
+	//------------------
+		
+	body&
+		background:#F1F1F1 !important
+		font-family fonte-texto
+	
+	.modal
+		// overflow: auto !important;
+		.content
+			background:#F1F1F1 !important;
+	.modal.basic
+		.content
+			background: transparent !important;
+
+
+	
+
+	//Typografia
+	h1,h2,h3
+		color cor-titulo
+
+
+
+	//icon
+	.page-title .icon
+		display inline-block
+		vertical-align middle
+	
+
+
+
+/*
+# Bordas
+================================
+
+**.borda-container** -
+para o div que vai conter as bordas (deixa overflow visible)
+
+*div* **.bb, .bl, .br, .bt, .ba** -
+borda lateral, tob, botoom ou left ou All
+
+**bcolor (cor)** - mixen para colorir a borda
+
+*/		
+	bordaestilo = 1px dashed cor-marrom
+
+	.borda-container
+		overflow: visible !important
+		position: relative;
+	
+	.bd-marrom
+		bcolor(cor-marrom)
+
+	.borda
+		z-index 10
+		
+	.borda-right,.br
+		box  t 0 b 0 r -3 w 3
+		border-left bordaestilo
+		&:after
+			content ''
+			box t 3 b 3 l 0 w 1
+			border-left bordaestilo
+		&:before
+			content ''
+			box t 1 b 1 r 0 w 1
+			border-left bordaestilo
+			
+	.borda-bottom,.bb
+		box r 0 l 0 b -2 h 3
+		border-bottom bordaestilo
+		&:after
+			content ''
+			box l 3 r 3 t 1 h 1
+			border-bottom bordaestilo
+		&:before
+			content ''
+			box l 1 r 1 b 0 h 1
+			border-bottom bordaestilo
+	
+
+
+
+
+
+
+
+
+
+	//======================================================
+	// 		BARRA LATERAL
+	//======================================================
+
+	#barra-lateral
+		cor-fundo = cor-marrom
+
+		background cor-fundo
+		width 54px
+		overflow visible !important
+		box-shadow 3px 2px 15px rgba(cor-sombra, 0.25)
+		transition 0.7s
+		transition-delay: 0.4s
+		
+		bcolor(cor-fundo)
+		
+		.item
+			text-align center
+			width 100%
+			overflow: hidden
+			padding 0
+			margin 0
+			
+			a
+				cursor pointer;
+				display: block
+				padding-top: pd = 15px
+				padding-bottom: pd*1.5
+				width: 100%
+				min-height: 50px
+				
+				&.active
+					background darken(cor-fundo,35%)
+					transition 0.5s
+				&:hover
+					background darken(cor-fundo,15%)		
+					transition 0.5s
+					
+				.icone
+					width 100%
+					display block
+					padding-top:0px
+				.nome
+					posabs initial 0 5 0
+					width 100%
+					display block
+					opacity 0
+					text-align center
+					transition 0.4s
+					transition-delay 0.5s
+					font-family fonte-texto
+					font-size 10px
+					font-width 100
+					text-transform uppercase
+
+			
+			.logo
+				padding-top: pd = 9px
+				padding-bottom: pd*1
+				opacity 0.5
+				
+
+
+
+		//Hover--------
+
+		&:hover
+			width 100px
+			transition: 0.4s
+			box-shadow 10px 2px 40px rgba(0, 0, 0, .75)
+			
+			.item
+				a
+					.nome
+						opacity 0.6 !important
+						transition 0.4s
+						transition-delay 0.1s
+
+
+
+
+
+	//======================================================
+	// 		BARRA TOPO
+	//======================================================
+	#barra-topo
+		background cor-bege
+		border 0
+		margin 0
+		border-radius 0
+		box-shadow 3px -6px 15px rgba(cor-sombra,0.70)
+		bcolor(cor-bege)
+		position: absolute;
+		width: 100%;
+		z-index: 30;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index 15;
+		font-family fonte-texto
+		small
+			opacity:0.6
+			font-size 10px
+			font-width 100
+			text-transform uppercase
+
+		.dropdown.icon
+			display:none
+
+		
+
+
+
+
+	//======================================================
+	// 		PAGINAS
+	//======================================================
+	
+
+	// CABECALHO
+	//---------------------------
+	
+	.cabecalho
+		background cor-cabecalho
+		padding-top 40px !important
+		padding-bottom 20px !important
+		
+		.voltar
+			.button
+				background transparent;
+				&:hover
+					background rgba(0, 0, 0, 0.1)
+					color white
+			float:right
+			i
+				color cor-titulo
+		
+		h1.page-title
+			font-family fonte-titulo
+			font-size 3rem
+			color cor-titulo
+			font-weight 500
+			
+			i.icon
+				color cor-titulo !important
+				line-height 1;
+				font-weight 900
+			.icon svg *
+				fill cor-titulo
+
+		
+	
+	// CONTEUDO
+	//---------------------------
+
+	.conteudo
+		padding-top:40px !important;
+		z-index:1
+		position:relative
+		padding-left:49px
+		
+
+
+
+
+
+	//======================================================
+	// 		FORMS
+	//======================================================
+	// Sobescrevendo o semantic ui
+
+
+	// .ui.input input
+	// 	margin-bottom 10px !important
+	// 	border-radius 0 !important
+	// 	background none
+	// 	border none
+	// 	border-bottom 1px dashed rgba(white,0.5) !important
+	// 	transition: 0.5s background
+	// 	line-height 2.2rem !important
+		
+	// 	&:hover
+	// 		background rgba(white, 0.5)
+	// 		transition: 0.5s background
+
+	// 	&:focus
+	// 		background white
+
+	
+	// .ui.inverted
+	// 	input
+	// 		background cor-marrom
+	// 		border-bottom 1px dashed rgba(white,0.5)
+			
+	// .ui.button
+	// 	// border-radius 0 !important
+	// 	&.primary
+	// 		background cor-laranja
+	// 		&:hover
+	// 			background darken(cor-laranja, -15%)
+
+	
+
+
+//======================================================
+// 		LOGIN PAGE
+//======================================================
+
+	.login-page
+		
+		box w 100% h 100%
+		overflow hidden
+
+		#footer
+			box w 100% b 0 h 250px
+			background: white !important;
+			z-index:3;
+
+		h3
+			color:white !important;
+			text-shadow: 2px 2px 3px rgba(black,0.6)
+		
+		.assinaturas
+			box r 20px t 20px w 350px
+			z-index:10
+			position:absolute !important
+			img
+				width: 100%
+		.fundo
+			z-index:1
+			box full
+			background black	
+			position: fixed !important
+			
+			//add some noise
+			// &:before
+			// 	content ''
+			// 	box full
+			// 	background black
+			// 	opacity 0.6
+			// 	z-index 10
+			&:after
+				content ''
+				box full
+				background url('../images/noise.png')
+				opacity 0.7
+				z-index 10
+			
+			.slick-slider
+				box full
+				.slick-list
+					box full
+					.slick-track
+						box full
+						div.slider
+							box full
+							left: 0 !important
+							background-position 50% 50%
+							background-size cover
+							.description
+								box l 40 b 40
+								color white
+								opacity 0.6
+								
+				.slick-dots
+					box b 23
+					li button:before
+						color:white;
+						z-index 400
+
+		.barra-lateral
+					box-shadow 3px 2px 15px rgba(cor-sombra, 0.25)
+					box t 0 l 0 w 20 b 0
+					background cor-bege
+					bcolor(cor-bege)	
+					z-index 300		
+					
+		.formulario
+			color white
+			box w 350
+			margin-top 180px
+			margin-left 120px
+			z-index 200
+			.logowrap
+			
+				text-align center
+				h4
+					margin-top 0px
+					font-family fonte-texto
+					font-size: 14px
+					font-weight 100 !important
+					color rgba(white, 0.6)
+					margin-bottom 20px
+			.logo
+				width 120px
+				display inline-block
+	
+		.estatisticas
+			box r 40 t 40 b 40 w 200
+			color white
+			z-index:100
+			.ui.statistic
+				display block !important
+				clear both
+				float right
+				width 150px
+				.value
+					color white
+					opacity 0.4
+					font-family fonte-texto
+					font-weight 700
+					font-size 5rem
+					transition 0.5s
+				.label
+					font-size 10px
+					color white
+					
+			.ui.statistic:hover
+				.value
+					opacity 0.7
+					transition 0.5s
+					
+				
+
+						
+	.ui.menu.secondary
+		.item
+			color cor-marrom !important
+			text-align right
+			&.active
+				color:white !important
+				background cor-marrom !important
+		.header
+			color rgba(black,0.3) !important
+			border-bottom:1px solid rgba(black,0.1);
+			background	rgba(black,0.1);
+		
+		
+
+
+
+
+@import formulario
+
+@import tabela
+
+
+@import views
+
+
+//Algumas configuracoes golais utilizando 
+//variaveis ja definidas em formularios etc
+
+#si3
+	.ui.input{
+		
+		input,textarea{
+			
+			@extends .f-input-elemento
+			&:hover{
+					@extends .f-input-elemento-hover
+			}
+			&:focus{
+					@extends .f-input-elemento-focus
+			}
+		}
+
+
+
+		&.normal{
+		
+			input,textarea,
+			input.normal,textarea.normal{
+				border-radius: 5px
+				background: rgba(gray,0.3) !important
+				border-color:transparent;
+
+				&::-webkit-input-placeholder {
+					color: rgba(gray,0.6) !important;
+				}
+
+				&:hover{
+						@extends .f-input-elemento-hover
+				}
+				&:focus{
+						@extends .f-input-elemento-focus
+				}
+			}
+		}
+		
+		&.left.icon{
+				input,textarea{
+					padding-left: 2.5em !important;
+				}
+		}
+		
+		
+		i{
+			color:rgba(0,0,0,0.4);
+		}
+
+
+		.ui.busca{
+			.ui.input input{
+					padding: 3em 2.5em !important;
+					background: rgba(gray,0.1)
+					border:0 !important
+			}
+		}
+
+
+	}
+
+
+
+
+
+@import flexboxgrid
+
+
+
+coresClassificacao= {
+	padrao:#A8CBDC,
+	status:#A5CA92,
+	fase:#CDB8CD,
+	etapa:#EEC16D
+}
+#si3
+
+	for k,v in coresClassificacao{
+		.ui.label.{k}{
+			font-size:0.8em !important
+			margin: 2px !important;
+			color:darken(v,25%) !important
+			background: lighten(v,50%) !important
+		}
+	}
+
+
+	.itemGenericoList
+		
+		.segment
+			background rgba(cor_cinza,0.05)
+			// &:hover
+				// background:white;
+		textarea
+			font-size 12px !important
+
+		
+		.accordion
+			// margin-left: 30px !important
+			.editform
+				margin-bottom: 5px;
+
+			.title
+				padding:10px;
+				border-radius: 15px 0 0 0;
+				color:black
+				font-weight: 600
+				// border-bottom: 1px dotted gray
+			.content
+				border-left: 2px solid gray
+				border-right: 0px solid gray
+			.accordion  //sub acordion
+				margin-left: 30px !important
+		
+		
+
+	
+
+
+		 for k,v in coresClassificacao{
+			 .{k}{
+			 	background: lighten(v,80%)
+				.title{
+					color:darken(v,25%)
+					background: lighten(v,50%) 
+				}
+				.formulario .ui.input input,.ui.input textarea{
+					color:darken(v,25%) !important
+				}
+				.content{
+					border-left-color:v
+					border-right-color:v
+					border-bottom:1px solid v
+				}
+				.delete{
+					color:darken(v,25%)
+				}
+				.editform{
+					margin-top:15px
+					border-top:2px solid v
+				}
+				.editform:first-child{
+					margin-top:0px
+					border-top:0px solid v
+				}
+			 }
+		 }
+
+
+
+
+
+.mapwrap
+	z-index:0;
+
+
+
+.ui.inverted.popup,
+.ui.inverted.popup:before
+	background: cor-marrom !important;
+
+
+
+.lateral-info
+	position:relative
+	padding-top:20px
+	padding-left:22px
+	// opacity: 0.6
+	// transform: translate3d(0,0,0)
+	&:before
+		content:''
+		box abs t 0 b 0 l -26px w 22px
+		box-shadow: 15px 7px 20px rgba(0,0,0,0.1);
+
+
+//ajustes minimo
+.icon.outline
+	outline: 0px !important  //por conta do conflito com tycons.css
+
+.ui.top.right.pointing.dropdown	> i.icon{
+	position:absolute !important;
+	right:5px !important;
+	top:45%;
+	line-height: 0;
+	padding:0;
+}
+
+.box{
+
+	background: rgba(125,91,86,0.04);
+	border-radius: 7px;
+	padding: 10px;
+
+	
+
+}
+

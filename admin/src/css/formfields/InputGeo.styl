@@ -1,0 +1,149 @@
+@import mixen-and-variables
+
+
+.formulario-placeholder .coorddisplay
+  display:none;
+
+//lidando com GEOS Input
+.geoinput
+
+  .coorddisplay
+    box r 35px t 10%
+    font-size:0.7em
+    color: cor-cinza
+  &.open
+    .ui.input input
+      background white
+
+  .elemento-complemento 
+    width 100%
+    height 400px;
+    
+  .geoDropdown
+    // &:after
+    //   pointer-events none !important
+    //   z-index:2000
+    //   content ''
+    //   box t 0 l 0 r 0 h 50
+    //   background: linear-gradient(top, rgba(0,0,0,0.1), rgba(0,0,0,0)); 
+      
+    box abs l 2 r 2
+    width: 100%;
+    // margin-top: -10px;
+    background white
+    // box-shadow 4px 15px 15px 1px rgba(black,0.2)
+    z-index 200
+    height 100% !important;
+    
+    
+    .menuwrap
+      box t 0 b 0 l 0 w 50% 
+      background cor-cinza
+      
+      .ui.dropdown
+        box full
+        width 100% !important
+        height 100% !important
+        overflow auto
+        
+        .menu
+          box full
+          display block !important
+
+      
+    .mapwrap
+      box t 0 r 0 b 0 l 50%
+      transition 0.2s 
+      z-index 50
+
+      .fullscreentoogle
+        position:absolute;
+        background:gray;
+        width:25px;
+        height:25px;
+        left:-28px;
+        border-radius:25% 0 0 25%;
+        z-index:400;
+        text-align:center;
+        color:white;
+        cursor:pointer;
+        line-height:25px;
+        // display:none !important; //temporario
+
+      &.fullscreen
+        position:fixed
+        left:120px
+        right:20px
+        bottom:20px
+        top:50px
+        z-index:1000
+
+        .fullscreentoogle
+            position:fixed
+            left:90px
+            top:90px
+            z-index:1001
+            width:55px;
+            height:55px;
+            line-height:61px;
+            border-radius:50%;
+
+
+
+  &.hover
+    &:before
+      content ''
+      box full
+      border 2px dashed blue !important
+      background-color rgba(cor-azul,0.2) !important
+      z-index 100
+
+  &.hover .geoDropdown
+      &:before
+        content ''
+        box full
+        border 2px dashed blue !important
+        background-color rgba(cor-azul,0.2) !important
+        z-index 100
+      & .menuwrap,
+      & .mapwrap
+        opacity 0.4 !important
+
+
+  //modo de entrada point 
+  &.modo-mapa
+    .geoDropdown
+      .mapwrap
+        left:0
+        transition 0.2s
+      .menuwrap
+        display: none
+
+
+
+//lidando com osmapas
+
+
+.mapwrap
+  &.insertmode
+    .leaflet-container
+      cursor: crosshair !important
+
+
+// &.formulario-placeholder,
+// &.formulario-compacto,
+// &.formulario-small
+//   input
+//      ::-webkit-input-placeholder 
+//          color: black !important;
+    
+  
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+from euamoocerrado.settings import eac_router
+from {{app_name}} import {{app_name}}_viewsets as viewsets
+
+
+{% for model in models %}eac_router.register(r'rest_api/{{model.uri.path}}', viewsets.{{model.uri.view}})
+{% endfor %}

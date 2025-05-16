@@ -1,0 +1,60 @@
+# Dependências
+node_modules/
+.pnp
+.pnp.js
+
+data/pgdata
+data/cache
+data/pgdata-temp
+bin
+
+mvtmapserver/cache
+
+.dev_temp_data
+
+
+# Testes
+coverage/
+
+# Produção
+build/
+dist/
+.nuxt/
+.output/
+
+# Arquivos de ambiente
+
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+
+
+# Arquivos temporários
+*.log
+*.tmp
+*.temp

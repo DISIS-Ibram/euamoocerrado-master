@@ -1,0 +1,74 @@
+@import mixen-and-variables
+
+
+
+// .view-resumo
+        // .view-header,view.titulo
+        // .view-content
+                // .view-grupo
+                    // label
+                    // .view-texto
+
+
+.view-resumo{
+    padding:0
+    border-radius: 0 25px
+    background: rgba(cor-marrom,0.0)
+    // opacity: 0.8
+}
+
+
+.view-header{
+    
+    position:relative;
+    margin-bottom:0
+    padding:0.5em 1em
+    border-radius: 0 25px 0 0
+    background: rgba(cor-marrom,0.00)
+    border-bottom:1px dotted cor-cinza;
+    h3{
+        display: inline-block;
+        color:rgba(cor-cinza-escuro,0.7) !important;
+        small{
+            opacity: 0.6;
+        }
+    }
+
+
+    .ui.button{
+        position:absolute
+        top 5px
+        right: 5px
+        // background: none
+        opacity: 1
+    }
+    &:hover{
+           .ui.button{
+               opacity: 1
+           } 
+    }
+
+
+}
+
+.view-content{
+    opacity: 0.8
+    background: rgba(cor-marrom,0.00)
+    padding: 0.7em 1.2em
+    border-radius:0 0 15px 15px
+    // background: rgba(black,0.05)
+}
+
+.view-group{
+
+    margin-bottom:1em;
+
+    label{
+        color:cor-marrom;
+        font-size:0.8rem;
+    }
+    .view-texto{
+        color:cor-cinza-escuro
+    }
+
+}

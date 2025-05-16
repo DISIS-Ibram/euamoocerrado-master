@@ -1,0 +1,1234 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"index",
+				"indexOf\t(onlyDOMProps.js)"
+			],
+			[
+				"displa",
+				"display_name\t(models.js)"
+			],
+			[
+				"prop",
+				"propriedadeVirtual"
+			],
+			[
+				"propri",
+				"propriedadeVirtual\t(models.js)"
+			],
+			[
+				"resul",
+				"result2"
+			],
+			[
+				"ite",
+				"items"
+			],
+			[
+				"objF",
+				"objFinal"
+			],
+			[
+				"cus",
+				"custom"
+			],
+			[
+				"custom",
+				"custom.req\t(InputText.js)"
+			],
+			[
+				"inputTe",
+				"InputTextArea"
+			],
+			[
+				"endere",
+				"endereço"
+			],
+			[
+				"dica",
+				"dicaCEP"
+			],
+			[
+				"trans",
+				"transition"
+			],
+			[
+				"initial",
+				"initialValues\t(PessoasForm.js)"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"Input",
+				"InputTextArea"
+			],
+			[
+				"valu",
+				"value"
+			],
+			[
+				"get",
+				"getCEP"
+			],
+			[
+				"ownpro",
+				"ownprops"
+			],
+			[
+				"usu",
+				"usuarios"
+			],
+			[
+				"ent",
+				"entities"
+			],
+			[
+				"wi",
+				"with\t(itemGenericoList.js)"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
+				"tran",
+				"transform\t(models.js)"
+			],
+			[
+				"Usuario",
+				"UsuarioForm"
+			],
+			[
+				"che",
+				"checkForFile"
+			],
+			[
+				"add",
+				"addform\t(statusRegistroList.js)"
+			],
+			[
+				"cor-",
+				"cor-verde"
+			],
+			[
+				"cor",
+				"cor-marrom"
+			],
+			[
+				"fase",
+				"fases"
+			],
+			[
+				"remove",
+				"removeItem"
+			],
+			[
+				"status",
+				"statusid"
+			],
+			[
+				"fases",
+				"faseregistro"
+			],
+			[
+				"statu",
+				"statusText\t(createApiMiddleware.js)"
+			],
+			[
+				"StatusRe",
+				"StatusRegistroList"
+			],
+			[
+				"text",
+				"textarea"
+			],
+			[
+				"boto",
+				"botoes\t(itemGenericoForm.js)"
+			],
+			[
+				"sh",
+				"schema"
+			],
+			[
+				"nex",
+				"nextState"
+			],
+			[
+				"compon",
+				"componentDidMount\t(Home.js)"
+			],
+			[
+				"de",
+				"default\t(Home.js)"
+			],
+			[
+				"const",
+				"constructor\t(.eslintrc.js)"
+			],
+			[
+				"Te",
+				"TextareaAutosize"
+			],
+			[
+				"ele",
+				"elements"
+			],
+			[
+				"compo",
+				"components\t(Admin.js)"
+			],
+			[
+				"iten",
+				"itemgenerico\t(index.js)"
+			],
+			[
+				"for",
+				"forEach\t(index.js)"
+			],
+			[
+				"Item",
+				"ItemGenericoForm"
+			],
+			[
+				"cw",
+				"cwr\tReact: componentWillReceiveProps(np) {…}"
+			],
+			[
+				"l",
+				"log"
+			],
+			[
+				"normalizeEn",
+				"normalizeEntity\t(normalize.js)"
+			],
+			[
+				"norm",
+				"normalize\t(normalize.js)"
+			],
+			[
+				"no",
+				"normalized\t(normalize.js)"
+			],
+			[
+				"op",
+				"opcoes"
+			],
+			[
+				"Red",
+				"Redux\t(index.js)"
+			],
+			[
+				"paddin",
+				"padding-top"
+			],
+			[
+				"wid",
+				"width\t(PageInterna.js)"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"form",
+				"formReducer"
+			],
+			[
+				"rou",
+				"routerReducer"
+			],
+			[
+				"combi",
+				"combineReducers"
+			],
+			[
+				"red",
+				"reducers"
+			],
+			[
+				"blck",
+				"black\t(S3Icon.js)"
+			],
+			[
+				"rgb",
+				"rgba\trgba"
+			],
+			[
+				"box",
+				"box-shadow\t(app.css)"
+			],
+			[
+				"verti",
+				"vertical-align\t(app.html)"
+			],
+			[
+				"user",
+				"users\t(Sidebar.js)"
+			],
+			[
+				"Cp",
+				"Component\t(README.md)"
+			],
+			[
+				"bak",
+				"background"
+			],
+			[
+				"Col",
+				"Column"
+			],
+			[
+				"pro",
+				"props"
+			],
+			[
+				"page-",
+				"page-title\t(PageInterna.js)"
+			],
+			[
+				"req",
+				"require\t(Gulpfile.js)"
+			],
+			[
+				"S3",
+				"S3Input\t(S3input.js)"
+			],
+			[
+				"reque",
+				"require('gulp\t(Gulpfile.js)"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/models/models.js",
+			"settings":
+			{
+				"buffer_size": 9401,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "import React from 'react';\nimport { connect } from 'react-redux';\nimport { Link } from 'react-router';\nimport ViewMore from 'components/ViewMore'\nimport { Item, Header, Label, List, Icon, Accordion, Input, Dimmer, Loader, Image, Segment, Button } from 'semantic-ui-react';\nimport * as _  from 'lodash';\nimport FlipMove from 'react-flip-move';\nimport { t, d }  from 'models/models';\nimport { si3, si3Actions }  from 'actions/index';\nimport StringMask from 'string-mask';\n// import { ModalYesNo } from 'components/modals';\nimport * as util from 'util/s3util'\nimport carregaModelo from 'hocs/carregaModelo'\n\n\n\n// import tabelaHoc from 'hocs/tabela'\nimport Tabela from 'components/tabela'\nimport {Coluna, ItemAttr, If} from 'components/tabelacolunas/coluna'\n\n\n\n\nexport default class PessoasTabela extends React.Component\n{\n\n  static defaultProps = {\n        modelo: \"pessoa\",\n        id:'all'\n  } \n\n  render(){\n\n      return(\n\n        <Tabela orderBy=\"nome\" search=\"all\" col=\"1\" modelo=\"pessoa\" {...this.props} >\n\n            \n\n            <Coluna width=\"60%\" name=\"nome\" label=\"Nome\" link=\"pessoa/%cpf%\">\n              <div className='row'>\n              <div className='col-xs-1'><If foto><Image width=\"35px\"  avatar src={util.thumb(\"%foto%\",\"80\")} /></If></div>\n              <div className='col-xs-9'>\n                  <Item>\n                    <Item.Content>\n                            <Item.Header as='h4' className='mb-0'>\n                          <Link className='cl-m h-cl-a' to='/pessoa/%cpf%'>\n                              <ItemAttr name=\"nome\" transform={(v)=>v.toUpperCase()} />\n                          </Link>\n                      </Item.Header>\n                      \n                      <Item.Description><strong> CPF:<ItemAttr format=\"000.000.000-00\" name=\"cpf\" /></strong></Item.Description>\n                      <If matricula> <Item.Description> Matricula: %matricula% </Item.Description></If>\n                    </Item.Content>\n                  </Item>\n              </div>\n              </div>\n\n            </Coluna>\n\n            <Coluna label=\"Tipo\" name=\"tipoDeAcesso\" />\n\n            <Coluna label=\"Contato\" orderBy=\"email\">\n            <ViewMore height=\"3em\">\n               <a href=\"mailto:%email%\"> %email%</a><br />\n               <If telefone><Icon name=\"phone\" color=\"gray\" /><ItemAttr name=\"telefone\" format=\"(00) 0000-0000\" /></If><br />\n               <If endereco><Icon className='f-l cl-cinza' name=\"marker\" color=\"gray\" /><span className='w-pre d-ilb'>%endereco%</span></If>\n            </ViewMore>\n           </Coluna>\n\n        \n        </Tabela>\n      )\n\n  }\n\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n@carregaModelo\nexport class PessoasList extends React.Component\n{\n\n   static defaultProps = {\n        modelo: \"pessoa\"\n  } \n\n\n\n\n  render(){\n      return(\n                <div className=\"pessoasList\">\n                    <Button color='brown' size=\"tiny\" as={Link} to=\"/pessoas/0\"> <Icon  name='add' /> Adicionar </Button>\n                    <br/>\n                    <Input placeholder='Procurar' fluid onChange={(e)=>this.filterItem(e.target.value)} />\n\n                     \n\n                    <List selection verticalAlign='' divided size='large'>\n                      \n                        \n                        {_.map(this.props.itens,(item)=>(\n                          item.cpf &&\n                            <List.Item key={item.cpf}>\n                             \n                              <List.Content floated='right'>\n                                    <Icon onClick={()=>this.removeItem(item.cpf,'usuarios',item.nome)} circular name='trash' />\n                              </List.Content>\n\n                              <Image avatar size=\"tiny\" src={util.thumb(item.foto,\"120\")} />\n                              <List.Content as={Link} to={\"/pessoa/\"+item.cpf}>\n                                <List.Header>{item.nome}\n                                &emsp;\n                                {item.administrador &&\n                                <Label as='a' color='blue' size=\"mini\">Admin</Label>\n                                }\n                                { (item.usuario_s && !item.administrador) &&\n                                <Label as='a' color='green' size=\"tiny\">Usua.</Label>\n                                }\n                                </List.Header> \n                                <List.Description as='a'>{item.email}</List.Description>\n                                <List.Description as='a'><small>{new StringMask('000.000.000-00').apply(item.cpf)}</small></List.Description>\n                                <List.Description as='a'><small>Matricula: {item.matricula}</small></List.Description>\n                                \n                                {item.telefone &&\n                                  <List.Description as='a'><small>{item.telefone}</small></List.Description>\n                                }\n                                {item.endereco &&\n                                  <List.Description as='a'><small>{item.endereco}</small></List.Description>\n                                }\n                              \n\n                              </List.Content>\n                            </List.Item>\n\n                        ))}\n                    </List>\n\n\n                </div>\n      );\n        \n  }\n}\n\n\n\n\n\n\n\n\n\n\n\n\nexport class PessoasListBak extends React.Component\n{  \n\n  static defaultProps = {\n        modeloNome: \"usuarios\",\n        id:'all'\n  } \n\n\n\n    constructor(props){\n        super(props)\n        this.state = { carregando:true, filter:'', addindex:0 };\n        // this.getFaseEtapa = this.getFaseEtapa.bind(this);\n        this.removeItem = this.removeItem.bind(this);\n    }\n\n    componentDidMount() {\n        this.setState({carregando:true})\n        let data = this.props.load(this.props.model)\n        data.then(()=>this.setState({carregando:false}))\n        // this.props.closeModal('modal aberto 1')\n    }\n\n\n    handleSubmit(values,modelo){\n        this.props.save(modelo, values);\n        return true;\n   }\n\n   createModel(values){\n        this.props.save(this.props.model, values);\n        this.setState({filter:''})\n        const i = this.state.addindex+1;\n        this.setState({addindex:i})\n        return true;\n   }\n\n   removeItem(id,modelo,nome){\n\n      // this.props.openModal('removepessoa'+modelo+id,\n      //           <ModalYesNo  \n      //                 onYes={() => this.props.remove(modelo,{cpf:id}) } \n      //                 nome={'removepessoa'+modelo+id}\n      //                 titulo={\"Deseja excluir \"+nome+\"?\"}\n      //                 icon=\"trash\"\n      //           />)\n\n\n\n        // this.props.openModal('modal aberto 2 fasdf asdf a')\n    //    this.props.remove(modelo,{cpf:id});  \n        // this.render();\n   }\n\n\n\n\n\n   filterItem(nome){\n        console.log(nome)\n        // console.log(ev);\n        this.setState({filter:nome});\n   }\n\n\n   toogle(e){\n      \n      let quem = e.currentTarget;\n      let pai = $(quem).parent();\n      if(pai.hasClass('close')){\n          pai.css('max-height',pai[0].scrollHeight+400);\n          pai.removeClass('close')\n      }else{\n        pai.addClass('close')\n      }\n\n   }\n\n   openAll(){\n      $('.sublist.close').removeClass('close');\n   }\n\n   closeAll(){\n      $('.sublist').addClass('close');\n   }\n\n\n\n   render() { \n       \n    \n\n       const tipo = si3.getTipo(this.props.model);\n\n       if( this.state.carregando === false ){\n            let itens;\n            if( _.has( this.props.api.entities, tipo) ){\n                itens = si3.filterItens(this.props.api.entities[tipo],{nome:this.state.filter},[\"nome\"]);\n             }else{\n                itens = [];\n             }\n\n             return (\n                <div className=\"pessoasList\">\n\n                    <Button color='brown' size=\"tiny\" as={Link} to=\"/pessoas/0\"> <Icon  name='add' /> Adicionar </Button>\n\n                    {/*<UsuarioForm model=\"usuarios\" />*/}\n\n\n                    <Input placeholder='Procurar' fluid onChange={(e)=>this.filterItem(e.target.value)} />\n\n                    <List selection verticalAlign='' divided size='large'>\n                        {itens.map((item)=>(\n                          item.cpf &&\n                            <List.Item >\n                             \n                              <List.Content floated='right'>\n                                    <Icon onClick={()=>this.removeItem(item.cpf,'usuarios',item.nome)} circular name='trash' />\n                              </List.Content>\n\n                              <Image avatar size=\"tiny\" src={\"http://162.243.186.165/thumb/?url=\"+item.foto+\"&w=120&h=120\"} />\n                              <List.Content as={Link} to={\"/pessoas/\"+item.cpf}>\n                                <List.Header>{item.nome}\n                                &emsp;\n                                {item.administrador &&\n                                <Label as='a' color='blue' size=\"mini\">Admin</Label>\n                                }\n                                { (item.usuario_s && !item.administrador) &&\n                                <Label as='a' color='green' size=\"tiny\">Usua.</Label>\n                                }\n                                </List.Header> \n                                <List.Description as='a'>{item.email}</List.Description>\n                                <List.Description as='a'><small>{new StringMask('000.000.000-00').apply(item.cpf)}</small></List.Description>\n                                <List.Description as='a'><small>Matricula: {item.matricula}</small></List.Description>\n                                \n                                {item.telefone &&\n                                  <List.Description as='a'><small>{item.telefone}</small></List.Description>\n                                }\n                                {item.endereco &&\n                                  <List.Description as='a'><small>{item.endereco}</small></List.Description>\n                                }\n                              \n\n                              </List.Content>\n                            </List.Item>\n\n                        ))}\n                    </List>\n\n\n                </div>\n            );\n        }else{\n            return (\n                <div className=\"itemGenericoList\">           \n                      <Loader active content='Carregando usuários' inline='centered' />\n                </div>\n            );\n        }\n    }\n}\n\n\n\n\n// export default connect( (state, ownprops)=> {return {api:state.api}} , si3Actions)(PessoasList);\n",
+			"file": "src/components/tabelas/pessoaTabela.js",
+			"file_size": 10573,
+			"file_write_time": 131313711110000000,
+			"settings":
+			{
+				"buffer_size": 10576,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/actions/actions.js",
+			"settings":
+			{
+				"buffer_size": 26797,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/hocs/carregaModelo.js",
+			"settings":
+			{
+				"buffer_size": 17991,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/bibliotecas/si3rc-api/modules/api.js",
+			"settings":
+			{
+				"buffer_size": 5452,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/formfields/FormField.js",
+			"settings":
+			{
+				"buffer_size": 2685,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/formfields/Campo.js",
+			"settings":
+			{
+				"buffer_size": 4389,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/bibliotecas/si3rc-api/middleware/createApiMiddleware.js",
+			"settings":
+			{
+				"buffer_size": 12858,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 357.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"npm",
+				"npm: Install Package"
+			],
+			[
+				"box",
+				"Boxy Theme: Activation"
+			],
+			[
+				"pack in",
+				"Package Control: Install Package"
+			],
+			[
+				"pack remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"colo",
+				"Colorsublime: Browse Themes"
+			],
+			[
+				"theme",
+				"Colorsublime: Browse Themes"
+			],
+			[
+				"pack inst",
+				"Package Control: Install Package"
+			],
+			[
+				"gul",
+				"Gulp: Kill running tasks"
+			],
+			[
+				"gulp ",
+				"Gulp"
+			],
+			[
+				"npm ",
+				"npm: Run Script"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/le/SitesDev/si3rc/app",
+		"/Users/le/SitesDev/si3rc/app/src",
+		"/Users/le/SitesDev/si3rc/app/src/components",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields",
+		"/Users/le/SitesDev/si3rc/app/src/components/tabelacolunas",
+		"/Users/le/SitesDev/si3rc/app/src/components/tabelas"
+	],
+	"file_history":
+	[
+		"/Users/le/SitesDev/si3rc/app/src/util/onlyDOMProps.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputDate.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputGeos.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputText.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputTextArea.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputSelecaoModelo.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputColecaoMidia.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/InputText.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/TextArea.js",
+		"/Users/le/SitesDev/si3rc/app/src/pages/Home.js",
+		"/Users/le/SitesDev/si3rc/app/src/pages/RelatosPageForm.js",
+		"/Users/le/SitesDev/si3rc/app/src/pages/PessoasForm.js",
+		"/Users/le/SitesDev/si3rc/app/src/pages/Pessoas.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/Topbar.js",
+		"/Users/le/SitesDev/si3rc/app/src/index.html",
+		"/Users/le/SitesDev/si3rc/app/Gulpfile.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/index.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/pessoasList.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/itemGenericoForm.js",
+		"/Users/le/SitesDev/si3rc/app/package.json",
+		"/Users/le/SitesDev/si3rc/app/src/components/form-elements/textField.js",
+		"/Users/le/SitesDev/si3rc/app/webpack.config.js",
+		"/Users/le/SitesDev/si3rc/app/public/js/bundle.js",
+		"/Users/le/SitesDev/si3rc/app/src/pages/Relatos.js",
+		"/Users/le/SitesDev/si3rc/app/src/actions/actions.js",
+		"/Users/le/SitesDev/si3rc/app/src/models/models.js",
+		"/Users/le/SitesDev/si3rc/app/src/pages/Admin.js",
+		"/Users/le/SitesDev/si3rc/app/src/bibliotecas/si3rc-api/middleware/createApiMiddleware.js",
+		"/Users/le/SitesDev/si3rc/app/src/bibliotecas/si3rc-api/modules/api.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/itemGenericoList.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/usuarioForm.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/statusRegistroList.js",
+		"/Users/le/SitesDev/si3rc/app/src/bibliotecas/redux-jsonapi/middleware/createApiMiddleware.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/statusRegistroForm.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/statusRegistroFormAdd.js",
+		"/Users/le/SitesDev/si3rc/app/src/index.js",
+		"/Users/le/SitesDev/si3rc/app/public/css/app.styl",
+		"/Users/le/SitesDev/si3rc/app/src/config.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/statusRegistroSubList.js",
+		"/Users/le/SitesDev/si3rc/app/src/css/semantic-ui.styl",
+		"/Users/le/SitesDev/si3rc/app/src/css/app.styl",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/ColetaniaMidia.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/itemGenericoFormAdd.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/statusRegistroSubFormAdd.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/Midia.js",
+		"/Users/le/Library/Application Support/Sublime Text 3/Packages/User/Colorsublime.sublime-settings",
+		"/Users/le/Library/Application Support/Sublime Text 3/Packages/Colorsublime/Colorsublime.sublime-settings",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/S3MapaLine.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/S3MapaPolygon.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/S3MapaPoint.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/S3Icon.js",
+		"/Users/le/SitesDev/si3rc/app/src/pages/PageInterna.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/S3SelectMenuItem.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/S3Select.js",
+		"/Users/le/SitesDev/si3rc/app/src/util/camelizeKeys.js",
+		"/Users/le/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/le/SitesDev/si3rc/app/src/util/calculateNodeHeight.js",
+		"/Users/le/SitesDev/si3rc/app/src/bibliotecas/redux-jsonapi/modules/api.js",
+		"/Users/le/SitesDev/si3rc/app/src/actions/index.js",
+		"/Users/le/SitesDev/si3rc/app/src/util/normalize.js",
+		"/Users/le/Library/Application Support/Sublime Text 3/Packages/FuzzyFilePath/Default (OSX).sublime-keymap",
+		"/Users/le/Library/Application Support/Sublime Text 3/Packages/FuzzyFilePath/FuzzyFilePath.sublime-settings",
+		"/Users/le/Library/Application Support/Sublime Text 3/Packages/npm/npm.sublime-settings",
+		"/Users/le/SitesDev/si3rc/app/README.md",
+		"/Users/le/SitesDev/si3rc/app/src/reducers/index.js",
+		"/Users/le/SitesDev/si3rc/app/public/index.html",
+		"/Users/le/SitesDev/si3rc/app/src/api/ApiAdmin.js",
+		"/Users/le/SitesDev/si3rc/app/src/api/rest.js",
+		"/Users/le/SitesDev/si3rc/app/redux-api/examples/isomorphic/app/pages/Application.jsx",
+		"/Users/le/SitesDev/si3rc/app/src/pages/Login.js",
+		"/Users/le/SitesDev/si3rc/app/redux-api/examples/isomorphic/app/pages/Login.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/App.js",
+		"/Users/le/SitesDev/si3rc/app/public/docs/index.html",
+		"/Users/le/SitesDev/si3rc/app/public/docs/app.html",
+		"/Users/le/SitesDev/si3rc/app/public/css/app.css",
+		"/Users/le/SitesDev/si3rc/app/src/pages/NotFound.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/Sidebar.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/S3MenuItem.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/S3input.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/icons/Icon.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/icons/_getIcons.js",
+		"/Users/le/SitesDev/si3rc/app/si3rc.sublime-project"
+	],
+	"find":
+	{
+		"height": 44.0
+	},
+	"find_in_files":
+	{
+		"height": 132.0,
+		"where_history":
+		[
+			"/Users/le/SitesDev/si3rc/app/src"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"parecersolicitacaocriacaoregistro",
+			"requestAction",
+			"requestActionsCall",
+			"registro",
+			"filter",
+			"getIDKeyFromMap",
+			"debugger",
+			"normali",
+			"get",
+			"prepareRes",
+			"dataResource",
+			"prepare",
+			"prepareResources",
+			"normali",
+			"keys",
+			"registro",
+			"modeloNew",
+			"modeloRef",
+			"obj",
+			"Obj",
+			"obj",
+			"Obj",
+			"obj",
+			"normaliz",
+			"serializeModel",
+			"normalizerModel",
+			"normali",
+			"serializeModel",
+			"class",
+			"load",
+			"StringFormatValidation",
+			"debugg",
+			"custom",
+			"subField",
+			"handleResponse",
+			"requestAction",
+			"requestActionsCall",
+			"item",
+			"withRouter",
+			"App",
+			"handleChange",
+			"type",
+			"</Ui.Grid.Column",
+			"<Ui.Grid.Column",
+			"renderCheckbox",
+			"Ui.",
+			"endereco",
+			"renderTextArea",
+			"FormFiledBase",
+			"TextField",
+			"S3",
+			"renderTextField",
+			"save",
+			"debu",
+			"console",
+			"USUARIOFO",
+			"USUARIO",
+			"Admin",
+			"128",
+			"handleResponse",
+			"class",
+			"/admin/",
+			"StatusRegistroList",
+			"admin",
+			"Admin",
+			"h3",
+			"getFaseEtapa",
+			"removeItem",
+			"statusid",
+			"normalize",
+			"normali",
+			"ItemGenericoForm",
+			"StatusRegistroList",
+			"ItemGenericoFormAdd",
+			"ItemGenericoForm",
+			"h2",
+			"class",
+			"this.props.params.item",
+			"SI3RC_MODELS",
+			"getInitialState",
+			"fetc",
+			"debugger",
+			"debugg",
+			"handleErrors",
+			"fetchRelationships",
+			"$('textarea').each",
+			"ItemGenericoFormAdd",
+			"itemgenerico",
+			"formatURL",
+			"entity",
+			"saga",
+			"Button",
+			"class",
+			"reducer",
+			"goBack",
+			"';\n",
+			"icon",
+			"icone",
+			"icon",
+			"posabs",
+			";",
+			"box",
+			"arguments[i]"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/models/models.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9401,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2885,
+								2885
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 429.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/components/tabelas/pessoaTabela.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10576,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								962,
+								965
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 40.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/actions/actions.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 26797,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21052,
+								21052
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 15011.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/hocs/carregaModelo.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17991,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								681,
+								681
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "src/bibliotecas/si3rc-api/modules/api.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5452,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1684,
+								1733
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/actions/actions.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 26797,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11213,
+								11213
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7316.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/components/formfields/FormField.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2685,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 492.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/components/formfields/Campo.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4389,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 7,
+					"file": "src/bibliotecas/si3rc-api/middleware/createApiMiddleware.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12858,
+						"regions":
+						{
+							"bookmarks":
+							{
+								"flags": 144,
+								"icon": "bookmark",
+								"regions":
+								[
+									[
+										10670,
+										10670
+									]
+								],
+								"scope": "bookmarks"
+							}
+						},
+						"selection":
+						[
+							[
+								303,
+								303
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"history_list_is_closing": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				2,
+				0,
+				3,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.61241720561,
+			0.735863963413,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "si3rc.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"action",
+				"src/actions/actions.js"
+			],
+			[
+				"carrega",
+				"src/hocs/carregaModelo.js"
+			],
+			[
+				"inputcole",
+				"src/components/formfields/InputColecaoMidia.js"
+			],
+			[
+				"onlyd",
+				"src/util/onlyDOMProps.js"
+			],
+			[
+				"inputg",
+				"src/components/formfields/InputGeos.js"
+			],
+			[
+				"inputda",
+				"src/components/formfields/InputDate.js"
+			],
+			[
+				"inputmodel",
+				"src/components/formfields/InputSelecaoModelo.js"
+			],
+			[
+				"inputte",
+				"src/components/formfields/InputTextArea.js"
+			],
+			[
+				"texta",
+				"src/components/elements/TextArea.js"
+			],
+			[
+				"model",
+				"src/models/models.js"
+			],
+			[
+				"pessoal",
+				"src/components/form/pessoasList.js"
+			],
+			[
+				"inde",
+				"src/index.js"
+			],
+			[
+				"applmi",
+				"src/bibliotecas/si3rc-api/middleware/createApiMiddleware.js"
+			],
+			[
+				"usua",
+				"src/components/form/usuarioForm.js"
+			],
+			[
+				"pessoa",
+				"src/pages/PessoasForm.js"
+			],
+			[
+				"itemg",
+				"src/components/form/itemGenericoForm.js"
+			],
+			[
+				"admin",
+				"src/pages/Admin.js"
+			],
+			[
+				"midd",
+				"src/bibliotecas/si3rc-api/middleware/createApiMiddleware.js"
+			],
+			[
+				"styl",
+				"src/css/app.styl"
+			],
+			[
+				"app",
+				"src/css/app.styl"
+			],
+			[
+				"appst",
+				"public/css/app.styl"
+			],
+			[
+				"api",
+				"src/bibliotecas/si3rc-api/modules/api.js"
+			],
+			[
+				"applimi",
+				"src/bibliotecas/si3rc-api/middleware/createApiMiddleware.js"
+			],
+			[
+				"sty",
+				"public/css/app.styl"
+			],
+			[
+				"hom",
+				"src/pages/Home.js"
+			],
+			[
+				"ico",
+				"src/components/form/itemGenericoList.js"
+			],
+			[
+				"home",
+				"src/pages/Home.js"
+			],
+			[
+				"admi",
+				"src/pages/Admin.js"
+			],
+			[
+				"ho",
+				"src/pages/Home.js"
+			],
+			[
+				"in",
+				"src/index.js"
+			],
+			[
+				"s3i",
+				"src/components/elements/S3Icon.js"
+			],
+			[
+				"relato",
+				"src/pages/Relatos.js"
+			],
+			[
+				"pagein",
+				"src/pages/PageInterna.js"
+			],
+			[
+				"app.js",
+				"src/components/App.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 218.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

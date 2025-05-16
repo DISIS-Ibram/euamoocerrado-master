@@ -1,0 +1,16 @@
+.CalendarMonthGrid {
+  background: #fff;
+  z-index: 0; }
+
+.CalendarMonthGrid--animating {
+  transition: transform 0.2s ease-in-out;
+  z-index: 1; }
+
+.CalendarMonthGrid--horizontal {
+  position: absolute;
+  left: 9px;
+  width: 1200px; }
+
+.CalendarMonthGrid--vertical {
+  width: 300px;
+  margin: 0 auto; }

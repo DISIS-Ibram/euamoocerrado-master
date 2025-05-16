@@ -1,0 +1,16 @@
+from rest_framework.filters import OrderingFilter, DjangoFilterBackend
+
+from curupira_rest_api import viewsets
+from curupira_rest_api.utils import get_filter_and_ordering_fields
+from curupira_rest_api.serializers import SerializerFactory
+
+from {{app_name}}.models import {{models_names|join:", " }}
+
+{% for model in models %}
+class {{model.name}}ViewSet (viewsets.{{model.viewset_class_base_name }}):
+    model = {{model.name}}
+    serializer_class = SerializerFactory(model)
+    queryset = model.objects.all()
+    filter_backends = (DjangoFilterBackend, OrderingFilter)
+    filter_fields, ordering_fields = get_filter_and_ordering_fields(model)      
+{% endfor %}

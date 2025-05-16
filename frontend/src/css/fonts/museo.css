@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'Museo';
+  src: url('Museo700-Regular.eot'); /* IE9 Compat Modes */
+  src: url('Museo700-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Museo700-Regular.woff') format('woff'), /* Modern Browsers */
+       url('Museo700-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Museo700-Regular.svg#87e82fa757b19ea2f170ec4b20873855') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  700;
+}
+
+
+
+@font-face {
+  font-family: 'Museo';
+  src: url('Museo300-Regular.eot'); /* IE9 Compat Modes */
+  src: url('Museo300-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Museo300-Regular.woff') format('woff'), /* Modern Browsers */
+       url('Museo300-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Museo300-Regular.svg#d8b40b84b4bd6e4b75ac0cfe1e5ed91f') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  300;
+}
+
+
+@font-face {
+  font-family: 'Museo';
+  src: url('Museo500-Regular.eot'); /* IE9 Compat Modes */
+  src: url('Museo500-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Museo500-Regular.woff') format('woff'), /* Modern Browsers */
+       url('Museo500-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Museo500-Regular.svg#e3e98f6b6cb95391f30e0ab01b7437d9') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+
+
+
+

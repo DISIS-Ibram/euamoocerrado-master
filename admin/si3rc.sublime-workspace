@@ -1,0 +1,1582 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Pessoa",
+				"PessoaTabela\t(index.js)"
+			],
+			[
+				"pick",
+				"pickBy"
+			],
+			[
+				"cor-az",
+				"cor-azul"
+			],
+			[
+				"cor-azul",
+				"cor-azul-escuro"
+			],
+			[
+				"para",
+				"param\t(actions.js)"
+			],
+			[
+				"defa",
+				"defaultProps\t(formularioHoc.js)"
+			],
+			[
+				"value",
+				"valueKey"
+			],
+			[
+				"renderI",
+				"renderItem\t(classificacao.js)"
+			],
+			[
+				"ite",
+				"items\t(actions.js)"
+			],
+			[
+				"normalize",
+				"normalizerModel\t(actions.js)"
+			],
+			[
+				"include",
+				"includeOnLoad"
+			],
+			[
+				"strin",
+				"stringify\t(Formulario.js)"
+			],
+			[
+				"getI",
+				"getIDKeyFromMap\t(models.js)"
+			],
+			[
+				"form",
+				"forms"
+			],
+			[
+				"back",
+				"background\t(app.styl)"
+			],
+			[
+				"resource",
+				"resources\t(carregaModelo.js)"
+			],
+			[
+				"requ",
+				"required"
+			],
+			[
+				"de",
+				"default\t(Formulario.js)"
+			],
+			[
+				"res",
+				"resources"
+			],
+			[
+				"initi",
+				"initialValues"
+			],
+			[
+				"redux",
+				"reduxForm"
+			],
+			[
+				"contru",
+				"constructor"
+			],
+			[
+				"compo",
+				"componentWillMount"
+			],
+			[
+				"initial",
+				"initialValues\t(Home.js)"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"Input",
+				"InputTextArea"
+			],
+			[
+				"valu",
+				"value"
+			],
+			[
+				"get",
+				"getCEP"
+			],
+			[
+				"ownpro",
+				"ownprops"
+			],
+			[
+				"usu",
+				"usuarios"
+			],
+			[
+				"ent",
+				"entities"
+			],
+			[
+				"wi",
+				"with\t(itemGenericoList.js)"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
+				"tran",
+				"transform\t(models.js)"
+			],
+			[
+				"trans",
+				"transition"
+			],
+			[
+				"Usuario",
+				"UsuarioForm"
+			],
+			[
+				"che",
+				"checkForFile"
+			],
+			[
+				"add",
+				"addform\t(statusRegistroList.js)"
+			],
+			[
+				"cor-",
+				"cor-verde"
+			],
+			[
+				"cor",
+				"cor-marrom"
+			],
+			[
+				"fase",
+				"fases"
+			],
+			[
+				"remove",
+				"removeItem"
+			],
+			[
+				"status",
+				"statusid"
+			],
+			[
+				"fases",
+				"faseregistro"
+			],
+			[
+				"statu",
+				"statusText\t(createApiMiddleware.js)"
+			],
+			[
+				"StatusRe",
+				"StatusRegistroList"
+			],
+			[
+				"text",
+				"textarea"
+			],
+			[
+				"boto",
+				"botoes\t(itemGenericoForm.js)"
+			],
+			[
+				"sh",
+				"schema"
+			],
+			[
+				"nex",
+				"nextState"
+			],
+			[
+				"compon",
+				"componentDidMount\t(Home.js)"
+			],
+			[
+				"const",
+				"constructor\t(.eslintrc.js)"
+			],
+			[
+				"Te",
+				"TextareaAutosize"
+			],
+			[
+				"ele",
+				"elements"
+			],
+			[
+				"iten",
+				"itemgenerico\t(index.js)"
+			],
+			[
+				"for",
+				"forEach\t(index.js)"
+			],
+			[
+				"Item",
+				"ItemGenericoForm"
+			],
+			[
+				"cw",
+				"cwr\tReact: componentWillReceiveProps(np) {…}"
+			],
+			[
+				"prop",
+				"props\tReact: this.props"
+			],
+			[
+				"l",
+				"log"
+			],
+			[
+				"normalizeEn",
+				"normalizeEntity\t(normalize.js)"
+			],
+			[
+				"norm",
+				"normalize\t(normalize.js)"
+			],
+			[
+				"no",
+				"normalized\t(normalize.js)"
+			],
+			[
+				"op",
+				"opcoes"
+			],
+			[
+				"Red",
+				"Redux\t(index.js)"
+			],
+			[
+				"paddin",
+				"padding-top"
+			],
+			[
+				"wid",
+				"width\t(PageInterna.js)"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"rou",
+				"routerReducer"
+			],
+			[
+				"combi",
+				"combineReducers"
+			],
+			[
+				"red",
+				"reducers"
+			],
+			[
+				"blck",
+				"black\t(S3Icon.js)"
+			],
+			[
+				"rgb",
+				"rgba\trgba"
+			],
+			[
+				"box",
+				"box-shadow\t(app.css)"
+			],
+			[
+				"verti",
+				"vertical-align\t(app.html)"
+			],
+			[
+				"user",
+				"users\t(Sidebar.js)"
+			],
+			[
+				"Cp",
+				"Component\t(README.md)"
+			],
+			[
+				"bak",
+				"background"
+			],
+			[
+				"Col",
+				"Column"
+			],
+			[
+				"pro",
+				"props"
+			],
+			[
+				"page-",
+				"page-title\t(PageInterna.js)"
+			],
+			[
+				"req",
+				"require\t(Gulpfile.js)"
+			],
+			[
+				"S3",
+				"S3Input\t(S3input.js)"
+			],
+			[
+				"reque",
+				"require('gulp\t(Gulpfile.js)"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/index.js",
+			"settings":
+			{
+				"buffer_size": 2403,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/pages/AutoTabelaPage.js",
+			"settings":
+			{
+				"buffer_size": 1031,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/tabelas/AutoTable.js",
+			"settings":
+			{
+				"buffer_size": 1847,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/actions/actions.js",
+			"settings":
+			{
+				"buffer_size": 26797,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/tabelas/index.js",
+			"settings":
+			{
+				"buffer_size": 152,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/pages/Pessoas.js",
+			"settings":
+			{
+				"buffer_size": 1343,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/tabelas/pessoaTabela.js",
+			"settings":
+			{
+				"buffer_size": 10572,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/formfields/InputSelecaoModeloTemplates/index.js",
+			"settings":
+			{
+				"buffer_size": 289,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/css/app.styl",
+			"settings":
+			{
+				"buffer_size": 22085,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/css/tabela.styl",
+			"settings":
+			{
+				"buffer_size": 2137,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/css/formulario.styl",
+			"settings":
+			{
+				"buffer_size": 19734,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 357.0,
+		"last_filter": "sort",
+		"selected_items":
+		[
+			[
+				"sort",
+				"Sort Lines"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"npm",
+				"npm: Install Package"
+			],
+			[
+				"box",
+				"Boxy Theme: Activation"
+			],
+			[
+				"pack in",
+				"Package Control: Install Package"
+			],
+			[
+				"pack remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"colo",
+				"Colorsublime: Browse Themes"
+			],
+			[
+				"theme",
+				"Colorsublime: Browse Themes"
+			],
+			[
+				"pack inst",
+				"Package Control: Install Package"
+			],
+			[
+				"gul",
+				"Gulp: Kill running tasks"
+			],
+			[
+				"gulp ",
+				"Gulp"
+			],
+			[
+				"npm ",
+				"npm: Run Script"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/le/SitesDev/si3rc/app",
+		"/Users/le/SitesDev/si3rc/app/src",
+		"/Users/le/SitesDev/si3rc/app/src/components",
+		"/Users/le/SitesDev/si3rc/app/src/components/tabelas",
+		"/Users/le/SitesDev/si3rc/app/src/hocs",
+		"/Users/le/SitesDev/si3rc/app/src/pages",
+		"/Users/le/SitesDev/si3rc/app/src/util"
+	],
+	"file_history":
+	[
+		"/Users/le/SitesDev/si3rc/app/src/pages/AutoTabelaPage.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/index.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/pessoasList.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/Campo.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/tabelacolunas/coluna.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputSelecaoModelo.js",
+		"/Users/le/SitesDev/si3rc/app/src/css/app.styl",
+		"/Users/le/SitesDev/si3rc/app/src/css/funcssion.styl",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputColecaoMidia.js",
+		"/Users/le/SitesDev/si3rc/app/src/util/myconsole.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/RelatoForm.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/RegistroForm.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/AutoForm.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/tabelas/AutoTable.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/Formulario.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/Topbar.js",
+		"/Users/le/SitesDev/si3rc/app/src/index.js",
+		"/Users/le/SitesDev/si3rc/app/src/models/models.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/Tabela.js",
+		"/Users/le/SitesDev/si3rc/app/src/hocs/tabelaHoc.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputCheckbox.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputDate.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputTextArea.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputText.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/FormField.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputRadioGroup.js",
+		"/Users/le/SitesDev/si3rc/app/src/pages/AutoTablePage.js",
+		"/Users/le/SitesDev/si3rc/app/src/hocs/carregaModelo.js",
+		"/Users/le/SitesDev/si3rc/app/src/hocs/formularioHoc.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/TextArea.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/InputText.js",
+		"/Users/le/SitesDev/si3rc/app/src/util/s3util.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/tabela",
+		"/Users/le/SitesDev/si3rc/app/src/actions/actions.js",
+		"/Users/le/SitesDev/si3rc/app/src/bibliotecas/si3rc-api/modules/api.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/RelatoList.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/PessoasForm.js",
+		"/Users/le/SitesDev/si3rc/app/src/pages/AutoFormPage.js",
+		"/Users/le/SitesDev/si3rc/app/src/pages/Home.js",
+		"/Users/le/SitesDev/si3rc/app/src/hocs/getItemID.js",
+		"/Users/le/SitesDev/si3rc/app/src/pages/Registros.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputSelecaoModeloTemplates/pessoa.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputSelecaoModeloTemplates/relato.js",
+		"/Users/le/SitesDev/si3rc/app/src/util/onlyDOMProps.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputSelecaoModeloTemplates/classificacao.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputSelecaoModeloTemplates/situacao.js",
+		"/Users/le/SitesDev/si3rc/app/src/pages/RelatosPageForm.js",
+		"/Users/le/SitesDev/si3rc/app/package.json",
+		"/Users/le/SitesDev/si3rc/app/src/pages/RegistroPageForm.js",
+		"/Users/le/SitesDev/si3rc/app/src/bibliotecas/si3rc-api/middleware/createApiMiddleware.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputGeos.js",
+		"/Users/le/SitesDev/si3rc/app/public/css/app.styl",
+		"/Users/le/SitesDev/si3rc/app/src/configStore.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputEndereco.js",
+		"/Users/le/SitesDev/si3rc/app/src/util/validacoes.js",
+		"/Users/le/SitesDev/si3rc/app/src/config.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/index.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/formfields/InputFile.js",
+		"/Users/le/SitesDev/si3rc/app/src/css/flexboxgrid.styl",
+		"/Users/le/SitesDev/si3rc/app/src/pages/Login.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/Sidebar.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/S3Icon.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/S3SelectMenuItem.js",
+		"/Users/le/SitesDev/si3rc/app/src/pages/PageInterna.js",
+		"/Users/le/SitesDev/si3rc/app/src/pages/Relatos.js",
+		"/Users/le/SitesDev/si3rc/app/src/pages/Pessoas.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/icons/svg/campo.svg",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/BaseForm.js",
+		"/Users/le/SitesDev/si3rc/app/Gulpfile.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/ColetaniaMidia.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/Icon.js",
+		"/Users/le/SitesDev/si3rc/app/src/index.html",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/index.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/itemGenericoForm.js",
+		"/Users/le/SitesDev/si3rc/app/src/pages/PessoasForm.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/usuarioForm.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form-elements/textField.js",
+		"/Users/le/SitesDev/si3rc/app/webpack.config.js",
+		"/Users/le/SitesDev/si3rc/app/public/js/bundle.js",
+		"/Users/le/SitesDev/si3rc/app/src/pages/Admin.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/itemGenericoList.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/statusRegistroList.js",
+		"/Users/le/SitesDev/si3rc/app/src/bibliotecas/redux-jsonapi/middleware/createApiMiddleware.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/statusRegistroForm.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/statusRegistroFormAdd.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/statusRegistroSubList.js",
+		"/Users/le/SitesDev/si3rc/app/src/css/semantic-ui.styl",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/itemGenericoFormAdd.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/form/statusRegistroSubFormAdd.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/Midia.js",
+		"/Users/le/Library/Application Support/Sublime Text 3/Packages/User/Colorsublime.sublime-settings",
+		"/Users/le/Library/Application Support/Sublime Text 3/Packages/Colorsublime/Colorsublime.sublime-settings",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/S3MapaLine.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/S3MapaPolygon.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/S3MapaPoint.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/S3Select.js",
+		"/Users/le/SitesDev/si3rc/app/src/util/camelizeKeys.js",
+		"/Users/le/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/le/SitesDev/si3rc/app/src/util/calculateNodeHeight.js",
+		"/Users/le/SitesDev/si3rc/app/src/bibliotecas/redux-jsonapi/modules/api.js",
+		"/Users/le/SitesDev/si3rc/app/src/actions/index.js",
+		"/Users/le/SitesDev/si3rc/app/src/util/normalize.js",
+		"/Users/le/Library/Application Support/Sublime Text 3/Packages/FuzzyFilePath/Default (OSX).sublime-keymap",
+		"/Users/le/Library/Application Support/Sublime Text 3/Packages/FuzzyFilePath/FuzzyFilePath.sublime-settings",
+		"/Users/le/Library/Application Support/Sublime Text 3/Packages/npm/npm.sublime-settings",
+		"/Users/le/SitesDev/si3rc/app/README.md",
+		"/Users/le/SitesDev/si3rc/app/src/reducers/index.js",
+		"/Users/le/SitesDev/si3rc/app/public/index.html",
+		"/Users/le/SitesDev/si3rc/app/src/api/ApiAdmin.js",
+		"/Users/le/SitesDev/si3rc/app/src/api/rest.js",
+		"/Users/le/SitesDev/si3rc/app/redux-api/examples/isomorphic/app/pages/Application.jsx",
+		"/Users/le/SitesDev/si3rc/app/redux-api/examples/isomorphic/app/pages/Login.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/App.js",
+		"/Users/le/SitesDev/si3rc/app/public/docs/index.html",
+		"/Users/le/SitesDev/si3rc/app/public/docs/app.html",
+		"/Users/le/SitesDev/si3rc/app/public/css/app.css",
+		"/Users/le/SitesDev/si3rc/app/src/pages/NotFound.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/S3MenuItem.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/S3input.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/icons/Icon.js",
+		"/Users/le/SitesDev/si3rc/app/src/components/elements/icons/_getIcons.js",
+		"/Users/le/SitesDev/si3rc/app/si3rc.sublime-project"
+	],
+	"find":
+	{
+		"height": 44.0
+	},
+	"find_in_files":
+	{
+		"height": 132.0,
+		"where_history":
+		[
+			"/Users/le/SitesDev/si3rc/app/src"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"AutoForm",
+			"prepare",
+			".ui.input",
+			"          </",
+			"isRealEmpty",
+			"andre@locmed",
+			"itens",
+			"toLowe",
+			"_prepararInfo",
+			"getWithForm",
+			"loadFormOptions",
+			"loadOpti",
+			"exclude",
+			"map",
+			"myconsole",
+			"class=",
+			"class",
+			"myconsole",
+			".*./",
+			"valueKey",
+			"handleAddition",
+			"normalize",
+			"asID",
+			"o.",
+			"relato",
+			"o.",
+			"class",
+			"objRefer",
+			"toStin",
+			"custom",
+			"{...custom",
+			"exclude",
+			"tags",
+			"processaCamposApi",
+			"Field",
+			"getModeloApi",
+			"retorno",
+			"FormField",
+			"si3",
+			"_.",
+			"SI3RC_MODELS",
+			"_prepararInfo",
+			"debugger",
+			"serialize",
+			"serializeAllByModelo",
+			"tipo",
+			"case:",
+			"FormularioInterno",
+			"getState",
+			"store",
+			"requestAction",
+			"requestCreator",
+			"load",
+			"datanormalizado",
+			"requestActionsCall",
+			"handleResponse",
+			"tipo))",
+			".indexOf",
+			"tipo.indexOf(",
+			"handleErrors",
+			"serialize",
+			"Wc",
+			"}\n",
+			"debugger",
+			"console",
+			"å",
+			"modeloNome",
+			"map",
+			"debugger",
+			"validate",
+			"modelosCarregados",
+			"debugge",
+			"debugger",
+			"modelosToLoad",
+			"itemNormal",
+			"serializeByModeloID",
+			"return",
+			"Criando",
+			"load",
+			"elements/Icon",
+			"IconesSvg",
+			"modeloNome",
+			"handleChange",
+			"type",
+			"</Ui.Grid.Column",
+			"<Ui.Grid.Column",
+			"renderCheckbox",
+			"Ui.",
+			"endereco",
+			"renderTextArea",
+			"FormFiledBase",
+			"TextField",
+			"S3",
+			"renderTextField",
+			"save",
+			"debu",
+			"console",
+			"USUARIOFO",
+			"USUARIO",
+			"Admin",
+			"128",
+			"handleResponse",
+			"class",
+			"/admin/",
+			"StatusRegistroList",
+			"admin",
+			"Admin",
+			"h3",
+			"getFaseEtapa",
+			"removeItem",
+			"statusid",
+			"normalize",
+			"normali",
+			"ItemGenericoForm",
+			"StatusRegistroList",
+			"ItemGenericoFormAdd",
+			"ItemGenericoForm",
+			"h2",
+			"class",
+			"this.props.params.item",
+			"SI3RC_MODELS",
+			"getInitialState",
+			"fetc",
+			"debugger",
+			"debugg",
+			"handleErrors",
+			"fetchRelationships",
+			"$('textarea').each"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2403,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								673,
+								687
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 238.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/pages/AutoTabelaPage.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1031,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								864,
+								864
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "src/components/tabelas/AutoTable.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1847,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								918,
+								918
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 338.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/actions/actions.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 26797,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2868,
+								2868
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1736.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/components/tabelas/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 152,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								29,
+								29
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"open_with_edit": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/pages/Pessoas.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1343,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								736,
+								736
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 6,
+					"file": "src/components/tabelas/pessoaTabela.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10572,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								666,
+								666
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 7,
+					"file": "src/components/formfields/InputSelecaoModeloTemplates/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 289,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								160,
+								160
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"open_with_edit": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/css/app.styl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 22085,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"history_list_is_closing": true,
+							"syntax": "Packages/Stylus/Stylus.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 24655.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/css/tabela.styl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2137,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								681,
+								660
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"open_with_edit": true,
+							"syntax": "Packages/Stylus/Stylus.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "src/css/formulario.styl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19734,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10751,
+								10771
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Oceanic Next (SL).tmTheme",
+							"history_list_is_closing": true,
+							"syntax": "Packages/Stylus/Stylus.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 11149.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				2,
+				0,
+				3,
+				1
+			],
+			[
+				3,
+				0,
+				4,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.235403900887,
+			0.743205408736,
+			0.917296955097,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "si3rc.sublime-project",
+	"replace":
+	{
+		"height": 82.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"action",
+				"src/actions/actions.js"
+			],
+			[
+				"pessoali",
+				"src/components/form/pessoasList.js"
+			],
+			[
+				"inde",
+				"src/index.js"
+			],
+			[
+				"seleca",
+				"src/components/formfields/InputSelecaoModelo.js"
+			],
+			[
+				"inputdat",
+				"src/components/formfields/InputDate.js"
+			],
+			[
+				"inputtextare",
+				"src/components/formfields/InputTextArea.js"
+			],
+			[
+				"inputte",
+				"src/components/formfields/InputText.js"
+			],
+			[
+				"textare",
+				"src/components/elements/TextArea.js"
+			],
+			[
+				"inputt",
+				"src/components/elements/InputText.js"
+			],
+			[
+				"inputr",
+				"src/components/formfields/InputRadioGroup.js"
+			],
+			[
+				"model",
+				"src/models/models.js"
+			],
+			[
+				"formula",
+				"src/components/Formulario.js"
+			],
+			[
+				"pessoa",
+				"src/components/form/pessoasList.js"
+			],
+			[
+				"funci",
+				"src/css/funcssion.styl"
+			],
+			[
+				"formulario",
+				"src/components/Formulario.js"
+			],
+			[
+				"app",
+				"src/css/app.styl"
+			],
+			[
+				"campo",
+				"src/components/formfields/Campo.js"
+			],
+			[
+				"relatof",
+				"src/components/form/RelatoForm.js"
+			],
+			[
+				"index",
+				"src/index.js"
+			],
+			[
+				"autofor",
+				"src/components/form/AutoForm.js"
+			],
+			[
+				"form",
+				"src/hocs/formularioHoc.js"
+			],
+			[
+				"home",
+				"src/pages/Home.js"
+			],
+			[
+				"inputdo",
+				"src/components/formfields/InputColecaoMidia.js"
+			],
+			[
+				"ac",
+				"src/actions/actions.js"
+			],
+			[
+				"carrega",
+				"src/hocs/carregaModelo.js"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"relatoli",
+				"src/components/form/RelatoList.js"
+			],
+			[
+				"relato",
+				"src/components/form/RelatoForm.js"
+			],
+			[
+				"api",
+				"src/bibliotecas/si3rc-api/modules/api.js"
+			],
+			[
+				"inputsele",
+				"src/components/formfields/InputSelecaoModelo.js"
+			],
+			[
+				"regist",
+				"src/components/form/RegistroForm.js"
+			],
+			[
+				"formhoc",
+				"src/hocs/formularioHoc.js"
+			],
+			[
+				"formho",
+				"src/hocs/formularioHoc.js"
+			],
+			[
+				"inputgeo",
+				"src/components/formfields/InputGeos.js"
+			],
+			[
+				"inputda",
+				"src/components/formfields/InputDate.js"
+			],
+			[
+				"carregamo",
+				"src/hocs/carregaModelo.js"
+			],
+			[
+				"inputcole",
+				"src/components/formfields/InputColecaoMidia.js"
+			],
+			[
+				"pessoaf",
+				"src/components/form/PessoasForm.js"
+			],
+			[
+				".sty",
+				"public/css/app.styl"
+			],
+			[
+				"pessoas",
+				"src/components/form/pessoasList.js"
+			],
+			[
+				"inputsle",
+				"src/components/formfields/InputSelecaoModelo.js"
+			],
+			[
+				"formu",
+				"src/components/Formulario.js"
+			],
+			[
+				"endere",
+				"src/components/formfields/InputEndereco.js"
+			],
+			[
+				"middl",
+				"src/bibliotecas/si3rc-api/middleware/createApiMiddleware.js"
+			],
+			[
+				"modelo",
+				"src/hocs/carregaModelo.js"
+			],
+			[
+				"pessof",
+				"src/components/form/PessoasForm.js"
+			],
+			[
+				"formul",
+				"src/components/Formulario.js"
+			],
+			[
+				"config",
+				"src/config.js"
+			],
+			[
+				"inpu",
+				"src/components/formfields/InputText.js"
+			],
+			[
+				"base",
+				"src/components/form/BaseForm.js"
+			],
+			[
+				"inputge",
+				"src/components/formfields/InputGeos.js"
+			],
+			[
+				"cole",
+				"src/components/elements/ColetaniaMidia.js"
+			],
+			[
+				"login",
+				"src/pages/Login.js"
+			],
+			[
+				"pessoal",
+				"src/components/form/pessoasList.js"
+			],
+			[
+				"s3selectmenuitem",
+				"src/components/elements/S3SelectMenuItem.js"
+			],
+			[
+				"rela",
+				"src/components/form/RelatoForm.js"
+			],
+			[
+				"applmi",
+				"src/bibliotecas/si3rc-api/middleware/createApiMiddleware.js"
+			],
+			[
+				"usua",
+				"src/components/form/usuarioForm.js"
+			],
+			[
+				"itemg",
+				"src/components/form/itemGenericoForm.js"
+			],
+			[
+				"admin",
+				"src/pages/Admin.js"
+			],
+			[
+				"midd",
+				"src/bibliotecas/si3rc-api/middleware/createApiMiddleware.js"
+			],
+			[
+				"styl",
+				"src/css/app.styl"
+			],
+			[
+				"appst",
+				"public/css/app.styl"
+			],
+			[
+				"applimi",
+				"src/bibliotecas/si3rc-api/middleware/createApiMiddleware.js"
+			],
+			[
+				"sty",
+				"public/css/app.styl"
+			],
+			[
+				"hom",
+				"src/pages/Home.js"
+			],
+			[
+				"ico",
+				"src/components/form/itemGenericoList.js"
+			],
+			[
+				"admi",
+				"src/pages/Admin.js"
+			],
+			[
+				"ho",
+				"src/pages/Home.js"
+			],
+			[
+				"in",
+				"src/index.js"
+			],
+			[
+				"s3i",
+				"src/components/elements/S3Icon.js"
+			],
+			[
+				"pagein",
+				"src/pages/PageInterna.js"
+			],
+			[
+				"app.js",
+				"src/components/App.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 238.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

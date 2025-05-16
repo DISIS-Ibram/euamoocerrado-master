@@ -1,0 +1,89 @@
+@import mixen-and-variables
+
+.ui.arquivo-wrap
+	// margin-top:0.5em
+
+	.responsive-wrap
+		max-width:130px 
+		max-height: 130px
+		position:relative
+	
+	
+	
+	.viewFile
+		cursor:pointer
+		box abs r -20px t 0px
+		color:gray
+		&:hover
+			color:cor-azul
+	.removeFile
+		cursor:pointer
+		box abs r -20px t 20px
+		color:gray
+		&:hover
+			color:cor-azul
+
+	.arquivo
+			size = 128px
+			box rel
+			width 100%
+			height 0;
+			padding-bottom: 30%
+			margin-bottom:5px
+			margin-top:0.6em
+
+			border 1px dashed gray
+			transition 0.4s
+			border-radius: 15px;
+			text-align center
+			padding-top:0px !important
+			overflow hidden !important
+			cursor:pointer
+			display:block
+			align-items center
+			align-content center
+			
+			.a-foto
+				box full
+				background-size	cover
+				background-position 50% 50%
+				z-index:10;
+			.ui.label
+				background none !important
+				box t 50% l 0 r 0
+				margin-top: -13px
+				color:gray
+			
+			.ui.label.nomeArquivo
+				color:cor-azul-escuro
+				text-align:left
+				// font-size:1em
+			&.hover
+				border 2px dashed blue
+				background-color rgba(cor-azul,0.2)
+				transition 0.4
+				
+.ui.arquivo-wrap.imagem
+	.arquivo
+		padding-bottom: 100%;
+
+.ui.arquivo-wrap.comarquivo.semimagem
+	.responsive-wrap
+		max-width: 95%
+	.arquivo
+		padding-bottom: 40px !important
+		border: 1px dashed rgba(gray,0.5)
+		border-top:0
+		border-left:0
+		border-right:0
+	
+		background: rgba(cor-azul-escuro,0.05)
+
+
+.placeholder
+	.ui.arquivo-wrap .ui.arquivo
+		margin-top:2em
+
+.placeholder .preenchido
+	.ui.arquivo-wrap .ui.arquivo
+		margin-top:0.5em !important

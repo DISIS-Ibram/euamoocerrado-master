@@ -1,0 +1,130 @@
+version: "3.8"
+services:
+  nginx:
+    container_name: eac-ngix-dev
+    build:
+      context: nginx
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+      # - frontend
+      - hassura
+      # - admin
+    env_file:
+      - ./.env.development
+    volumes:
+      - ./nginx/nginx-dev.tmpl:/etc/nginx/nginx-dev.tmpl
+      - ./nginx/run_nginx-dev.sh:/etc/nginx/run_nginx-dev.sh
+    entrypoint: /etc/nginx/run_nginx-dev.sh
+
+  db:
+    container_name: eac-postgres
+    image: mdillon/postgis
+    #restart: always
+    env_file:
+      - ./.env.development
+    volumes:
+      - ./data/pgdata:/var/lib/postgresql/data
+      - ./db-backup:/db-backup
+    ports:
+      - "54322:5432"
+
+  backend:
+    depends_on:
+      - db
+    container_name: eac-backend-dev
+    build: ./backend
+    #restart: always
+    env_file:
+      - ./.env.development
+    ports:
+      - "8686:80"
+      - "3001:3001"
+    volumes:
+      - ./backend:/app
+      - ./data/media/:/app/media/
+    entrypoint: /app/start-dev.sh
+    #  command: bash -c 'while !</dev/tcp/db/5432; do sleep 5; done; python manage.py runserver 0.0.0.0:8686'
+    # command:
+    #   [
+    #     "/app/start-dev.sh",
+    #     "db:5432",
+    #     "python",
+    #     "manage.py",
+    #     "runserver",
+    #     "0.0.0.0:80",
+    #   ]
+    #  command: python manage.py runserver 0.0.0.0:80
+
+  hassura:
+    image: hasura/graphql-engine:v2.0.3
+    container_name: eac-hassura-dev
+    ports:
+    - "8383:80"
+    depends_on:
+    - "db"
+    restart: always
+    environment:
+      HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:r00t05@db:5432/euamoocerrado
+      ## enable the console served by server
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
+      ## enable debugging mode. It is recommended to disable this in production
+      HASURA_GRAPHQL_DEV_MODE: "true"
+      HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
+      ## uncomment next line to set an admin secret
+      HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
+      HASURA_GRAPHQL_SERVER_PORT: 80
+
+  # mvtmapserver:
+  #   depends_on:
+  #     - db
+  #   container_name: eac-mvtmapserver
+  #   build: ./mvtmapserver
+  #   #restart: always
+  #   env_file:
+  #     - ./.env.development
+  #   ports:
+  #     - "8989:80"
+  #   volumes:
+  #     - ./mvtmapserver:/app:cached #dev only
+  #     - ./data/cache/mvt/:/app/cache/
+  #   command: bash -c "npm install && node app.js" #dev only
+
+
+  frontend:
+    container_name: eac-frontend-dev
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile-dev
+      # target: node
+    #restart: always
+    env_file:
+      - ./.env.development
+    ports:
+      #  - "${FRONTEND_PORT}:80" #esse so no production
+      - "8181:80"
+    volumes:
+      - ./frontend:/app:cached
+      - ./.dev_temp_data/node_modules_frontend:/app/node_modules #make node modules local docker
+    command: bash -c 'yarn && npx vue-cli-service serve --port 80'
+    entrypoint: ''
+
+  admin:
+    container_name: eac-admin-dev
+    build:
+      context: ./admin/
+      dockerfile: Dockerfile-dev
+      target: node
+    #restart: always
+    env_file:
+      - ./.env.development
+    ports:
+      - "8888:8080"
+    volumes:
+      - ./admin:/app
+      - ./.dev_temp_data/node_modules_admin:/app/node_modules #make node modules local docker
+    working_dir: /app
+    command: sh -c 'yarn && yarn add webpack-dev-server@2.4.5 && npm run start'
+    # entrypoint: /app/entrypoint-dev.sh
