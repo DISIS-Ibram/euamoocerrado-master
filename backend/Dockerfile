@@ -1,13 +1,20 @@
-FROM python:3.5.6-jessie
-ENV PYTHONUNBUFFERED 1
-RUN mkdir /app
+FROM python:3.12-slim
+
+ENV PYTHONUNBUFFERED=1
+
 WORKDIR /app
-ADD requirements.txt /app/
-RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main\ndeb-src http://security.debian.org jessie/updates main" > /etc/apt/sources.list
-RUN apt-get update && apt-get --yes --force-yes install libgdal-dev
-RUN apt-get update && apt-get --yes --force-yes install postgresql-client
 
-RUN pip install -r requirements.txt
-ADD . /app/
+COPY requirements.txt ./
 
-CMD python manage.py runserver 0.0.0.0:8585
+RUN apt-get update && apt-get install -y \
+    libgdal-dev postgresql-client gcc python3-dev libxml2-dev libxslt1-dev \
+    postgis \
+    libmagickwand-dev \
+    # && pip install --upgrade pip \
+    && pip install pip==24.0 \
+    && pip install -r requirements.txt \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+COPY . .
+
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8585"]

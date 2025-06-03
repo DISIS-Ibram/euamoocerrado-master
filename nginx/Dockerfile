@@ -14,5 +14,6 @@ COPY static /static
 RUN chown -R nginx:nginx /static
 
 EXPOSE 80
+# EXPOSE 8080
 
 CMD ["nginx", "-g", "daemon off;"]

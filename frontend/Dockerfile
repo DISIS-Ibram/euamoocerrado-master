@@ -1,4 +1,4 @@
-FROM node:14 as builder
+FROM node:24 AS builder
 
 
 

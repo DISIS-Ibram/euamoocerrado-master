@@ -1,5 +1,5 @@
 #compilar o node
-FROM node:10 as node
+FROM node:24 AS node
 # RUN apt-get update && apt-get install -y yarn
 WORKDIR /app
 ADD ./ /app
