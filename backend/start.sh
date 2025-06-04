@@ -1,18 +1,24 @@
-#!/bin/sh
-set -e
+#!/bin/bash
 
-host="$1"
+DB_HOST=$1
 shift
-cmd="$@"
+CMD="$@"
 
 sleep 10
 
-until PGPASSWORD=$DB_PASS psql -h "$DB_HOST" -U "postgres" -c '\q'; do
-  >&2 echo "Aguardando o banco...."
-  sleep 10
+echo "Aguardando o banco de dados em $DB_HOST..."
+
+until pg_isready -h "$DB_HOST" -p 5432; do
+  sleep 2
+  echo "Aguardando o banco de dados..."
 done
 
->&2 echo "Banco OK... executando"
-#incluir os migrations aq ui
+echo "Banco disponível. Iniciando aplicação."
+
+#incluir os migrates aqui
+
 python manage.py migrate
-exec $cmd
+
+echo "Iniciando o servidor Django..."
+
+exec $CMD

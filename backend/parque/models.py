@@ -88,7 +88,7 @@ class ImagemParque(SoftDeletion):
                              verbose_name='Autor',
                              help_text='')
     imagem = models.ImageField(upload_to='parque/')
-    parque = models.ForeignKey(Parque)
+    parque = models.ForeignKey(Parque, on_delete=models.CASCADE)
 
     class MetaSerializer:
         exclude_fields = ['created_at', 'deleted_at','user']
@@ -98,7 +98,7 @@ class ImagemParque(SoftDeletion):
 
 
 class VideoYoutubeParque(SoftDeletion):
-    parque = models.ForeignKey(Parque)
+    parque = models.ForeignKey(Parque, on_delete=models.CASCADE)
     nome = models.CharField(max_length=250, null=True, blank=True)
     autor = models.CharField(max_length=250, null=True, blank=True)
     url = models.URLField(null=True, blank=True)
@@ -114,9 +114,9 @@ class VideoYoutubeParque(SoftDeletion):
 
 
 class VisitanteParque(ElementoBasico, SoftDeletion):
-    parque = models.ForeignKey(Parque)
+    parque = models.ForeignKey(Parque, on_delete=models.CASCADE)
     visitante = models.ForeignKey(
-        User, related_name='visit', null=True, blank=True)
+        User, related_name='visit', null=True, blank=True, on_delete=models.CASCADE)
 
     class MetaSerializer:
         exclude_fields = ['created_at', 'deleted_at']
@@ -138,7 +138,7 @@ class VisitanteParque(ElementoBasico, SoftDeletion):
 
 
 class ContatoParque(SoftDeletion):
-    parque = models.OneToOneField(Parque)
+    parque = models.OneToOneField(Parque, on_delete=models.CASCADE)
     endereco = models.CharField(max_length=100)
     email = models.EmailField(null=True, blank=True)
     telefone = models.CharField(max_length=100)
@@ -176,8 +176,8 @@ class TipoBenfeitoria(SoftDeletion):
 
 
 class Benfeitoria(SoftDeletion):
-    parque = models.ForeignKey(Parque)
-    tipo_benfeitoria = models.ForeignKey(TipoBenfeitoria)
+    parque = models.ForeignKey(Parque, on_delete=models.CASCADE)
+    tipo_benfeitoria = models.ForeignKey(TipoBenfeitoria, on_delete=models.CASCADE)
     descricao = models.TextField( null=True, blank=True )
     geom = models.GeometryField(srid=4674)
 
@@ -211,8 +211,9 @@ class TipoAtrativo(SoftDeletion):
 
 
 class Atrativo(SoftDeletion):
-    parque = models.ForeignKey(Parque)
-    tipo_atrativo = models.ForeignKey(TipoAtrativo)
+    id = models.AutoField(primary_key=True)
+    parque = models.ForeignKey(Parque, on_delete=models.CASCADE)
+    tipo_atrativo = models.ForeignKey(TipoAtrativo, on_delete=models.CASCADE)
     descricao = models.TextField( null=True, blank=True)
     cor = models.TextField( null=True, blank=True)
     nome = models.CharField(max_length=250, null=True, blank=True)
@@ -235,7 +236,7 @@ class ImagemAtrativoParque(SoftDeletion):
                              verbose_name='Autor',
                              help_text='')
     imagem = models.ImageField(upload_to='atrativoimagens/')
-    atrativo = models.ForeignKey(Atrativo)
+    atrativo = models.ForeignKey(Atrativo, on_delete=models.CASCADE)
     
     class MetaSerializer:
         exclude_fields = ['created_at', 'deleted_at','user']
@@ -245,7 +246,7 @@ class ImagemAtrativoParque(SoftDeletion):
 
 
 class VideoAtrativoParque(SoftDeletion):
-    atrativo = models.ForeignKey(Atrativo)
+    atrativo = models.ForeignKey(Atrativo, on_delete=models.CASCADE)
     nome = models.CharField(max_length=250, null=True, blank=True)
     autor = models.CharField(max_length=250, null=True, blank=True)
     url = models.URLField(null=True, blank=True)

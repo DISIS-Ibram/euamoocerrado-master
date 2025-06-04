@@ -17,34 +17,20 @@ CATEGORIA = (
 
 
 class TipoEspecie(ElementoBasico, SoftDeletion):
-    nome_cientifico = models.CharField(max_length=200,
-                                       verbose_name='Nome Científico',
-                                       help_text='')
-
-    nome = models.CharField(max_length=200, null=True, blank=True,
-                            verbose_name='Nome Popular',
-                            help_text='')
-
-    descricao = models.TextField(
-        verbose_name='Descrição', null=True, blank=True,)
-
-    link = models.CharField(max_length=3000, null=True, blank=True,
-                            verbose_name='Link',
-                            help_text='')
-    categoria = models.CharField(
-        max_length=12,
-        choices=CATEGORIA,
-        default='des',
-    )
-    cor =  models.CharField(max_length=7, null=True, blank=True,
-                            verbose_name='Cor',
-                            help_text='')
+    id = models.BigAutoField(primary_key=True)
+    nome_cientifico = models.CharField(max_length=200, verbose_name='Nome Científico', help_text='')
+    nome = models.CharField(max_length=200, null=True, blank=True, verbose_name='Nome Popular', help_text='')
+    descricao = models.TextField(verbose_name='Descrição', null=True, blank=True,)
+    link = models.CharField(max_length=3000, null=True, blank=True,verbose_name='Link', help_text='')
+    categoria = models.CharField(max_length=12, choices=CATEGORIA, default='des', verbose_name='Categoria', help_text='')
+    cor =  models.CharField(max_length=7, null=True, blank=True, verbose_name='Cor', help_text='')
     def __str__(self):
         return self.nome
 
     """Espécie"""
     class Meta:
         verbose_name = "Espécie"
+        db_table = 'especie_tipoespecie'
 
     class MetaSerializer:
         includes = {'imagemespecie_set': []}
@@ -100,11 +86,12 @@ class TipoEspecie(ElementoBasico, SoftDeletion):
             return Response(serializer.data) 
 
 class ImagemEspecie(ElementoBasico, SoftDeletion):
+    id = models.BigAutoField(primary_key=True)
     autor = models.CharField(max_length=200, null=True, blank=True,
                              verbose_name='Autor',
                              help_text='')
     imagem = models.ImageField(upload_to='especie/')
-    especie = models.ForeignKey(TipoEspecie)
+    especie = models.ForeignKey(TipoEspecie, on_delete=models.CASCADE)
 
     class MetaSerializer:
         exclude_fields = ['created_at', 'deleted_at']
@@ -139,9 +126,10 @@ class ImagemEspecie(ElementoBasico, SoftDeletion):
 
 
 class Ocorrencia(ElementoBasico, SoftDeletion):
-    especie = models.ForeignKey(TipoEspecie)
-    parque = models.ForeignKey(Parque, null=True, blank=True,)
-    trilha = models.ForeignKey(Trilha, null=True, blank=True,)
+    id = models.BigAutoField(primary_key=True)
+    especie = models.ForeignKey(TipoEspecie, on_delete=models.CASCADE)
+    parque = models.ForeignKey(Parque, null=True, blank=True, on_delete=models.CASCADE)
+    trilha = models.ForeignKey(Trilha, null=True, blank=True, on_delete=models.CASCADE)
     geom = models.PointField(srid=4674)
     foto = models.ImageField(upload_to='ocorrencia', null=True, blank=True)
 

@@ -4,7 +4,7 @@ from collections import OrderedDict
 
 from django.core.exceptions import PermissionDenied
 from django.http import Http404
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 
 from rest_framework import exceptions, serializers
 from rest_framework.request import clone_request
@@ -19,7 +19,8 @@ class KhartesMetadata(SimpleMetadata):
     label_lookup = ClassLookupDict({
         serializers.Field: 'field',
         serializers.BooleanField: 'boolean',
-        serializers.NullBooleanField: 'boolean',
+        # serializers.NullBooleanField: 'boolean',
+        serializers.BooleanField: 'boolean',
         serializers.CharField: 'string',
         serializers.URLField: 'url',
         serializers.EmailField: 'email',
@@ -156,7 +157,7 @@ class KhartesMetadata(SimpleMetadata):
             else:                                
                 value = getattr(field, attr, None)
                 if value is not None and value != '':
-                    field_info[attr] = force_text(value, strings_only=True)
+                    field_info[attr] = force_str(value, strings_only=True)
         if getattr(field, 'child', None):
             field_info['child'] = self.get_field_info(field.child)
         elif getattr(field, 'fields', None):
@@ -164,7 +165,7 @@ class KhartesMetadata(SimpleMetadata):
         if choice:
             if not field_info.get('read_only') and hasattr(field, 'choices'):
                 field_info['choices'] = [
-                                         {'value': choice_value, 'display_name': force_text(choice_name, strings_only=True)} 
+                                         {'value': choice_value, 'display_name': force_str(choice_name, strings_only=True)} 
         
                                       for choice_value, choice_name in field.choices.items()]
         return field_info
