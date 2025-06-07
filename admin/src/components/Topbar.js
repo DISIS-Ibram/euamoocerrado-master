@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, IndexRoute, browserHistory,  Link } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory,  Link } from 'react-router-dom';
 // import Icon from '../components/icons/Icon';
 import { Menu, Icon, Dropdown } from 'semantic-ui-react'
 

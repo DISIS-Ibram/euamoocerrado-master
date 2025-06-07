@@ -1,66 +1,83 @@
-var webpack = require("webpack");
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-module.exports = require('./webpack.config.js');    // inherit from the main config file
-var path = require('path');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
-// disable the hot reload
-module.exports.entry =  __dirname + '/src/index.js';
+const webpack = require("webpack");
+const path = require("path");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const baseConfig = require("./webpack.config.js");
 
-//module.exports.devServer = {};  // doesn't seem to do anything
-//module.exports.devtool = 'cheap-module-source-map'; // doesn't seem to do anything
- module.exports.devtool = ""
-// compress the js file
-module.exports.plugins = [
-        new webpack.ProvidePlugin({
-                    React: "react",
-                    JSONTree:'react-json-tree'
-        }),
-          //Typically you'd have plenty of other plugins here as well
-        new webpack.DllReferencePlugin({
-            context: path.join(__dirname, "src"),
-            manifest: require("./dll/vendor-manifest.json")
-        }),
+module.exports = {
+  ...baseConfig,
 
-        //   new webpack.optimize.AggressiveMergingPlugin(),//Merge chunks 
-        
-      new CopyWebpackPlugin([
-            { from: 'src/images', to: 'public/images' },
-            { from: 'src/themes/dist', to: 'public/themes' }
-      ]),
-    // https://webpack.github.io/docs/list-of-plugins.html
-     new webpack.DefinePlugin({ // <-- key to reducing React's size
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
+  mode: "production",
+
+  devtool: false,
+
+  entry: path.resolve(__dirname, "src/index.js"),
+
+  output: {
+    path: path.resolve(__dirname, "public/js"),
+    publicPath: "js/",
+    filename: "bundle.[contenthash].js",
+    chunkFilename: "bundle.[contenthash].js",
+    clean: true, // limpa a pasta antes de gerar os arquivos
+  },
+
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+        terserOptions: {
+          compress: {
+            drop_console: true, // remove console.log
+          },
+        },
+      }),
+    ],
+  },
+
+  module: {
+    rules: [
+      ...baseConfig.module.rules.filter(rule => rule.test.toString() !== /\.scss$/.toString()),
+
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
+        ],
+      },
+    ],
+  },
+
+  plugins: [
+    new webpack.ProvidePlugin({
+      React: "react",
+      JSONTree: "react-json-tree",
     }),
-    new LodashModuleReplacementPlugin,
-    // new webpack.optimize.DedupePlugin(), //dedupe similar code 
-    // new webpack.optimize.UglifyJsPlugin(), //minify everything
-    // new webpack.optimize.AggressiveMergingPlugin()//Merge chunks 
 
-    // new webpack.optimize.UglifyJsPlugin({
-    //     comments: false,
-    //     minimize:true,
-    // })
-];
+    new webpack.DefinePlugin({
+      "process.env.NODE_ENV": JSON.stringify("production"),
+    }),
 
-// module.exports.resolve = {
-//     extensions: ['', '.js', '.jsx'],
-//     "alias": {
-//       "react": "preact-compat",
-//       "react-dom": "preact-compat"
-//     }
-//   }
-//   module.exports.devServer = {
-//     historyApiFallback: true,
-//     contentBase: './public'
-//   }
+    new LodashModuleReplacementPlugin(),
 
-// export css to a separate file
-// module.exports.module.loaders[1] = {
-//     test: /\.scss$/,
-//     loader: ExtractTextPlugin.extract('css!sass'),
-// };
+    new webpack.DllReferencePlugin({
+      context: path.resolve(__dirname, "src"),
+      manifest: require("./dll/vendor-manifest.json"),
+    }),
 
-// module.exports.plugins.push(new ExtractTextPlugin('../css/main.css'));
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "src/images", to: "public/images" },
+        { from: "src/themes/dist", to: "public/themes" },
+      ],
+    }),
+
+    new MiniCssExtractPlugin({
+      filename: "../css/main.[contenthash].css",
+    }),
+  ],
+};

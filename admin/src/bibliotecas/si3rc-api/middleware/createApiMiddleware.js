@@ -1,6 +1,6 @@
 import queryString from 'qs';
 import { decamelize } from 'humps';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import * as _ from 'lodash';
 import * as apiActions from '../modules/api';
 import { SI3RC_MODELS, SI3RC_MODELS_API_MAP, getIDValue, getIDKey, getModel } from 'models/models';
