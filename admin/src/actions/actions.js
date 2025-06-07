@@ -4,17 +4,28 @@ import * as _  from 'lodash';
 import humps from 'humps';
 import { apiActions, serialize, deserialize } from '../bibliotecas/si3rc-api';
 import { normalize, Schema, arrayOf, valuesOf } from 'normalizr';
+
+// import Fuse from 'fuse.js';
 import Fuse from 'fuse.js';
+
 import fuzzysearch from 'fuzzysearch';
-import { SI3RC_MODELS, getIDKey, getIDValue, t, d } from 'models/models'
+
+
+// import { SI3RC_MODELS, getIDKey, getIDValue, t, d } from 'models/models'
+import { SI3RC_MODELS, getIDKey, getIDValue, t, d } from '../models/models'
 import { denormalize } from 'denormalizr';
-import * as util from 'util/s3util'
+
+// import * as util from 'util/s3util'
+import * as util from '../util/s3util'
+
 import {Header, Modal, Label, List, Icon, Accordion, Input, Dimmer, Loader, Image, Segment, Button } from 'semantic-ui-react';
 
-import { store } from 'configStore.js'
+// import { store } from 'configStore.js'
+import { store } from '../configStore.js'
 
 //import { ModalForm, ModalYesNo } from 'components/Modals'
-import criaconsole from 'util/myconsole'
+// import criaconsole from 'util/myconsole'
+import criaconsole from '../util/myconsole'
 
 const _debug = false;
 const myconsole = criaconsole(_debug,' *** Actions.js | ', 'color:orange;font-weight:bold')
@@ -33,8 +44,6 @@ util.getIDValue = getIDValue;
 util.t = t;;
 util.d = d;
 export { util as util}
-
-
 
 
 //pega os items como objeto

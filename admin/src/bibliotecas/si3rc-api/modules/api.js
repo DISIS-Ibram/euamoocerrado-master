@@ -1,14 +1,18 @@
 import { camelize } from 'humps';
 // import { serialize, deserialize } from '../serializers';
-import { si3, si3Actions }  from 'actions/index';
-import { SI3RC_MODELS, getIDValue, getIDKey } from 'models/models'
+// import { si3, si3Actions }  from 'actions/index';
+import { si3, si3Actions }  from '../../../actions/index';
+// import { SI3RC_MODELS, getIDValue, getIDKey } from 'models/models'
+import { SI3RC_MODELS, getIDValue, getIDKey } from '../../../models/models'
 import * as _  from 'lodash';
-import {normalizerModel} from 'actions/actions';
+// import {normalizerModel} from 'actions/actions';
+import {normalizerModel} from '../../../actions/actions';
 import u from 'updeep';
-import Notifications from 'react-notification-system-redux';
 
+// import Notifications from 'react-notification-system-redux';
 
-import criaconsole from 'util/myconsole';
+// import criaconsole from 'util/myconsole';
+import criaconsole from '../../../util/myconsole';
 const _debug = false;
 const myconsole = criaconsole(_debug, ' *** Api.js | ', 'color:green;font-weight:bold');
 

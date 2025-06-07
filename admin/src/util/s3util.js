@@ -1,9 +1,17 @@
-import StringFormatValidation from 'string-format-validation'
+// import StringFormatValidation from 'string-format-validation'
+import StringFormatValidation from './stringFormatValidation.js';
+
 import wkx from 'wkx'
 
-import { Utm, Dms} from 'geodesy'
-import { LatLonEllipsoidal as LatLon } from 'geodesy'
-import * as model from 'models/models'
+// import { Utm, Dms} from 'geodesy'
+import Utm from 'geodesy/utm.js';
+import Dms from 'geodesy/dms.js';
+
+// import { LatLonEllipsoidal as LatLon } from 'geodesy'
+import LatLon from 'geodesy/latlon-ellipsoidal-vincenty.js';
+
+// import * as model from 'models/models'
+import * as model from '../models/models'
 
 import prws from './processaResourcesWithState.js'
 

@@ -1,32 +1,168 @@
-import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
-import { reducer as formReducer } from 'redux-form';
-import thunk from "redux-thunk";
+// import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
+// import { reducer as formReducer } from 'redux-form';
+// import thunk from 'redux-thunk';
+// import _ from 'lodash';
+
+// import config from './config';
+// import { apiReducer, createApiMiddleware } from './bibliotecas/si3rc-api/';
+// import { reducer as notifications } from 'react-notification-system-redux';
+
+// //======================================================
+// //     REDUCERS
+// //======================================================
+
+// function modalReducer(state = [], { type, payload }) {
+//   switch (type) {
+//     case 'MODAL_CREATE':
+//       return [..._.filter(state, e => e.nome !== payload.nome), { ...payload }];
+//     case 'MODAL_REMOVE':
+//       return _.filter(state, e => e.nome !== payload.nome);
+//     default:
+//       return state;
+//   }
+// }
+
+// const prefDefault = { tileSel: '' };
+// const prefLocal = JSON.parse(localStorage.getItem('si3rcpreferences'));
+// const initialprefs = _.defaultsDeep(prefLocal, prefDefault);
+
+// function prefsReducer(state = initialprefs, { type, payload }) {
+//   switch (type) {
+//     case 'PREFERENCE_SET':
+//       const prefs = { ...state, ...payload };
+//       localStorage.setItem('si3rcpreferences', JSON.stringify(prefs));
+//       return prefs;
+//     default:
+//       return state;
+//   }
+// }
+
+// function userReducer(state = { id: false, _admin: false }, { type, payload }) {
+//   switch (type) {
+//     case 'USER_LOGIN':
+//       const newpayload = { ...payload };
+//       window.USER = newpayload;
+//       window.PERM = newpayload.permissions;
+//       return newpayload;
+//     case 'USER_LOGOUT':
+//       return { id: false };
+//     default:
+//       return state;
+//   }
+// }
+
+// function tabelaReducer(state = {}, { type, payload }) {
+//   switch (type) {
+//     case 'TABELA_ADD':
+//       return { ...state, [payload.nome]: { nome: payload.nome, filter: {} } };
+//     case 'TABELA_ADD_FILTER':
+//       return payload;
+//     default:
+//       return state;
+//   }
+// }
+
+// //======================================================
+// //     STORE CONFIGURATION
+// //======================================================
+
+// const reducer = combineReducers({
+//   form: formReducer,
+//   tabela: tabelaReducer,
+//   api: apiReducer,
+//   modal: modalReducer,
+//   prefs: prefsReducer,
+//   usuario: userReducer,
+//   notifications,
+// });
+
+// const logger = store => next => action => {
+//   return next(action);
+// };
+
+// const apiMiddleware = createApiMiddleware(window.SI3CONFIG.url, {
+//   'Content-Type': 'application/json',
+// });
+
+// const middleware = applyMiddleware(logger, thunk, apiMiddleware);
+
+// const composeEnhancers =
+//   (process.env.NODE_ENV !== 'production' &&
+//     typeof window === 'object' &&
+//     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+//   compose;
+
+// const enhancer = composeEnhancers(middleware);
+
+// export const store = createStore(reducer, enhancer);
+
+// window.STORE = store;
+
+ // /////////////////////////////////////////////////////////////////////////////////
+
+
+// // store.js (moderno)
+// import { configureStore } from '@reduxjs/toolkit';
+
+// // import { reducer as notifications } from 'react-notification-system-redux';
+// // import { reducer as formReducer } from 'redux-form';
+
+
+// import thunk from 'redux-thunk';
+// import _ from 'lodash';
+
+// import { apiReducer, createApiMiddleware } from './bibliotecas/si3rc-api/';
+
+
+// // ... seus reducers definidos antes
+
+// const reducer = {
+//   form: formReducer,
+//   tabela: tabelaReducer,
+//   api: apiReducer,
+//   modal: modalReducer,
+//   prefs: prefsReducer,
+//   usuario: userReducer,
+//   notifications,
+// };
+
+// const apiMiddleware = createApiMiddleware(window.SI3CONFIG.url, {
+//   'Content-Type': 'application/json',
+// });
+
+// export const store = configureStore({
+//   reducer,
+//   middleware: (getDefaultMiddleware) =>
+//     getDefaultMiddleware().concat(thunk, apiMiddleware),
+//   devTools: process.env.NODE_ENV !== 'production',
+// });
+
+// window.STORE = store;
+
+// //////////////////////////////////////////////////////////////////////
+
+// store.js (moderno com React 18)
+import { configureStore } from '@reduxjs/toolkit';
+import thunk from 'redux-thunk';
 import _ from 'lodash';
 
-import config from './config';
-import { apiReducer, createApiMiddleware, apiActions } from './bibliotecas/si3rc-api/';
-import { reducer as notifications } from 'react-notification-system-redux';
+import { apiReducer, createApiMiddleware } from './bibliotecas/si3rc-api/';
 
-//======================================================
-//     REDUCERS
-//======================================================
-
-// modalReducer
+// Seus reducers locais
 function modalReducer(state = [], { type, payload }) {
   switch (type) {
     case 'MODAL_CREATE':
       return [..._.filter(state, e => e.nome !== payload.nome), { ...payload }];
     case 'MODAL_REMOVE':
-      return [..._.filter(state, e => e.nome !== payload.nome)];
+      return _.filter(state, e => e.nome !== payload.nome);
     default:
       return state;
   }
 }
 
-// prefsReducer
 const prefDefault = { tileSel: '' };
-let prefLocal = JSON.parse(localStorage.getItem('si3rcpreferences'));
-let initialprefs = _.defaultsDeep(prefLocal, prefDefault);
+const prefLocal = JSON.parse(localStorage.getItem('si3rcpreferences'));
+const initialprefs = _.defaultsDeep(prefLocal, prefDefault);
 
 function prefsReducer(state = initialprefs, { type, payload }) {
   switch (type) {
@@ -39,11 +175,10 @@ function prefsReducer(state = initialprefs, { type, payload }) {
   }
 }
 
-// userReducer
 function userReducer(state = { id: false, _admin: false }, { type, payload }) {
   switch (type) {
     case 'USER_LOGIN':
-      var newpayload = { ...payload };
+      const newpayload = { ...payload };
       window.USER = newpayload;
       window.PERM = newpayload.permissions;
       return newpayload;
@@ -54,58 +189,42 @@ function userReducer(state = { id: false, _admin: false }, { type, payload }) {
   }
 }
 
-// tabelaReducer
 function tabelaReducer(state = {}, { type, payload }) {
   switch (type) {
     case 'TABELA_ADD':
-      var obj = { nome: payload.nome, filter: {} };
-      return { ...state, [payload.nome]: obj };
+      return { ...state, [payload.nome]: { nome: payload.nome, filter: {} } };
     case 'TABELA_ADD_FILTER':
-      // Ajuste conforme seu caso: aqui só retorna o payload?
       return payload;
     default:
       return state;
   }
 }
 
-//======================================================
-//     REDUX STORE
-//======================================================
-
-const reducer = combineReducers({
-  form: formReducer,
+// Criar reducer unificado
+const reducer = {
   tabela: tabelaReducer,
   api: apiReducer,
   modal: modalReducer,
   prefs: prefsReducer,
   usuario: userReducer,
-  notifications: notifications,
-});
-
-// Middleware logger
-const logger = store => next => action => {
-  // console.group(action.type);
-  // console.info('dispatching', action);
-  // console.groupEnd();
-  return next(action);
+  // notifications removido
+  // form removido
 };
 
-// Middleware API
-const apiMiddleware = createApiMiddleware(window.SI3CONFIG.url, { "Content-Type": "application/json" });
+// Middleware de API
+const apiMiddleware = createApiMiddleware(window.SI3CONFIG.url, {
+  'Content-Type': 'application/json',
+});
 
-// Configure middleware
-let middleware = applyMiddleware(logger, thunk, apiMiddleware);
+// Criação da store
+export const store = configureStore({
+  reducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(thunk, apiMiddleware),
+  devTools: process.env.NODE_ENV !== 'production',
+});
 
-// Redux DevTools Extension
-const composeEnhancers =
-  (process.env.NODE_ENV !== 'production' &&
-    typeof window === 'object' &&
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
-  compose;
-
-const enhancer = composeEnhancers(middleware);
-
-// Cria a store
-export const store = createStore(reducer, enhancer);
-
+// Expor globalmente (se necessário para debug)
 window.STORE = store;
+
+

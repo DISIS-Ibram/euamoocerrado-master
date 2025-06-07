@@ -1,4 +1,5 @@
-import {store} from 'configStore.js'
+// import {store} from 'configStore.js'
+import {store} from '../configStore.js'
 
 //Resiyrce que comeca com $ serao substituidos
 export default function(resources) {

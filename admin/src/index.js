@@ -1,17 +1,16 @@
-// import React from 'react';
-import ReactDOM from 'react-dom/client';
-// import { Provider } from 'react-redux';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// index.jsx ou main.jsx
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
 import App from './components/App';
-import { store } from './configStore'; // certifique-se que isso está exportando corretamente
+import { store } from './configStore'; // o arquivo que você compartilhou
 
-const root = ReactDOM.createRoot(document.getElementById('app'));
+const root = createRoot(document.getElementById('root'));
+
 root.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/*" element={<App />} />
-      </Routes>
-    </BrowserRouter>
-  </Provider>
+  <React.StrictMode>
+    {/* <Provider store={store}> */}
+      <App />
+    {/* </Provider> */}
+  </React.StrictMode>
 );
