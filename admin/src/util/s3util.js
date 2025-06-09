@@ -1,7 +1,8 @@
 // import StringFormatValidation from 'string-format-validation'
 import StringFormatValidation from './stringFormatValidation.js';
 
-import wkx from 'wkx'
+// import wkx from 'wkx';
+import wellknown from 'wellknown';
 
 // import { Utm, Dms} from 'geodesy'
 import Utm from 'geodesy/utm.js';
@@ -13,17 +14,15 @@ import LatLon from 'geodesy/latlon-ellipsoidal-vincenty.js';
 // import * as model from 'models/models'
 import * as model from '../models/models'
 
+export { getIDKey, getIDValue, t, d } from '../models/models'
+
 import prws from './processaResourcesWithState.js'
+import { features } from 'process';
 
 // Utilitarios/ Helpers
 // 
 
-
-
 export {model as model}
-
-
-
 
 export const getModelNome = (modelo="")=>{
     var res = prws({nome:'$api.modelOptions.'+modelo+'.name'})
@@ -96,127 +95,104 @@ export const getMidiaTipo = (file) => {
 let geo = {
 
   convertPointFromWKT: (p) =>{
-        var convertido;
+        var geojson;
         try{
-          convertido = wkx.Geometry.parse(p);
+          geojson = wellknown.parse(p);
         }catch(e){
-          convertido = {x:0,y:0}
+          geojson = { type: "Point", coordinates: [0, 0]};
         }
        
-        var point = {x:convertido.y,y:convertido.x};
-        return point;
-  },
-  
+        const [x, y] = geojson.coordinates || [0, 0];
+        return {x, y};
+  },  
 
-  convertPointToWKT: (objOrLng, lat='') => {
+  convertPointToWKT: (objOrLng, lat = '') => {
       let lng;
       if( _.isObject(objOrLng) ){
         if(objOrLng.lat){
           lat = objOrLng.lat
           lng = objOrLng.lng
-        }
-      
-      }else if( lat !='' ){
-          lat = lat
+        }      
+      }else if( lat !== '' ){
           lng = objOrLng
       }
 
-      const wktString = new wkx.Point(lng,lat).toWkt();
-      return wktString;
-  
+      const point = {
+        type: "Point",
+        coordinates: [lng, lat]
+      };      
   },
-
 
   convertGeomToWKT: (geo) => {
-      let a = wkx.Geometry.parseGeoJSON(geo).toWkt();
-    
-      return a;
+    try {
+      return wellknown.stringify(geo);
+    }catch (e) {
+      return "";
+    }
   },
 
-
-  convertGeomFromWKT: (geo) => {
+  convertGeomFromWKT: (wkt) => {
       // console.log("******* GEOOOO *******")
       // console.log(geo)
-    
-      let a;
+      let geo;
       try{
-        a = wkx.Geometry.parse(geo)
-        geo = a.toGeoJSON();
-    
-    
+        geo = wellknown.parse(wkt);
       }catch(e){
-
-      
+        geo = null;
       }
       
-      let feature =  [{
-          type:"Feature",
-          "properties": {},
-          geometry:geo
-        }]
-
-        a = {"type":"FeatureCollection","features":feature}
-   
-      let newFeatures = [];
-
-      if(a.features){
-      a.features.forEach( feature=>{
-      
-            if( geo.type=="MultiPolygon"){
-                //convert muiltpolygon to to polygon features 
-                feature = [];
-                geo.coordinates.forEach(function(coords){
-                  var polygeo={'type':'Polygon','coordinates':coords};
-                  newFeatures.push( {
-                    type:"Feature",
-                    "properties": {},
-                    geometry:polygeo
-                  } )
-                }
-              );
-
-            }else{
-              newFeatures.push(feature)
-            }
-
-        })
-        a.features = newFeatures
-      
+      if (!geo) {
+        return { type: "FeatureCollection", features: []};
       }
-  
-      return a;
-  
-  
+
+      let feature = [];
+
+      if( geo.type=="MultiPolygon"){
+        geo.coordinates.forEach(coords => {
+          const polygeo = { type: "Polygon", coordinates: coords };
+          features.push({
+            type: "Feature",
+            properties: {},
+            geometry: polygeo
+          });
+        });
+      }else{
+        features.push({
+          type: "Feature",
+          properties: {},
+          geometry: geo
+        });
+      }
+
+      return {
+        type: "FeatureCollection",
+        features: features
+      };
   },
 
-
-
   getPointinXY: (point) => {
-
-          if(point.x){
-            return {x:point.x,y:point.y}
-          }
-          if(point.lng){
-            return {x:point.lng,y:point.lat}
-          }
+    if(point.x){
+      return {x:point.x,y:point.y}
+    }
+    if(point.lng){
+      return {x:point.lng,y:point.lat}
+    }
   },
 
 
   //POINT CONVERSION
   //*************
   toUTM: (x,y)=>{
+    let point = new LatLon(x,y);
+    // point.toUtm().toString(2);
     
-      let point = new LatLon(x,y);
-      // point.toUtm().toString(2);
-      
-      let utmstr 
-      try{ 
-          utmstr = point.toUtm().toString(2)
-      }catch(e){
-          utmstr = e.toString();
-      }
-
-      return utmstr
+    let utmstr 
+    try{ 
+        utmstr = point.toUtm().toString(2)
+    }catch(e){
+        utmstr = e.toString();
+    }
+    return utmstr
   },
 
   toGD: (x,y)=>{
@@ -227,8 +203,8 @@ let geo = {
   },
 
   toGMS: (x,y)=>{
-      let point = new LatLon(x,y);
-      return point.toString('deg-min-sec')
+    let point = new LatLon(x,y);
+    return point.toString('deg-min-sec')
   },
 
 
@@ -237,18 +213,16 @@ let geo = {
   //*************
   //
   getLocationName: (point,cb,_t) => {
-        if(point){
-            let p = geo.getPointinXY(point)
-            if(p)
-                geo._getLocationNameFromSI3( p.x, p.y, cb, _t)
-        }
+    if(point){
+        let p = geo.getPointinXY(point)
+        if(p)
+            geo._getLocationNameFromSI3( p.x, p.y, cb, _t)
+    }
 },
 
 
   getAreasName: (geom,cb,_t) => {
-    
     const url = `${window.SI3CONFIG.getLocation}`;
-
     return( 
         $.post(url,{geom_wkt:geom}, (data) =>{
                   let local = ""                  
@@ -261,29 +235,24 @@ let geo = {
                     })
                   } 
                   cb.call(_t,local)
-
         })
-    )      
-
+    )
   },
 
 
  _getLocationNameFromGoogle: (lat,lng, cb,_t) => {
-
     const url = `http://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&language=pt_BR`;
-
     return (
-        $.getJSON(url, (data) =>{
-            if(data.status == 'OK'){
-              if(data.results[0].formatted_address){
-                cb.call(_t,data.results[0].formatted_address)
-              }
-            }else{ //pq nao achei endereco nem no nosso sistema nem no google, entao retorno endereco vazilo
-                 cb.call(_t,false)
+      $.getJSON(url, (data) =>{
+          if(data.status == 'OK'){
+            if(data.results[0].formatted_address){
+              cb.call(_t,data.results[0].formatted_address)
             }
-        })
+          }else{ //pq nao achei endereco nem no nosso sistema nem no google, entao retorno endereco vazilo
+               cb.call(_t,false)
+          }
+      })
     )
-
   },
 
 
@@ -296,29 +265,22 @@ let geo = {
     var pointWKT= "POINT("+lng+" "+lat+")";
 
     return( 
-        $.post(url,{geom_wkt:pointWKT}, (data) =>{
-                if(_.isEmpty(data)){
-                    geo._getLocationNameFromGoogle(lat,lng, cb,_t)                    
-                }else{
-
-                  let local = ""                  
-                //   if(data.Estado) local += data.Estado[0].Sigla + " | ";
-                  if(data.Município) local += data.Município[0].Nome ;
-                  if(data.TerraIndigena) local += " | TI. " + data.TerraIndigena[0].Nome;
-                  cb.call(_t,local)
-          }
-        })
+      $.post(url,{geom_wkt:pointWKT}, (data) =>{
+        if(_.isEmpty(data)){
+            geo._getLocationNameFromGoogle(lat,lng, cb,_t)                    
+        }else{
+         let local = ""                  
+        //   if(data.Estado) local += data.Estado[0].Sigla + " | ";
+          if(data.Município) local += data.Município[0].Nome ;
+          if(data.TerraIndigena) local += " | TI. " + data.TerraIndigena[0].Nome;
+          cb.call(_t,local)
+        }
+      })
     )      
-},
-
-
-
+  },
 
   _getLocationNameFromSI3BAK: (lat,lng, cb,_t) => {
-
     const url = `${window.SI3CONFIG.getLocation}?y=${lat}&x=${lng}`;
-
-
     return( 
         $.getJSON(url, (data) =>{
                 if(_.isEmpty(data)){

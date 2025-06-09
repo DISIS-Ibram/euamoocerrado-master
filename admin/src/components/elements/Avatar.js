@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { si3 }  from 'actions/index';
+// import { si3 }  from 'actions/index';
+import { si3 }  from '';
 import {Image, Icon } from 'semantic-ui-react';
 
 

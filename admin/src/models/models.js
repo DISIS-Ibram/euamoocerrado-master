@@ -1466,7 +1466,7 @@ export { SI3RC_MODELS };
 // serve para funcoes como obterItens?, filtro dos mapas etc
 //---------------------------
 export const SI3RC_MODELS_API_MAP = {
-	usuarios: 'avatar',
+	// usuarios: 'avatar',
 	colecao: 'Colecao',
 };
 
@@ -1580,7 +1580,7 @@ export const getIDValue = (resource, modeloSchema) => {
 	// vejo se o resource tem/esta usando esse key
 	if (_.has(resource, key)) {
 		return resource[key];
-	} else if (_.has(resource, 'id')) {
+	} else if (_.has(resource, 'id')) {''
 		return resource.id;
 	}
 	return 0;
@@ -1661,7 +1661,7 @@ export const t = (nome) => {
 
 	var state = window.STORE.getState() 
 
-	return _.get(state,'api.modelOptions.'+nome+'.name', nome)
+	return _.get(state,'api.modelOptions.' + nome + '.name', nome)
 
 	// nome = nome.toLowerCase();
 	// if (SI3RC_NOMES[nome]) {
@@ -1673,7 +1673,7 @@ export const t = (nome) => {
 
 export const d = (nome) => {
 	var state = window.STORE.getState() 
-	return _.get(state,'api.modelOptions.'+nome+'.description', nome)
+	return _.get(state,'api.modelOptions.' + nome + '.description', nome)
 };
 
   

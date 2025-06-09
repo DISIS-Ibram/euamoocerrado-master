@@ -4,7 +4,8 @@ import { Router, Route, IndexRoute, browserHistory,  Link } from 'react-router-d
 import { Menu, Icon, Dropdown } from 'semantic-ui-react'
 
 import { connect } from 'react-redux';
-import Avatar from 'components/elements/Avatar'
+// import Avatar from 'components/elements/Avatar'
+import Avatar from './elements/Avatar'
 
 
 const trigger = (<a className="right icon item" ><i className="fa fa-cog"></i></a>)
