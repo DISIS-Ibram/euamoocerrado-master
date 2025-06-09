@@ -69,6 +69,8 @@ services:
   #   command: sh -c 'yarn && yarn add webpack-dev-server@2.4.5 && npm run start'
 
   # BANCO DE DADOS - POSTGRES/POSTGIS
+  # Executar esse comando depois do container ativo para restaurar os dados no banco
+  # docker exec -i eac-postgres psql -U postgres -d euamoocerrado < ./db-backup/backup_completo.sql
   db:
       container_name: eac-postgres
       image: postgis/postgis:15-3.4
@@ -110,6 +112,8 @@ services:
 
 
   #GRAPH-QL que serve os dados para o frontend
+  # Acessar o hasura no modo console
+  #http://localhost:8383/?admin_secret=myadminsecretkey
   hassura:
     image: hasura/graphql-engine:v2.44.0
     container_name: eac-hassura
