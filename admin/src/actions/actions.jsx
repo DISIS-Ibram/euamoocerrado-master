@@ -1,50 +1,42 @@
-
 import React from 'react';
+
 import * as _  from 'lodash';
-import humps from 'humps';
-import { apiActions, serialize, deserialize } from '../bibliotecas/si3rc-api';
-import { normalize, Schema, arrayOf, valuesOf } from 'normalizr';
+// import humps from 'humps';
+// import { apiActions, serialize, deserialize } from '../bibliotecas/si3rc-api';
+// import { normalize, Schema, arrayOf, valuesOf } from 'normalizr';
 
+// // import Fuse from 'fuse.js';
 // import Fuse from 'fuse.js';
-import Fuse from 'fuse.js';
 
-import fuzzysearch from 'fuzzysearch';
-
+// import fuzzysearch from 'fuzzysearch';
 
 // import { SI3RC_MODELS, getIDKey, getIDValue, t, d } from 'models/models'
 import { SI3RC_MODELS, getIDKey, getIDValue, t, d } from '../models/models'
-import { denormalize } from 'denormalizr';
+// import { denormalize } from 'denormalizr';
 
-// import * as util from 'util/s3util'
 import * as util from '../util/s3util'
 
 import {Header, Modal, Label, List, Icon, Accordion, Input, Dimmer, Loader, Image, Segment, Button } from 'semantic-ui-react';
 
-// import { store } from 'configStore.js'
-import { store } from '../configStore.js'
+// // import { store } from 'configStore.js'
+// import { store } from '../configStore.js'
 
-//import { ModalForm, ModalYesNo } from 'components/Modals'
-// import criaconsole from 'util/myconsole'
-import criaconsole from '../util/myconsole'
+// //import { ModalForm, ModalYesNo } from 'components/Modals'
+// // import criaconsole from 'util/myconsole'
+// import criaconsole from '../util/myconsole'
 
-const _debug = false;
-const myconsole = criaconsole(_debug,' *** Actions.js | ', 'color:orange;font-weight:bold')
-
+// const _debug = false;
+// const myconsole = criaconsole(_debug,' *** Actions.js | ', 'color:orange;font-weight:bold')
 
 //======================================================
 //     FUNCOES DE RESGATE DE OBJETOS
 //======================================================
 
-
-
-
-
-util.getIDKey = getIDKey;
-util.getIDValue = getIDValue;
-util.t = t;;
-util.d = d;
+// util.getIDKey = getIDKey;
+// util.getIDValue = getIDValue;
+// util.t = t;
+// util.d = d;
 export { util as util}
-
 
 //pega os items como objeto
 export const filterItens2 = (items, filter={}, sort=[]) => {
@@ -83,23 +75,12 @@ export const filterItens2 = (items, filter={}, sort=[]) => {
         //vejo se é string o key, se for usolowercase para nao ter problema
 
     })
-
     const itensFinal2 = _.sortBy(itensFinal);
-
     return itensFinal2;
-
 }
-
-
-
-
-
-
 
 //a new search items
 export const filterItens = async (items, keyword="", propriedadesAProcurar = [], idKey = false,optionsExtend = {})=>{
-
-
         if(_.isEmpty(keyword)){ 
             return items;
         }
@@ -117,7 +98,6 @@ export const filterItens = async (items, keyword="", propriedadesAProcurar = [],
             keys = [propriedadesAProcurar]
         }
 
-
         // keys: [{
         //     name: 'title',
         //     weight: 0.3
@@ -125,8 +105,6 @@ export const filterItens = async (items, keyword="", propriedadesAProcurar = [],
         //     name: 'author',
         //     weight: 0.7
         // }]
-
-
 
         var options = {
             caseSensitive: false,
@@ -148,8 +126,6 @@ export const filterItens = async (items, keyword="", propriedadesAProcurar = [],
                             }
         }
 
-
-
         if(keyword.length <= 4){
             options.threshold = keyword.length/20;
         }
@@ -159,21 +135,18 @@ export const filterItens = async (items, keyword="", propriedadesAProcurar = [],
              options.threshold = 0;
         }
 
-
-
         // if(idKey)
         //     options.id = idKey;
         myconsole.log("FUSE SEARCH pavara:%s itens: %o, OPTIONS %o, keys: %o ", keyword, items, options, keys)
         var fuse = new Fuse(items, options); // "list" is the item array
-        
-       
-       try{
-          var result = fuse.search(keyword); 
-          return result;
-       }catch(e){
-          console.warn(e);
-          return items
-       }
+              
+        try{
+           var result = fuse.search(keyword); 
+           return result;
+        }catch(e){
+           console.warn(e);
+           return items
+        }
 
         // var options2 = options
         // options2.include = ["score"];
@@ -183,16 +156,9 @@ export const filterItens = async (items, keyword="", propriedadesAProcurar = [],
 
         // myconsole.log("resultado sem score:", result)
         // myconsole.log("resultado com score:", result2)
-
-        
-
 }
 
-
-
-
 export function geraArrayDeKeys(obj, condition=(i)=>_.isString(i) ){
-
     let objFinal = {};
     let keysBag = [];
     let path = "";
@@ -204,7 +170,6 @@ export function geraArrayDeKeys(obj, condition=(i)=>_.isString(i) ){
     }else{
         return "";
     }
-
 
     const getKeys= (o,path,keysBag)=>{
 
@@ -233,19 +198,6 @@ export function geraArrayDeKeys(obj, condition=(i)=>_.isString(i) ){
     return keysBag
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 //
 export const getById = (items) => {
     return   _.map(_.filter(items) , (item) => {
@@ -253,28 +205,12 @@ export const getById = (items) => {
       })
 }
 
-
 //pega o type do modelo
-export const getTipo = (type) => {
-
-    
+export const getTipo = (type) => {  
     let tipo =  SI3RC_MODELS[type].type || type;
     tipo = humps.camelize(tipo);
     return tipo;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-// 
 
 export const serializeByModeloID = (modeloNome,id) => {
 
@@ -474,20 +410,6 @@ export const serializeModel = (obj,tipo,entities) => {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //OBJ - recebo o objeto ou array de objetos
 //TIPO - o tipo relacionado ao modelhttp://162.243.186.165/coplii/relato/8/
 //entities - todos os objetos da api
@@ -630,11 +552,7 @@ export const serializeModelBak = (obj,tipo,entities) => {
                     
                    
                 }
-        }
-
-
-
-
+      }
            
       //se nnao tenho mapa no modelo, so retorno o objeto como é   
       // }else{
@@ -646,72 +564,35 @@ export const serializeModelBak = (obj,tipo,entities) => {
 
     }  //final serialize
 
-
-
-
     let objSerial = new Object();
 
     myconsole.log("SERIALIZADO ANTES===== %o, tipo:%s",obj,tipo)
-
-
-    //LETODO - verifico se obj é uma array ou um Map ou um objeto solo
-     _.forIn(obj, (v,k)=>{ 
+      //LETODO - verifico se obj é uma array ou um Map ou um objeto solo
+      _.forIn(obj, (v,k)=>{ 
             if(v === null || v === undefined){
                   objSerial[k] = null
             }else{
                   objSerial[k] = serialize(v,modelo,entities,k, [])} 
             }          
-    )
+      )
     
-
     myconsole.log("SERIALIZADO===== %o",objSerial)
-
     //Aqui crio os atributosVirtuais ao modelo
     objSerial = adicionaPropriedadesVirtuais(objSerial);
-
-
     myconsole.log("Com Propriedades Virtuais ===== %o",objSerial)
-
-
     return objSerial;
-
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export function adicionaPropriedadesVirtuais(obj){
-
-    
     const addVirtual = (objToSerialize) => {
             let obj = {...objToSerialize}
-
             //pego o modelo do objeto
             var model = getModel(obj._type);
-
             //vejo se tem key virtual    
             if (_.has(model,"propriedadeVirtual")){
-
                     _.forIn(model.propriedadeVirtual, (v,keyVirtual)=>{ 
                     //para cada propriedade virtual
                             let escolhido = v.default || null;
-                           
                             if( _.has(v,'choice')){
                                 //pego crio o value correto baseado nas configuracoes
                                 _.each(v.choices,(choice)=>{
@@ -728,10 +609,8 @@ export function adicionaPropriedadesVirtuais(obj){
                             }
                             //crio o key
                             obj[keyVirtual] = escolhido
-                            
                     })
             }
-
 
             // vou um loop nos outors keys para ver se tenho objetos internos
             // LETODO - testar se loop em objetos internos esta realmente funcionando
@@ -740,19 +619,10 @@ export function adicionaPropriedadesVirtuais(obj){
                     obj[k] = addVirtual(v)
                 }
             })
-             
-            return obj;
-            
-    }
-
-
+      return obj;
+      }
     let objSerial = addVirtual({...obj});
-
-  
-
-
     return objSerial;
-
 }
 
 
@@ -768,331 +638,298 @@ export function adicionaPropriedadesVirtuais(obj){
 
 
 
-export const excluirDeModel = (id,tipo) => {
+// export const excluirDeModel = (id,tipo) => {
 
 
-     let modelo = getModel(tipo);
+//      let modelo = getModel(tipo);
 
-     let state = store.getState().api;
+//      let state = store.getState().api;
 
-     //pego o id do objto;
+//      //pego o id do objto;
      
 
-     //apago o proprio objeto
+//      //apago o proprio objeto
      
 
-     //procuro para ver se tem algum modelo que tem esse objeto
-     //se tiver voulto esse modelo sem o id tambem
+//      //procuro para ver se tem algum modelo que tem esse objeto
+//      //se tiver voulto esse modelo sem o id tambem
 
-    //defino uma funcao interna que normaliza
-    //é chamada recorrente
-    const deletiza = (obj,modelo,bag={}) => {
+//     //defino uma funcao interna que normaliza
+//     //é chamada recorrente
+//     const deletiza = (obj,modelo,bag={}) => {
 
-        //no bag sempre mantenho o que tenho anteriormente
-        let newobj = {}
+//         //no bag sempre mantenho o que tenho anteriormente
+//         let newobj = {}
 
-        //tipo atual
-        let tipo = modelo.type
+//         //tipo atual
+//         let tipo = modelo.type
 
-        //crio o tipo no bag se não existir
-        if(! _.has(bag,tipo) )
-            bag[tipo] = {}
+//         //crio o tipo no bag se não existir
+//         if(! _.has(bag,tipo) )
+//             bag[tipo] = {}
 
-        //pego qual o id utilizado como key no modelo
-        let idkey = (modelo.idkey || 'id');
-        let idObj = obj[idkey];
-
-
-
-        //e adiciono o Objeto no bag 
-        if(! _.has(bag[tipo],idObj) ){
-            bag[tipo][idObj] = {}
-        }
-
-        bag[tipo][idObj] = _.merge(bag[tipo][idObj],obj)
+//         //pego qual o id utilizado como key no modelo
+//         let idkey = (modelo.idkey || 'id');
+//         let idObj = obj[idkey];
 
 
-        //verifico se tem um mapeamento no modelo
-        if( _.has(modelo,'map') ){
+
+//         //e adiciono o Objeto no bag 
+//         if(! _.has(bag[tipo],idObj) ){
+//             bag[tipo][idObj] = {}
+//         }
+
+//         bag[tipo][idObj] = _.merge(bag[tipo][idObj],obj)
+
+
+//         //verifico se tem um mapeamento no modelo
+//         if( _.has(modelo,'map') ){
             
-            const map = modelo.map
-            // se tem pecorro tudo que é mapeado
-            _.forIn(map, (v,k) => {
+//             const map = modelo.map
+//             // se tem pecorro tudo que é mapeado
+//             _.forIn(map, (v,k) => {
 
-                var objAtualNaBag = bag[tipo][idObj];
+//                 var objAtualNaBag = bag[tipo][idObj];
 
-                //pego o modelo referente a esse objeto
-                let modeloNew = SI3RC_MODELS[v] || false 
-                //pego o id que pertence a esse objRefer 
-                let idkey = (modeloNew.idkey || 'id');
+//                 //pego o modelo referente a esse objeto
+//                 let modeloNew = SI3RC_MODELS[v] || false 
+//                 //pego o id que pertence a esse objRefer 
+//                 let idkey = (modeloNew.idkey || 'id');
 
 
-                //vejo se no meu objeto existe essa key e se é um objeto ou array
-                if( _.has(objAtualNaBag,k) && _.isObjectLike(objAtualNaBag[k]) ){
+//                 //vejo se no meu objeto existe essa key e se é um objeto ou array
+//                 if( _.has(objAtualNaBag,k) && _.isObjectLike(objAtualNaBag[k]) ){
                     
-                    // pego o objeto
-                    let objRefer = objAtualNaBag[k]
+//                     // pego o objeto
+//                     let objRefer = objAtualNaBag[k]
 
-                    if( _.isArray(objRefer) ){
+//                     if( _.isArray(objRefer) ){
 
-                        let refs = []
-                        objRefer.map( (objRefAtual)=>{
-                                //pego o id do objeto referencia
-                                let ref = objRefAtual[idkey];
-                                // e normalizo o valor do objRefer atual tb
-                                refs.push(deletiza(objRefAtual, modeloNew, bag))
-                        })
+//                         let refs = []
+//                         objRefer.map( (objRefAtual)=>{
+//                                 //pego o id do objeto referencia
+//                                 let ref = objRefAtual[idkey];
+//                                 // e normalizo o valor do objRefer atual tb
+//                                 refs.push(deletiza(objRefAtual, modeloNew, bag))
+//                         })
 
-                        objAtualNaBag[k] = refs;
+//                         objAtualNaBag[k] = refs;
 
-                    }else{
-                        //pego o id do objeto referencia
-                        let ref = objRefer[idkey];
-                        // e normalizo o valor do objRefer atual tb
-                        objAtualNaBag[k] = deletiza(objRefer, modeloNew, bag)
+//                     }else{
+//                         //pego o id do objeto referencia
+//                         let ref = objRefer[idkey];
+//                         // e normalizo o valor do objRefer atual tb
+//                         objAtualNaBag[k] = deletiza(objRefer, modeloNew, bag)
 
-                    }
-                }
+//                     }
+//                 }
             
-            })
+//             })
         
-        }
+//         }
 
 
-        //normalize pode retornar a nova referencia dos objetos, né?
-        return idObj;
+//         //normalize pode retornar a nova referencia dos objetos, né?
+//         return idObj;
     
-    }
+//     }
 
 
 
 
 
-    let objSerial = {}
+//     let objSerial = {}
     
-    let bag = {}
+//     let bag = {}
 
-    bag = state[modelo.type][id];
+//     bag = state[modelo.type][id];
 
 
-    _.forIn(obj, 
-        (v,k)=>{ 
+//     _.forIn(obj, 
+//         (v,k)=>{ 
            
-            objSerial[tipo] = deletiza(v,modelo,bag)
-        } 
-    )
+//             objSerial[tipo] = deletiza(v,modelo,bag)
+//         } 
+//     )
     
-    // console.log('====  NORMALIZADO '+tipo.toUpperCase()+'===========')
-    // console.log(bag)
+//     // console.log('====  NORMALIZADO '+tipo.toUpperCase()+'===========')
+//     // console.log(bag)
 
-    //dou um merge 
+//     //dou um merge 
     
-    return {entities:bag};
+//     return {entities:bag};
 
-}
-
-
+// }
 
 
+// //OBJ - recebo o objeto ou array de objetos
+// //TIPO - o tipo relacionado ao model
+// //entities - todos os objetos da api
 
+// export const normalizerModel = (obj,tipo) => {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//OBJ - recebo o objeto ou array de objetos
-//TIPO - o tipo relacionado ao model
-//entities - todos os objetos da api
-
-export const normalizerModel = (obj,tipo) => {
-
-    let modelo =  getModel(tipo) //SI3RC_MODELS[tipo] || false
+//     let modelo =  getModel(tipo) //SI3RC_MODELS[tipo] || false
     
 
-    //LENOTA - essa parte não deve executar mais, ja que o get tipo retorna um novo 
-    // schema de modelo virtual mesmo que baseado em url fornecida como o tipo
-    // verificar se isso nao vai afetar o resto do sistema
-    // if(!modelo){ 
-    //     let res = {}
-    //     res.entities = {}
-    //     res.entities[tipo] = obj;
-    //     return res
-    // }
+//     //LENOTA - essa parte não deve executar mais, ja que o get tipo retorna um novo 
+//     // schema de modelo virtual mesmo que baseado em url fornecida como o tipo
+//     // verificar se isso nao vai afetar o resto do sistema
+//     // if(!modelo){ 
+//     //     let res = {}
+//     //     res.entities = {}
+//     //     res.entities[tipo] = obj;
+//     //     return res
+//     // }
 
 
-    //defino uma funcao interna que normaliza
-    //é chamada recorrente
-    const normaliza = (obj,modelo,bag={}) => {
+//     //defino uma funcao interna que normaliza
+//     //é chamada recorrente
+//     const normaliza = (obj,modelo,bag={}) => {
 
-        //no bag sempre mantenho o que tenho anteriormente
-        let newobj = {}
+//         //no bag sempre mantenho o que tenho anteriormente
+//         let newobj = {}
 
 
-        //tipo atual
-        let tipo = modelo.type
+//         //tipo atual
+//         let tipo = modelo.type
 
-        //crio o tipo no bag se não existir
-        if(! _.has(bag,tipo) )
-            bag[tipo] = {}
+//         //crio o tipo no bag se não existir
+//         if(! _.has(bag,tipo) )
+//             bag[tipo] = {}
 
-        //pego qual o id utilizado como key no modelo
-        let idkey = (modelo.idkey || 'id');
+//         //pego qual o id utilizado como key no modelo
+//         let idkey = (modelo.idkey || 'id');
        
 
-       let idObj;
-       //se o objeto em si é uma string, ele deve pode ser o objeto que é a sua propria key, tipo tag
-       if( _.isString(obj) ){
-             idObj = obj
-             var valor = obj
-             obj = {}
-             obj[idkey] = valor
-       }else{
-             idObj = obj[idkey];
-       }
+//        let idObj;
+//        //se o objeto em si é uma string, ele deve pode ser o objeto que é a sua propria key, tipo tag
+//        if( _.isString(obj) ){
+//              idObj = obj
+//              var valor = obj
+//              obj = {}
+//              obj[idkey] = valor
+//        }else{
+//              idObj = obj[idkey];
+//        }
         
-        //se nao tenho id provavelmente estou retornando alguma coisa que nao seja um modelos em si
-         if(idObj === undefined){
-                idObj = 0
-         }
-        //CRIO ATRIBUTOS INTERNOS
-        //usando set para nao da problema quando
-        //normalizo um objeto ja normalizado
-        _.set(obj,"_idkey",idkey)
-        _.set(obj,"_id",idObj)
-        _.set(obj,"_type",tipo)
+//         //se nao tenho id provavelmente estou retornando alguma coisa que nao seja um modelos em si
+//          if(idObj === undefined){
+//                 idObj = 0
+//          }
+//         //CRIO ATRIBUTOS INTERNOS
+//         //usando set para nao da problema quando
+//         //normalizo um objeto ja normalizado
+//         _.set(obj,"_idkey",idkey)
+//         _.set(obj,"_id",idObj)
+//         _.set(obj,"_type",tipo)
 
 
-        //e adiciono o Objeto no bag 
-        if(! _.has(bag[tipo],idObj) ){
-            bag[tipo][idObj] = {}
-        }
+//         //e adiciono o Objeto no bag 
+//         if(! _.has(bag[tipo],idObj) ){
+//             bag[tipo][idObj] = {}
+//         }
 
 
-      if( _.isString(obj) ){
-              bag[tipo][idObj] = obj
-      }else{
-               bag[tipo][idObj] = _.merge(bag[tipo][idObj],obj)
-      }
+//       if( _.isString(obj) ){
+//               bag[tipo][idObj] = obj
+//       }else{
+//                bag[tipo][idObj] = _.merge(bag[tipo][idObj],obj)
+//       }
 
      
 
-        //verifico se tem um mapeamento no modelo
-        if( _.has(modelo,'map') ){
+//         //verifico se tem um mapeamento no modelo
+//         if( _.has(modelo,'map') ){
             
-            const map = modelo.map
-            // se tem pecorro tudo que é mapeado
-            _.forIn(map, (v,k) => {
-                var objAtualNaBag = bag[tipo][idObj];
+//             const map = modelo.map
+//             // se tem pecorro tudo que é mapeado
+//             _.forIn(map, (v,k) => {
+//                 var objAtualNaBag = bag[tipo][idObj];
                 
-                //pego o modelo referente a esse objeto
-                let modeloNew = SI3RC_MODELS[v] || false 
+//                 //pego o modelo referente a esse objeto
+//                 let modeloNew = SI3RC_MODELS[v] || false 
 
-                //pego o id que pertence a esse objRefer 
-                let idkey = (modeloNew.idkey || 'id');
+//                 //pego o id que pertence a esse objRefer 
+//                 let idkey = (modeloNew.idkey || 'id');
 
 
-                //vejo se no meu objeto existe essa key e se é um objeto ou array
-                if( _.has(objAtualNaBag,k) && _.isObjectLike(objAtualNaBag[k]) ){
+//                 //vejo se no meu objeto existe essa key e se é um objeto ou array
+//                 if( _.has(objAtualNaBag,k) && _.isObjectLike(objAtualNaBag[k]) ){
                     
-                    // pego o objeto
-                    let objRefer = objAtualNaBag[k]
+//                     // pego o objeto
+//                     let objRefer = objAtualNaBag[k]
 
-                    if( _.isArray(objRefer) ){
+//                     if( _.isArray(objRefer) ){
 
-                        let refs = []
+//                         let refs = []
 
-                        objRefer.map( (objRefAtual)=>{
-                                //se for um objeto que teho normalizo ele
-                                if(_.isObject(objRefAtual)){
-                                    //pego o id do objeto referencia
-                                    let ref = objRefAtual[idkey];
-                                    // e normalizo o valor do objRefer atual tb
-                                    refs.push(normaliza(objRefAtual, modeloNew, bag))
-                                }else{
-                                  //senao so coloco ele de volta.
+//                         objRefer.map( (objRefAtual)=>{
+//                                 //se for um objeto que teho normalizo ele
+//                                 if(_.isObject(objRefAtual)){
+//                                     //pego o id do objeto referencia
+//                                     let ref = objRefAtual[idkey];
+//                                     // e normalizo o valor do objRefer atual tb
+//                                     refs.push(normaliza(objRefAtual, modeloNew, bag))
+//                                 }else{
+//                                   //senao so coloco ele de volta.
                                   
-                                  refs.push(objRefAtual)
-                                   //antes para a tag estaca colocando de volta
-                                   //refs.push(normaliza(objRefAtual, modeloNew, bag))
-                                   //e salvo na bag, claro
-                                   // bag[tipo][idObj] = _.merge(bag[tipo][idObj],obj)
-                                }
-                        })
+//                                   refs.push(objRefAtual)
+//                                    //antes para a tag estaca colocando de volta
+//                                    //refs.push(normaliza(objRefAtual, modeloNew, bag))
+//                                    //e salvo na bag, claro
+//                                    // bag[tipo][idObj] = _.merge(bag[tipo][idObj],obj)
+//                                 }
+//                         })
 
 
-                        objAtualNaBag[k] = refs;
+//                         objAtualNaBag[k] = refs;
 
-                    }else{
-                        //pego o id do objeto referencia
-                       if(_.isObject(objRefer)){
-                          // e normalizo o valor do objRefer atual tb
-                          objAtualNaBag[k] = normaliza(objRefer, modeloNew, bag)
-                      }else{
-                          objAtualNaBag[k] = objRefer;
-                      }
-                    }
+//                     }else{
+//                         //pego o id do objeto referencia
+//                        if(_.isObject(objRefer)){
+//                           // e normalizo o valor do objRefer atual tb
+//                           objAtualNaBag[k] = normaliza(objRefer, modeloNew, bag)
+//                       }else{
+//                           objAtualNaBag[k] = objRefer;
+//                       }
+//                     }
 
-                }
+//                 }
             
-            })
+//             })
         
-        }
+//         }
 
 
-        //normalize pode retornar a nova referencia dos objetos, né?
-        return idObj;
+//         //normalize pode retornar a nova referencia dos objetos, né?
+//         return idObj;
     
-    }
+//     }
 
 
 
 
 
-    let objSerial = {}
+//     let objSerial = {}
     
-    let bag = {}
+//     let bag = {}
 
-    myconsole.log('====  NORMALIZER | VAI NORMALIZAR ===========',obj)
+//     myconsole.log('====  NORMALIZER | VAI NORMALIZAR ===========',obj)
 
 
-    _.forIn(obj, 
-        (v,k)=>{ 
-            objSerial[tipo] = normaliza(v,modelo,bag)
-        } 
-    )
+//     _.forIn(obj, 
+//         (v,k)=>{ 
+//             objSerial[tipo] = normaliza(v,modelo,bag)
+//         } 
+//     )
     
-    myconsole.log('====   NORMALIZER | NORMALIZADO '+tipo.toUpperCase()+'===========%o',bag)
+//     myconsole.log('====   NORMALIZER | NORMALIZADO '+tipo.toUpperCase()+'===========%o',bag)
 
-    //dou um merge 
+//     //dou um merge 
     
-    return {entities:bag};
+//     return {entities:bag};
 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// }
 
 
 
@@ -1103,10 +940,7 @@ export const normalizerModel = (obj,tipo) => {
 //     uma adaptação do json-api
 //======================================================
 
-
-
 export const getModel = (type)=>{
-
         if( _.has(SI3RC_MODELS,type) ){
             return SI3RC_MODELS[type]
         }else{
@@ -1114,23 +948,12 @@ export const getModel = (type)=>{
            // return type;
            //se não existe o medelo, eu crio ele utilizando a url como o path
            let modeloObj={}
-
            modeloObj.type = type; //_.kebabCase(type); // pq kebaba quera a referencia aos modelos nos connects,que uso a outra versao
            modeloObj.url = type+"/";
-
            return modeloObj;
            // vacina:{type:'situacao', url:'adm/Vacina/'}
         }
-
-
 }
-
-
-
-
-
-
-
 
 // Load a Model
 //---------------------------
@@ -1140,17 +963,11 @@ export const getModel = (type)=>{
 //opt.include = ['key','key'] - carrega so as dependencias especificadas
 export const load = (type, obj = {}, opt = {}) => {
     const modelo = getModel(type);
-    
-
     modelo.options = opt;
-
     //marco se é para incluir alguns objetos ou nnao na requisicao
     if(opt['include']){
         modelo.includeOnLoad = opt['include']
     }
-    
-
-
     // else{
     //      //modelo.includeOnLoad = _.uniq( _.concat( (modelo.includeOnLoad || []), opt.include ) )
     // }
@@ -1170,53 +987,30 @@ export const load = (type, obj = {}, opt = {}) => {
     }
 }
 
-
-
 export const loadOptions = (type) => {
-     
       const modelo = getModel(type);
-
       //so disparo o action se não tiver carregado ainda
-    
       const state = store.getState();
-
       if( _.isEmpty(state.api.modelOptions[type]) === false ){
             return async (dispatch) => {} 
       }
-           
       return async (dispatch) => {
-          
             const data = await dispatch(apiActions.options( modelo ));
-            
             localStorage.setItem( (type+"_options"),JSON.stringify(data[0]) ); //salvo no localStorage
             return data;          
       }
-
 }
 
-
-
-
 export const save = (type, obj = {}) => {
-     
       const modelo = getModel(type);
-      
       const param = modelo.param || type;
-      
       const objF = {...obj};
-
       //verifico se alguns do modelos tem imagem, se tiver mudo o tipo de envio
       return async (dispatch) => {
             const data = await dispatch(apiActions.write( objF , modelo ));
             return data;          
       }
 }
-
-
-
-
-
-
 
 export const remove = (type, obj = {}) => {
 
@@ -1232,23 +1026,12 @@ export const remove = (type, obj = {}) => {
       }
 }
 
-
-
-
-
-
-
-
-
 //======================================================
 //     MODALS
 //======================================================
 
-export const removeItem = ( modeloNome, id ) => {
-
-      
+export const removeItem = ( modeloNome, id ) => {     
         return (dispatch) => {
-
              var props = {
                      modelo:modeloNome,
                      id:id,
@@ -1263,13 +1046,9 @@ export const removeItem = ( modeloNome, id ) => {
                              dispatch(apiActions.remove(objFinal , modelo ));
                     }
                 }
-      
                 dispatch({type:'MODAL_CREATE',payload:props} )
-      
           }
-
 }
-
 
 //   this.props.openModal( {nome:"modal"+this.props.modelo,
 //                               tipo:'form',
@@ -1287,8 +1066,6 @@ export const openModal = ( props = {nome,tipo} ) => {
     }
 
 }
-
-
 
 // export const openModalForm = ( nome='modalForm', props = {} ) => {
 
@@ -1310,9 +1087,6 @@ export const openModal = ( props = {nome,tipo} ) => {
 //       dispatch({type:'MODAL_CREATE',payload:{nome:nome,conteudo:conteudo}})
 //     }
 // }
-
-
-
 
 export const closeModal = ( nome='modal') => {
     return (dispatch) => {
@@ -1341,15 +1115,6 @@ export const setPref = (obj={}) => {
     
 }
 
-
-
-
-
-
-
-
-
-
 export const getMidiaTipo = (file) => {
 
       //pego o mini type
@@ -1373,16 +1138,8 @@ export const getMidiaTipo = (file) => {
 
 }
 
-
-
-
-
-
 // funcoes de geopoints
 //---------------------------
-
-
-
 
 export const sendGeoFiles = (formdata) => {
 
@@ -1401,9 +1158,6 @@ export const sendGeoFiles = (formdata) => {
                 )
 }
 
-
-
-
 export const getGeoJson = (modelo="terraindigena", options = {}) => {
 
                 //LETODO - colocar em config
@@ -1416,9 +1170,6 @@ export const getGeoJson = (modelo="terraindigena", options = {}) => {
                 )
 }
 
-
-
-
 export const docSearch = (palavra='') => {
 
         //LETODO - colocar em config
@@ -1429,7 +1180,6 @@ export const docSearch = (palavra='') => {
         )
 
 }
-
 
 export const getDepedenciaMidia = (id='') => {
 
@@ -1442,13 +1192,6 @@ export const getDepedenciaMidia = (id='') => {
 
 }
 
-
-
-
-
-
-
-
 // TABELAS
 
 export const tabelaAdd = (nome) => {
@@ -1460,7 +1203,6 @@ export const tabelaAdd = (nome) => {
     }
 
 }
-
 
 export const tabelaAddFilter = (nome,filter) => {
     //props.nome

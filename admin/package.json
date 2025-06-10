@@ -24,11 +24,16 @@
     "webpack-dev-server": "^5.2.2"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.8.2",
+    "geodesy": "^2.4.0",
+    "lodash": "^4.17.21",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^6.30.1",
     "semantic-ui-css": "^2.5.0",
-    "semantic-ui-react": "^2.1.5"
+    "semantic-ui-react": "^2.1.5",
+    "wellknown": "^0.5.0"
   }
 }

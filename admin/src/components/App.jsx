@@ -1,9 +1,12 @@
 import React from 'react';
-
-import Products from './testes/Products';
-import Testes from './testes/Testes';
+import { input } from 'semantic-ui-react';
 import Sidebar from './Sidebar';
+import Topbar from './Topbar';
 
+// import { connect } from 'react-redux';
+// import { Header, Modal, Label, List, Icon, Accordion, Input, Dimmer, Loader, Image, Segment, Button } from 'semantic-ui-react';
+// import { si3, si3Actions }  from 'actions/index';
+// import { withRouter, Router, Route, IndexRoute, browserHistory,  Link } from 'react-router';
 
 
 const App = () => (
@@ -11,14 +14,10 @@ const App = () => (
     <h1 style={{ color: 'green' }}>React funcionando sem Redux nem Router</h1>
     <p>Esse é um teste simples com Webpack.</p>
 
-
-    <Testes />
-
-
-    <Products />
-
-
     <Sidebar />
+
+
+    <Topbar />
   </div>
 );
 

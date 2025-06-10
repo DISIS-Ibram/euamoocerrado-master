@@ -1,18 +1,14 @@
-import React, { Component } from 'react';
-// import { si3 }  from 'actions/index';
-import { si3 }  from '';
-import {Image, Icon } from 'semantic-ui-react';
+import React from 'react';
+import { si3 } from '../../actions/index';
+import { Image } from 'semantic-ui-react';
 
-
-export default class Avatar extends React.Component {
-
+class Avatar extends React.Component {
     static defaultProps = {
         size:80,
         url:""
     }
-
+    
     render(){
-        
         if(this.props.url == "" || this.props.url === null){
             return (<span className='ui avatar image'>
                 <center>
@@ -20,7 +16,8 @@ export default class Avatar extends React.Component {
             </center> </span>)
         }else{
             return (<Image avatar src={si3.util.thumb(this.props.url,this.props.size)}  />)
-        }
-
+        }        
     }
 }
+
+export default Avatar;
