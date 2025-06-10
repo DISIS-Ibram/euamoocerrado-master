@@ -62,7 +62,11 @@ module.exports = {
     open: true,
   },
   module: {
-    rules: [
+  rules: [
+      {
+        test: /\.svg$/i,
+        use: 'raw-loader',
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
