@@ -25,6 +25,7 @@ from dj_rest_auth.views import (
 
 from dj_rest_auth.views import UserDetailsView
 
+# Adiciona as demais rotas
 from euamoocerrado.settings import eac_router
 
 from especie import especie_urls

@@ -15,7 +15,7 @@ class KhartesSerializer(ModelSerializer):
         """
         function = get_serializer_funtion(self.Meta.model, 'create')
         if function:
-            return function(self, validated_data)                
+            return function(self, validated_data)
         return super(KhartesSerializer, self).create(validated_data)
 
 
@@ -166,6 +166,7 @@ def SerializerFactory(model, includes={}, fields=[], BaseClass=KhartesSerializer
         deeppath+=model.__name__
     else:
         deeppath=model.__name__
+
     f0, f1 = get_fields_and_extra_kwargs(model)
     fields = [i for i in fields if i in f0]
     if fields:

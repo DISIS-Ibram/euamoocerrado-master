@@ -12,7 +12,7 @@ import Home from './pages/Home';
 
 //Story
 // import { store, history } from "./configStore"
-// import { store } from "./configStore"
+import {store} from './configStore.js';
 
 const root = ReactDOM.createRoot(document.getElementById('app'));
 root.render(<App />);

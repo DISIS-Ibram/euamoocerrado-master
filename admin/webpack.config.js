@@ -62,17 +62,20 @@ module.exports = {
     open: true,
   },
   module: {
-  rules: [
-      {
-        test: /\.svg$/i,
-        use: 'raw-loader',
-      },
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: 'babel-loader',
-      }
-    ],
+    rules: [
+        {
+          test: /\.svg$/i,
+          use: 'raw-loader',
+        },
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /node_modules/,
+          use: {
+            loader: "babel-loader"
+          }
+          // use: 'babel-loader',
+        }
+      ],
   },
   plugins: [
     new HtmlWebpackPlugin({

@@ -49,6 +49,13 @@ Desenvolvido em DJANGO. É utilizado para inclusão de dados no backend, atravé
 # #########################
 DANIEL
 
+Executar o Docker-compose.yaml
+docker compose build
+
 Após executar os containers de db e backend, executar o comando para restaurar o banco de dados
 docker compose exec db bash -c "psql -U postgres -d euamocerrado < /db-backup/backup_completo.sql"
+
+Frontend
+Instalar as dependências
+npm install
 
