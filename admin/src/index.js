@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 // Componentes
-import App from './components/App';
+import App from './components/App.js';
 // import Home from './pages/Home';
 
 //Story
