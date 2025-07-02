@@ -11,10 +11,10 @@ import * as _  from 'lodash';
 // import fuzzysearch from 'fuzzysearch';
 
 // import { SI3RC_MODELS, getIDKey, getIDValue, t, d } from 'models/models'
-import { SI3RC_MODELS, getIDKey, getIDValue, t, d } from '../models/models'
+import { SI3RC_MODELS, getIDKey, getIDValue, t, d } from '../models/models.js'
 // import { denormalize } from 'denormalizr';
 
-import * as util from '../util/s3util'
+import * as util from '../util/s3util.js'
 
 import {Header, Modal, Label, List, Icon, Accordion, Input, Dimmer, Loader, Image, Segment, Button } from 'semantic-ui-react';
 
@@ -626,310 +626,266 @@ export function adicionaPropriedadesVirtuais(obj){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// export const excluirDeModel = (id,tipo) => {
-
-
-//      let modelo = getModel(tipo);
-
-//      let state = store.getState().api;
-
-//      //pego o id do objto;
+export const excluirDeModel = (id,tipo) => {
+     let modelo = getModel(tipo);
+     let state = store.getState().api;
+     //pego o id do objto;
+     //apago o proprio objeto
      
+     //procuro para ver se tem algum modelo que tem esse objeto
+     //se tiver voulto esse modelo sem o id tambem
 
-//      //apago o proprio objeto
-     
+    //defino uma funcao interna que normaliza
+    //é chamada recorrente
+    const deletiza = (obj,modelo,bag={}) => {
 
-//      //procuro para ver se tem algum modelo que tem esse objeto
-//      //se tiver voulto esse modelo sem o id tambem
+        //no bag sempre mantenho o que tenho anteriormente
+        let newobj = {}
 
-//     //defino uma funcao interna que normaliza
-//     //é chamada recorrente
-//     const deletiza = (obj,modelo,bag={}) => {
+        //tipo atual
+        let tipo = modelo.type
 
-//         //no bag sempre mantenho o que tenho anteriormente
-//         let newobj = {}
+        //crio o tipo no bag se não existir
+        if(! _.has(bag,tipo) )
+            bag[tipo] = {}
 
-//         //tipo atual
-//         let tipo = modelo.type
+        //pego qual o id utilizado como key no modelo
+        let idkey = (modelo.idkey || 'id');
+        let idObj = obj[idkey];
 
-//         //crio o tipo no bag se não existir
-//         if(! _.has(bag,tipo) )
-//             bag[tipo] = {}
+        //e adiciono o Objeto no bag 
+        if(! _.has(bag[tipo],idObj) ){
+            bag[tipo][idObj] = {}
+        }
 
-//         //pego qual o id utilizado como key no modelo
-//         let idkey = (modelo.idkey || 'id');
-//         let idObj = obj[idkey];
-
-
-
-//         //e adiciono o Objeto no bag 
-//         if(! _.has(bag[tipo],idObj) ){
-//             bag[tipo][idObj] = {}
-//         }
-
-//         bag[tipo][idObj] = _.merge(bag[tipo][idObj],obj)
+        bag[tipo][idObj] = _.merge(bag[tipo][idObj],obj)
 
 
-//         //verifico se tem um mapeamento no modelo
-//         if( _.has(modelo,'map') ){
+        //verifico se tem um mapeamento no modelo
+        if( _.has(modelo,'map') ){
             
-//             const map = modelo.map
-//             // se tem pecorro tudo que é mapeado
-//             _.forIn(map, (v,k) => {
+            const map = modelo.map
+            // se tem pecorro tudo que é mapeado
+            _.forIn(map, (v,k) => {
 
-//                 var objAtualNaBag = bag[tipo][idObj];
+                var objAtualNaBag = bag[tipo][idObj];
 
-//                 //pego o modelo referente a esse objeto
-//                 let modeloNew = SI3RC_MODELS[v] || false 
-//                 //pego o id que pertence a esse objRefer 
-//                 let idkey = (modeloNew.idkey || 'id');
+                //pego o modelo referente a esse objeto
+                let modeloNew = SI3RC_MODELS[v] || false 
+                //pego o id que pertence a esse objRefer 
+                let idkey = (modeloNew.idkey || 'id');
 
 
-//                 //vejo se no meu objeto existe essa key e se é um objeto ou array
-//                 if( _.has(objAtualNaBag,k) && _.isObjectLike(objAtualNaBag[k]) ){
+                //vejo se no meu objeto existe essa key e se é um objeto ou array
+                if( _.has(objAtualNaBag,k) && _.isObjectLike(objAtualNaBag[k]) ){
                     
-//                     // pego o objeto
-//                     let objRefer = objAtualNaBag[k]
+                    // pego o objeto
+                    let objRefer = objAtualNaBag[k]
 
-//                     if( _.isArray(objRefer) ){
+                    if( _.isArray(objRefer) ){
 
-//                         let refs = []
-//                         objRefer.map( (objRefAtual)=>{
-//                                 //pego o id do objeto referencia
-//                                 let ref = objRefAtual[idkey];
-//                                 // e normalizo o valor do objRefer atual tb
-//                                 refs.push(deletiza(objRefAtual, modeloNew, bag))
-//                         })
+                        let refs = []
+                        objRefer.map( (objRefAtual)=>{
+                                //pego o id do objeto referencia
+                                let ref = objRefAtual[idkey];
+                                // e normalizo o valor do objRefer atual tb
+                                refs.push(deletiza(objRefAtual, modeloNew, bag))
+                        })
 
-//                         objAtualNaBag[k] = refs;
+                        objAtualNaBag[k] = refs;
 
-//                     }else{
-//                         //pego o id do objeto referencia
-//                         let ref = objRefer[idkey];
-//                         // e normalizo o valor do objRefer atual tb
-//                         objAtualNaBag[k] = deletiza(objRefer, modeloNew, bag)
+                    }else{
+                        //pego o id do objeto referencia
+                        let ref = objRefer[idkey];
+                        // e normalizo o valor do objRefer atual tb
+                        objAtualNaBag[k] = deletiza(objRefer, modeloNew, bag)
 
-//                     }
-//                 }
+                    }
+                }
             
-//             })
+            })
         
-//         }
+        }
 
+        //normalize pode retornar a nova referencia dos objetos, né?
+        return idObj;
+    }
 
-//         //normalize pode retornar a nova referencia dos objetos, né?
-//         return idObj;
-    
-//     }
+    let objSerial = {}
+    let bag = {}
 
+    bag = state[modelo.type][id];
 
-
-
-
-//     let objSerial = {}
-    
-//     let bag = {}
-
-//     bag = state[modelo.type][id];
-
-
-//     _.forIn(obj, 
-//         (v,k)=>{ 
+    _.forIn(obj, 
+        (v,k)=>{ 
            
-//             objSerial[tipo] = deletiza(v,modelo,bag)
-//         } 
-//     )
+            objSerial[tipo] = deletiza(v,modelo,bag)
+        } 
+    )
     
-//     // console.log('====  NORMALIZADO '+tipo.toUpperCase()+'===========')
-//     // console.log(bag)
+    // console.log('====  NORMALIZADO '+tipo.toUpperCase()+'===========')
+    // console.log(bag)
 
-//     //dou um merge 
-    
-//     return {entities:bag};
-
-// }
+    //dou um merge    
+    return {entities:bag};
+}
 
 
-// //OBJ - recebo o objeto ou array de objetos
-// //TIPO - o tipo relacionado ao model
-// //entities - todos os objetos da api
+//OBJ - recebo o objeto ou array de objetos
+//TIPO - o tipo relacionado ao model
+//entities - todos os objetos da api
 
-// export const normalizerModel = (obj,tipo) => {
+export const normalizerModel = (obj,tipo) => {
 
-//     let modelo =  getModel(tipo) //SI3RC_MODELS[tipo] || false
-    
+    let modelo =  getModel(tipo) //SI3RC_MODELS[tipo] || false
 
-//     //LENOTA - essa parte não deve executar mais, ja que o get tipo retorna um novo 
-//     // schema de modelo virtual mesmo que baseado em url fornecida como o tipo
-//     // verificar se isso nao vai afetar o resto do sistema
-//     // if(!modelo){ 
-//     //     let res = {}
-//     //     res.entities = {}
-//     //     res.entities[tipo] = obj;
-//     //     return res
-//     // }
-
-
-//     //defino uma funcao interna que normaliza
-//     //é chamada recorrente
-//     const normaliza = (obj,modelo,bag={}) => {
-
-//         //no bag sempre mantenho o que tenho anteriormente
-//         let newobj = {}
+    //LENOTA - essa parte não deve executar mais, ja que o get tipo retorna um novo 
+    // schema de modelo virtual mesmo que baseado em url fornecida como o tipo
+    // verificar se isso nao vai afetar o resto do sistema
+    // if(!modelo){ 
+    //     let res = {}
+    //     res.entities = {}
+    //     res.entities[tipo] = obj;
+    //     return res
+    // }
 
 
-//         //tipo atual
-//         let tipo = modelo.type
+    //defino uma funcao interna que normaliza
+    //é chamada recorrente
+    const normaliza = (obj,modelo,bag={}) => {
 
-//         //crio o tipo no bag se não existir
-//         if(! _.has(bag,tipo) )
-//             bag[tipo] = {}
+        //no bag sempre mantenho o que tenho anteriormente
+        let newobj = {}
 
-//         //pego qual o id utilizado como key no modelo
-//         let idkey = (modelo.idkey || 'id');
-       
+        //tipo atual
+        let tipo = modelo.type
 
-//        let idObj;
-//        //se o objeto em si é uma string, ele deve pode ser o objeto que é a sua propria key, tipo tag
-//        if( _.isString(obj) ){
-//              idObj = obj
-//              var valor = obj
-//              obj = {}
-//              obj[idkey] = valor
-//        }else{
-//              idObj = obj[idkey];
-//        }
+        //crio o tipo no bag se não existir
+        if(! _.has(bag,tipo) )
+            bag[tipo] = {}
+
+        //pego qual o id utilizado como key no modelo
+        let idkey = (modelo.idkey || 'id');      
+
+       let idObj;
+       //se o objeto em si é uma string, ele deve pode ser o objeto que é a sua propria key, tipo tag
+       if( _.isString(obj) ){
+             idObj = obj
+             var valor = obj
+             obj = {}
+             obj[idkey] = valor
+       }else{
+             idObj = obj[idkey];
+       }
         
-//         //se nao tenho id provavelmente estou retornando alguma coisa que nao seja um modelos em si
-//          if(idObj === undefined){
-//                 idObj = 0
-//          }
-//         //CRIO ATRIBUTOS INTERNOS
-//         //usando set para nao da problema quando
-//         //normalizo um objeto ja normalizado
-//         _.set(obj,"_idkey",idkey)
-//         _.set(obj,"_id",idObj)
-//         _.set(obj,"_type",tipo)
+        //se nao tenho id provavelmente estou retornando alguma coisa que nao seja um modelos em si
+         if(idObj === undefined){
+                idObj = 0
+         }
+        //CRIO ATRIBUTOS INTERNOS
+        //usando set para nao da problema quando
+        //normalizo um objeto ja normalizado
+        _.set(obj,"_idkey",idkey)
+        _.set(obj,"_id",idObj)
+        _.set(obj,"_type",tipo)
 
 
-//         //e adiciono o Objeto no bag 
-//         if(! _.has(bag[tipo],idObj) ){
-//             bag[tipo][idObj] = {}
-//         }
+        //e adiciono o Objeto no bag 
+        if(! _.has(bag[tipo],idObj) ){
+            bag[tipo][idObj] = {}
+        }
 
 
-//       if( _.isString(obj) ){
-//               bag[tipo][idObj] = obj
-//       }else{
-//                bag[tipo][idObj] = _.merge(bag[tipo][idObj],obj)
-//       }
+      if( _.isString(obj) ){
+              bag[tipo][idObj] = obj
+      }else{
+               bag[tipo][idObj] = _.merge(bag[tipo][idObj],obj)
+      }  
 
-     
-
-//         //verifico se tem um mapeamento no modelo
-//         if( _.has(modelo,'map') ){
+        //verifico se tem um mapeamento no modelo
+        if( _.has(modelo,'map') ){
             
-//             const map = modelo.map
-//             // se tem pecorro tudo que é mapeado
-//             _.forIn(map, (v,k) => {
-//                 var objAtualNaBag = bag[tipo][idObj];
+            const map = modelo.map
+            // se tem pecorro tudo que é mapeado
+            _.forIn(map, (v,k) => {
+                var objAtualNaBag = bag[tipo][idObj];
                 
-//                 //pego o modelo referente a esse objeto
-//                 let modeloNew = SI3RC_MODELS[v] || false 
+                //pego o modelo referente a esse objeto
+                let modeloNew = SI3RC_MODELS[v] || false 
 
-//                 //pego o id que pertence a esse objRefer 
-//                 let idkey = (modeloNew.idkey || 'id');
+                //pego o id que pertence a esse objRefer 
+                let idkey = (modeloNew.idkey || 'id');
 
 
-//                 //vejo se no meu objeto existe essa key e se é um objeto ou array
-//                 if( _.has(objAtualNaBag,k) && _.isObjectLike(objAtualNaBag[k]) ){
+                //vejo se no meu objeto existe essa key e se é um objeto ou array
+                if( _.has(objAtualNaBag,k) && _.isObjectLike(objAtualNaBag[k]) ){
                     
-//                     // pego o objeto
-//                     let objRefer = objAtualNaBag[k]
+                    // pego o objeto
+                    let objRefer = objAtualNaBag[k]
 
-//                     if( _.isArray(objRefer) ){
+                    if( _.isArray(objRefer) ){
 
-//                         let refs = []
+                        let refs = []
 
-//                         objRefer.map( (objRefAtual)=>{
-//                                 //se for um objeto que teho normalizo ele
-//                                 if(_.isObject(objRefAtual)){
-//                                     //pego o id do objeto referencia
-//                                     let ref = objRefAtual[idkey];
-//                                     // e normalizo o valor do objRefer atual tb
-//                                     refs.push(normaliza(objRefAtual, modeloNew, bag))
-//                                 }else{
-//                                   //senao so coloco ele de volta.
+                        objRefer.map( (objRefAtual)=>{
+                                //se for um objeto que teho normalizo ele
+                                if(_.isObject(objRefAtual)){
+                                    //pego o id do objeto referencia
+                                    let ref = objRefAtual[idkey];
+                                    // e normalizo o valor do objRefer atual tb
+                                    refs.push(normaliza(objRefAtual, modeloNew, bag))
+                                }else{
+                                  //senao so coloco ele de volta.
                                   
-//                                   refs.push(objRefAtual)
-//                                    //antes para a tag estaca colocando de volta
-//                                    //refs.push(normaliza(objRefAtual, modeloNew, bag))
-//                                    //e salvo na bag, claro
-//                                    // bag[tipo][idObj] = _.merge(bag[tipo][idObj],obj)
-//                                 }
-//                         })
+                                  refs.push(objRefAtual)
+                                   //antes para a tag estaca colocando de volta
+                                   //refs.push(normaliza(objRefAtual, modeloNew, bag))
+                                   //e salvo na bag, claro
+                                   // bag[tipo][idObj] = _.merge(bag[tipo][idObj],obj)
+                                }
+                        })
 
 
-//                         objAtualNaBag[k] = refs;
+                        objAtualNaBag[k] = refs;
 
-//                     }else{
-//                         //pego o id do objeto referencia
-//                        if(_.isObject(objRefer)){
-//                           // e normalizo o valor do objRefer atual tb
-//                           objAtualNaBag[k] = normaliza(objRefer, modeloNew, bag)
-//                       }else{
-//                           objAtualNaBag[k] = objRefer;
-//                       }
-//                     }
+                    }else{
+                        //pego o id do objeto referencia
+                       if(_.isObject(objRefer)){
+                          // e normalizo o valor do objRefer atual tb
+                          objAtualNaBag[k] = normaliza(objRefer, modeloNew, bag)
+                      }else{
+                          objAtualNaBag[k] = objRefer;
+                      }
+                    }
 
-//                 }
+                }
             
-//             })
-        
-//         }
+            })
+        }
 
 
-//         //normalize pode retornar a nova referencia dos objetos, né?
-//         return idObj;
+        //normalize pode retornar a nova referencia dos objetos, né?
+        return idObj;
+    }
+
+    let objSerial = {}
+    let bag = {}
+
+    myconsole.log('====  NORMALIZER | VAI NORMALIZAR ===========',obj)
+
+
+    _.forIn(obj, 
+        (v,k)=>{ 
+            objSerial[tipo] = normaliza(v,modelo,bag)
+        } 
+    )
     
-//     }
+    myconsole.log('====   NORMALIZER | NORMALIZADO '+tipo.toUpperCase()+'===========%o',bag)
 
-
-
-
-
-//     let objSerial = {}
+    //dou um merge 
     
-//     let bag = {}
-
-//     myconsole.log('====  NORMALIZER | VAI NORMALIZAR ===========',obj)
-
-
-//     _.forIn(obj, 
-//         (v,k)=>{ 
-//             objSerial[tipo] = normaliza(v,modelo,bag)
-//         } 
-//     )
-    
-//     myconsole.log('====   NORMALIZER | NORMALIZADO '+tipo.toUpperCase()+'===========%o',bag)
-
-//     //dou um merge 
-    
-//     return {entities:bag};
-
-// }
+    return {entities:bag};
+}
 
 
 

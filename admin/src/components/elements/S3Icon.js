@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import IconesSvg from './icons/Icon';
+import IconesSvg from './icons/Icon.js';
 import {Icon as UIIcon} from 'semantic-ui-react'
 
 //tanto icones svg como do semantic-ui com uma interface parecida.

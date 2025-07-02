@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import icons from './_getIcons';
+// import icons from './_getIcons.js'; // está com erro no require
 
 const Icon = ({ color = '#333333', size = 24, name, tipo = 'svg', ...rest }) => {
   const divStyle = {

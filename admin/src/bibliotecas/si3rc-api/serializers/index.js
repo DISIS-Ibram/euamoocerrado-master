@@ -1,5 +1,5 @@
-import serialize from './serialize';
-import deserialize from './deserialize';
+import serialize from './serialize.js';
+import deserialize from './deserialize.js';
 
 export {
   serialize,

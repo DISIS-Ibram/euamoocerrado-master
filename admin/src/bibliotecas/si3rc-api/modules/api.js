@@ -1,18 +1,18 @@
 import { camelize } from 'humps';
-// import { serialize, deserialize } from '../serializers';
-// import { si3, si3Actions }  from 'actions/index';
-import { si3, si3Actions }  from '../../../actions/index';
-// import { SI3RC_MODELS, getIDValue, getIDKey } from 'models/models'
-import { SI3RC_MODELS, getIDValue, getIDKey } from '../../../models/models'
+// // import { serialize, deserialize } from '../serializers';
+// // import { si3, si3Actions }  from 'actions/index';
+import { si3, si3Actions }  from '../../../actions/index.js';
+// // import { SI3RC_MODELS, getIDValue, getIDKey } from 'models/models'
+import { SI3RC_MODELS, getIDValue, getIDKey } from '../../../models/models.js'
 import * as _  from 'lodash';
-// import {normalizerModel} from 'actions/actions';
-import {normalizerModel} from '../../../actions/actions';
+// // import {normalizerModel} from 'actions/actions';
+import { normalizerModel } from '../../../actions/actions.js';
 import u from 'updeep';
 
-// import Notifications from 'react-notification-system-redux';
+// // import Notifications from 'react-notification-system-redux';
 
-// import criaconsole from 'util/myconsole';
-import criaconsole from '../../../util/myconsole';
+// // import criaconsole from 'util/myconsole';
+import criaconsole from '../../../util/myconsole.js';
 const _debug = false;
 const myconsole = criaconsole(_debug, ' *** Api.js | ', 'color:green;font-weight:bold');
 
@@ -46,9 +46,6 @@ const requestCreator = (method, resources, modeloSchema, meta={}) => {
     meta,
   };
 };
-
-
-
 
 
 export const receive = (resources, method, schema,resourceOriginal) => {
@@ -188,7 +185,6 @@ function getInitialState() {
 }
 
 
-
 // O RECEIVE REDUCER - RODA NO REDUCER PARA GERAR O NOVO STATE
 //---------------------------
 //state - é o tree api atual
@@ -198,19 +194,12 @@ function getInitialState() {
 function receiveReducer(state, { method, resources, schema, resourceOriginal }) {
 
   myconsole.log("%c====receiveReducer======",'color:red;font-size:24px')
-
   let res;
-  
   res = resources;
-
   res = (_.isArray(res))? res : [res];
 
-
   let datanormalizado = {};
-
-
 // myconsole.log("%c====data normalizado ANTES ======,%o",'color:red;font-size:24px', res)
-
 
   if(method != OPTIONS){
 
@@ -233,59 +222,17 @@ function receiveReducer(state, { method, resources, schema, resourceOriginal }) 
       datanormalizado = { formOptions, modelOptions }
   }
 
-  //LENOTA
-  //u = updeep. So atualiza o que muda, o resto retorna referencia.
-  //importante para os reselect verificar se mudou ou nao um objeto
-  //usando merge retornava tudo como um novo objeto, fazendo comparacao de objeto com referencia não funcionar
-  //FORMA ANTIGA > let dataFinal = _.merge({},state,datanormalizado); 
- 
-  // myconsole.log("%c====data normalizado ======,%o",'color:red;font-size:24px', datanormalizado)
-
-
-
-
-
-
-  // let dataFinal = _.merge({},state,datanormalizado); 
-
   let dataFinal;
 
   if(method === DELETE ){
-
-
-
     //LETODO - fazer remover de result também, e de todos os nested objects também
     var pathToRemove = ('entities.'+schema.type+'.'+resourceOriginal._id);
     dataFinal = u.omit(pathToRemove,state);
-   
-
-  }else{
-
-       dataFinal =  u(datanormalizado, state);
-
-
-      
+    }else{
+       dataFinal =  u(datanormalizado, state);      
   }
-
-
-
   myconsole.log("%c====receiveReducer Final ======",'color:red;font-size:24px')
-
-  
   return dataFinal;
 }
 
-
-
-
-
-
-
-
 export default reducer;
-
-
-
-
-
-

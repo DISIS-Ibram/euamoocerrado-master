@@ -37,3 +37,5 @@ class StringFormatValidation {
     return formatted;
   }
 }
+
+export default StringFormatValidation;

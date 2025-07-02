@@ -10,14 +10,14 @@ import Dms from 'geodesy/dms.js';
 
 // // import { LatLonEllipsoidal as LatLon } from 'geodesy'
 // // import LatLon from 'geodesy/latlon-ellipsoidal-vincenty.js';
-import LatLon from 'geodesy/latlon-ellipsoidal-vincenty';
+import LatLon from 'geodesy/latlon-ellipsoidal-vincenty.js';
 
 // // import * as model from 'models/models'
 // // import * as model from '../models/models.js'
-import * as model from '../models/models'
+import * as model from '../models/models.js'
 
 // // export { getIDKey, getIDValue, t, d } from '../models/models.js'
-export { getIDKey, getIDValue, t, d } from '../models/models'
+export { getIDKey, getIDValue, t, d } from '../models/models.js'
 
 // // import prws from './processaResourcesWithState.js'
 // import prws from './processaResourcesWithState'

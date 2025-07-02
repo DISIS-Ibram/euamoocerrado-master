@@ -1,72 +1,73 @@
-// // Modern Redux store configuration for React 18
-// import { configureStore, createSlice, combineReducers } from '@reduxjs/toolkit';
+// Modern Redux store configuration for React 18
+
+import { configureStore, createSlice, combineReducers } from '@reduxjs/toolkit';
 // import { reducer as formReducer } from 'redux-form'; // Optional: consider removing in future
 // import { reducer as notifications } from 'react-notification-system-redux';
-// import thunk from 'redux-thunk';
+import { thunk } from 'redux-thunk';
 // import config from './config';
-// import _ from 'lodash';
-// import { apiReducer, createApiMiddleware } from './bibliotecas/si3rc-api/';
+import _ from 'lodash';
+import { apiReducer, createApiMiddleware } from './bibliotecas/si3rc-api/index.js';
 
-// // Initial preferences
-// const prefDefault = {
-//   tileSel: '',
-// };
-// const prefLocal = JSON.parse(localStorage.getItem('si3rcpreferences')) || {};
-// const initialPrefs = _.defaultsDeep(prefLocal, prefDefault);
+// Initial preferences
+const prefDefault = {
+  tileSel: '',
+};
+const prefLocal = JSON.parse(localStorage.getItem('si3rcpreferences')) || {};
+const initialPrefs = _.defaultsDeep(prefLocal, prefDefault);
 
-// const prefsSlice = createSlice({
-//   name: 'prefs',
-//   initialState: initialPrefs,
-//   reducers: {
-//     setPreference: (state, action) => {
-//       const newPrefs = { ...state, ...action.payload };
-//       localStorage.setItem('si3rcpreferences', JSON.stringify(newPrefs));
-//       return newPrefs;
-//     },
-//   },
-// });
+const prefsSlice = createSlice({
+  name: 'prefs',
+  initialState: initialPrefs,
+  reducers: {
+    setPreference: (state, action) => {
+      const newPrefs = { ...state, ...action.payload };
+      localStorage.setItem('si3rcpreferences', JSON.stringify(newPrefs));
+      return newPrefs;
+    },
+  },
+});
 
-// const modalSlice = createSlice({
-//   name: 'modal',
-//   initialState: [],
-//   reducers: {
-//     createModal: (state, action) => {
-//       return [...state.filter(m => m.nome !== action.payload.nome), action.payload];
-//     },
-//     removeModal: (state, action) => {
-//       return state.filter(m => m.nome !== action.payload.nome);
-//     },
-//   },
-// });
+const modalSlice = createSlice({
+  name: 'modal',
+  initialState: [],
+  reducers: {
+    createModal: (state, action) => {
+      return [...state.filter(m => m.nome !== action.payload.nome), action.payload];
+    },
+    removeModal: (state, action) => {
+      return state.filter(m => m.nome !== action.payload.nome);
+    },
+  },
+});
 
-// const userSlice = createSlice({
-//   name: 'usuario',
-//   initialState: { id: false, _admin: false },
-//   reducers: {
-//     login: (state, action) => {
-//       const user = { ...action.payload };
-//       window.USER = user;
-//       window.PERM = user.permissions;
-//       return user;
-//     },
-//     logout: () => ({ id: false }),
-//   },
-// });
+const userSlice = createSlice({
+  name: 'usuario',
+  initialState: { id: false, _admin: false },
+  reducers: {
+    login: (state, action) => {
+      const user = { ...action.payload };
+      window.USER = user;
+      window.PERM = user.permissions;
+      return user;
+    },
+    logout: () => ({ id: false }),
+  },
+});
 
-// const tabelaSlice = createSlice({
-//   name: 'tabela',
-//   initialState: {},
-//   reducers: {
-//     addTabela: (state, action) => {
-//       const { nome } = action.payload;
-//       state[nome] = { nome, filter: {} };
-//     },
-//     addTabelaFilter: (state, action) => {
-//       // You can customize this according to your logic
-//       return action.payload;
-//     },
-//   },
-// });
+const tabelaSlice = createSlice({
+  name: 'tabela',
+  initialState: {},
+  reducers: {
+    addTabela: (state, action) => {
+      const { nome } = action.payload;
+      state[nome] = { nome, filter: {} };
+    },
+    addTabelaFilter: (state, action) => {
+      // You can customize this according to your logic
+      return action.payload;
+    },
+  },
+});
 
 // const rootReducer = combineReducers({
 //   form: formReducer, // Optional: consider removing in favor of react-hook-form

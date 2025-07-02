@@ -2,17 +2,17 @@ import queryString from 'qs';
 import { decamelize } from 'humps';
 import { Link } from 'react-router-dom';
 import * as _ from 'lodash';
-import * as apiActions from '../modules/api';
+import * as apiActions from '../modules/api.js';
 // import { SI3RC_MODELS, SI3RC_MODELS_API_MAP, getIDValue, getIDKey, getModel } from 'models/models';
-import { SI3RC_MODELS, SI3RC_MODELS_API_MAP, getIDValue, getIDKey, getModel } from '../../../models/models';
+import { SI3RC_MODELS, SI3RC_MODELS_API_MAP, getIDValue, getIDKey, getModel } from '../../../models/models.js';
 
 // import Notifications from 'react-notification-system-redux';
 
 // import ViewMore from 'components/ViewMore';
-import ViewMore from '../../../components/ViewMore';
+import ViewMore from '../../../components/ViewMore.js';
 
 // import criaconsole from 'util/myconsole';
-import criaconsole from '../../../util/myconsole';
+import criaconsole from '../../../util/myconsole.js';
 
 const _debug = false;
 const myconsole = criaconsole(_debug, ' *** ApiMiddleware.js | ', 'color:green;font-weight:bold');
