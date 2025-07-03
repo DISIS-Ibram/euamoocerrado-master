@@ -1,5 +1,5 @@
 import React from 'react';
-// import { input } from 'semantic-ui-react';
+import { input } from 'semantic-ui-react';
 // import Sidebar from './Sidebar';
 // import Topbar from './Topbar';
 
