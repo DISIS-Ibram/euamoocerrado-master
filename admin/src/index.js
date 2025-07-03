@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux'
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+// import ReactDOM from 'react-dom/client';
+// import { Provider } from 'react-redux'
+// import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 // Componentes
 import App from './components/App.js';
@@ -10,5 +10,5 @@ import App from './components/App.js';
 //Story
 // import {store} from './configStore.js';
 
-const root = ReactDOM.createRoot(document.getElementById('app'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
