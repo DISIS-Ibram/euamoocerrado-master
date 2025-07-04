@@ -59,3 +59,7 @@ Frontend
 Instalar as dependências
 npm install
 
+
+Rodar o projeto 
+docker compose up -d
+

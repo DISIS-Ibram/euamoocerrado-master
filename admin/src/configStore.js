@@ -1,12 +1,13 @@
-// Modern Redux store configuration for React 18
-
 import { configureStore, createSlice, combineReducers } from '@reduxjs/toolkit';
 // import { reducer as formReducer } from 'redux-form'; // Optional: consider removing in future
 // import { reducer as notifications } from 'react-notification-system-redux';
 import { thunk } from 'redux-thunk';
 // import config from './config';
 import _ from 'lodash';
-import { apiReducer, createApiMiddleware } from './bibliotecas/si3rc-api/index.js';
+
+// import { apiReducer, createApiMiddleware } from './bibliotecas/si3rc-api/index.js'; // error
+import { apiActions } from './bibliotecas/si3rc-api/index.js'; // error
+
 
 // Initial preferences
 const prefDefault = {
@@ -79,28 +80,28 @@ const tabelaSlice = createSlice({
 //   tabela: tabelaSlice.reducer,
 // });
 
-// const loggerMiddleware = store => next => action => {
-//   // You can customize logging or add debugging info here if needed
-//   return next(action);
-// };
+// // const loggerMiddleware = store => next => action => {
+// //   // You can customize logging or add debugging info here if needed
+// //   return next(action);
+// // };
 
-// const apiMiddleware = createApiMiddleware(window.SI3CONFIG.url, {
-//   'Content-Type': 'application/json',
-// });
+// // const apiMiddleware = createApiMiddleware(window.SI3CONFIG.url, {
+// //   'Content-Type': 'application/json',
+// // });
 
-// export const store = configureStore({
-//   reducer: rootReducer,
-//   middleware: getDefaultMiddleware =>
-//     getDefaultMiddleware().concat(loggerMiddleware, thunk, apiMiddleware),
-//   devTools: process.env.NODE_ENV !== 'production',
-// });
+// // export const store = configureStore({
+// //   reducer: rootReducer,
+// //   middleware: getDefaultMiddleware =>
+// //     getDefaultMiddleware().concat(loggerMiddleware, thunk, apiMiddleware),
+// //   devTools: process.env.NODE_ENV !== 'production',
+// // });
 
-// window.STORE = store;
+// // window.STORE = store;
 
-// // Routing is now handled using react-router-dom v6 via <BrowserRouter> in your root component
+// // // Routing is now handled using react-router-dom v6 via <BrowserRouter> in your root component
 
-// // Export actions if needed
-// export const { setPreference } = prefsSlice.actions;
-// export const { createModal, removeModal } = modalSlice.actions;
-// export const { login, logout } = userSlice.actions;
-// export const { addTabela, addTabelaFilter } = tabelaSlice.actions;
+// // // Export actions if needed
+// // export const { setPreference } = prefsSlice.actions;
+// // export const { createModal, removeModal } = modalSlice.actions;
+// // export const { login, logout } = userSlice.actions;
+// // export const { addTabela, addTabelaFilter } = tabelaSlice.actions;

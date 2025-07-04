@@ -1,26 +1,22 @@
 import React from 'react';
-import { input } from 'semantic-ui-react';
-// import Sidebar from './Sidebar';
-// import Topbar from './Topbar';
+// import { input } from 'semantic-ui-react';
+import Sidebar from './Sidebar.js';
+import Topbar from './Topbar.js';
 
 // import { connect } from 'react-redux';
 // import { Header, Modal, Label, List, Icon, Accordion, Input, Dimmer, Loader, Image, Segment, Button } from 'semantic-ui-react';
-// import { si3, si3Actions }  from 'actions/index';
+// import { si3, si3Actions }  from '../actions/index.js';
 // import { withRouter, Router, Route, IndexRoute, browserHistory,  Link } from 'react-router';
 
-
-// import icons from './elements/icons/_getIcons.js';
+import icons from './elements/icons/_getIcons.cjs';
 
 const App = () => (
   <div style={{ padding: 50 }}>
     <h1 style={{ color: 'green' }}>React funcionando sem Redux e sem Router</h1>
     <p>Esse é um teste simples com Webpack.</p>
-    {/* 
-    { <Sidebar /> }
-
+    <Sidebar />
 
     <Topbar /> 
-    */}
   </div>
 );
 

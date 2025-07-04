@@ -13,3 +13,7 @@ mixen box (all t l r b w h)
 npx webpack serve --config webpack.config.js 
 
 
+## Daniel
+
+npm install
+npm start

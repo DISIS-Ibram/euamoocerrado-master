@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Icon from './elements/S3Icon.js';
+// import Icon from './elements/S3Icon.js';
 
 function Home() {
   return <h2>Página Inicial</h2>;

@@ -7,7 +7,7 @@ import { createRoot } from 'react-dom/client';
 //Pages
 import App from './components/App.js';
 import Home from './pages/Home.js';
-// import Admin from './pages/Admin.js';
+// import Admin from './pages/Admin.js'; // erro lodash
 
 // import PessoasPageList from './pages/PessoasPageList';
 // import PessoasPageForm from './pages/PessoasPageForm';
@@ -35,7 +35,7 @@ import Home from './pages/Home.js';
 // import NotFound from './pages/NotFound';
 
 // //Story
-// import { store, history } from "./configStore.js"
+import { store, history } from "./configStore.js"
 
 
 
@@ -141,6 +141,6 @@ root.render(
 //             </Route>
 //         </Router>
 //     </Provider>,
-    // document.getElementById('app')
+
     <App />
 );
