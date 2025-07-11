@@ -18,7 +18,9 @@ docker run -d -p 8000:8000 nome-da-imagem
 docker run -it name-da-maquina /bin/bash    # máquina completa
 docker run -it nome-da-maquina /bin/sh      # máquina alpine - limitada
 
-
+# Rodar o projeto com o Dockerfile
+docker build -t eac-admin .
+docker run -p 8080:8080 eac-admin
 
 
 
