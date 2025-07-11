@@ -1,118 +1,111 @@
-// http://webpack.github.io/docs/configuration.html
-// http://webpack.github.io/docs/webpack-dev-server.html
-var app_root = 'src'; // the app root folder: src, src_users, etc
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
-var path = require('path');
-var publicPath = __dirname + '/public/';
-var webpack = require("webpack");
-
+const path = require('path');
+const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const nib = require('nib');
 
+const isDevelopment = process.env.NODE_ENV !== 'production';
+
 module.exports = {
-    cache: true,
-    devtool:"source-map", //inline-source-map",
-    entry: [
-        // http://gaearon.github.io/react-hot-loader/getstarted/
-        // 'webpack-dev-server/client?http://localhost:8080',
-        // 'webpack/hot/only-dev-server',
-        __dirname + '/' + app_root + '/index.js',
-    ],
-    
-    output: {
-        path: __dirname + '/public/js',
-        publicPath: 'js/',
-        filename: 'bundle.js',
-        chunkFilename: "bundle.js",
-        // pathinfo:true,
-        library: "[name]"
+  mode: isDevelopment ? 'development' : 'production',
+  devtool: isDevelopment ? 'eval-source-map' : 'source-map',
+  entry: path.resolve(__dirname, 'src/index.js'),
+  output: {
+    path: path.resolve(__dirname, 'public/js'),
+    publicPath: '/js/',
+    filename: 'bundle.js',
+    chunkFilename: 'bundle.[name].js',
+    clean: true,
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    alias: {
+      moment: 'moment',
     },
-    externals : {
-        lodash : {
-            commonjs: "lodash",
-            amd: "lodash",
-            root: "_" // indicates global variable
-        }
-    },
-    resolve: {
-      modules: [path.resolve(__dirname, "src"), "node_modules"],
-      alias:{'moment':'moment'},
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
-                include: [
-                    path.join(__dirname, "src") //important for performance!
-                ],
-                query: {
-                    cacheDirectory: true, //important for performance
-                    presets: ['es2015'],
-                    plugins: ["transform-object-rest-spread",
-                                "transform-class-properties",
-                                "transform-decorators-legacy",
-                                'lodash']
-                }
-            },
-            {
-              test: /\.svg$/,
-              loader: 'svg-inline-loader'
-            },
-            {
-                // https://github.com/jtangelder/sass-loader
-                test: /\.scss$/,
-                loaders: ['style-loader', 'css-loader', 'sass-loader'],
-            },
-            {
-                // https://github.com/jtangelder/sass-loader
-                test: /\.css$/,
-                loaders: ['style-loader', 'css-loader'],
-            },
-            {
-                test: /\.styl$/,
-                use: [
-                  'style-loader',
-                  'css-loader',
-                  {
-                    loader: 'stylus-loader',
-                    options: {
-                      use: [nib()],
-                      import: ['~nib/index.styl'] // imports into styl files
-                    }
-                  }
-                ],
-               
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        include: path.resolve(__dirname, 'src'),
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+            presets: [
+              '@babel/preset-env',
+              ['@babel/preset-react', { runtime: 'automatic' }],
+            ],
+            plugins: [
+              isDevelopment && require.resolve('react-refresh/babel'),
+              '@babel/plugin-proposal-class-properties',
+              '@babel/plugin-proposal-object-rest-spread',
+              ['@babel/plugin-proposal-decorators', { legacy: true }],
+              'babel-plugin-lodash',
+            ].filter(Boolean),
+          },
+        },
+      },
+      {
+        test: /\.scss$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
+        test: /\.styl$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'stylus-loader',
+            options: {
+              stylusOptions: {
+                use: [nib()],
+                import: ['~nib/index.styl'],
               },
+            },
+          },
         ],
-    },
-    devServer: {
-        contentBase: __dirname + '/public',
-        host:'0.0.0.0',
-        port:8080,
-        clientLogLevel: 'info',
-        hot: false,
-        inline: false,
-    },
-    plugins: [
-        new webpack.ProvidePlugin({
-                     React: "react",
-                     JSONTree:'react-json-tree'
-        }),
-        new LodashModuleReplacementPlugin,
-          //Typically you'd have plenty of other plugins here as well
-        new webpack.DllReferencePlugin({
-            context: path.join(__dirname, "src"),
-            manifest: require("./dll/vendor-manifest.json")
-        }),
-
-        //   new webpack.optimize.AggressiveMergingPlugin(),//Merge chunks 
-        
-        new CopyWebpackPlugin([
-            { from: 'src/images', to: 'public/images' },
-            { from: 'src/themes/dist', to: 'public/themes' }
-        ])
+      },
+      {
+        test: /\.svg$/,
+        use: 'svg-inline-loader',
+      },
     ],
-
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      React: 'react',
+      JSONTree: 'react-json-tree',
+    }),
+    new LodashModuleReplacementPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'src/images', to: '../images' },
+      ],
+    }),
+    new MiniCssExtractPlugin({
+      filename: '../css/[name].css',
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+    }),
+    isDevelopment && new ReactRefreshWebpackPlugin(),
+  ].filter(Boolean),
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, 'public'),
+    },
+    host: '0.0.0.0',
+    port: 8080,
+    hot: true,
+    historyApiFallback: true,
+    open: true,
+  },
 };
