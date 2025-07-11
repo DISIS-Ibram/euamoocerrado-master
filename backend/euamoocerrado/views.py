@@ -1,6 +1,6 @@
 from django.core.mail import send_mail
 from rest_framework.exceptions import ValidationError
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from django.utils.http import urlsafe_base64_decode as uid_decoder
 import ast
 from rest_framework.permissions import AllowAny
@@ -32,7 +32,8 @@ from django.shortcuts import render
 from django.contrib.gis.geos import GEOSGeometry
 from euamoocerrado.settings import MEDIA_ROOT
 
-from rest_auth.views import UserDetailsView
+# from rest_auth.views import UserDetailsView
+from dj_rest_auth.views import UserDetailsView
 
 from django.apps import apps
 from euamoocerrado.settings import INSTALLED_APPS
@@ -121,7 +122,7 @@ def SI3RCPasswordResetConfirmView(request, uidb64, token):
     user = None
     # Decode the uidb64 to uid to get User object
     try:
-        uid = force_text(uid_decoder(uidb64))
+        uid = force_str(uid_decoder(uidb64))
         user = User._default_manager.get(pk=uid)
     except (TypeError, ValueError, OverflowError, User.DoesNotExist):
         return JsonResponse({'uid': ['Invalid value']}, status=status.HTTP_412_PRECONDITION_FAILED, safe=False)
@@ -167,12 +168,6 @@ def send_email(data):
 
 
 @csrf_exempt
-class UploadFileForm(forms.Form):
-    file_field = forms.FileField(
-        widget=forms.ClearableFileInput(attrs={'multiple': True}))
-
-
-@csrf_exempt
 def handle_uploaded_file(geo_file):
     from django.contrib.gis.gdal import DataSource
     ds = DataSource(geo_file)
@@ -186,49 +181,52 @@ def handle_uploaded_file(geo_file):
             geoms.append(geom.json)
     return geoms
 
+@csrf_exempt
+class UploadFileForm(forms.Form):
+    file_field = forms.FileField(
+        # widget=forms.ClearableFileInput(attrs={'multiple': True}),
+        widget=forms.ClearableFileInput(attrs={'multiple': False}),
+        label="Selecione os arquivos",
+        required=False,
+        help_text="Selecione os arquivos para upload",
+    )
 
 @csrf_exempt
 def upload_geo_file(request):
     if request.method == 'POST':
-        try:
-            form = UploadFileForm(request.POST, request.FILES)
-            files = request.FILES.getlist('file_field')
-            folder = "geo_temp"
-            if form.is_valid():
-                geo_files = []
-                for f in files:
-                    f_name = str(clean_name(f.name))[2:-1]
-                    path = default_storage.save(os.path.join(
-                        folder, f_name), ContentFile(f.read()))
-                    f_path = (os.path.join(default_storage.base_location, path))
-                    geo_file = f_path
-                    if os.path.splitext(f_name)[1].lower() in GEO_FORMATS:
-                        geo_files.append(geo_file)
-                geoms_list = []
-                for g_file in geo_files:
+        form = UploadFileForm(request.POST, request.FILES)
+        files = request.FILES.getlist('file_field')  # agora compatível com o form
+        folder = "geo_temp"
+        if form.is_valid():
+            geo_files = []
+            for f in files:
+                f_name = str(clean_name(f.name))[2:-1]
+                path = default_storage.save(os.path.join(
+                    folder, f_name), ContentFile(f.read()))
+                f_path = os.path.join(default_storage.base_location, path)
+                if os.path.splitext(f_name)[1].lower() in GEO_FORMATS:
+                    geo_files.append(f_path)
+            geoms_list = []
+            for g_file in geo_files:
+                geoms = handle_uploaded_file(g_file)
+                for geom in geoms:
+                    geoms_list.append(geom_json % (geom, 'geom'))
 
-                    geoms = handle_uploaded_file(g_file)
-                    for geom in geoms:
-                        geoms_list.append(geom_json % (geom, 'geom'))
+            result = lyr_json % (','.join(geoms_list))
+            response = HttpResponse(result,
+                                    content_type='application/json',
+                                    charset='latin1')
+            response['Content-Length'] = len(result)
 
-                result = lyr_json % (','.join(geoms_list))
-                response = HttpResponse(result,
-                                        content_type='application/json',
-                                        charset='latin1')
-                response['Content-Length'] = len(result)
+            # Limpeza
+            for f in files:
+                file_path = os.path.join(default_storage.base_location,
+                                         os.path.join(folder, str(clean_name(f.name))[2:-1]))
+                if os.path.exists(file_path):
+                    os.remove(file_path)
 
-                for f in files:
-                    file_path = os.path.join(default_storage.base_location,
-                                            os.path.join(folder, str(clean_name(f.name))[2:-1]))
-                    print(f, file_path)
-                    if os.path.exists(file_path):
-                        os.remove(file_path)
-                return response
-        
-
-            return HttpResponseRedirect('/conversaogeo/')
-        except:
-            return JsonResponse({'error': 'Não foi possível ler o arquivo enviado'}, status=401)
+            return response
+        return HttpResponseRedirect('/conversaogeo/')
     else:
         form = UploadFileForm()
         return render(request, 'euamoocerrado/upload.html', {'form': form})
@@ -236,6 +234,7 @@ def upload_geo_file(request):
 
 
 geojson_null = '{"crs": {"properties": {"name": "EPSG:4326"}, "type": "name"}, "type": "FeatureCollection", "features": null}'
+
 
 query = 'SELECT jsonb_build_object(\'type\',\'FeatureCollection\',\'crs\', jsonb_build_object(\'type\',\'name\',\'properties\', jsonb_build_object(\'name\',\'EPSG:4326\')),\'features\', json_agg(f.feature) ) as feature FROM (select jsonb_build_object(\'properties\', jsonb_build_object(\'pk\',"{0}"."{1}"),\'type\',\'Feature\',\'geometry\', (ST_ASgeojson("{0}"."{2}"))::JSON) AS feature FROM "{0}" /**/) as f'
 
