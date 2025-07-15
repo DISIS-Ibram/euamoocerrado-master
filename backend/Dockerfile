@@ -17,4 +17,4 @@ RUN apt-get update && apt-get install -y \
 
 COPY . .
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8585"]
+# CMD ["python", "manage.py", "runserver", "0.0.0.0:8585"]

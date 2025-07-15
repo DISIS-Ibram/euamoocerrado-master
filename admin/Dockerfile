@@ -1,31 +1,23 @@
-# FROM node:24 AS node
+FROM node:10 as node
 
-# WORKDIR /app
+# Corrige repositórios e remove os que não existem mais
+RUN sed -i '/stretch-updates/d' /etc/apt/sources.list && \
+    sed -i 's/deb.debian.org/archive.debian.org/g' /etc/apt/sources.list && \
+    sed -i 's|security.debian.org|archive.debian.org|g' /etc/apt/sources.list && \
+    echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99no-check-valid-until && \
+    apt-get update && \
+    apt-get install -y python-minimal make g++ && \
+    ln -sf /usr/bin/python /usr/bin/python2
 
-# COPY ./ /app
-# RUN npm install
-
-# RUN npm install webpack-dev-server@^5.0.0 --save-dev
-# RUN npm run start
-
-
-# Etapa base: imagem Node
-FROM node:24 as node
- 
-# Diretório de trabalho
+# Diretório da aplicação
 WORKDIR /app
 
-# Copia apenas os arquivos de dependência primeiro (melhora cache)
-COPY package*.json ./
-
-# Instala as dependências
-RUN npm install
-
-# Copia o restante do código da aplicação
+# Copia o projeto
 COPY . .
 
-# Expõe a porta usada pelo Webpack Dev Server
+# Instala dependências
+RUN npm install
+
 EXPOSE 8080
 
-# Comando padrão ao iniciar o container
-CMD ["npm", "run", "start"]
+CMD ["npm", "start"]
