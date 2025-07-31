@@ -4,6 +4,9 @@
 // Ela é definida no Index.html
 // Depois podemos alterar so la na hora de iniciar o container, sem ter que recompilar toda hora
 var apiurlBase = window.____BACKEND_URL;
+console.log('apiurlBase em api.js: ', apiurlBase);
+
+
 const axios = require("axios");
 
 var urls = {
@@ -13,7 +16,7 @@ var urls = {
   obtergeojson: apiurlBase + "obtergeojson/",
   mapaincorporados: apiurlBase + "mapaspaineis/mapa1.php",
   server: apiurlBase, //'http://189.6.18.55:5000/',
-  login: apiurlBase + "login/",
+  login: apiurlBase + "login/",  
   register: apiurlBase + "register/",
   logout: apiurlBase + "logout/",
   user: apiurlBase + "user/",

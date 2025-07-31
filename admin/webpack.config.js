@@ -1,5 +1,3 @@
-// http://webpack.github.io/docs/configuration.html
-// http://webpack.github.io/docs/webpack-dev-server.html
 var app_root = 'src'; // the app root folder: src, src_users, etc
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
@@ -13,9 +11,6 @@ module.exports = {
     cache: true,
     devtool:"source-map", //inline-source-map",
     entry: [
-        // http://gaearon.github.io/react-hot-loader/getstarted/
-        // 'webpack-dev-server/client?http://localhost:8080',
-        // 'webpack/hot/only-dev-server',
         __dirname + '/' + app_root + '/index.js',
     ],
     
@@ -82,8 +77,7 @@ module.exports = {
                       import: ['~nib/index.styl'] // imports into styl files
                     }
                   }
-                ],
-               
+                ],   
               },
         ],
     },
@@ -101,13 +95,10 @@ module.exports = {
                      JSONTree:'react-json-tree'
         }),
         new LodashModuleReplacementPlugin,
-          //Typically you'd have plenty of other plugins here as well
         new webpack.DllReferencePlugin({
             context: path.join(__dirname, "src"),
             manifest: require("./dll/vendor-manifest.json")
         }),
-
-        //   new webpack.optimize.AggressiveMergingPlugin(),//Merge chunks 
         
         new CopyWebpackPlugin([
             { from: 'src/images', to: 'public/images' },

@@ -1,11 +1,18 @@
 var url = window.____BACKEND_URL
 
-if(window.____BACKEND_URL==""){
-    url = 'http://euamocerrado.com.br:8585/';
-}
+// if(window.____BACKEND_URL==""){
+//     // url = 'http://euamocerrado.com.br:8585/';
+//     // url = 'http://localhost:8686/';
+// }
 
+console.log('configuracaoAPI.js carregado')
 
 var urlApi = `${url}rest_api/`;
+
+console.log('url: ', url);
+// url = 'http://localhost:8686/api/';
+// console.log('url: ', url);
+
 const config = {
     url:url,
     urlAPI:urlApi,

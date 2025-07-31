@@ -1,13 +1,11 @@
 import { store } from "configStore.js"
 
 import validacao from './util/validacoes';
+import { toLength } from "lodash";
 
 function serialize(resource={}) {
   return JSON.stringify(resource);
 }
-
-
-
 
   //pego o usuario a partir do token
   export const getUserFromToken = async ()=>{
@@ -112,41 +110,70 @@ function serialize(resource={}) {
 
 
 export const loginRequest = async ({email, password})=> {
-    // 
-    var login = window.SI3CONFIG.login;
-    var resources = {password:password};
+  // 
+  var login = window.SI3CONFIG.login;
+  var resources = {password:password};
+  
+  //verifico se estou logando com email ou usuario
+  if(validacao.isEmail(email)){
+    resources.email = email;
+  }else{
+    resources.username = email;
+  } 
+ 
+  var body = JSON.stringify(resources);
+  const token = localStorage.token;
+  
+  console.log('auth.js');
+  console.log('Email: ', email);
+  console.log('Password: ', password);
+  console.log('Body: ', body);
+  console.log('token: ', token);
+   
+  console.log('Login: ', login);  
 
-    //verifico se estou logando com email ou usuario
-    if(validacao.isEmail(email)){
-        resources.email = email;
-    }else{
-        resources.username = email;
-    } 
+  // teste de fetch direto no servidor de backend
+  // var teste_response = await fetch('http://backend:8686/api/login/', {
+  var teste_response = await fetch('http://localhost:8686/api/login/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ 'email': 'daniel@email.com', 'password': '123456' })
+  });
 
-    var body = JSON.stringify(resources);
-    const token = localStorage.token;
-    var response = await fetch(login, {
-                method:'POST',
-                body: body,
-                // credentials: 'include',
-                headers: {
-                  'Accept': 'application/json',
-                  'Content-Type': 'application/json',
-                  // 'Authorization': 'Token '+token,
-              }
-              });
-    
-    // 
-    if(!response.ok){
-      return response;
+  if(!teste_response.ok){
+    console.log('Erro na requisição de teste')
+  }else{
+    const resposta_teste = await teste_response.json();
+
+    console.log('Deu certo a requisição de teste')
+    console.log('Resposta do teste: ', resposta_teste);
+  }
+  ///////////////////////////////
+
+
+  var response = await fetch(login, {
+    method:'POST',
+    body: body,
+    // credentials: 'include',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      // 'Authorization': 'Token '+token,
     }
-
-    var resFinal = await response.json();
-    
-    //salvo o token
-    saveToken(resFinal.key);
-
+  });
+  
+  // 
+  if(!response.ok){
+    console.log('Erro na requisição')
     return response;
+  }
+  var resFinal = await response.json();
+  
+  //salvo o token
+  saveToken(resFinal.key);
+  return response;
 
 }
 

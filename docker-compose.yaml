@@ -75,8 +75,12 @@ services:
     #restart: always
     env_file:
       - ./.env
+
     ports:
-      - "9898:8080"
+    - "${ADMIN_PORT}:8080"
+      # - "9898:8080"
+    depends_on:
+      - backend
     working_dir: /app
     # command: sh -c 'yarn && yarn add webpack-dev-server@2.4.5 && npm run start'
 

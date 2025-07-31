@@ -30,10 +30,6 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
-CORS_ALLOW_CREDENTIALS = True
-
-CORS_ORIGIN_ALLOW_ALL=True
-
 INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.admin',
@@ -74,6 +70,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+
+# CORS
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL=True
+# CORS_ALLOWED_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://admin:80",
+    "http://localhost:8181",  # se acessar pelo navegador local
 ]
 
 ROOT_URLCONF = 'euamoocerrado.urls'

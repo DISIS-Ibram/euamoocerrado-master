@@ -39,11 +39,9 @@ export default class Formulario extends Component{
           criarLabel:'Salvo',
           
           value:{} //é o Default Value para usar
-}
+    }
 
   camposEncontrados = [];
-
-
 
   constructor(props){
     super(props)
@@ -55,13 +53,12 @@ export default class Formulario extends Component{
 
 
   //Transversa toda a tree atras de componentes "Campo" e processa eles de acordo
-  processaCamposApi = (campos,bag)=>{     
+  processaCamposApi = (campos,bag) => {
       // return campos;
 
       // return React.Children.map(campos,(elm)=>{
       //       return elm
       // })
-
       return React.Children.map(campos,(elm)=>{
 
                 if(!elm) return elm;

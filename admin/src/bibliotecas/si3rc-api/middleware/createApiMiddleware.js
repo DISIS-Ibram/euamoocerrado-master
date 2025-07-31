@@ -78,21 +78,15 @@ async function handleErrors(responseRef, method) {
 
     //LETODO
     //Verifico quando tem resposta ou nao
-    if(response.status !== 500)
-        respText =  await response.json().catch(function(erro){
-              
-                console.log(erro)
-        })
- 
-
+    if(response.status !== 500){
+      respText =  await response.json().catch(function(erro){
+        console.log(erro);
+      })
+    }
 
     if(response.status === 500){
          mensagem = (<b>Erro no Servidor. Entrar em contato com o administrador do sistema!</b>);
-
-
     }else if(response.status === 405){
-
-        
         if( _.has(respText,'deleteable') ){
           mensagem = (<b>{respText.msg}</b>);
             //respText = (<pre>{JSON.stringify(respText,null,2)}</pre>)
@@ -119,11 +113,6 @@ async function handleErrors(responseRef, method) {
   }else 
   
   if(response.status === 400){
-        
-        //var respTemp = response.clone();   //assim leio o json depois no formulario hoc tb
-        
-     
-        
         if(_.isObject(respText)){
             elementos = [];
             _.forOwn(respText,(v,k)=>{
@@ -140,13 +129,6 @@ async function handleErrors(responseRef, method) {
                 }}> <strong>{k}</strong> - {v[0]} </a></li>)
             })
         }
-
-      //   //respText = (<pre>{JSON.stringify(respText,null,2)}</pre>)
-      //  elementos = _.map(respText, (elm)=>{
-      //      return _.map(elm,(v,k)=>{
-      //           return (<div><Link to={"/form/"+k+"/"+v}> {k} </Link></div>)
-      //       })
-      //   })
 
         mensagem = (<b>{respText.msg}</b>);
 
@@ -206,58 +188,30 @@ function replacePropertyValue(prevVal, newVal, object) {
   return newObject;
 }
 
-
-
-
-
-// funcao que vai livar com a resposta do fetch
+// funcao que vai lidar com a resposta do fetch
 async function handleResponse(response) {
-  // pq chamo o handle response com o errotambem
   myconsole.log('handleResponse RAW ======= %o', response);
 
   const respostaTxt = await response.text();
 
-  const respostaRepla = respostaTxt;// .replace(/null/g,'"nulo"');
+  console.log('respostaTxt createApiMiddleware.js: ', respostaTxt);
 
+  const respostaRepla = respostaTxt;
 
   myconsole.log('handleResponse Text ======= %o', respostaRepla);
-
-
-  // LETODO - pq muda null para undefined
-//   let resposta = JSON.parse(respostaRepla, function(k, v) {
-//         return v;
-
-//         if(_.isObject(v)){
-//            // myconsole.log("handleResponse k: %o v: %o",k,v);
-//         }
-//         if(v == "null" || v == "undefined" || v == null || v == undefined ){
-//             // myconsole.log("handleResponse k: %o v: %o",k,v);
-//             return v;
-//         }else{
-//           //myconsole.log("handleResponse k%o v%o",k,v); // exibe o log do nome da propriedade atual, a ultima propriedade é "".
-//           return v;       // retorna os valores sem nenhuma alteração.
-//       }
-// });
+  console.log('handleResponse Text ======= %o', respostaRepla);
 
   const pp = `${respostaTxt}    `;
   const res = JSON.parse(pp);
 
   myconsole.log('handleResponse Json ======= %o', JSON.parse(pp));
 
-   myconsole.log('handleResponse Json ======= %o', { ...res });
-  // LETODO - converter tudo que for undefind para null
-
-  // const respostaTexto = await response.text();
-
-  // myconsole.log('handleResponse Texto======= %o',respostaTexto)
-
+  myconsole.log('handleResponse Json ======= %o', { ...res });
 
   let { results, included = [], meta = {} } = res;
 
-  // se nao tem o key results, é porque estou pegando a resposta direto como um objeto
   if (!results) results = [res];
 
-  // se tem a key resultados, ela é para ser a results
   if (res.resultado) results = res.resultado;
 
   if (results) {
@@ -311,19 +265,6 @@ function createMiddleware(host, defaultHeaders) {
       let url = payload.url || {};
    
       const headers = payload.headers || {};
-
-      // if(method === 'DELETE' && payload.idkey){
-      //     resources.id = resources[payload.idkey]
-      //     payload.idkey = 'id'
-      // }
-
-    //  if (method === 'OPTIONS'){
-    //     const state =  window.STORE.getState();
-    //     if( _.isEmpty(state.api.modelOptions[modeloSchema.type]) === false )
-    //           return [state.api.modelOptions[modeloSchema.type]] //so pq geralmente vem numa array a resposta
-    //   }
-
-
 
       let isNew = false;
       if (resources._new) {
@@ -511,7 +452,7 @@ function createMiddleware(host, defaultHeaders) {
 
 
     // GERA A URL CONFORME
-    const getURL = (method,resources, modeloSchema = {}, options = {}, url = '', isNew = false) => {
+    const getURL = (method, resources, modeloSchema = {}, options = {}, url = '', isNew = false) => {
         myconsole.log('geURL arguments %o', resources, modeloSchema);
         let urlParts = "";
      

@@ -130,9 +130,8 @@ function runTimeout(fun) {
             return cachedSetTimeout.call(this, fun, 0);
         }
     }
-
-
 }
+
 function runClearTimeout(marker) {
     if (cachedClearTimeout === clearTimeout) {
         //normal enviroments in sane situations

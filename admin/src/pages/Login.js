@@ -34,7 +34,6 @@ class Fundo extends React.Component{
       loadFormOptions:false,
       modelo:"fotohomelist",
       loader:false,
-      
    } 
    
    render(){
@@ -55,9 +54,6 @@ class Fundo extends React.Component{
                             <div className='slider' style={{backgroundImage:'url(images/cerrado-wwf.jpg)'}} >
                                 <div className='description'>  </div>
                             </div>
-                            
-            
-        
                     </Slider>
                 </div>
         )
@@ -175,9 +171,7 @@ export default class Login extends React.Component
                 <Fundo modelo="fotohomelist" />
                 
                 <div className='barra-lateral borda-container'>
-
-
-                        <div className='borda br'></div>
+                    <div className='borda br'></div>
                 </div>
 
                 {/*<div className='estatisticas'>
@@ -202,20 +196,15 @@ export default class Login extends React.Component
 
                 <div className="row mt-5">
                     <div className="col-sm-4 col-sm-offset-2">
-                <div className="formulario ">
-                    
-                    <div className="column logowrap">
-                        <img className='logo' src='images/euamocerrado.png' />
-                        <h3> Eu Amo o Cerrado </h3>
-                        
-                         <LoginForm />
-
+                        <div className="formulario ">               
+                            <div className="column logowrap">
+                                <img className='logo' src='images/euamocerrado.png' />
+                                <h3> Eu Amo o Cerrado </h3>
+                                <LoginForm />
+                            </div>
+                        </div>
                     </div>
-                    </div>
-                    </div>
-                  
                 </div>
-
             </div>
         );
     }

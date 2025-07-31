@@ -1,10 +1,18 @@
-var url = window.____BACKEND_URL
+// var url = window.____BACKEND_URL
 
-if(window.____BACKEND_URL==""){
-    url = 'http://euamocerrado.com.br:8585/';
-}
+// if(window.____BACKEND_URL==""){
+    //     // url = 'http://euamocerrado.com.br:8585/';
+    //     // url = 'http://localhost:8686/';
+    //     url = 'http://backend:8686/';
+    // }
+    
+    
+var url = 'http://localhost:8686/'
 
 var urlApi = `${url}rest_api/`;
+
+console.log('URL montada: ', urlApi);
+
 const config = {
     url:url,
     urlAPI:urlApi,
@@ -21,11 +29,6 @@ const config = {
     docSearch:url+"doc_search/?q=",
     dependeciaMidia:url+'/dependencia_midia/'  // /dependencia_midia/id
 }
-
-
-
-
-
 
 // retorna todos os estados
 // http://127.0.0.1:8000/localizacao/?dado=estado
