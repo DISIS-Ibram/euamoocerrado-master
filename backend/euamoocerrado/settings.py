@@ -80,6 +80,11 @@ CORS_ORIGIN_ALLOW_ALL=True
 CORS_ALLOWED_ORIGINS = [
     "http://admin:80",
     "http://localhost:8181",  # se acessar pelo navegador local
+    "http://localhost:8989",  # se acessar pelo navegador local
+]
+# Domínios que podem enviar cookies com CSRF
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:8989',  # porta do Nginx
 ]
 
 ROOT_URLCONF = 'euamoocerrado.urls'

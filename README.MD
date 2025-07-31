@@ -44,5 +44,6 @@ So um servico temporario para fornecer as imagens que o DJANGO fornecia.
 Desenvolvido em DJANGO. É utilizado para inclusão de dados no backend, através do interface disponibilizada no Frontend Admin
 
 
+## Pesquisar dentro do projeto
 
 
