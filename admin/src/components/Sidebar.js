@@ -8,6 +8,7 @@ const Sidebar = function(){
 	<div className="ui vertical inverted sidebar menu left overlay visible" id="barra-lateral" >
 		
 		<Link to="/home" onlyActiveOnIndex={true}  name="si3rc" >
+		{/* Não está carregando a imagem por causa do nginx */}
 				<img style={{ width:'100%',padding:'10px' }} src="http://euamocerrado.com.br/images/euamocerrado.png" />
 		</Link> 
 		
