@@ -81,7 +81,7 @@
     "react-dropzone": "^3.7.3",
     "react-flip-move": "^2.7.1",
     "react-icons": "^2.2.1",
-    "react-input-mask": "^0.7.5",
+    "react-input-mask": "^2.0.4",
     "react-json-tree": "^0.10.7",
     "react-leaflet": "^1.9.1",
     "react-leaflet-draw": "^0.18.0",

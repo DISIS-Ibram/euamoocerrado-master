@@ -2,22 +2,21 @@ import React from 'react';
 import { Router, Route, IndexRoute, browserHistory,  Link } from 'react-router';
 import Icon from './elements/S3Icon';
 
-
 const Sidebar = function(){
 	return (
 	<div className="ui vertical inverted sidebar menu left overlay visible" id="barra-lateral" >
 		
 		<Link to="/home" onlyActiveOnIndex={true}  name="si3rc" >
 		{/* Não está carregando a imagem por causa do nginx */}
-				<img style={{ width:'100%',padding:'10px' }} src="http://euamocerrado.com.br/images/euamocerrado.png" />
-		</Link> 
-		
+				{/* <img style={{ width:'100%',padding:'10px' }} src="http://euamocerrado.com.br/images/euamocerrado.png" /> */}
+				<img style={{ width:'100%',padding:'10px' }} src="../../images/euamocerrado.png" />
+		</Link>		
 
 		{/* <LinkMenu to="/" onlyActiveOnIndex={true} /> */}
 		<LinkMenu to="/especies/lista" icon='ave' nome="Especies" />
 		<LinkMenu to="/parques/lista" icon='arvore' nome="Parques" />
 		<LinkMenu to="/trilhas/lista" icon='trilha' nome="Trilhas" />
-		<LinkMenu to="/avistamentos/lista" tipo='fa' icon='fa-binoculars' nome="Avistamentos" />
+		<LinkMenu to="/avistamentos/lista" tipo='fa' icon='binoculars' nome="Avistamentos" />
 		{/* <LinkMenu to="/registro/registro" icon='registros' nome="Registros" />
 		<LinkMenu to="/fpe/lista" icon='fpe' nome="FPE" />
 		<LinkMenu to="/expedicao/lista" icon='campo' tipo='svg' nome="Expedição" />
@@ -31,8 +30,6 @@ const Sidebar = function(){
 
  )
 }
-
-
 
 const LinkMenu = function(props,args){
 
@@ -50,8 +47,6 @@ const LinkMenu = function(props,args){
 			</Link>
 		</div>
 	)
-
 }
-
 
 export default Sidebar;

@@ -41,8 +41,7 @@ from euamoocerrado.thumbnails import thumbnails, obter_icone
 
 
 # Routers provide an easy way of automatically determining the URL conf.
-# eac_router.register(r'^rest_api/administracao/users', UserViewSet)
-# eac_router.register(r'^rest_api/administracao/users', UserViewSet)
+eac_router.register(r'^rest_api/administracao/users', UserViewSet)
 
 urlpatterns = [
     re_path(r'^api/thumb/', thumbnails),

@@ -9,6 +9,8 @@ services:
       volumes:
       - ./data/pgdata:/var/lib/postgresql/data
       - ./db-backup:/db-backup
+      # - ./db-init:/db-init
+      - ./db-init:/docker-entrypoint-initdb
       ports:
       - "${POSTGRES_PORT}:5432"
       
@@ -75,7 +77,6 @@ services:
     #restart: always
     env_file:
       - ./.env
-
     ports:
     - "${ADMIN_PORT}:8080"
       # - "9898:8080"
@@ -83,6 +84,15 @@ services:
       - backend
     working_dir: /app
     # command: sh -c 'yarn && yarn add webpack-dev-server@2.4.5 && npm run start'
+
+    # 👇 ADICIONE ISSO:
+    volumes:
+      - ./admin/src:/app/src               # monta apenas o código fonte
+      - ./admin/public:/app/public         # opcional (para refletir imagens/html)
+      - /app/node_modules                  # evita conflito do node_modules local
+    environment:
+      - CHOKIDAR_USEPOLLING=true           # essencial para hot reload no Docker
+#    command: yarn start                    # ou npm start, conforme seu projeto   
 
 
 
@@ -100,7 +110,12 @@ services:
         - ./.env
       ports:
         # - "${NGIX_PORT}:80"
-        - "8989:80"  # Porta do host : Porta do container
+        # - "8989:80"  # Porta do host : Porta do container
+        - "80:80"  # Porta do host : Porta do container
+
+      # volumes:
+      #   - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+
 
   # nginx:
   #     build: 

@@ -1,39 +1,51 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import IconesSvg from './icons/Icon';
-import {Icon as UIIcon} from 'semantic-ui-react'
+import { Icon as UIIcon } from 'semantic-ui-react';
 
-//tanto icones svg como do semantic-ui com uma interface parecida.
-//----
-//verifico o tipo do icone
-//
-//se for svg retorno o meu icone svg
-//
-//senao retorno o meu icone do semantic-ui
+const semanticColors = [
+  "red","orange","yellow","olive","green","teal",
+  "blue","violet","purple","pink","brown","grey","black"
+];
 
+export default class Icon extends React.Component {
+  static defaultProps = {
+    tipo: 'fa',
+    color: 'black',
+    size: '2rem'
+  };
 
-export default class Icon extends React.Component{  
+  render() {
+    const { tipo, name, color, size, ...rest } = this.props;
 
-    static defaultProps = {
-          tipo: 'fa',
-          color: 'black',
-          size: '2rem'
-    }
+    if (tipo === "svg") {
+      return (
+        <IconesSvg
+          tipo="svg"
+          name={name || ''}
+          color={color}
+          size={size}
+          {...rest}
+        />
+      );
+    } else {
+      // Verifica se a cor é reconhecida pelo Semantic UI
+      const isSemanticColor = semanticColors.includes(color);
+      const semanticColor = isSemanticColor ? color : undefined;
 
-    render(){
-      if (this.props.tipo == "svg"){
+      // Aplica cor via CSS caso não seja uma cor Semantic UI
+      const style = {
+        color: !isSemanticColor ? color : undefined,
+        fontSize: parseInt(size, 10) * 11,
+      };
 
-        return (
-          <IconesSvg  tipo="svg" name={this.props.name || ''} color={this.props.color}  size={this.props.size}  />
-          )
-
-      }else{
-           const { name, size, tipo, color, ...custom } = this.props;
-           return(
-              <UIIcon name={name} color={color} style={{fontSize:parseInt(this.props.size,10)*11}}/>
-            )
-      
+      return (
+        <UIIcon
+          name={name}
+          color={semanticColor}
+          style={style}
+          {...rest}
+        />
+      );
     }
   }
 }
-
-

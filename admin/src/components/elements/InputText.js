@@ -1,48 +1,73 @@
-import _ from 'lodash'
-import React, {  Component, PropTypes } from 'react'
-import ReactDOM from 'react-dom';
-import { Header, Dropdown, Form, Label, List, Radio, Checkbox, Icon, Accordion, Input, Dimmer, Loader, Image, Segment, Button } from 'semantic-ui-react';
-import { Field, Fields, FieldArray , reduxForm, SubmissionError } from 'redux-form';
+import _ from "lodash";
+// import React, {  Component } from 'react';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-import {DayPicker, SingleDatePicker} from 'react-dates';
+import ReactDOM from "react-dom";
+import {
+  Header,
+  Dropdown,
+  Form,
+  Label,
+  List,
+  Radio,
+  Checkbox,
+  Icon,
+  Accordion,
+  Input,
+  Dimmer,
+  Loader,
+  Image,
+  Segment,
+  Button,
+} from "semantic-ui-react";
+import {
+  Field,
+  Fields,
+  FieldArray,
+  reduxForm,
+  SubmissionError,
+} from "redux-form";
 
-import StringMask from 'string-mask';
+import { DayPicker, SingleDatePicker } from "react-dates";
 
-import StringFormatValidation from 'string-format-validation'
+import StringMask from "string-mask";
 
-import { connect } from 'react-redux';
+import StringFormatValidation from "string-format-validation";
 
-import { si3, si3Actions }  from 'actions/index';
+import { connect } from "react-redux";
 
-import * as util from 'util/s3util'
-import moment from 'moment'
-import { createSelector } from 'reselect'
-import enhanceWithClickOutside from 'react-click-outside';
-import ReactPlayer from 'react-player'
+import { si3, si3Actions } from "actions/index";
+
+import * as util from "util/s3util";
+import moment from "moment";
+import { createSelector } from "reselect";
+import enhanceWithClickOutside from "react-click-outside";
+import ReactPlayer from "react-player";
 // import { ModalYesNo } from 'components/modals';
-import { Map, Marker, Popup, TileLayer, LayersControl, FeatureGroup, Circle, GeoJSON } from 'react-leaflet';
+import {
+  Map,
+  Marker,
+  Popup,
+  TileLayer,
+  LayersControl,
+  FeatureGroup,
+  Circle,
+  GeoJSON,
+} from "react-leaflet";
 
-import Draw from 'leaflet-draw'; // eslint-disable-line
+import Draw from "leaflet-draw"; // eslint-disable-line
 
-import {FormField, InputDate} from 'components/formfields/index'
+import { FormField, InputDate } from "components/formfields/index";
 
-import wkx from 'wkx';
-
-
-
-
+import wkx from "wkx";
 
 const S3Input = (props) => (
-    <Form.Field>
-      <label>First Name</label>
-      <Input placeholder='First Name' />
-    </Form.Field>
- )
-
-
-
-
-
+  <Form.Field>
+    <label>First Name</label>
+    <Input placeholder="First Name" />
+  </Form.Field>
+);
 
 // //  FORM FIELD BASE
 // //---------------------------
@@ -52,17 +77,15 @@ const S3Input = (props) => (
 // //recebe um formfilte como o elemento principal
 // class FormField extends React.Component {
 
-
 //   static defaultProps = {
 //     subField: false,
 //     req:false,
 //     tipo: ''
 //   };
 
-
 //   render () {
 //     let { input, label, subField, meta: { touched, error, valid, dirty, active }, ...custom } = this.props;
-    
+
 //     let classname = this.props.className || ''
 //     classname += (touched && error) && " erro" || ""
 //     classname += ((touched && valid) && " valid") || ''
@@ -74,29 +97,24 @@ const S3Input = (props) => (
 //         classname += " preenchido"
 //     }
 
-
 //    if( this.props.tipo == 'input' && input.value === 0){
 //       classname += " preenchido"
 //    }
 
-
-
 //     return (
 //        <Form.Field className={classname+' fieldnormal' }>
-        
 
 //         {(label != '') &&
 //            <label className='ui label '><i className="fa fa-exclamation-triangle" />{label}{custom.req && '*'}</label>
 //         }
 
-
 //         {this.props.children}
 
-//         {(touched && error) &&  
+//         {(touched && error) &&
 //           <Label className='label-erro' basic pointing>{error}</Label>
 //         }
 
-//        {(this.props.dica) &&  
+//        {(this.props.dica) &&
 //           <div className='fs07 ui label-dica'>{this.props.dica}</div>
 //         }
 
@@ -106,21 +124,12 @@ const S3Input = (props) => (
 //   }
 // }
 
-
-
-
-
-
-
-
-
 // FieldSet - Agrupa um bando defields
 //---------------------------
 
-
 // export class Fieldset extends React.Component {
 
-//     renderChildren = ()=>{      
+//     renderChildren = ()=>{
 //         return React.Children.map(this.props.children, child => {
 //             if (child.type === Field)
 //               return React.cloneElement(child, {
@@ -136,7 +145,7 @@ const S3Input = (props) => (
 //         const {label,...custom } = this.props;
 //         return (
 //            <Form.Field className='fieldset'>
-            
+
 //             {(label != '') &&
 //                <label className='ui label' ><i className="fa fa-exclamation-triangle" />{label}{custom.req && '*'}</label>
 //             }
@@ -150,14 +159,6 @@ const S3Input = (props) => (
 //     }
 
 // }
-
-
-
-
-
-
-
-
 
 // Input Text Area
 //---------------------------
@@ -176,7 +177,7 @@ const S3Input = (props) => (
 //      return (
 //         <FormField {...this.props}>
 //             <div className="ui fluid input">
-//               <textarea rows="1" className='autoheight ui fluid input lh11'  {...input} {...custom} 
+//               <textarea rows="1" className='autoheight ui fluid input lh11'  {...input} {...custom}
 //                ref={(input) => this.input = input}
 //               />
 //             </div>
@@ -186,19 +187,16 @@ const S3Input = (props) => (
 
 //  }
 
-
-
 // Endereco
 // Textearea com a busca do CEP
 //---------------------------
-
 
 // export class InputEndereco extends React.Component {
 
 //   state = { dicaCEP:'Digite no inicio o CEP para buscar endereco'};
 
 //   mesagemCEP = (msg,delay=6000) =>{
-    
+
 //     this.setState({dicaCEP:msg})
 
 //     setTimeout(()=>{
@@ -242,14 +240,12 @@ const S3Input = (props) => (
 //         this.props.input.onChange(v)
 //   }
 
-
 //   componentDidMount(){
 //     //faco a altura inicial ficar conforme o conteudo
 //     if(this.input){
 //         $(this.input).height( 'auto' ).height( this.input.scrollHeight );
 //     }
 //   }
-
 
 //   render (){
 //      const { input, label, meta: { touched, error, valid, dirty }, ...custom } = this.props;
@@ -259,9 +255,9 @@ const S3Input = (props) => (
 //      return (
 //         <FormField {...this.props} dica={this.state.dicaCEP} >
 //             <div className="ui fluid input">
-//               <textarea rows="1" className='autoheight ui fluid input lh11'  {...input} {...custom} 
-//                 autoComplete="off" 
-//                 autoCorrect='off' 
+//               <textarea rows="1" className='autoheight ui fluid input lh11'  {...input} {...custom}
+//                 autoComplete="off"
+//                 autoCorrect='off'
 //                 spellCheck="false"
 //                 onChange={(e)=>{this.getCEP(e)}}
 //                 ref={(input) => this.input = input}
@@ -271,21 +267,7 @@ const S3Input = (props) => (
 //       )
 //    }
 
-
-
 // }
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Input CHECKBOX
 //---------------------------
@@ -297,16 +279,12 @@ const S3Input = (props) => (
 //            delete custom.req
 //      return(
 //          <FormField {...this.props} label=''>
-//                 <label><i className="fa fa-exclamation-triangle" /> 
+//                 <label><i className="fa fa-exclamation-triangle" />
 //                 <Checkbox checked={input.value ? true : false} onClick={()=>{ input.onChange(!input.value)}} label={label}  /> {custom.req && '*'}</label>
 //           </FormField>
 //       )
 //     }
 // }
-
-
-
-
 
 // // Input Radio
 // //---------------------------
@@ -318,26 +296,20 @@ const S3Input = (props) => (
 //            delete custom.req
 //      return(
 //          <FormField {...this.props} label=''>
-//                 <label><i className="fa fa-exclamation-triangle" /> 
+//                 <label><i className="fa fa-exclamation-triangle" />
 //                 <Radio checked={input.value ? true : false} onClick={()=>{ input.onChange(!input.value)}} label={label}  />{custom.req && '*'}</label>
 //           </FormField>
 //       )
 //     }
 // }
 
-
-
-
-
 // // Grupo de Radio
 // //---------------------------
 
-
-
 // export class RadioButtonGroup extends Component {
- 
+
 //   constructor(props){
-//       super(props) 
+//       super(props)
 //       this.state = {
 //           numberCheckedRadioButtons: 0,
 //           selected: '',
@@ -349,9 +321,9 @@ const S3Input = (props) => (
 //     let cnt = 0;
 //     let selected = '';
 //     let {valueSelected, defaultSelected} = this.props;
-    
+
 //     valueSelected = this.props.input.value;
-    
+
 //     if(valueSelected !== undefined && valueSelected != '' ) {
 //       selected = valueSelected;
 //     } else if (defaultSelected !== undefined) {
@@ -367,7 +339,6 @@ const S3Input = (props) => (
 //       selected,
 //     });
 //   }
-
 
 //   componentWillReceiveProps(nextProps) {
 //     let valueSelected = nextProps.input.value;
@@ -399,7 +370,7 @@ const S3Input = (props) => (
 //     if (this.state.numberCheckedRadioButtons === 0) {
 //       if (this.props.input.onChange) this.props.input.onChange(newSelection.value);
 //       if (this.props.onChange) this.props.onChange(newSelection.value);
-    
+
 //     }
 //   };
 
@@ -429,9 +400,6 @@ const S3Input = (props) => (
 //         ...other
 //       } = option.props;
 
-
-
-
 //       return (
 //        <div className={"ui fluid input radio mt1 "+ (this.props.label  != '' && 'sub') }>
 //           <Radio
@@ -455,14 +423,6 @@ const S3Input = (props) => (
 //     );
 //   }
 // }
-
-
-
-
-
-
-
-
 
 // // Input File
 // //---------------------------
@@ -501,9 +461,6 @@ const S3Input = (props) => (
 //   componentWillReceiveProps(prevprops, currentprops){
 
 //   }
-
-
-
 
 //   dragOver(event) {
 //     event.preventDefault();
@@ -546,7 +503,7 @@ const S3Input = (props) => (
 //     return (
 
 //        <FormField className='ui radiogroup' {...this.props} >
-          
+
 //           <div>
 //               <input
 //               style={{display:'none'}}
@@ -555,37 +512,30 @@ const S3Input = (props) => (
 //               onChange={this.onChange}
 //               ref={(input) => this.fileInput = input}
 //               />
-         
-//             <div ref={(i)=>this.dropI = i} 
+
+//             <div ref={(i)=>this.dropI = i}
 //              onDragOver={(event)=>event.preventDefault()}
 //              onDragEnter={this.dragOver.bind(this)}
 //              onDragLeave={this.dragOut.bind(this)}
 //              onDrop={this.drop.bind(this)}
-//              onClick={ () => this.fileInput.click() } 
+//              onClick={ () => this.fileInput.click() }
 //              className='ui foto foto-circular small'>
 //                 <div className='a-foto' style={{backgroundImage:'url('+imagem+')' }}></div>
 //                 <Label> selecionar foto </Label>
 //             </div>
-         
+
 //          </div>
-  
+
 //      </FormField>
 //     )
 //   }
 // }
 
-
-
-
-
-
-
 //Input SELECT MODEL
 //---------------------------
 
-
 // class InputSelectModel extends React.Component {
- 
+
 //   state = {
 //       isFetching: true,
 //       multiple: true,
@@ -596,7 +546,6 @@ const S3Input = (props) => (
 //       currentValue: '',
 //       valueKey:'id'
 //   }
-
 
 //   componentWillMount() {
 //       //carrego todas as opcoes do modelo
@@ -610,13 +559,11 @@ const S3Input = (props) => (
 //       .then( ()=>this.setState({isFetching: false}) )
 //   }
 
-
 //   handleSearchChange = (e, value) => this.setState({ searchQuery: value })
 
-  
 //   handleAddition = function(e, { value }){
 //         //adiciono no servidor
-       
+
 //         return e;
 //     }
 
@@ -626,7 +573,6 @@ const S3Input = (props) => (
 //       this.props.input.onChange(value);
 //   }
 
-
 //   onAddItem = (e, { value }) => {
 //     console.log("=====VALUE ADD=======")
 //     console.log(value)
@@ -634,23 +580,21 @@ const S3Input = (props) => (
 //     return false;
 //   }
 
-
 //   createOptions = (o) => {
 //       return {text: o.nome, value:o[this.state.valueKey],
-//       children:<div> 
+//       children:<div>
 //                  {" "+o.nome} <small className='gray fs07 fw100'>
 //                     <br /> {o.descricao}
 //               </small></div>
 //        }
 //   }
 
-
 //   render (){
 
 //     const { input, label, meta: { touched, error, valid, dirty }, ...custom } = this.props;
 //     const { currentValue, multiple, options, isFetching, search, value } = this.state
 //     delete custom.req
-    
+
 //     let opcoes = [];
 
 //     const tipo = this.props.modelo
@@ -664,11 +608,10 @@ const S3Input = (props) => (
 //     const valor = input.value
 //     console.log("=====VALUE=======")
 //     console.log(valor)
-    
 
 //     return (
 //         <FormField {...this.props}>
-     
+
 //            <Dropdown
 //             options={opcoes}
 //             {...input} {...custom}
@@ -684,7 +627,6 @@ const S3Input = (props) => (
 //             additionLabel="Adicionar:"
 //           />
 
-
 //        </FormField>
 //     );
 //   }
@@ -696,39 +638,6 @@ const S3Input = (props) => (
 //   api:state.api,
 //  }} , si3Actions)(InputSelectModel)
 
-// export {InputSelectModelCon as InputSelectModel} 
+// export {InputSelectModelCon as InputSelectModel}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export { S3Input as Input}
-
-
-
-
-
+export { S3Input as Input };

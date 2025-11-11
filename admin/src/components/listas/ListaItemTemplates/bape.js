@@ -1,38 +1,60 @@
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-import React, {  Component, PropTypes } from 'react'
-
-import { Header, Dropdown, Form, Label, List, Radio, Checkbox, Icon, Accordion, Input, Dimmer, Loader, Image, Segment, Button } from 'semantic-ui-react';
+import {
+  Header,
+  Dropdown,
+  Form,
+  Label,
+  List,
+  Radio,
+  Checkbox,
+  Icon,
+  Accordion,
+  Input,
+  Dimmer,
+  Loader,
+  Image,
+  Segment,
+  Button,
+} from "semantic-ui-react";
 
 //import FormField  from 'components/formfields/FormField'
 // import carregaModelo from 'hocs/carregaModelo'
-import onlyDOMProps from 'util/onlyDOMProps'
+import onlyDOMProps from "util/onlyDOMProps";
 
 // import AutoForm from 'components/form/AutoForm'
-import moment from 'moment'
+import moment from "moment";
 
+export const titulo = (item) => {
+  return <span>{_.get(item, "nome")}</span>;
+};
 
+export const descricao = (item) => {
+  return (
+    <div>
+      <small>
+        <div>
+          {" "}
+          Tipo Acesso:
+          <br />
+          {_.map(item.tipo_acesso, (acesso) => {
+            return <Label size="mini">{acesso.nome}</Label>;
+          })}
+        </div>
 
-
-
-export const titulo = (item)=>{
-      
-        return  (<span>{ _.get(item,'nome') }</span>)
-}
-
-
-export const descricao = (item)=>{
-          return  ( <div><small> 
-                        
-                          <div>  Tipo Acesso:<br />
-                              { _.map(item.tipo_acesso, acesso=>{ return <Label size="mini">{acesso.nome}</Label> } ) }</div>
-
-                          <div>  Attribuição:<br />
-                              { _.map(item.tipo_atribuicao, atribuicao=>{ return <Label size="mini">{atribuicao.nome}</Label> } ) }</div>
-                  
-                        </small></div> )
-}
-
-
+        <div>
+          {" "}
+          Attribuição:
+          <br />
+          {_.map(item.tipo_atribuicao, (atribuicao) => {
+            return <Label size="mini">{atribuicao.nome}</Label>;
+          })}
+        </div>
+      </small>
+    </div>
+  );
+};
 
 /*
 //funcaao que renderiza a opcao
