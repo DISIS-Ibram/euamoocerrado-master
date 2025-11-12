@@ -13,7 +13,7 @@ import _ from 'lodash'
 
 
 
-export default function(debug=true,prefix="si3rc",format="color:green"){
+export default function(debug=true, prefix="si3rc", format="color:green"){
 
   var obj = {}
   for(var o in window.console){

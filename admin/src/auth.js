@@ -124,13 +124,13 @@ export const loginRequest = async ({email, password})=> {
   var body = JSON.stringify(resources);
   const token = localStorage.token;
   
-  console.log('auth.js');
-  console.log('Email: ', email);
-  console.log('Password: ', password);
-  console.log('Body: ', body);
-  console.log('token: ', token);
+  // console.log('auth.js');
+  // console.log('Email: ', email);
+  // console.log('Password: ', password);
+  // console.log('Body: ', body);
+  // console.log('token: ', token);
    
-  console.log('Login: ', login);  
+  // console.log('Login: ', login);  
 
   // teste de fetch direto no servidor de backend
   // var teste_response = await fetch('http://backend:8686/api/login/', {
@@ -142,14 +142,14 @@ export const loginRequest = async ({email, password})=> {
     body: JSON.stringify({ 'email': 'daniel@email.com', 'password': '123456' })
   });
 
-  if(!teste_response.ok){
-    console.log('Erro na requisição de teste')
-  }else{
-    const resposta_teste = await teste_response.json();
+  // if(!teste_response.ok){
+  //   console.log('Erro na requisição de teste')
+  // }else{
+  //   const resposta_teste = await teste_response.json();
 
-    console.log('Deu certo a requisição de teste')
-    console.log('Resposta do teste: ', resposta_teste);
-  }
+  //   console.log('Deu certo a requisição de teste')
+  //   console.log('Resposta do teste: ', resposta_teste);
+  // }
   ///////////////////////////////
 
 
@@ -166,7 +166,7 @@ export const loginRequest = async ({email, password})=> {
   
   // 
   if(!response.ok){
-    console.log('Erro na requisição')
+    // console.log('Erro na requisição')
     return response;
   }
   var resFinal = await response.json();

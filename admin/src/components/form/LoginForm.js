@@ -9,9 +9,6 @@ import {loginRequest} from 'auth';
 
 import { SubmissionError } from 'redux-form';
 
-
-
-
 @formHoc
 export default class LoginForm extends React.Component {
   static defaultProps = {
@@ -28,8 +25,6 @@ export default class LoginForm extends React.Component {
 
   constructor(props){
       super(props)
-   //    this.__proto__.antesDeSalvar = this.antesDeSalvar;
-       //sempre que apresento o formulario de login linpo o token
   }
   
   async onSalvar(values){
@@ -40,14 +35,12 @@ export default class LoginForm extends React.Component {
           browserHistory.push('/');
       }else{
           throw new SubmissionError({ 'password':'Credenciais Inválidas', _error: 'Credenciais Inválidas', _erro: 'Credenciais Invalidas' })
-          //  return resultado.json().then((data)=>{
-          //       throw new SubmissionError({...data, _error: 'Erro' })
-          //   })
       }
     })
   }
 
   render() {
+
     return (
       <Formulario {...this.props} titulo="Entrar" tipo='invertido'  showReset={false} salvoLabel='Entrar' salvarLabel='Entrar' salvandoLabel='Logando...' criarLabel="Entrar" >
         <div className="row center-xs">

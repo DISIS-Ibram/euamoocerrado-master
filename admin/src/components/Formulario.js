@@ -16,10 +16,6 @@ import criaconsole from 'util/myconsole'
 const _debug = false;
 const myconsole = criaconsole(_debug,' *** Formulario.js | ', 'color:green;font-weight:bold')
 
-
-
-
-
 // @connect(null,si3Actions)
 export default class Formulario extends Component{
 
@@ -46,59 +42,35 @@ export default class Formulario extends Component{
   constructor(props){
     super(props)
     myconsole.log(" contructo | props:%o",props)
-
-  //   // this.exclude = 
   }
-
-
 
   //Transversa toda a tree atras de componentes "Campo" e processa eles de acordo
   processaCamposApi = (campos,bag) => {
-      // return campos;
-
-      // return React.Children.map(campos,(elm)=>{
-      //       return elm
-      // })
       return React.Children.map(campos,(elm)=>{
-
                 if(!elm) return elm;
                 if(!elm.type) return elm;
 
-                if( elm.type === Campo ){                  
+                if( elm.type === Campo ){
                   this.camposEncontrados.push(elm.props.name);
                   return this.criaValidacaoEtcNoCampo(elm);
                 }
                 
                 if ( _.has(elm.props,'children') ){
-                  //retorno um novo elemento com o child processado tb, recursivamento isso funciona
                   let children = this.processaCamposApi(elm.props.children)
                   return React.cloneElement(elm,{children:children})
-               
                 }else{
                   return elm
                 }
       })
   }
 
-
-
-
-
-
   criaCamposApi = ()=>{
-
        const opcoes = this.props.formOptions;
-
        var campos = [];
-
        campos = _.map(opcoes,(v,k)=>{
-                    
-                
-                    // myconsole.log( "%c EXCLUD PROPS %o, k:%o", "font-size:40px;color:red;", this.props.exclude, k )
                     if( _.some(this.props.exclude,v=>v===k) ){
                         return false;
                     } 
-
                     //Exclude os que estiverem configurado nos models
                     var model = getModel(this.props.modelo)
                     if(_.has(model,'form.exclude') ){
@@ -106,18 +78,13 @@ export default class Formulario extends Component{
                             return false;
                          } 
                     }
-
-
              
                     let tipo = "texto"
                     let adicionalProps={};
-
-
                    
                     if(v.read_only === true){
                         adicionalProps.disabled = true;
                     }
-                    
                     switch(v.type.toLowerCase()){    
                         case  "string":
                             tipo = "texto"
@@ -192,7 +159,6 @@ export default class Formulario extends Component{
                             if(v.read_only || "classificacao_inicial".indexOf(k)>-1 ){
                                 adicionalProps.allowAdditions = false;
                             }
-                        
                             break;
                     }
                         
@@ -463,21 +429,9 @@ export default class Formulario extends Component{
             }
             </div>
            }
-
-
-            {/*
-              {process.env.NODE_ENV !== 'production' &&
-                <div>
-                    <small>  <pre className='ta-l'>{JSON.stringify(this.props.formOptions,null,2)}</pre> </small>
-                    <small>  <pre className='ta-l'>{JSON.stringify(this.props.itens,null,2)}</pre> </small>
-                </div>
-            }*/}
-         
-       
         </div>
         )
   }
-
 }
 
 

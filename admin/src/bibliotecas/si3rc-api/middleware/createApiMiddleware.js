@@ -210,23 +210,23 @@ function replacePropertyValue(prevVal, newVal, object) {
 
 // funcao que vai lidar com a resposta do fetch
 async function handleResponse(response) {
-  myconsole.log("handleResponse RAW ======= %o", response);
+  // myconsole.log("handleResponse RAW ======= %o", response);
 
   const respostaTxt = await response.text();
 
-  console.log("respostaTxt createApiMiddleware.js: ", respostaTxt);
+  // console.log("respostaTxt createApiMiddleware.js: ", respostaTxt);
 
   const respostaRepla = respostaTxt;
 
-  myconsole.log("handleResponse Text ======= %o", respostaRepla);
-  console.log("handleResponse Text ======= %o", respostaRepla);
+  // myconsole.log("handleResponse Text ======= %o", respostaRepla);
+  // console.log("handleResponse Text ======= %o", respostaRepla);
 
   const pp = `${respostaTxt}    `;
   const res = JSON.parse(pp);
 
-  myconsole.log("handleResponse Json ======= %o", JSON.parse(pp));
+  // myconsole.log("handleResponse Json ======= %o", JSON.parse(pp));
 
-  myconsole.log("handleResponse Json ======= %o", { ...res });
+  // myconsole.log("handleResponse Json ======= %o", { ...res });
 
   let { results, included = [], meta = {} } = res;
 
@@ -307,7 +307,7 @@ function createMiddleware(host, defaultHeaders) {
     // if( method === 'OPTIONS')
     // url += "?format=json"
 
-    myconsole.log("url:", url);
+    // myconsole.log("url:", url);
 
     // if(method === 'DELETE' || method === 'POST' || method === 'PATCH' ) url = url+'/';
 
@@ -325,7 +325,7 @@ function createMiddleware(host, defaultHeaders) {
     if (!checkForFile(resources)) {
       // Se não tenho é normal
 
-      console.log("URL recebida", url);
+      // console.log("URL recebida", url);
 
       response = await fetch(url, {
         method,
@@ -392,10 +392,10 @@ function createMiddleware(host, defaultHeaders) {
 
     response = await handleErrors(response, method);
 
-    myconsole.log("response raw");
-    myconsole.log(response);
+    // myconsole.log("response raw");
+    // myconsole.log(response);
 
-    myconsole.log("dataFinalMontado - RAW response: %o", response);
+    // myconsole.log("dataFinalMontado - RAW response: %o", response);
 
     if (response.ok === true) {
       //o response recebe um promisse que paso para a frente
@@ -462,7 +462,7 @@ function createMiddleware(host, defaultHeaders) {
     url = "",
     isNew = false
   ) => {
-    myconsole.log("geURL arguments %o", resources, modeloSchema);
+    // myconsole.log("geURL arguments %o", resources, modeloSchema);
     let urlParts = "";
 
     //Se comeca com / a url uso relativo a api, senao uso relativo ao rest_api

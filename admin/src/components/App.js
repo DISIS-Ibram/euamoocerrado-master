@@ -43,29 +43,10 @@ class NotificationComponent extends React.Component {
   }
 }
 
-
-// NotificationComponent.propTypes = {
-//   notifications: PropTypes.array
-// };
-
-
-
-
-
-
-
-/**
- * App component
- */
-class App extends React.Component
-{
-
-
-
+class App extends React.Component{
     componentWillMount() {
         this.state = {user:false}; 
         this.requireAuth();  
-      
     }
 
     componentDidMount() {
@@ -78,9 +59,6 @@ class App extends React.Component
         if(this.props.modal.length > 0)
                 $('body').addClass('scrolling dimmable dimmed');
     }
-
-
-
 
     requireAuth = async (nextState, replace)=> {
         var user = await getUserFromToken();
@@ -96,71 +74,54 @@ class App extends React.Component
         }
     }
 
-
     //funcao para gerar os modals
     processaModals =() =>{
-      
         const modals = this.props.modal.map( (el)=>{
               return criaModal(el,{dimmer:false})
         } )
-        
         return modals;
-   
-
      }
     
-
-    
-    render()
-    {
+    render(){
         const modals = this.processaModals();
-       const theme = {
-  scheme: 'monokai',
-  author: 'wimer hazenberg (http://www.monokai.nl)',
-  base00: '#272822',
-  base01: '#383830',
-  base02: '#49483e',
-  base03: '#75715e',
-  base04: '#a59f85',
-  base05: '#f8f8f2',
-  base06: '#f5f4f1',
-  base07: '#f9f8f5',
-  base08: '#f92672',
-  base09: '#fd971f',
-  base0A: '#f4bf75',
-  base0B: '#a6e22e',
-  base0C: '#a1efe4',
-  base0D: '#66d9ef',
-  base0E: '#ae81ff',
-  base0F: '#cc6633'
-};
+        const theme = {
+          scheme: 'monokai',
+          author: 'wimer hazenberg (http://www.monokai.nl)',
+          base00: '#272822',
+          base01: '#383830',
+          base02: '#49483e',
+          base03: '#75715e',
+          base04: '#a59f85',
+          base05: '#f8f8f2',
+          base06: '#f5f4f1',
+          base07: '#f9f8f5',
+          base08: '#f92672',
+          base09: '#fd971f',
+          base0A: '#f4bf75',
+          base0B: '#a6e22e',
+          base0C: '#a1efe4',
+          base0D: '#66d9ef',
+          base0E: '#ae81ff',
+          base0F: '#cc6633'
+        };
         return (
             <div className="si3">
-               
                 {modals}
                 <Sidebar />
                 <Topbar />
                 {this.props.children}         
                 <NotificationComponent />
 
-
                 {process.env.NODE_ENV !== 'production' &&
-                <div className="mt7">
-                    <div className='w-70 mh5 fl '>
-                            <JSONTree data={this.props.options}  theme={theme} invertTheme={true} />
-                    </div>
-                </div>
+                  <div className="mt7">
+                      <div className='w-70 mh5 fl '>
+                              <JSONTree data={this.props.options}  theme={theme} invertTheme={true} />
+                      </div>
+                  </div>
                 }
             </div>
-        
         );
     }
-
-
 }
-
-
-
-
 
 export default withRouter(connect((state)=>({modal:state.modal,usuario:state.usuario,options:state.api.modelOptions}),si3Actions)(App))

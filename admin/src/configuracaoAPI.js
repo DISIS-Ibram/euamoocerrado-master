@@ -11,7 +11,7 @@ var url = 'http://localhost:8686/'
 
 var urlApi = `${url}rest_api/`;
 
-console.log('URL montada: ', urlApi);
+// console.log('URL montada: ', urlApi);
 
 const config = {
     url:url,

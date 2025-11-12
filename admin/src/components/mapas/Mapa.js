@@ -230,26 +230,11 @@ class Mapa extends React.Component {
           });
         }
 
-        console.log(JSON.stringify(this.state.linhasRelacoesGeoJSON));
         var obj = {};
         obj[modelo] = data;
         this.setState({ ...obj });
       });
     });
-
-    // si3.getGeoJson("relato", optionsFinal)
-    //     .then((data) => {
-    //         this.setState({
-    //             geoRelatos: data
-    //         })
-    //     })
-
-    // si3.getGeoJson("registro", optionsFinal)
-    //     .then((data) => {
-    //         this.setState({
-    //             geoRegistro: data
-    //         })
-    //     })
   };
 
   //quando clico em gson

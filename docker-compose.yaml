@@ -11,8 +11,9 @@ services:
       - ./db-backup:/db-backup
       # - ./db-init:/db-init
       - ./db-init:/docker-entrypoint-initdb
-      ports:
-      - "${POSTGRES_PORT}:5432"
+      # 👇 Sem 'ports'
+      # ports:
+      #   - "55432:5432"
       
   # DJANGO-LOGICA BACKEND
   backend:
@@ -25,7 +26,8 @@ services:
       - ./.env
     ports:
       - "${BACKEND_PORT}:8686"
-
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@db:5432/euamoocerrado
   #   # expose:
   #   #   - 8080
   #   volumes:

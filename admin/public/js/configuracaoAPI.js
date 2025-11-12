@@ -5,11 +5,11 @@ var url = window.____BACKEND_URL
 //     // url = 'http://localhost:8686/';
 // }
 
-console.log('configuracaoAPI.js carregado')
+// console.log('configuracaoAPI.js carregado')
 
 var urlApi = `${url}rest_api/`;
 
-console.log('url: ', url);
+// console.log('url: ', url);
 // url = 'http://localhost:8686/api/';
 // console.log('url: ', url);
 
