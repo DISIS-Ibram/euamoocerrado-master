@@ -1,11 +1,11 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { Loader, Container, Message } from "semantic-ui-react";
 import { connect } from "react-redux";
-import { Router, Route, IndexRoute, browserHistory,  Link } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory, Link } from "react-router";
 import map from "lodash/map";
-import { withRouter } from 'react-router'
-import _ from 'lodash';
+import { withRouter } from "react-router";
+import _ from "lodash";
 import { t, d } from "models/models";
 import { si3, si3Actions } from "actions/index";
 import { createSelector } from "reselect";
@@ -65,19 +65,13 @@ export default function carregaModelo(Wc) {
   let newClass = class CarregaModeloComponent extends Wc {
     static propTypes = {
       modelo: PropTypes.oneOfType([
-        React.PropTypes.string,
-        React.PropTypes.array,
-        React.PropTypes.object,
+        PropTypes.string,
+        PropTypes.array,
+        PropTypes.object,
       ]).isRequired,
       //LETODO - verificar pq id não esta funcionando
-      idd: PropTypes.oneOfType([
-        React.PropTypes.string,
-        React.PropTypes.array,
-      ]),
-      include: PropTypes.oneOfType([
-        React.PropTypes.string,
-        React.PropTypes.array,
-      ]),
+      idd: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+      include: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
     };
 
     static defaultProps = {

@@ -29,124 +29,121 @@ const myconsole = (function (_debug = true) {
 // // ####################### TESTE #####################################
 
 export default class Campo extends React.Component {
-    static type = "Campo"
-    render(){
-         let {validate, tipo, req, requerido, maxChar, minChar, email,...custom} = this.props
+  static type = "Campo";
 
-          //verifico as validacoes
-          validate = isArray(validate) ? validate : [];
+  //     render(){
+  //          let {validate, tipo, req, requerido, maxChar, minChar, email,...custom} = this.props
 
-          if(req){
-             validate.push( validacao.requerido )
-             custom.req = true; //passo para baixo que é requerido ou nao
-          }
+  //           //verifico as validacoes
+  //           validate = isArray(validate) ? validate : [];
 
-           if(email){
-             validate.push( validacao.email )
-          }
-          if(maxChar){
-             validate.push( validacao.maxLength(maxChar) )
-          }
-          if(minChar){
-             validate.push( validacao.minLength(maxChar) )
-          }
+  //           if(req){
+  //              validate.push( validacao.requerido )
+  //              custom.req = true; //passo para baixo que é requerido ou nao
+  //           }
 
-          //verifico o tipo do componente
-          tipo = tipo.toLowerCase();
-          let component;
+  //            if(email){
+  //              validate.push( validacao.email )
+  //           }
+  //           if(maxChar){
+  //              validate.push( validacao.maxLength(maxChar) )
+  //           }
+  //           if(minChar){
+  //              validate.push( validacao.minLength(maxChar) )
+  //           }
 
-          if( "inputtext texto text input".indexOf(tipo) > -1 ){
-              component=TipoCampos.InputText
+  //           //verifico o tipo do componente
+  //           tipo = tipo.toLowerCase();
+  //           let component;
 
-          }else if("inputdate data date".indexOf(tipo) > -1 ){
-              component=TipoCampos.InputDate
+  //           if( "inputtext texto text input".indexOf(tipo) > -1 ){
+  //               component=TipoCampos.InputText
 
-          }else if("inputcolor color cor".indexOf(tipo) > -1 ){
-              component=TipoCampos.InputColor
+  //           }else if("inputdate data date".indexOf(tipo) > -1 ){
+  //               component=TipoCampos.InputDate
 
-          }else if("inputtextarea textarea areatexto areadetexto textoarea areadetexto".indexOf(tipo) > -1 ){
-              component=TipoCampos.InputTextArea
+  //           }else if("inputcolor color cor".indexOf(tipo) > -1 ){
+  //               component=TipoCampos.InputColor
 
-          }else if("endereco".indexOf(tipo) > -1 ){
-              component=TipoCampos.InputEndereco
+  //           }else if("inputtextarea textarea areatexto areadetexto textoarea areadetexto".indexOf(tipo) > -1 ){
+  //               component=TipoCampos.InputTextArea
 
-          }else if("geopoint point ponto mapaponto".indexOf(tipo) > -1 ){
-              component=TipoCampos.InputGeoPoint
+  //           }else if("endereco".indexOf(tipo) > -1 ){
+  //               component=TipoCampos.InputEndereco
 
-          }else if("arquivo".indexOf(tipo) > -1 ){
-              component=TipoCampos.InputFile
+  //           }else if("geopoint point ponto mapaponto".indexOf(tipo) > -1 ){
+  //               component=TipoCampos.InputGeoPoint
 
-          }else if("modelo model select".indexOf(tipo) > -1 ){
-              component=TipoCampos.InputSelecaoModelo
+  //           }else if("arquivo".indexOf(tipo) > -1 ){
+  //               component=TipoCampos.InputFile
 
-          }else if("checkbox bolleano bollean".indexOf(tipo) > -1 ){
-              component=TipoCampos.InputCheckbox
+  //           }else if("modelo model select".indexOf(tipo) > -1 ){
+  //               component=TipoCampos.InputSelecaoModelo
 
-          }else if("radiogrupo radiogrup".indexOf(tipo) > -1 ){
-              component=TipoCampos.InputRadioGroup
+  //           }else if("checkbox bolleano bollean".indexOf(tipo) > -1 ){
+  //               component=TipoCampos.InputCheckbox
 
-          }else if("radio".indexOf(tipo) > -1 ){
-              component=TipoCampos.InputRadio
+  //           }else if("radiogrupo radiogrup".indexOf(tipo) > -1 ){
+  //               component=TipoCampos.InputRadioGroup
 
-          }else if("midia colecao colecao_midia colecaomidia".indexOf(tipo) > -1 ){
-              component=TipoCampos.InputColecaoMidia
-          }else{
-              component = tipo;
-          }
+  //           }else if("radio".indexOf(tipo) > -1 ){
+  //               component=TipoCampos.InputRadio
 
-          myconsole.count("********* RENDER CAMPO *************")
-          myconsole.log("props:",this.props)
+  //           }else if("midia colecao colecao_midia colecaomidia".indexOf(tipo) > -1 ){
+  //               component=TipoCampos.InputColecaoMidia
+  //           }else{
+  //               component = tipo;
+  //           }
 
-          //converto qualquer onChange para uma versnao interna do onChange
-          let _onChange = custom.onChange;
+  //           myconsole.count("********* RENDER CAMPO *************")
+  //           myconsole.log("props:",this.props)
 
-           return(
-               <Field {...custom}  component={component} validate={validate} _onChange={_onChange} >
-                     {this.props.children}
-               </Field>
-             )
+  //           //converto qualquer onChange para uma versnao interna do onChange
+  //           let _onChange = custom.onChange;
 
-    }
+  //            return(
+  //                <Field {...custom}  component={component} validate={validate} _onChange={_onChange} >
+  //                      {this.props.children}
+  //                </Field>
+  //              )
 
+  //     }
 }
 
-//validate={validate}
+// //validate={validate}
 
-// FieldSet - Agrupa um bando defields
-//---------------------------
+// // FieldSet - Agrupa um bando defields
+// //---------------------------
 
 export class CampoGrupo extends React.Component {
+  renderChildren = () => {
+    return React.Children.map(this.props.children, (child) => {
+      if (child.type && child.type === Campo)
+        return React.cloneElement(child, {
+          subField: true,
+          // placeholder:child.props.label
+        });
+      else return child;
+    });
+  };
 
-    renderChildren = ()=>{
-        return React.Children.map(this.props.children, child => {
-            if (child.type && child.type === Campo)
-              return React.cloneElement(child, {
-                subField: true,
-                // placeholder:child.props.label
-              })
-            else
-              return child
-          })
-    }
+  //     render(){
+  //         const {req, label,...custom } = this.props;
+  //         return (
 
-    render(){
-        const {req, label,...custom } = this.props;
-        return (
+  //            <div className='field fieldnormal campogrupo subgrupo placeholder'>
 
-           <div className='field fieldnormal campogrupo subgrupo placeholder'>
+  //           {(label != '') &&
+  //            <label className='ui label titulo '>
+  //               <span className='icone-erro erro-icone'><i className="fa fa-exclamation-triangle" /></span> <span className='requerido'>{req && '*'}</span>{label}
+  //           </label>
+  //           }
 
-          {(label != '') &&
-           <label className='ui label titulo '>
-              <span className='icone-erro erro-icone'><i className="fa fa-exclamation-triangle" /></span> <span className='requerido'>{req && '*'}</span>{label}
-          </label>
-          }
+  //            {/* <div className='fields campogrupo subgrupo'>*/}
+  //               {this.renderChildren()}
+  //         {/*    </div>*/}
+  //            </div>
+  //         );
 
-           {/* <div className='fields campogrupo subgrupo'>*/}
-              {this.renderChildren()}
-        {/*    </div>*/}
-           </div>
-        );
-
-    }
-
+  //     }
 }

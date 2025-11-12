@@ -1,5 +1,6 @@
-import React from 'react';
-import Tooltip from 'rc-tooltip';
+import React from "react";
+import PropTypes from "prop-types";
+import Tooltip from "rc-tooltip";
 
 export default class Handle extends React.Component {
   constructor(props) {
@@ -38,7 +39,9 @@ export default class Handle extends React.Component {
 
     const style = vertical ? { bottom: `${offset}%` } : { left: `${offset}%` };
     const handle = (
-      <div className={className} style={style}
+      <div
+        className={className}
+        style={style}
         onMouseUp={this.showTooltip.bind(this)}
         onMouseEnter={this.showTooltip.bind(this)}
         onMouseLeave={this.hideTooltip.bind(this)}
@@ -66,14 +69,14 @@ export default class Handle extends React.Component {
 }
 
 Handle.propTypes = {
-  prefixCls: React.PropTypes.string,
-  tooltipPrefixCls: React.PropTypes.string,
-  className: React.PropTypes.string,
-  vertical: React.PropTypes.bool,
-  offset: React.PropTypes.number,
-  tipTransitionName: React.PropTypes.string,
-  tipFormatter: React.PropTypes.func,
-  value: React.PropTypes.number,
-  dragging: React.PropTypes.bool,
-  noTip: React.PropTypes.bool,
+  prefixCls: PropTypes.string,
+  tooltipPrefixCls: PropTypes.string,
+  className: PropTypes.string,
+  vertical: PropTypes.bool,
+  offset: PropTypes.number,
+  tipTransitionName: PropTypes.string,
+  tipFormatter: PropTypes.func,
+  value: PropTypes.number,
+  dragging: PropTypes.bool,
+  noTip: PropTypes.bool,
 };

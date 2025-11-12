@@ -1,26 +1,26 @@
-import React from 'react';
-import calculateNodeHeight from 'util/calculateNodeHeight';
-import onlyDOMProps from 'util/onlyDOMProps'
+import React from "react";
+import PropTypes from "prop-types";
+import calculateNodeHeight from "util/calculateNodeHeight";
+import onlyDOMProps from "util/onlyDOMProps";
 
-const emptyFunction = function() {};
+const emptyFunction = function () {};
 
 export default class TextareaAutosize extends React.Component {
-
   static propTypes = {
     /**
      * Current textarea value.
      */
-    value: React.PropTypes.string,
+    value: PropTypes.string,
 
     /**
      * Callback on value change.
      */
-    onChange: React.PropTypes.func,
+    onChange: PropTypes.func,
 
     /**
      * Callback on height changes.
      */
-    onHeightChange: React.PropTypes.func,
+    onHeightChange: PropTypes.func,
 
     /**
      * Try to cache DOM measurements performed by component so that we don't
@@ -29,36 +29,36 @@ export default class TextareaAutosize extends React.Component {
      * This optimization doesn't work if we dynamically style <textarea />
      * component.
      */
-    useCacheForDOMMeasurements: React.PropTypes.bool,
+    useCacheForDOMMeasurements: PropTypes.bool,
 
     /**
      * Minimal numbder of rows to show.
      */
-    rows: React.PropTypes.number,
+    rows: PropTypes.number,
 
     /**
      * Alias for `rows`.
      */
-    minRows: React.PropTypes.number,
+    minRows: PropTypes.number,
 
     /**
      * Maximum number of rows to show.
      */
-    maxRows: React.PropTypes.number
-  }
+    maxRows: PropTypes.number,
+  };
 
   static defaultProps = {
     onChange: emptyFunction,
     onHeightChange: emptyFunction,
-    useCacheForDOMMeasurements: false
-  }
+    useCacheForDOMMeasurements: false,
+  };
 
   constructor(props) {
     super(props);
     this.state = {
       height: null,
       minHeight: -Infinity,
-      maxHeight: Infinity
+      maxHeight: Infinity,
     };
     this._onNextFrameActionId = null;
     this._rootDOMNode = null;
@@ -74,9 +74,9 @@ export default class TextareaAutosize extends React.Component {
       maxRows: _maxRows,
       onHeightChange: _onHeightChange,
       useCacheForDOMMeasurements: _useCacheForDOMMeasurements,
-      ...props,
+      ...props
     } = this.props;
-    if (typeof valueLink === 'object') {
+    if (typeof valueLink === "object") {
       props.value = valueLink.value;
     }
     props.style = {
@@ -85,22 +85,23 @@ export default class TextareaAutosize extends React.Component {
     };
     let maxHeight = Math.max(
       props.style.maxHeight ? props.style.maxHeight : Infinity,
-      this.state.maxHeight);
+      this.state.maxHeight
+    );
     if (maxHeight < this.state.height) {
-      props.style.overflow = 'hidden';
+      props.style.overflow = "hidden";
     }
     return (
       <textarea
         {...onlyDOMProps(props)}
         onChange={this._onChange}
         ref={this._onRootDOMNode}
-        />
+      />
     );
   }
 
   componentDidMount() {
     this._resizeComponent();
-    window.addEventListener('resize', this._resizeComponent);
+    window.addEventListener("resize", this._resizeComponent);
   }
 
   componentWillReceiveProps() {
@@ -120,7 +121,7 @@ export default class TextareaAutosize extends React.Component {
     // Remove any scheduled events to prevent manipulating the node after it's
     // been unmounted.
     this._clearNextFrame();
-    window.removeEventListener('resize', this._resizeComponent);
+    window.removeEventListener("resize", this._resizeComponent);
   }
 
   _clearNextFrame() {
@@ -135,7 +136,7 @@ export default class TextareaAutosize extends React.Component {
 
   _onChange(e) {
     this._resizeComponent();
-    let {valueLink, onChange} = this.props;
+    let { valueLink, onChange } = this.props;
     if (valueLink) {
       valueLink.requestChange(e.target.value);
     } else {
@@ -144,18 +145,22 @@ export default class TextareaAutosize extends React.Component {
   }
 
   _resizeComponent() {
-    let {useCacheForDOMMeasurements} = this.props;
-    this.setState(calculateNodeHeight(
-      this._rootDOMNode,
-      useCacheForDOMMeasurements,
-      this.props.rows || this.props.minRows,
-      this.props.maxRows));
+    let { useCacheForDOMMeasurements } = this.props;
+    this.setState(
+      calculateNodeHeight(
+        this._rootDOMNode,
+        useCacheForDOMMeasurements,
+        this.props.rows || this.props.minRows,
+        this.props.maxRows
+      )
+    );
   }
 
   /**
    * Read the current value of <textarea /> from DOM.
    */
-  get value(): string {
+  // get value(): string {
+  get value() {
     return this._rootDOMNode.value;
   }
 
@@ -169,28 +174,32 @@ export default class TextareaAutosize extends React.Component {
   /**
    * Read the current selectionStart of <textarea /> from DOM.
    */
-  get selectionStart(): number {
+  // get selectionStart(): number {
+  get selectionStart() {
     return this._rootDOMNode.selectionStart;
   }
 
   /**
    * Set the current selectionStart of <textarea /> DOM node.
    */
-  set selectionStart(selectionStart: number) {
+  // set selectionStart(selectionStart: number) {
+  set selectionStart(selectionStart) {
     this._rootDOMNode.selectionStart = selectionStart;
   }
 
   /**
    * Read the current selectionEnd of <textarea /> from DOM.
    */
-  get selectionEnd(): number {
+  // get selectionEnd(): number {
+  get selectionEnd() {
     return this._rootDOMNode.selectionEnd;
   }
 
   /**
    * Set the current selectionEnd of <textarea /> DOM node.
    */
-  set selectionEnd(selectionEnd: number) {
+  // set selectionEnd(selectionEnd: number) {
+  set selectionEnd(selectionEnd) {
     this._rootDOMNode.selectionEnd = selectionEnd;
   }
 
@@ -207,7 +216,6 @@ export default class TextareaAutosize extends React.Component {
   blur() {
     this._rootDOMNode.blur();
   }
-
 }
 
 function onNextFrame(cb) {

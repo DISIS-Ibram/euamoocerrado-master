@@ -15,6 +15,9 @@ WORKDIR /app
 # Copia o projeto
 COPY . .
 
+# # Instala dependências (inclusive Babel)
+# RUN npm install --save-dev @babel/core @babel/preset-env @babel/preset-typescript
+
 # Instala dependências
 RUN npm install
 

@@ -37,11 +37,11 @@ import carregaModelo from "hocs/carregaModelo";
 import * as util from "util/s3util";
 import { createSelector } from "reselect";
 import enhanceWithClickOutside from "react-click-outside";
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player"; // Erro PropTypes
 
 import { FormField } from "components/formfields/index";
 
-// import wkx from 'wkx';
+// // import wkx from 'wkx';
 
 import Formulario from "components/Formulario";
 import formHoc from "hocs/formularioHoc";
@@ -72,12 +72,10 @@ const myconsole = criaconsole(
 export default class InputColecaoMidiaWrap extends React.Component {
   render() {
     var id = this.props.input.value;
-
     //letodo - pq so id = 0 garanto que nao vou tentar pegar id da url.
     // isso é especialmente importante quando to abrindo popup
     if (id == "") id = this.props.id;
     if (id == undefined) id = 0;
-
     return (
       <InputColecaoMidia
         modelo="colecao"
@@ -89,7 +87,7 @@ export default class InputColecaoMidiaWrap extends React.Component {
   }
 }
 
-@carregaModelo
+// @carregaModelo
 class InputColecaoMidiaTest extends React.Component {
   static defaultProps = {
     nomeTemplate: "_colecao_midia",
@@ -116,7 +114,7 @@ class InputColecaoMidiaTest extends React.Component {
   }
 }
 
-@carregaModelo
+// @carregaModelo
 class InputColecaoMidia extends React.Component {
   //lengrando que os props recebem o field tb
   //O ide da colecao vem do porps.input.value
@@ -429,11 +427,11 @@ class InputColecaoMidia extends React.Component {
             onDrop={this.drop.bind(this)}
             onDoubleClick={this.showAllToogle}
             onClick={() => this.fileInput.click()}
-            className="ui colecao-midia-drop"
+            // className="ui colecao-midia-drop"
           >
             {/*this.state.totalFiles > 0 &&
-                  
-                  */}
+
+                    */}
 
             <div className=" upload float-right ta-r col-xs-6">
               <i className="fs2 op04 t02 h-cl-ae1 h-op1 fa fa-cloud-upload" />
@@ -532,7 +530,7 @@ class InputColecaoMidia extends React.Component {
             onDragLeave={this.dragOut.bind(this)}
             onDrop={this.drop.bind(this)}
             onDoubleClick={this.showAllToogle}
-            className="ui colecao-midia-drop"
+            // className="ui colecao-midia-drop"
           >
             {this.state.totalFiles > 0 && (
               <div className="full zi10 row center-xs middle-xs bg-cor-laranja06">
@@ -718,7 +716,7 @@ class ColecaoForm extends React.Component {
       <Formulario
         tipo="small"
         {...this.props}
-        tipo="placeholder mini"
+        // tipo="placeholder mini"
         butoesOnPristine={true}
       >
         <Campo
@@ -1283,7 +1281,7 @@ class MidiaForm extends React.Component {
             </Button.Group>
 
             {/* <Button.Group className='fl-r' basic size='small'>
-                          
+
                         </Button.Group> */}
           </div>
         </div>
