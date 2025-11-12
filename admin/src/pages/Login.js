@@ -15,7 +15,7 @@ import carregaModelo from "hocs/carregaModelo";
 import { SI3RC_MODELS } from "models/models";
 import { Statistic } from "semantic-ui-react";
 
-import LoginForm from "components/form/LoginForm"; // Erro PropTypes
+import LoginForm from "components/form/LoginForm";
 
 import criaconsole from "util/myconsole";
 const _debug = false;
@@ -60,7 +60,7 @@ class Fundo extends React.Component {
   }
 }
 
-// @carregaModelo
+@carregaModelo
 class Estatisticas extends React.Component {
   static defaultProps = {
     id: "all",

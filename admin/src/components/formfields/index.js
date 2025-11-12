@@ -9,7 +9,7 @@ import InputCheckbox from "./InputCheckbox";
 import InputRadioGroup from "./InputRadioGroup";
 import InputColor from "./InputColor";
 import { InputRadio } from "./InputRadioGroup";
-import InputColecaoMidia from "./InputColecaoMidia"; //Erro PropTypes
+import InputColecaoMidia from "./InputColecaoMidia";
 import InputSelecaoModelo from "./InputSelecaoModelo";
 import { CampoGrupo } from "./Campo";
 import Campo from "./Campo";

@@ -1,94 +1,88 @@
-import React from 'react';
-import { Accordion,Divider, Popup, Label, List, Icon, Radio, Input, Dimmer, Loader, Image, Segment, Button } from 'semantic-ui-react';
-import { si3, si3Actions }  from 'actions/index';
-import moment from 'moment'
+import React from "react";
+import {
+  Accordion,
+  Divider,
+  Popup,
+  Label,
+  List,
+  Icon,
+  Radio,
+  Input,
+  Dimmer,
+  Loader,
+  Image,
+  Segment,
+  Button,
+} from "semantic-ui-react";
+import { si3, si3Actions } from "actions/index";
+import moment from "moment";
 
-import {Link} from 'react-router'
+import { Link } from "react-router";
 
-import Formulario from 'components/Formulario'
-import formHoc from 'hocs/formularioHoc'
-import {Campo, CampoGrupo } from 'components/formfields'
+import Formulario from "components/Formulario";
+import formHoc from "hocs/formularioHoc";
+import { Campo, CampoGrupo } from "components/formfields";
 
-import Avatar from 'components/elements/Avatar'
+import Avatar from "components/elements/Avatar";
 
-import carregaModelo from 'hocs/carregaModelo'
+import carregaModelo from "hocs/carregaModelo";
 
-import ItemGenericoList from 'components/form/ItemGenericoList';
+import ItemGenericoList from "components/form/ItemGenericoList";
 
-import criaconsole from 'util/myconsole'
+import criaconsole from "util/myconsole";
 
-import ViewMore from 'components/ViewMore'
+import ViewMore from "components/ViewMore";
 
-
-import ListaSection from 'components/listas/ListaSection'
-
-
+import ListaSection from "components/listas/ListaSection";
 
 const _debug = true;
-const myconsole = criaconsole(_debug,' === FpeForm.js | ', 'color:orange; font-weight:bold')
-
-
-
-
+const myconsole = criaconsole(
+  _debug,
+  " === FpeForm.js | ",
+  "color:orange; font-weight:bold"
+);
 
 @formHoc
-export default class ExpedicaoForm extends React.Component{
-   
+export default class ExpedicaoForm extends React.Component {
   static defaultProps = {
-        modelo: "especie",
-        autoForm:true,
-        loadFormOptions:true,
-        // asID:["relatos"]//,"colecao_midia","receptor"],
-      //   include:'all', 
-  } 
+    modelo: "especie",
+    autoForm: true,
+    loadFormOptions: true,
+    // asID:["relatos"]//,"colecao_midia","receptor"],
+    //   include:'all',
+  };
 
+  novoPlanejamento = (e) => {
+    this.props.openModal({
+      nome: "modal_planejamentoexpedicao",
+      tipo: "form",
+      modelo: "especie",
+      onSave: () => {
+        this.props.load("especie", {}, { especie: this.props.itens.id });
+      },
+      value: { especie: this.props.itens.id },
+    });
+  };
 
-    novoPlanejamento = (e)=>{
+  render() {
+    //os props que passo abaixo é pq eu ja sou um redux-form
+    //e passo abaixo os props do redux form para esse component
+    return (
+      <div className="row">
+        <div className="col-xs-6 col-sm-6 pr-3">
+          <Formulario {...this.props}></Formulario>
+        </div>
 
-     this.props.openModal( { nome:"modal_planejamentoexpedicao",
-                              tipo:'form',
-                              modelo:"especie",
-                              onSave:()=>{
-                                this.props.load('especie',{},{especie:this.props.itens.id})
-                             },
-                              value:{especie:this.props.itens.id}
-                            } 
-                            )
-
-  }
-
-
-
-
-
-  render(){
-      
-      //os props que passo abaixo é pq eu ja sou um redux-form
-      //e passo abaixo os props do redux form para esse component
-      return (  
-          <div className='row'>
-              <div className='col-xs-6 col-sm-6 pr-3'>
-                    <Formulario {...this.props} >
-                    </Formulario>
-            </div>
-          
-
-
-            { this.props.id != 0 &&
-           
-            <div className='col-xs-6 col-sm-5 col-sm-5 lateral-info'>
-
-
-               
-
-           
-            <ListaSection modelo="imagemespecie" 
-                          titulo="Imagens Especies"
-                          onSaveOptions={ {especie:this.props.itens.id} }
-                          initialValues={ {especie:this.props.itens.id} }
-                          options={{especie:this.props.itens._id}}
-                          template="imagemespecie"
-                           />
+        {(this.props.id != 0 && (
+          <div className="col-xs-6 col-sm-5 col-sm-5 lateral-info">
+            <ListaSection
+              modelo="imagemespecie"
+              titulo="Imagens Especies"
+              onSaveOptions={{ especie: this.props.itens.id }}
+              initialValues={{ especie: this.props.itens.id }}
+              options={{ especie: this.props.itens._id }}
+              template="imagemespecie"
+            />
 
             {/* <ListaSection modelo="relatoriodeexpedicao" 
                           titulo="Relatório"
@@ -96,24 +90,16 @@ export default class ExpedicaoForm extends React.Component{
                           initialValues={ {expedicao:this.props.itens.id}}
                           options={{expedicao:this.props.itens._id}}
                            /> */}
-
-
-           
-            </div>
-           
-           ||
-
-             <div className='col-xs-6 col-sm-5 col-sm-5 tac'>
-                    <center className="fs1 gray" > Salve para mais opções </center>
-            </div>
-            
-            }
-        
-        </div>
-        )
+          </div>
+        )) || (
+          <div className="col-xs-6 col-sm-5 col-sm-5 tac">
+            <center className="fs1 gray"> Salve para mais opções </center>
+          </div>
+        )}
+      </div>
+    );
   }
 }
-
 
 /*
 @carregaModelo

@@ -1,8 +1,8 @@
 import React from "react";
 import Teste from "../../teste/Teste";
-import Formulario from "components/Formulario"; // Erro PropTypes
+import Formulario from "components/Formulario";
 import formHoc from "hocs/formularioHoc";
-// import { Campo, CampoGrupo } from "components/formfields"; // Erro PropTypes
+import { Campo, CampoGrupo } from "components/formfields";
 
 import { browserHistory, Link } from "react-router";
 
@@ -45,15 +45,35 @@ export default class LoginForm extends React.Component {
 
   render() {
     return (
-      <Teste />
-      //       <Formulario {...this.props} titulo="Entrar" tipo='invertido'  showReset={false} salvoLabel='Entrar' salvarLabel='Entrar' salvandoLabel='Logando...' criarLabel="Entrar" >
-      //         <div className="row center-xs">
-      //           <div className="col-xs-11">
-      //             <Campo req tipo='texto' name="email" label="CPF ou email" dica="cpf ou email"/>
-      //             <Campo req tipo='texto' type='password' name="password" label="Senha"/>
-      //           </div>
-      //         </div>
-      //       </Formulario>
+      <Formulario
+        {...this.props}
+        titulo="Entrar"
+        tipo="invertido"
+        showReset={false}
+        salvoLabel="Entrar"
+        salvarLabel="Entrar"
+        salvandoLabel="Logando..."
+        criarLabel="Entrar"
+      >
+        <div className="row center-xs">
+          <div className="col-xs-11">
+            <Campo
+              req
+              tipo="texto"
+              name="email"
+              label="CPF ou email"
+              dica="cpf ou email"
+            />
+            <Campo
+              req
+              tipo="texto"
+              type="password"
+              name="password"
+              label="Senha"
+            />
+          </div>
+        </div>
+      </Formulario>
     );
   }
 }

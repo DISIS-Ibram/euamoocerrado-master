@@ -13,13 +13,19 @@ module.exports = {
   entry: [__dirname + "/" + app_root + "/index.js"],
 
   output: {
-    path: __dirname + "/public/js",
-    publicPath: "js/",
+    path: path.resolve(__dirname, "public/js"),
+    publicPath: "/js/",
     filename: "bundle.js",
-    chunkFilename: "bundle.js",
-    // pathinfo:true,
-    library: "[name]",
+    chunkFilename: "[name].chunk.js",
   },
+  // output: {
+  //   path: __dirname + "/public/js",
+  //   publicPath: "js/",
+  //   filename: "bundle.js",
+  //   chunkFilename: "bundle.js",
+  //   // pathinfo:true,
+  //   library: "[name]",
+  // },
   externals: {
     lodash: {
       commonjs: "lodash",
@@ -40,6 +46,16 @@ module.exports = {
         include: [
           path.join(__dirname, "src"), //important for performance!
         ],
+        // query: {
+        //   cacheDirectory: true, //important for performance
+        //   presets: ["@babel/preset-env"],
+        //   plugins: [
+        //     "transform-object-rest-spread",
+        //     "transform-class-properties",
+        //     "transform-decorators-legacy",
+        //     "lodash",
+        //   ],
+        // },
         query: {
           cacheDirectory: true, //important for performance
           presets: ["es2015"],

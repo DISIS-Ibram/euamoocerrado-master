@@ -878,7 +878,7 @@ export class MapaAtrativos extends React.Component {
               onEdited={this._onEditPath.bind(this)}
               onEditStop={this._onEditStop}
               onDeleteStart={this._onDeleteStart}
-              onDeleted={this._onDeleted.bind(this)}
+              // onDeleted={this._onDeleted.bind(this)}
               onDeleteStop={this._onDeleteStop}
               draw={{
                 rectangle: false,
