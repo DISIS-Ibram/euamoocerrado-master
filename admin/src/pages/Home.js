@@ -4,7 +4,8 @@ import Sidebar from "../components/Sidebar";
 import { Router, Route, IndexRoute, browserHistory } from "react-router";
 import { si3, si3Actions } from "actions/index";
 
-import Mapa from "components/mapas/Mapa.js";
+// import Mapa from "components/mapas/Mapa.js";  // com erro de propriedades - setState, estado, municipio
+import Teste from "../teste/Teste";
 
 export class Home extends React.Component {
   componentDidMount() {
@@ -17,7 +18,8 @@ export class Home extends React.Component {
     return (
       <div className="row conteudo row-xs-12">
         <div className="col-xs-12 row-xs-12">
-          < Mapa />
+          {/* <Mapa /> */}
+          <Teste />
         </div>
       </div>
     );
