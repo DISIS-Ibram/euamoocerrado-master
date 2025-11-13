@@ -35,8 +35,10 @@ import Teste from "./teste/Teste";
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/login" component={Login} />
+      {/* <Route path="/login" component={Login} />
+      <Route path="/" component={Teste} /> */}
 
+      <Route path="/login" component={Login} />
       <Route path="/" component={App}>
         <IndexRoute component={Home} />
         <Route path="home" component={Home} />
@@ -61,29 +63,23 @@ ReactDOM.render(
           <Route path=":item" component={TextosPage} />
           <Route path=":item/:id" component={TextosPage} />
         </Route>
-
         <Route path="pessoa">
           <IndexRoute component={PessoasPageList} />
           <Route path="lista" component={PessoasPageList} />
           <Route path=":id" component={PessoasPageForm} />
         </Route>
-
         <Route path="avistamentos">
           <IndexRoute component={AvistamentoPage} />
           <Route path="lista" component={AvistamentoPage} />
           <Route path=":id" component={AvistamentoPage} />
         </Route>
-
         <Route path="itensdesistema/:item" component={Admin}></Route>
-
         <Route path="form/:item" component={AutoFormPage}>
           <Route path=":id" component={AutoFormPage} />
         </Route>
-
         <Route path="tabela/:item" component={AutoTabelaPage}>
           <Route path=":id" component={AutoTabelaPage} />
         </Route>
-
         <Route path="*" component={NotFound} />
       </Route>
     </Router>
@@ -91,17 +87,17 @@ ReactDOM.render(
   document.getElementById("app")
 );
 
-// // #####################################################
-// // #####################################################
-// // #####################################################
-// // #####################################################
-// // #####################################################
-// // #####################################################
+// // // #####################################################
+// // // #####################################################
+// // // #####################################################
+// // // #####################################################
+// // // #####################################################
+// // // #####################################################
 
-// import React from "react";
-// import Teste from "./teste/Teste";
+// // import React from "react";
+// // import Teste from "./teste/Teste";
 
-// // render the main component
-// ReactDOM.render(<Teste />, document.getElementById("app"));
+// // // render the main component
+// // ReactDOM.render(<Teste />, document.getElementById("app"));
 
-// // #####################################################
+// // // #####################################################

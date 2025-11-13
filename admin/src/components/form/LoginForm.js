@@ -10,7 +10,9 @@ import { loginRequest } from "auth";
 
 import { SubmissionError } from "redux-form";
 
-// @formHoc
+import { store } from "../../configStore";
+
+@formHoc
 export default class LoginForm extends React.Component {
   static defaultProps = {
     modelo: "",
@@ -30,17 +32,37 @@ export default class LoginForm extends React.Component {
 
   async onSalvar(values) {
     console.log("antes de salvar", values);
-    return loginRequest(values).then((resultado) => {
+    try {
+      const resultado = await loginRequest(values);
+
       if (resultado.ok) {
+        console.log("Login bem-sucedido:", resultado.data);
+
+        // Garante que o token foi salvo
+        if (resultado.data.key)
+          localStorage.setItem("token", resultado.data.key);
+
+        console.log("Resultado: ", resultado);
+
+        // ✅ Atualiza o Redux com o usuário autenticado
+        store.dispatch({ type: "USER_LOGIN", payload: resultado.data });
+
+        // Redireciona e recarrega
         browserHistory.push("/");
+        // // window.location.reload();
       } else {
         throw new SubmissionError({
           password: "Credenciais Inválidas",
           _error: "Credenciais Inválidas",
-          _erro: "Credenciais Invalidas",
+          _erro: "Credenciais Inválidas",
         });
       }
-    });
+    } catch (err) {
+      console.error("Erro ao logar:", err);
+      throw new SubmissionError({
+        _error: "Erro de conexão ou credenciais inválidas",
+      });
+    }
   }
 
   render() {

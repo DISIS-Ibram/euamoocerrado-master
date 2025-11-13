@@ -77,7 +77,7 @@ class App extends React.Component {
 
   requireAuth = async (nextState, replace) => {
     var user = await getUserFromToken();
-    console.log("USUARIO:%o", user);
+    // console.log("USUARIO:%o", user);
     //usar o redux store
     if (user === false) {
       browserHistory.replace("/login");

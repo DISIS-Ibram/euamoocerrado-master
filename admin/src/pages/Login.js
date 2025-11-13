@@ -1,5 +1,4 @@
 import React from "react";
-import Teste from "../teste/Teste";
 import Sidebar from "../components/Sidebar";
 import {
   DefaultRoute,
@@ -8,24 +7,21 @@ import {
   Link,
   browserHistory,
 } from "react-router";
-import { Divider, Form, Label, Input } from "semantic-ui-react";
+import { Divider, Form, Label, Input, Statistic } from "semantic-ui-react";
 import Slider from "react-slick";
 import * as util from "util/s3util";
 import carregaModelo from "hocs/carregaModelo";
 import { SI3RC_MODELS } from "models/models";
-import { Statistic } from "semantic-ui-react";
-
 import LoginForm from "components/form/LoginForm";
-
 import criaconsole from "util/myconsole";
+import { loginRequest, logout } from "auth";
+
 const _debug = false;
 const myconsole = criaconsole(
   _debug,
   " *** login.js | ",
   "color:black;font-weight:bold"
 );
-
-import { loginRequest, logout } from "auth";
 
 class Fundo extends React.Component {
   static defaultProps = {
@@ -37,7 +33,7 @@ class Fundo extends React.Component {
   };
 
   render() {
-    var settings = {
+    const settings = {
       dots: true,
       fade: true,
       autoplay: true,
@@ -47,7 +43,7 @@ class Fundo extends React.Component {
 
     return (
       <div className="fundo">
-        <Slider {...settings} autoplay={true}>
+        <Slider {...settings}>
           <div
             className="slider"
             style={{ backgroundImage: "url(images/cerrado-wwf.jpg)" }}
@@ -71,64 +67,62 @@ class Estatisticas extends React.Component {
   };
 
   render() {
-    if (this.props.itens) {
-      return (
-        <div className="estatisticas">
-          <Statistic label="relatos" value={this.props.itens[0].relato} />
-          {_.map(this.props.itens[0].registro, (v, k) => (
-            <Statistic key={v.nome} label={v.nome} value={v.count} />
-          ))}
-        </div>
-      );
-    } else {
-      return null;
-    }
+    const { itens } = this.props;
+    if (!itens) return null;
+
+    return (
+      <div className="estatisticas">
+        <Statistic label="relatos" value={itens[0].relato} />
+        {_.map(itens[0].registro, (v, k) => (
+          <Statistic key={v.nome} label={v.nome} value={v.count} />
+        ))}
+      </div>
+    );
   }
 }
 
 export default class Login extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  componentWillMount() {
     this.state = { user: false };
-    this.requireAuth();
   }
 
   componentDidMount() {
+    // ❌ Removido logout automático
+    // ✅ Apenas limpeza de cache local de models
     _.forEach(SI3RC_MODELS, (v, k) => {
       try {
         localStorage.removeItem(k + "_options");
       } catch (e) {}
     });
 
-    var h = $(window).height();
-    $(".login-page").height(h + 250);
-
-    $(window).resize(function () {
-      var h = $(window).height();
+    const resizePage = () => {
+      const h = $(window).height();
       $(".login-page").height(h + 250);
-    });
-  }
+    };
 
-  async requireAuth(nextState, replace) {
-    var user = await logout();
+    resizePage();
+    $(window).resize(resizePage);
   }
 
   render() {
     return (
       <div className="login-page" key="loginpage">
         <Fundo modelo="fotohomelist" />
+
         <div className="barra-lateral borda-container">
           <div className="borda br"></div>
         </div>
+
         <Estatisticas />
+
         <div id="footer">
           <div className="col-xs-7 pv4 f6 gray lh-copy pl5">
             Eu Amo o Cerrado
           </div>
-          <div className="assinaturas"></div>
+          <div className="assinaturas">
+            {/* <img src='images/assinaturas.png' /> */}
+          </div>
         </div>
 
         <div className="row mt-5">
