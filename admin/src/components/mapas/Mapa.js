@@ -115,40 +115,48 @@ class Mapa extends React.Component {
   }
 
   componentDidMount() {
-    si3.getGeoJson("terraindigena").then((data) => {
-      dataFinal = topojson.this.setState({
-        geoTi: data,
-      });
-      // const dataSTR = JSON.stringify(data);
-      console.log("====ti carregada =====");
-
-      // localStorage.setItem('si3tisTiles',dataSTR);
-      // const a = localStorage.getItem('si3tisTiles')
-    });
-
-    si3.getGeoJson("estado").then((data) => {
-      var dataFinal = topojson.feature(data, data.objects.estado);
-
-      this.setState({
-        geoEstados: dataFinal,
-      });
-      console.log("====Estados Carregadas=====");
-      //  localStorage.setItem('si3estadosTiles',JSON.stringify(data))
-    });
-
-    si3.getGeoJson("municipio").then((data) => {
-      var dataFinal = topojson.feature(data, data.objects.municipio);
-      this.setState({
-        geoMunicipio: dataFinal,
-      });
-      //  localStorage.setItem('si3estadosTiles',JSON.stringify(data))
-    });
-
     this.carregaModelosBusca();
 
     //Adiciono os eventos pq o do react-leaflet nao esta funcionado
     this.mapref.leafletElement.on("baselayerchange", this.baseLayerChange);
   }
+  // ################################# Daniel #################################
+  // componentDidMount() {
+  //   si3.getGeoJson("terraindigena").then((data) => {
+  //     dataFinal = topojson.this.setState({
+  //       geoTi: data,
+  //     });
+  //     // const dataSTR = JSON.stringify(data);
+  //     console.log("====ti carregada =====");
+
+  //     // localStorage.setItem('si3tisTiles',dataSTR);
+  //     // const a = localStorage.getItem('si3tisTiles')
+  //   });
+
+  //   si3.getGeoJson("estado").then((data) => {
+  //     var dataFinal = topojson.feature(data, data.objects.estado);
+
+  //     this.setState({
+  //       geoEstados: dataFinal,
+  //     });
+  //     console.log("====Estados Carregadas=====");
+  //     //  localStorage.setItem('si3estadosTiles',JSON.stringify(data))
+  //   });
+
+  //   si3.getGeoJson("municipio").then((data) => {
+  //     var dataFinal = topojson.feature(data, data.objects.municipio);
+  //     this.setState({
+  //       geoMunicipio: dataFinal,
+  //     });
+  //     //  localStorage.setItem('si3estadosTiles',JSON.stringify(data))
+  //   });
+
+  //   this.carregaModelosBusca();
+
+  //   //Adiciono os eventos pq o do react-leaflet nao esta funcionado
+  //   this.mapref.leafletElement.on("baselayerchange", this.baseLayerChange);
+  // }
+  // ################################# Daniel #################################
 
   componentWillUnmount() {
     // alert('unmont')

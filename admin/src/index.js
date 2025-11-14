@@ -14,9 +14,9 @@ import Home from "./pages/Home"; // com erro de propriedades - setState, estado,
 import Login from "./pages/Login"; // com erro de PropsType
 
 // Midias
-// import MidiasPageList from "./pages/MidiasPageList";
+import MidiasPageList from "./pages/MidiasPageList";
 
-// import EspeciesPage from "./pages/EspeciesPage";
+import EspeciesPage from "./pages/EspeciesPage";
 // import ParquesPage from "./pages/ParquesPage";
 // import TrilhasPage from "./pages/TrilhasPage";
 // import TextosPage from "./pages/TextosPage";
@@ -27,8 +27,6 @@ import Login from "./pages/Login"; // com erro de PropsType
 
 // import NotFound from "./pages/NotFound";
 
-import Teste from "./teste/Teste";
-
 //Story
 import { store, history } from "configStore.js";
 
@@ -37,15 +35,16 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/login" component={Login} />
+
       <Route path="/" component={App}>
         <IndexRoute component={Home} />
-        {/* <Route path="home" component={Home} /> */}
-        {/* <Route path="midias" component={MidiasPageList} /> */}
-        {/* <Route path="especies">
+        <Route path="home" component={Home} />
+        <Route path="midias" component={MidiasPageList} />
+        <Route path="especies">
           <IndexRoute component={EspeciesPage} />
           <Route path=":item" component={EspeciesPage} />
           <Route path=":item/:id" component={EspeciesPage} />
-        </Route> */}
+        </Route>
         {/* <Route path="parques">
           <IndexRoute component={ParquesPage} />
           <Route path=":item" component={ParquesPage} />
