@@ -127,7 +127,7 @@ class App extends React.Component {
         {this.props.children}
         <NotificationComponent />
 
-        {process.env.NODE_ENV !== "production" && (
+        {/* {process.env.NODE_ENV !== "production" && (
           <div className="mt7">
             <div className="w-70 mh5 fl ">
               <JSONTree
@@ -137,7 +137,7 @@ class App extends React.Component {
               />
             </div>
           </div>
-        )}
+        )} */}
       </div>
     );
   }

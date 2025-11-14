@@ -1,32 +1,29 @@
-import React from 'react';
-import PageInterna from './PageInterna';
-import RelatoList from 'components/form/RelatoList';
-import {Menu, Icon, Dropdown } from 'semantic-ui-react'
-import {Link} from 'react-router'
-import { withRouter } from 'react-router'
-import AutoForm from 'components/form/AutoForm';
-import AutoTable from 'components/tabela/AutoTable';
-import carregaModelo  from 'hocs/carregaModelo';
+import React from "react";
+import PageInterna from "./PageInterna";
+import RelatoList from "components/form/RelatoList";
+import { Menu, Icon, Dropdown } from "semantic-ui-react";
+import { Link } from "react-router";
+import { withRouter } from "react-router";
+import AutoForm from "components/form/AutoForm";
+import AutoTable from "components/tabela/AutoTable";
+import carregaModelo from "hocs/carregaModelo";
+import Teste from "../teste/Teste";
 /**
  * Home page component
  */
 
 @withRouter
-export default class RecenteContato extends React.Component
-{
+export default class RecenteContato extends React.Component {
+  componentDidMount() {
+    document.title = "Espécies";
+  }
 
-   componentDidMount() {
-         document.title = "Espécies";
-    }
+  menu = () => {
+    var activeItem = "home";
 
-
-    menu = ()=>{
-        var activeItem = 'home';
-
-        return(  
-
-            <Menu secondary>
-                {/* <Menu.Item as={Link} activeClassName='active' to="/recentecontato/aldeia" > <Icon name='list' /> Aldeias </Menu.Item>
+    return (
+      <Menu secondary>
+        {/* <Menu.Item as={Link} activeClassName='active' to="/recentecontato/aldeia" > <Icon name='list' /> Aldeias </Menu.Item>
                 <Menu.Item as={Link} activeClassName='active' to="/recentecontato/indigena" > <Icon name='list' /> Indigenas </Menu.Item>
       
                 <Dropdown basic pointing='top right' 
@@ -41,58 +38,55 @@ export default class RecenteContato extends React.Component
                             <Dropdown.Item as={Link} to="/tabela/planodecontingencia"  activeClassName='active' > Planos de Contigência </Dropdown.Item>   
                         </Dropdown.Menu>
                 </Dropdown> */}
-      
-            </Menu>)
+      </Menu>
+    );
+  };
 
+  render() {
+    let renderChild = this.props.children;
 
+    let id = this.props.params.id || 0;
+
+    let modelo = this.props.params.item || "";
+    modelo = modelo == "lista" ? "especie" : modelo;
+    modelo = modelo.replace(/[_.-]/g, "/");
+
+    //VEJO SE ´E UM FORM
+    console.log("01");
+    if (this.props.params.item && id) {
+      console.log("02");
+      renderChild = (
+        <div key={this.props.params.item} className="col-xs-12">
+          <AutoForm modelo={modelo} id={id} />
+        </div>
+      );
+    } else if (this.props.params.item) {
+      console.log("03");
+      renderChild = (
+        <div key={this.props.params.item} className="col-xs-12">
+          <AutoTable modelo={modelo} addButton={true} />
+        </div>
+      );
     }
-   
-   render()
-    {
-        let renderChild = this.props.children
 
-        let id = this.props.params.id || 0;
-
-        let modelo = this.props.params.item || "";
-            modelo = (modelo == 'lista') ? 'especie' : modelo;
-            modelo = modelo.replace(/[_.-]/g,"/")
-        
-        //VEJO SE ´E UM FORM
-        if(this.props.params.item && id){
-
-                  renderChild = (
-                    <div key={this.props.params.item} className='col-xs-12'>      
-                          <AutoForm modelo={modelo} id={id} />
-                    </div>
-                    );       
-
-        }else if(this.props.params.item){
-                 renderChild = (
-                    <div key={this.props.params.item} className='col-xs-12'>  
-                      <AutoTable modelo={modelo} addButton={true} />
-                    </div>
-                    );     
-        }
-   
-
-        var nomePagina = "Espécies";
-        switch (modelo){
-            case "solicitacaocriacaoregistro":
-                nomePagina = "Recente Contato";
-                break;
-        }
-
-
-        return(
-
-            <PageInterna nome={nomePagina} icon='ave' icontipo='svg' menu={this.menu()}>
-                
-                
-                <div className="row">
-                    {renderChild}
-                </div>
-
-            </PageInterna>
-        );
+    var nomePagina = "Espécies";
+    switch (modelo) {
+      case "solicitacaocriacaoregistro":
+        nomePagina = "Recente Contato";
+        break;
     }
+
+    console.log("Nome da página: ", nomePagina);
+
+    return (
+      <PageInterna
+        nome={nomePagina}
+        icon="ave"
+        icontipo="svg"
+        menu={this.menu()}
+      >
+        <div className="row">{renderChild}</div>
+      </PageInterna>
+    );
+  }
 }

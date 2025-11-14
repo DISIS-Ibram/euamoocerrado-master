@@ -29,6 +29,7 @@ import EspeciesPage from "./pages/EspeciesPage";
 
 //Story
 import { store, history } from "configStore.js";
+import Teste from "./teste/Teste";
 
 // render the main component
 ReactDOM.render(
