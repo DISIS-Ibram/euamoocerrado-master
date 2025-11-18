@@ -9,7 +9,8 @@ services:
         dockerfile: Dockerfile
       restart: always
       ports:
-        - "8888:80"
+#        - "8888:80"
+        - "80:80"
       volumes:
         - ./nginx/static:/static
       depends_on:
@@ -26,6 +27,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8282:80"
+#      - "80:80"
 
 
 
