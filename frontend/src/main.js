@@ -200,10 +200,17 @@ window.mobilecheck = function() {
   return check;
 };
 
-//Inicio minha aplicacao quando tiver carregado o meu html
-$(function() {
-  if (mobilecheck) {
-    $("html").addClass("mobile");
+// //Inicio minha aplicacao quando tiver carregado o meu html
+// $(function() {
+//   if (mobilecheck) {
+//     $("html").addClass("mobile");
+//   }
+//   window.VTL_UI.start({});
+// });
+
+window.addEventListener("DOMContentLoaded", () => {
+  if (mobilecheck()) {
+    document.documentElement.classList.add("mobile");
   }
   window.VTL_UI.start({});
 });
