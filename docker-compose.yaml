@@ -2,18 +2,18 @@ services:
   # INGRESS DO EUAMOCERRADO
 
   nginx:
-    container_name: eac-ngix
+    container_name: eac-nginx
     build:
       context: nginx
       dockerfile: Dockerfile
     restart: always
     ports:
-      #        - "8888:80"
-      - "80:80"
+      - "8888:80"
+      # - "80:80"
     volumes:
       - ./nginx/static:/static
     depends_on:
-      - hassura
+      # - hassura
       - frontend
     env_file:
       - ./.env
@@ -58,9 +58,12 @@ services:
     ports:
       - "5433:5432"
 
-  #GRAPH-QL que serve os dados para o frontend
+  # GRAPH-QL que serve os dados para o frontend
+  # hassura:
+  #   image: hasura/graphql-engine:v2.0.3
+
   hassura:
-    image: hasura/graphql-engine:v2.0.3
+    image: hasura/graphql-engine:v2.33.1
     container_name: eac-hassura
     ports:
       - "8383:80"

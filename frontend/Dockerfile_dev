@@ -1,0 +1,13 @@
+# hot reload
+FROM node:18
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+# # Copiar o resto dos arquivos
+# COPY . .
+
+EXPOSE 8080
+
+CMD ["npm", "run", "serve"]

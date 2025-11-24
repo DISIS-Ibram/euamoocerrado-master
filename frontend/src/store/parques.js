@@ -109,39 +109,33 @@ export default function(data) {
     },
 
     //--ACTIONS
+    // Erro ao carregar os parques
     actions: {
 
       loadParques: async function(ctx, force = false) {
+        console.log('parques.js - actions')
         //return if alreade loaded and not set force tru to update
         if (_.isEmpty(ctx.state.parques) === false && force === false) {
           return;
         }
+        // console.log('Passou')
 
         var status = [];
         var parques = [];
 
         try {
-          // await _.getJSON(urls.apibase+"obterstatsparque/",{},data=>{
-
-          //     status = _.keyBy(data,'parque_id')
-          //     ctx.commit('setMutation', { parquesstats:status });
-          // })
-
-          // await _.getJSON(urls.apiurl + "parque/parque/", {}, data => {
-          //   console.log("parquesapi");
-          //   console.log(data.results);
-          //   // parques = data.results;
-          // });
-
           let queryFinal = QUERYES["parques"];
+          console.log('queryFinal', queryFinal)
           let res = await graphQL(queryFinal.query, queryFinal.variables);
           parques = res.parques;
-          // console.log("parques graphql");
-          // console.log(parques);
+
+          console.log("parques graphql");
+          console.log(parques);
 
           // ctx.commit('setData', res)
           // return { error:false, data:res }
         } catch (e) {
+          console.log('Erro ao tentar fazer a query')
           console.error(e);
           //LETODO - incluir erro sem ser alert para exibir em todos os casos
           alert("Error connecting to the service!");
@@ -162,23 +156,6 @@ export default function(data) {
             tipo_benfeitoria: _.keyBy(data.tipo_benfeitoria, "id"),
           });
         });
-        // graphQL(QUERYES["tipo_benfeitorias"], {}).then(data => {
-        //   ctx.commit("setMutation", {
-        //     tipo_benfeitoria: _.keyBy(data.tipo_benfeitoria, "id")
-        //   });
-        // });
-        // _.getJSON(urls.apiurl + "parque/tipoatrativo/", {}, data => {
-        //   ctx.commit("setMutation", {
-        //     tipo_atrativo: _.keyBy(data.results, "id")
-        //   });
-        // });
-        // });
-        // _.getJSON(urls.apiurl + "parque/tipobenfeitoria/", {}, data => {
-        //   ctx.commit("setMutation", {
-        //     tipo_benfeitoria: _.keyBy(data.results, "id")
-        //   });
-        // });
-
 
         graphQL(QUERYES["atrativos_benfeitorias_parques"], {}).then(data => {
           ctx.commit("setMutation", {
@@ -186,28 +163,6 @@ export default function(data) {
             atrativos: _.keyBy(data.parque_atrativo, "id"),
           });
         });
-
-
-        // _.getJSON(urls.apiurl + "parque/benfeitoria/", {}, data => {
-        // let benfeitorias = []
-        // parques.forEach(parque => parque.benfeitoria_set.forEach(benfitoria=>benfeitorias.push(benfitoria)))
-        // ctx.commit("setMutation", {
-        //   benfeitorias: _.keyBy(benfeitorias, "id")
-        // });
-
-        // // _.getJSON(urls.apiurl + "parque/benfeitoria/", {}, data => {
-        // let atrativos = []
-        // parques.forEach(parque => parque.atrativo_set.forEach(atrativo=>atrativos.push(atrativo)))
-        // ctx.commit("setMutation", {
-        //   atrativos: _.keyBy(atrativos, "id")
-        // });
-        // });
-        // _.getJSON(urls.apiurl + "parque/atrativo/", {}, data => {
-        //   ctx.commit("setMutation", {
-        //     atrativos: _.keyBy(data.results, "id")
-        //   });
-        // });
-
 
         graphQL(QUERYES["trilhas"], {}).then(data => {
           let trilhas = data?.trilhas ?? [];
@@ -222,11 +177,6 @@ export default function(data) {
             trilhas: trilhas
           });
 
-          // let atrativos = []
-          // trilhas.forEach(trilha => trilha.atrativotrilha_set.forEach(i=>atrativos.push(i)))
-          // ctx.commit("setMutation", {
-          //   atrativosTrilhas: _.keyBy(atrativos, "id")
-          // });
           let atividades = []
           trilhas.forEach(trilha => trilha.atividades.forEach(i=>atividades.push(i)))
           
@@ -243,35 +193,6 @@ export default function(data) {
           });
         });
 
-
-
-        // _.getJSON(
-        //   urls.apiurl + "trilha/trilha/",
-        //   { includes: "parques,atividades" },
-        //   data => {
-        //     var trilhas = _.map(data.results, trilha => {
-        //       trilha.color =
-        //         "hsl(" + _.random(0, 255, false) + ", 100%, 90%)";
-        //       trilha.visitado = false;
-        //       trilha.visitadoObj = false;
-        //       return trilha;
-        //     });
-        //     ctx.commit("setMutation", { trilhas: trilhas });
-        //   }
-        // );
-
-        // _.getJSON(urls.apiurl + "trilha/atrativo/", {}, data => {
-        //   ctx.commit("setMutation", {
-        //     atrativosTrilhas: _.keyBy(data.results, "id")
-        //   });
-        // });
-
-        // _.getJSON(urls.apiurl + "trilha/atividade/", {}, data => {
-        //   ctx.commit("setMutation", {
-        //     trilhasAtividades: _.keyBy(data.results, "id")
-        //   });
-        // });
-
         graphQL(QUERYES["especies_tipo"], {}).then(data => {
           // const benfeitorias = parques.map(parque => parque.parque_benfeitoria);
           const especies = data.especies.map( item=>({...item,ocorrencia_set:item.ocorrencia_set.map(i=>i.id)}))
@@ -281,21 +202,10 @@ export default function(data) {
           });
         });
 
-        // _.getJSON(urls.apiurl + "especie/tipoespecie/", {}, data => {
-        //   ctx.commit("setMutation", { especies: data.results });
-        //   ctx.commit("setMutation", {
-        //     especiesByID: _.keyBy(data.results, "id")
-        //   });
-        // });
-
         graphQL(QUERYES["especies_ocorrencia"], {}).then(data => {
           // const benfeitorias = parques.map(parque => parque.parque_benfeitoria);
           ctx.commit("setMutation", { avistamentos: data.especie_ocorrencia });
         });
-
-        // _.getJSON(urls.apiurl + "especie/ocorrencia/", {}, data => {
-        //   ctx.commit("setMutation", { avistamentos: data.results });
-        // });
 
         var featuresPolygon = [];
         var featuresCenter = [];
@@ -333,6 +243,8 @@ export default function(data) {
 
         ctx.dispatch("loadStats");
       },
+
+      // Erro ao carregar os parques
 
       addAvistamento: async function(ctx, { point, id }) {
         let template = {

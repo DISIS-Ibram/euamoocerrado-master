@@ -1,5 +1,9 @@
 import Vue from "vue";
 
+// IMPORTA OS STILOS
+// import 'tachyons/css/tachyons.css';
+
+// var bootstrapAndFontawasome = require('css/bootstrap.scss');
 
 //importo o stylus
 var mapacss = require("@/css/app.styl");
@@ -15,17 +19,39 @@ import {urls} from "./api.js";
 //Coloco o lodash global
 window._ = _;
 
+// import {i18n} from './in18-setup';
+// Vue.use(i18n)
+
 import App from "./App.vue";
 
 import VuexStore from "./store/store.js";
 import Elementos from "./elementos/index";
 import "./helpers/index";
 
+//usado no selector das corridas
+// import BootstrapVue from "bootstrap-vue";
+// import "bootstrap-vue/dist/bootstrap-vue.css";
+// Vue.use(BootstrapVue);
+
 import { DropdownPlugin } from 'bootstrap-vue'
 Vue.use(DropdownPlugin)
 
+// import VueDisqus from 'vue-disqus'
+
+// Vue.use(VueDisqus)
+
+// import 'vuetify/dist/vuetify.min.css'
+
+// import {
+//   VMenu,VButton,Vlist
+// } from 'vuetify'
+
 //ROUTER
 import router from "./router.js";
+
+// import VueTheMask from 'vue-the-mask'
+
+// Vue.use(VueTheMask)
 
 Vue.use(function(Vue) {
   Vue.prototype.$has = _.has;
@@ -92,10 +118,21 @@ Vue.filter("truncate", function(value, leng = 100) {
   return value.substring(0, leng) + "...";
 });
 
+// var VueTouch = require('vue-touch');
+// Vue.use(VueTouch, { name: 'v-touch' });
+
 Vue.use(Elementos);
 
 Vue.config.debug = true;
 Vue.config.devTools = true;
+
+//cadastros globais de componentes vue
+// Vue.use(ElementUI);
+// Vue.use(KeenUI);
+// Default tag name is 'svgicon'
+// Vue.use(svgicon, {
+//     tagName: 'svgicon'
+// })
 
 // Mixens apra ter acesso ao treebox
 Vue.mixin({
@@ -162,6 +199,14 @@ window.mobilecheck = function() {
   })(navigator.userAgent || navigator.vendor || window.opera);
   return check;
 };
+
+// //Inicio minha aplicacao quando tiver carregado o meu html
+// $(function() {
+//   if (mobilecheck) {
+//     $("html").addClass("mobile");
+//   }
+//   window.VTL_UI.start({});
+// });
 
 window.addEventListener("DOMContentLoaded", () => {
   if (mobilecheck()) {

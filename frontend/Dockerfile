@@ -1,6 +1,5 @@
-# FROM node:14 as builder
-
-
+# # FROM node:14 as builder
+# FROM node:18 as builder
 
 # WORKDIR /app
 
@@ -29,13 +28,17 @@
 # EXPOSE 80
 # CMD ["nginx", "-g", "daemon off;"]
 
+# /////////////////////////////////////////////////////////
 
-# hotreload
+# hot reload
 FROM node:18
 WORKDIR /app
 
 COPY package*.json ./
 RUN npm install
+
+# # Copiar o resto dos arquivos
+# COPY . .
 
 EXPOSE 8080
 

@@ -8,7 +8,7 @@
 // };
 
 
-// hotreload
+// hot reload
 module.exports = {
   lintOnSave: false,
 
