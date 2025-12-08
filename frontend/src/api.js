@@ -33,11 +33,12 @@ let graphqlurl = window.____GRAPHQL_URL;
 // let graphqlurl = `//${window.location.hostname}:${window.location.port}/graphql`;
 
 let graphQL = async function(query, variables = {}) {
-  console.log('graphQL em api.js')
   if (query?.query) query = query?.query;
+
   // debugger;
   console.log("---------------");
-  console.log(graphqlurl);
+  console.log('graphQL em api.js')
+  console.log('graphqlurl: ', graphqlurl);
   console.log("---------------");
 
   return new Promise((resolve, reject) => {

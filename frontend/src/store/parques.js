@@ -109,33 +109,39 @@ export default function(data) {
     },
 
     //--ACTIONS
-    // Erro ao carregar os parques
     actions: {
 
       loadParques: async function(ctx, force = false) {
-        console.log('parques.js - actions')
         //return if alreade loaded and not set force tru to update
         if (_.isEmpty(ctx.state.parques) === false && force === false) {
           return;
         }
-        // console.log('Passou')
 
         var status = [];
         var parques = [];
 
         try {
+          // await _.getJSON(urls.apibase+"obterstatsparque/",{},data=>{
+
+          //     status = _.keyBy(data,'parque_id')
+          //     ctx.commit('setMutation', { parquesstats:status });
+          // })
+
+          // await _.getJSON(urls.apiurl + "parque/parque/", {}, data => {
+          //   console.log("parquesapi");
+          //   console.log(data.results);
+          //   // parques = data.results;
+          // });
+
           let queryFinal = QUERYES["parques"];
-          console.log('queryFinal', queryFinal)
           let res = await graphQL(queryFinal.query, queryFinal.variables);
           parques = res.parques;
-
           console.log("parques graphql");
           console.log(parques);
 
           // ctx.commit('setData', res)
           // return { error:false, data:res }
         } catch (e) {
-          console.log('Erro ao tentar fazer a query')
           console.error(e);
           //LETODO - incluir erro sem ser alert para exibir em todos os casos
           alert("Error connecting to the service!");
@@ -150,12 +156,34 @@ export default function(data) {
           parque.trilha_set = trilha_set;
         });
 
+
+        // TODO - Daniel ERRO Resolver
         graphQL(QUERYES["tipo_atrativos_benfeitorias"], {}).then(data => {
-          ctx.commit("setMutation", {
-            tipo_atrativo: _.keyBy(data.tipo_atrativo, "id"),
-            tipo_benfeitoria: _.keyBy(data.tipo_benfeitoria, "id"),
-          });
-        });
+            // console.log('tipo_atrativos_benfeitorias: ', tipo_atrativos_benfeitorias)
+            ctx.commit("setMutation", {
+                tipo_atrativo: _.keyBy(data.tipo_atrativo, "id"),
+                tipo_benfeitoria: _.keyBy(data.tipo_benfeitoria, "id"),
+              });
+            });
+        // TODO - Daniel ERRO Resolver
+
+        // graphQL(QUERYES["tipo_benfeitorias"], {}).then(data => {
+        //   ctx.commit("setMutation", {
+        //     tipo_benfeitoria: _.keyBy(data.tipo_benfeitoria, "id")
+        //   });
+        // });
+        // _.getJSON(urls.apiurl + "parque/tipoatrativo/", {}, data => {
+        //   ctx.commit("setMutation", {
+        //     tipo_atrativo: _.keyBy(data.results, "id")
+        //   });
+        // });
+        // });
+        // _.getJSON(urls.apiurl + "parque/tipobenfeitoria/", {}, data => {
+        //   ctx.commit("setMutation", {
+        //     tipo_benfeitoria: _.keyBy(data.results, "id")
+        //   });
+        // });
+
 
         graphQL(QUERYES["atrativos_benfeitorias_parques"], {}).then(data => {
           ctx.commit("setMutation", {
@@ -163,6 +191,28 @@ export default function(data) {
             atrativos: _.keyBy(data.parque_atrativo, "id"),
           });
         });
+
+
+        // _.getJSON(urls.apiurl + "parque/benfeitoria/", {}, data => {
+        // let benfeitorias = []
+        // parques.forEach(parque => parque.benfeitoria_set.forEach(benfitoria=>benfeitorias.push(benfitoria)))
+        // ctx.commit("setMutation", {
+        //   benfeitorias: _.keyBy(benfeitorias, "id")
+        // });
+
+        // // _.getJSON(urls.apiurl + "parque/benfeitoria/", {}, data => {
+        // let atrativos = []
+        // parques.forEach(parque => parque.atrativo_set.forEach(atrativo=>atrativos.push(atrativo)))
+        // ctx.commit("setMutation", {
+        //   atrativos: _.keyBy(atrativos, "id")
+        // });
+        // });
+        // _.getJSON(urls.apiurl + "parque/atrativo/", {}, data => {
+        //   ctx.commit("setMutation", {
+        //     atrativos: _.keyBy(data.results, "id")
+        //   });
+        // });
+
 
         graphQL(QUERYES["trilhas"], {}).then(data => {
           let trilhas = data?.trilhas ?? [];
@@ -177,6 +227,11 @@ export default function(data) {
             trilhas: trilhas
           });
 
+          // let atrativos = []
+          // trilhas.forEach(trilha => trilha.atrativotrilha_set.forEach(i=>atrativos.push(i)))
+          // ctx.commit("setMutation", {
+          //   atrativosTrilhas: _.keyBy(atrativos, "id")
+          // });
           let atividades = []
           trilhas.forEach(trilha => trilha.atividades.forEach(i=>atividades.push(i)))
           
@@ -193,6 +248,35 @@ export default function(data) {
           });
         });
 
+
+
+        // _.getJSON(
+        //   urls.apiurl + "trilha/trilha/",
+        //   { includes: "parques,atividades" },
+        //   data => {
+        //     var trilhas = _.map(data.results, trilha => {
+        //       trilha.color =
+        //         "hsl(" + _.random(0, 255, false) + ", 100%, 90%)";
+        //       trilha.visitado = false;
+        //       trilha.visitadoObj = false;
+        //       return trilha;
+        //     });
+        //     ctx.commit("setMutation", { trilhas: trilhas });
+        //   }
+        // );
+
+        // _.getJSON(urls.apiurl + "trilha/atrativo/", {}, data => {
+        //   ctx.commit("setMutation", {
+        //     atrativosTrilhas: _.keyBy(data.results, "id")
+        //   });
+        // });
+
+        // _.getJSON(urls.apiurl + "trilha/atividade/", {}, data => {
+        //   ctx.commit("setMutation", {
+        //     trilhasAtividades: _.keyBy(data.results, "id")
+        //   });
+        // });
+
         graphQL(QUERYES["especies_tipo"], {}).then(data => {
           // const benfeitorias = parques.map(parque => parque.parque_benfeitoria);
           const especies = data.especies.map( item=>({...item,ocorrencia_set:item.ocorrencia_set.map(i=>i.id)}))
@@ -202,10 +286,21 @@ export default function(data) {
           });
         });
 
+        // _.getJSON(urls.apiurl + "especie/tipoespecie/", {}, data => {
+        //   ctx.commit("setMutation", { especies: data.results });
+        //   ctx.commit("setMutation", {
+        //     especiesByID: _.keyBy(data.results, "id")
+        //   });
+        // });
+
         graphQL(QUERYES["especies_ocorrencia"], {}).then(data => {
           // const benfeitorias = parques.map(parque => parque.parque_benfeitoria);
           ctx.commit("setMutation", { avistamentos: data.especie_ocorrencia });
         });
+
+        // _.getJSON(urls.apiurl + "especie/ocorrencia/", {}, data => {
+        //   ctx.commit("setMutation", { avistamentos: data.results });
+        // });
 
         var featuresPolygon = [];
         var featuresCenter = [];
@@ -243,8 +338,6 @@ export default function(data) {
 
         ctx.dispatch("loadStats");
       },
-
-      // Erro ao carregar os parques
 
       addAvistamento: async function(ctx, { point, id }) {
         let template = {
@@ -379,15 +472,25 @@ export default function(data) {
         });
       },
 
-   
+
       loadStats: async function(ctx) {
-        graphQL(QUERYES["stats"], {}).then(data => {
+          console.log('loadStats')
+          console.log('ctx: ', ctx)
+          graphQL(QUERYES["stats"], {}).then(data => {
+
+          console.log('data:', data)
+
+
           var parquesStats = _.keyBy(data.parques?.[0]?.data, "parque_id");
           var trilhasStats = _.keyBy(data.trilhas?.[0]?.data, "trilha_id");
           var especiesStats = _.keyBy(data.especies?.[0]?.data, "especie_id");
           ctx.commit("setMutation", { parquesStats });
           ctx.commit("setMutation", { trilhasStats });
           ctx.commit("setMutation", { especiesStats });
+
+          console.log(parquesStats)
+          console.log(trilhasStats)
+          console.log(especiesStats)
         });
 
         // _.getJSON(urls.apibase + "obterstatsparque/", {}, data => {
@@ -408,44 +511,43 @@ export default function(data) {
         // });
       },
 
-      loadUserInfo: async function(ctx) {
-        var user = ctx.rootGetters.user;
-        if (!user?.pk) {
-          ctx.commit("setMutation", {
-            parquesvisitados: [],
-            trilhasvisitados: []
-          });
-          return;
+    loadUserInfo: async function(ctx) {
+      var user = ctx.rootGetters.user;
+      if (!user?.pk) {
+        ctx.commit("setMutation", {
+          parquesvisitados: [],
+          trilhasvisitados: []
+        });
+        return;
+      }
+
+      graphQL(QUERYES["visitanteparque"], { visitanteid: user.pk }).then(
+        data => {
+          var parquesvisitados = _.keyBy(data?.visitantesparque, "parque");
+          var trilhasvisitados = _.keyBy(data?.trilhas, "trilha");
+          ctx.commit("setMutation", { parquesvisitados });
+          ctx.commit("setMutation", { trilhasvisitados });
         }
+      );
 
-        graphQL(QUERYES["visitanteparque"], { visitanteid: user.pk }).then(
-          data => {
-            var parquesvisitados = _.keyBy(data?.visitantesparque, "parque");
-            var trilhasvisitados = _.keyBy(data?.trilhas, "trilha");
-            ctx.commit("setMutation", { parquesvisitados });
-            ctx.commit("setMutation", { trilhasvisitados });
-          }
-        );
-
-        // await _.getJSON(
-        //   urls.apiurl + "parque/visitanteparque/",
-        //   { visitante: user.pk },
-        //   data => {
-        //     ctx.commit("setMutation", {
-        //       parquesvisitados: _.keyBy(data.results, "parque")
-        //     });
-        //   }
-        // );
-
-        // await _.getJSON(
-        //   urls.apiurl + "trilha/visitantetrilha/",
-        //   { visitante: user.pk },
-        //   data => {
-        //     ctx.commit("setMutation", {
-        //       trilhasvisitados: _.keyBy(data.results, "trilha")
-        //     });
-        //   }
-        // );
+      // await _.getJSON(
+      //   urls.apiurl + "parque/visitanteparque/",
+      //   { visitante: user.pk },
+      //   data => {
+      //     ctx.commit("setMutation", {
+      //       parquesvisitados: _.keyBy(data.results, "parque")
+      //     });
+      //   }
+      // );
+     // await _.getJSON(
+      //   urls.apiurl + "trilha/visitantetrilha/",
+      //   { visitante: user.pk },
+      //   data => {
+      //     ctx.commit("setMutation", {
+      //       trilhasvisitados: _.keyBy(data.results, "trilha")
+      //     });
+      //   }
+      // );
       },
 
       currentParque: function(ctx, parqueID) {

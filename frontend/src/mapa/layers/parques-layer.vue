@@ -181,6 +181,8 @@
 
 <script>
 
+console.log("parques-layer.vue")
+
 export default {
   data() {
     return {
@@ -194,12 +196,16 @@ export default {
 
   computed: {
     geoJSON: function() {
+      console.log('this.$store.getters.parquesGeoJSON', this.$store.getters.parquesGeoJSON)
       return this.$store.getters.parquesGeoJSON;
     },
     parquesCentroidesGeoJSON: function() {
       return this.$store.getters.parquesCentroidesGeoJSON;
     },
     hasFeatures: function() {
+      console.log('getJSON: ', this.geoJSON)
+      console.log('geoJSON?.features?: ', this.geoJSON?.features)
+      console.log('hasFeatures: ', this.geoJSON?.features?.length)
       return this.geoJSON?.features?.length > 0 || false;
     },
     currentParqueID: function() {

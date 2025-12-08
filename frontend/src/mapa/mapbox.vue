@@ -22,14 +22,15 @@
         </div>
       </template>
 
-      <!-- <vm-layer type="background" backgroundColor="#819869">
-
-    </vm-layer> -->
+      <!-- <vm-layer type="background" backgroundColor="#819869"></vm-layer> -->
 
       <satelite-layer />
       <parques-layer />
       <trilha-layer v-if="trilha"  />
       <atrativos-layer v-if="atrativo" />
+
+
+      <!-- Não descomentar -->
       <!-- <avistamentos /> -->
 
       <!-- <avistamentos />
@@ -76,8 +77,8 @@
     </div>
 
     <div
-           v-tooltip="'Minha Localização Atual'"
-      id="gotToMyLocation"
+        v-tooltip="'Minha Localização Atual'"
+        id="gotToMyLocation"
     >
       <i class="fa fa-location-arrow"></i>
 
@@ -91,6 +92,8 @@
 
 import MAPBASESTYLE from "./styles/mapabase_style";
 import elevationControl from "./iControl/elevation";
+
+console.log('mapbox.vue')
 
 export default {
   name: "mapbox",
@@ -144,9 +147,6 @@ export default {
   },
 
   methods: {
-
-
-    
     mapHasLoaded: function(e, map) {
       this.$options.map = map;
 

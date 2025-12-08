@@ -12,6 +12,8 @@
 <script>
 // import layer from "@/mixins/mapboxLayer";
 
+console.log('satelite-layer.vue')
+
 export default {
   //   mixins: [layer],
 

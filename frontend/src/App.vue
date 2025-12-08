@@ -25,50 +25,35 @@ export default {
 
 <template>
   <div>
-    <!-- <h1>TESTE</h1> -->
     <div id="pagewrap">
-      <!-- carrega o mapa -->
-      <!-- Deveria aparecer os ícones -->
-      <mapbox v-if="!$route.meta.withoutMap"></mapbox>
-      <!-- carrega o mapa -->
 
-      <!-- header do frontend -->
+      <mapbox v-if="!$route.meta.withoutMap"></mapbox>
+
       <cabecalho></cabecalho>
-      <!-- header do frontend -->
-    
-      <!-- Card lateral  -->
       <div
-      v-if="
+        v-if="
           $store.state.mapLoaded &&
-          $store.state.initialAnimationFinish &&
-          !$route.meta.withoutMap
-          "
+            $store.state.initialAnimationFinish &&
+            !$route.meta.withoutMap
+        "
         id="conteudo-wraper"
         class="conteudo"
-        >
+      >
         <router-view></router-view>
       </div>
-      <!-- Card lateral  -->
 
-      <!-- Card footer -->
       <div v-if="$route.meta.withoutMap" class="container">
         <router-view></router-view>
       </div>
-      <!-- Card footer -->
-      
-      <!--       
-      
-      -->
     </div>
   </div>
 </template>
 
 <script>
+// require('./icons/index.js')
 
 export default {
   name: "app",
-
-
   data() {
     return {
       open: false,
@@ -133,5 +118,18 @@ export default {
 };
 </script>
 
+<style lang="stylus">
 
-<!-- ########################################################## -->
+@import "css/variaveis";
+
+#pagewrap{
+    width 100%;
+    height:100%;
+    overflow:hidden;
+
+
+    +mobile(){
+         overflow initial;
+    }
+}
+</style>
