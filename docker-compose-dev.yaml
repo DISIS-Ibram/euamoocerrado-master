@@ -34,15 +34,14 @@ services:
       context: ./frontend
       dockerfile: Dockerfile_dev
     ports:
-      - "8282:8080"   # 8282 no host → 8080 no Vue Dev Server
+      - "8282:8080" # 8282 no host → 8080 no Vue Dev Server
     command: ["npm", "run", "serve"]
     volumes:
-      - ./frontend:/app               # monta o código local
-      - /app/node_modules             # evita conflito de node_modules
+      - ./frontend:/app # monta o código local
+      - /app/node_modules # evita conflito de node_modules
     environment:
       - CHOKIDAR_USEPOLLING=true
   # hotreload
-
 
   # BANCO DE DADOS - POSTGRES/POSTGIS
   db:
@@ -54,7 +53,7 @@ services:
     volumes:
       - ./data/pgdata:/var/lib/postgresql/data
       - ./db-backup:/db-backup
-      # - ./db-init:/docker-entrypoint-initdb.d
+      - ./db-init:/docker-entrypoint-initdb.d
     ports:
       - "5434:5432"
 
@@ -101,8 +100,6 @@ services:
       HASURA_GRAPHQL_DEV_MODE: "false"
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup,http-log,webhook-log,websocket-log,query-log
       HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
-
-
 
   # SERVIÇO DE MÍDIA para servir imagens estáticas e thumbnails que era do DJANGO
   media_service:
