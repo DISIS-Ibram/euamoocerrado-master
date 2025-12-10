@@ -46,7 +46,8 @@ services:
   # BANCO DE DADOS - POSTGRES/POSTGIS
   db:
     container_name: eac-postgres
-    image: postgis/postgis:15-3.4
+    image: postgis/postgis:11-2.5
+    # image: postgis/postgis:15-3.4
     restart: always
     env_file:
       - ./.env
@@ -115,4 +116,3 @@ services:
     #   - "5001:5000" # Apenas para debug, se necessário acessar diretamente
     env_file:
       - ./.env # Se precisar de variáveis de ambiente comuns
-

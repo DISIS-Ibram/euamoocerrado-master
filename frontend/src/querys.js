@@ -28,50 +28,34 @@ export const QUERYES = {
           imagem
           autor
         }
-        atrativo_set: parque_atrativos(where: {deleted_at: {_is_null: true}}) {
-          id
-          cor
-          tipo_atrativo: parque_tipoatrativo {
-            icone
-            id
-            nome
-          }
-        }
-        benfeitoria_set: parque_benfeitoria(where: {deleted_at: {_is_null: true}}) {
-          descricao
-          geom
-          id
-          tipo_benfeitoria_id
-        }
+      # atrativo_set: parque_atrativos(where: {deleted_at: {_is_null: true}}) {
+      #   id
+      #   cor
+      #   tipo_atrativo: parque_tipoatrativo {
+      #     icone
+      #     id
+      #     nome
+      #   }
+      # }
+      # benfeitoria_set: parque_benfeitoria(where: {deleted_at: {_is_null: true}}) {
+      #   descricao
+      #   geom
+      #   id
+      #   tipo_benfeitoria_id
+      # }
         parque_contatoparque {
           email
           endereco
           responsavel
           telefone
         }
-        trilha_set {
-          id
-          nome
-          deleted_at
+        trilha_set(where: {}) {
+          trilha_trilha {
+            id
+            nome
+            deleted_at
+          }
         }
-
-      #  trilha_set(where: {}) {
-      #    trilha_trilha {
-      #      id
-      #      nome
-      #      deleted_at
-      #    }
-      #  }
-      #  trilha_trilha {
-      #    id
-      #    nome
-      #    deleted_at
-      #  }
-      #  trilha_set: trilha_trilha(where: {deleted_at: {_is_null: true}}) {
-      #    id
-      #    nome
-      #    deleted_at
-      #  }
         geom
       }
     }
