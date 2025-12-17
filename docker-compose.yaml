@@ -1,74 +1,61 @@
 services:
+
   # INGRESS DO EUAMOCERRADO
 
   nginx:
-    container_name: eac-nginx
-    build:
-      context: nginx
-      dockerfile: Dockerfile
-    restart: always
-    ports:
-      - "8888:80"
-      # - "80:80"
-    volumes:
-      - ./nginx/static:/static
-    depends_on:
-      # - hassura
-      - frontend
-    env_file:
-      - ./.env
+      container_name: eac-ngix
+      build: 
+        context: nginx
+        dockerfile: Dockerfile
+      restart: always
+      ports:
+#        - "8888:80"
+        - "80:80"
+      volumes:
+        - ./nginx/static:/static
+      depends_on:
+        - hassura
+        - frontend
+      env_file:
+        - ./.env
 
-  # # Nginx do Frontend
-  # frontend:
-  #   container_name: eac-frontend
-  #   build:
-  #     context: ./frontend
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - "8282:80"
-
-  # hotreload
+  # Nginx do Frontend
   frontend:
     container_name: eac-frontend
     build:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - "8282:8080"   # 8282 no host → 8080 no Vue Dev Server
-    command: ["npm", "run", "serve"]
-    volumes:
-      - ./frontend:/app               # monta o código local
-      - /app/node_modules             # evita conflito de node_modules
-    environment:
-      - CHOKIDAR_USEPOLLING=true
-  # hotreload
+      - "8282:80"
+#      - "80:80"
+
+
 
 
   # BANCO DE DADOS - POSTGRES/POSTGIS
   db:
-    container_name: eac-postgres
-    image: postgis/postgis:15-3.4
-    restart: always
-    env_file:
+      container_name: eac-postgres
+      image: mdillon/postgis
+      restart: always
+      env_file:
       - ./.env
-    volumes:
+      volumes:
       - ./data/pgdata:/var/lib/postgresql/data
       - ./db-backup:/db-backup
-      # - ./db-init:/docker-entrypoint-initdb.d
-    ports:
+      - ./db-init:/docker-entrypoint-initdb.d
+      ports:
       - "5433:5432"
+      
 
-  # GRAPH-QL que serve os dados para o frontend
-  # hassura:
-  #   image: hasura/graphql-engine:v2.0.3
 
+  #GRAPH-QL que serve os dados para o frontend
   hassura:
-    image: hasura/graphql-engine:v2.33.1
+    image: hasura/graphql-engine:v2.0.3
     container_name: eac-hassura
     ports:
-      - "8383:80"
+    - "8383:80"
     depends_on:
-      - "db"
+    - "db"
     restart: always
     environment:
       HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:r00t05@db:5432/euamoocerrado
@@ -79,7 +66,7 @@ services:
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
       # Accepts from all domain
       HASURA_GRAPHQL_CORS_DOMAIN: "*"
-      HASURA_GRAPHQL_DISABLE_CORS: "true"
+      HASURA_GRAPHQL_DISABLE_CORS: 'true'
       HASURA_GRAPHQL_SERVER_HOST: "*"
       ## uncomment next line to set an admin secret
       HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
@@ -99,4 +86,3 @@ services:
     #   - "5001:5000" # Apenas para debug, se necessário acessar diretamente
     env_file:
       - ./.env # Se precisar de variáveis de ambiente comuns
-
