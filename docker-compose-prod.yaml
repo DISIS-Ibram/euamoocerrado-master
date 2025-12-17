@@ -25,26 +25,26 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    ports:
-      - "8282:80"
+    # ports:
+    #   - "8282:80"
     #  - "80:80"
 
 
 
 
-  # # BANCO DE DADOS - POSTGRES/POSTGIS
-  # db:
-  #     container_name: eac-postgres
-  #     image: mdillon/postgis
-  #     restart: always
-  #     env_file:
-  #     - ./.env
-  #     volumes:
-  #     - ./data/pgdata:/var/lib/postgresql/data
-  #     - ./db-backup:/db-backup
-  #     - ./db-init:/docker-entrypoint-initdb.d
-  #     ports:
-  #     - "5433:5432"
+  # BANCO DE DADOS - POSTGRES/POSTGIS
+  db:
+      container_name: eac-postgres
+      image: mdillon/postgis
+      restart: always
+      env_file:
+      - ./.env
+      volumes:
+      - ./data/pgdata:/var/lib/postgresql/data
+      - ./db-backup:/db-backup
+      - ./db-init:/docker-entrypoint-initdb.d
+      ports:
+      - "5433:5432"
       
 
 
