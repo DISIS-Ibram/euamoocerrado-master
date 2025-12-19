@@ -107,9 +107,10 @@ DATABASES = {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'euamoocerrado',
         'USER': 'postgres',
-        'PASSWORD': 'r00t05',
-        'HOST': 'db',
-        # 'HOST': '172.28.188.182',
+        # 'PASSWORD': 'r00t05',
+        'PASSWORD': '123456',
+        # 'HOST': 'db',
+        'HOST': '172.30.60.250',
         'PORT': '5432',
     }
 }
