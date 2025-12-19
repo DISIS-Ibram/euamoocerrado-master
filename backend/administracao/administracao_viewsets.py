@@ -1,4 +1,5 @@
-from rest_framework.filters import OrderingFilter, DjangoFilterBackend
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import OrderingFilter
 
 from curupira_rest_api import viewsets
 from curupira_rest_api.utils import get_filter_and_ordering_fields

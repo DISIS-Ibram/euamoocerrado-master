@@ -11,6 +11,7 @@ from euamoocerrado.settings import EMAIL_DEST
 
 
 class Contact(SoftDeletion):
+    id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=500)
     email = models.EmailField()
     message = models.TextField()
@@ -63,6 +64,7 @@ def clearTexto(modelo):
     outros.delete()
 
 class TextoHome(SoftDeletion):
+    id = models.BigAutoField(primary_key=True)
     identificador = models.CharField(max_length=500, null=True, blank=True)
     titulo = models.CharField(max_length=500)
     texto = models.TextField()
@@ -82,6 +84,7 @@ class TextoHome(SoftDeletion):
 
 
 class TextoTutorial(SoftDeletion):
+    id = models.BigAutoField(primary_key=True)
     titulo = models.CharField(max_length=500)
     texto = models.TextField()
 
@@ -100,9 +103,10 @@ class TextoTutorial(SoftDeletion):
 
 
 class Comentario(ElementoBasico, SoftDeletion):
+    id = models.BigAutoField(primary_key=True)
     url = models.CharField(max_length=200)
     conteudo =  models.TextField(max_length=1000)
-    ref_comentario= models.ForeignKey('self',null=True,blank=True)
+    ref_comentario= models.ForeignKey('self',null=True,blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.url

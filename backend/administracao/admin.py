@@ -1,7 +1,11 @@
-from django.contrib.gis import admin
+from django.contrib import admin
+from leaflet.admin import LeafletGeoAdmin
 from administracao.models import Contact
 
+@admin.register(Contact)
+class ContactAdmin(LeafletGeoAdmin):
+    pass
 
-admin.site.register(Contact, admin.OSMGeoAdmin)
+
 
 

@@ -10,6 +10,7 @@ from django.db.models.query import QuerySet
 from django.db.models import Q
 
 class ElementoBasico(models.Model):
+    id = models.BigAutoField(primary_key=True)
     oficial = models.BooleanField(default=False)
     publico = models.BooleanField(default=False)
 
@@ -124,9 +125,8 @@ class SoftDeletionManager(models.Manager):
         return self.get_queryset().hard_delete()
     
 class SoftDeletion(models.Model):
-    user = models.ForeignKey(User,
-                                    null=True,
-                                    blank=True)
+    id = models.BigAutoField(primary_key=True)
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
     created_at = models.DateTimeField(default=now)
     deleted_at = models.DateTimeField(null=True, blank=True)
 

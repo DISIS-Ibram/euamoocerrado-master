@@ -5,3 +5,4 @@ media/
 .vscode/launch.json
 .vscode/settings.json
 eac_venv/
+venv

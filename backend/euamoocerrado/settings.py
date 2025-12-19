@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
@@ -42,17 +41,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     'django.contrib.gis',
+    'leaflet',
 
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken', 
-    'rest_auth',   
+    
+    # 'rest_auth',   # Descontinuado para a versão 3.12 do Python
+    'dj_rest_auth',  # Substituto do rest_auth'
+
     'rest_framework_gis', 
     'django_filters',
 
     'curupira_rest_api',
     'administracao',
+
     'parque',
     'trilha',
     'especie',
@@ -92,28 +97,29 @@ TEMPLATES = [
 WSGI_APPLICATION = 'euamoocerrado.wsgi.application'
 
 
-db_host = os.environ['DB_HOST'] if 'DB_HOST' in  os.environ else "localhost"
-db_port = os.environ['DB_PORT'] if 'DB_PORT' in  os.environ else "5432"
-db_user = os.environ['DB_USER'] if 'DB_USER' in  os.environ else "postgres"
-db_pass = os.environ['DB_PASS'] if 'DB_PASS' in  os.environ else "postgres"
-db_name = os.environ['DB_NAME'] if 'DB_NAME' in  os.environ else "euamoocerrado"
-
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+# RODANDO DOCKER com BD DOCKER'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': db_name,
-        'USER': db_user,
-        'PASSWORD': db_pass,
-        'HOST': db_host,
-        'PORT': db_port,
+        'NAME': 'euamoocerrado',
+        'USER': 'postgres',
+        'PASSWORD': 'r00t05',
+        'HOST': 'db',
+        # 'HOST': '172.28.188.182',
+        'PORT': '5432',
     }
 }
 
 
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+
+GDAL_LIBRARY_PATH = os.getenv("/usr/lib/x86_64-linux-gnu/libgdal.so")
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -156,12 +162,18 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+# LEAFLET_CONFIG
+LEAFLET_CONFIG = {
+    'DEFAULT_CENTER': [-15.78, -47.93],  # Ex: Brasília
+    'DEFAULT_ZOOM': 5,
+    'MIN_ZOOM': 3,
+    'MAX_ZOOM': 18,
+    'SCALE': 'both',
+    'ATTRIBUTION_PREFIX': 'Eu Amo Cerrado',
+}
 
 
 #CONFIG EMAIL
-
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'mail.euamocerrado.com.br'
 EMAIL_USE_TLS = True

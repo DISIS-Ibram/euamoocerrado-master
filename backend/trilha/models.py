@@ -24,6 +24,7 @@ DIFICULDADE = (
 )
 
 class TipoAtividade(SoftDeletion):
+    id = models.BigAutoField(primary_key=True)
     nome = models.CharField(max_length=100)
     icone = models.FileField(upload_to='atividade/')
 
@@ -38,9 +39,10 @@ class TipoAtividade(SoftDeletion):
 
 
 class Trilha(ElementoBasico, SoftDeletion):
+    id = models.BigAutoField(primary_key=True)
     nome = models.CharField(max_length=100)
-    atividades = models.ManyToManyField(TipoAtividade, null=True, blank=True)
-    parques = models.ManyToManyField(Parque,null=True, blank=True,
+    atividades = models.ManyToManyField(TipoAtividade, blank=True)
+    parques = models.ManyToManyField(Parque, blank=True,
                                verbose_name='Parques',
                                help_text='Parques associados')
 
@@ -57,8 +59,7 @@ class Trilha(ElementoBasico, SoftDeletion):
         max_length=250, null=True, blank=True)
     visitantes = models.ManyToManyField(User,
                                         through='VisitanteTrilha',
-                                        through_fields=(
-                                            'trilha', 'visitante',),
+                                        through_fields=('trilha', 'visitante',),
                                         related_name='visitante_trilha')
 
 
@@ -125,6 +126,7 @@ class Trilha(ElementoBasico, SoftDeletion):
 
             
 class Trilha_3d(SoftDeletion):
+    id = models.BigAutoField(primary_key=True)
     nome = models.CharField(max_length=100)
 
     geom3d = models.LineStringField(srid=4674, dim=3,
@@ -143,9 +145,10 @@ class Trilha_3d(SoftDeletion):
 
 
 class VisitanteTrilha(ElementoBasico, SoftDeletion):
-    trilha = models.ForeignKey(Trilha)
+    id = models.BigAutoField(primary_key=True)
+    trilha = models.ForeignKey(Trilha, on_delete=models.CASCADE)
     visitante = models.ForeignKey(
-        User, related_name='visit_t', null=True, blank=True)
+        User, related_name='visit_t', null=True, blank=True, on_delete=models.CASCADE)
 
     class MetaSerializer:
         exclude_fields = ['created_at', 'deleted_at']
@@ -166,11 +169,12 @@ class VisitanteTrilha(ElementoBasico, SoftDeletion):
             return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
 class ImagemTrilha(SoftDeletion):
+    id = models.BigAutoField(primary_key=True)
     autor = models.CharField(max_length=200, null=True, blank=True,
                             verbose_name='Autor',
                             help_text='')
     imagem = models.ImageField(upload_to='trilha/')
-    trilha = models.ForeignKey(Trilha)
+    trilha = models.ForeignKey(Trilha, on_delete=models.CASCADE)
 
     class MetaSerializer:
         exclude_fields = ['created_at', 'deleted_at', 'user']
@@ -179,7 +183,8 @@ class ImagemTrilha(SoftDeletion):
                             'help_text': 'Fotografias das Trilhas'}}
 
 class VideoYoutubeTrilha(SoftDeletion):
-    trilha = models.ForeignKey(Trilha)
+    id = models.BigAutoField(primary_key=True)
+    trilha = models.ForeignKey(Trilha, on_delete=models.CASCADE)
     nome = models.CharField(max_length=250, null=True, blank=True)
     autor = models.CharField(max_length=250, null=True, blank=True)
     url = models.URLField(null=True, blank=True)
@@ -216,8 +221,9 @@ class VideoYoutubeTrilha(SoftDeletion):
 
 
 class AtrativoTrilha(SoftDeletion):
-    trilha = models.ForeignKey(Trilha)
-    tipo_atrativo = models.ForeignKey(TipoAtrativo)
+    id = models.BigAutoField(primary_key=True)
+    trilha = models.ForeignKey(Trilha, on_delete=models.CASCADE)
+    tipo_atrativo = models.ForeignKey(TipoAtrativo, on_delete=models.CASCADE)
     descricao = models.TextField( null=True, blank=True)
     cor = models.TextField( null=True, blank=True)
     limitacao = models.TextField( null=True, blank=True)
@@ -238,11 +244,12 @@ class AtrativoTrilha(SoftDeletion):
 
 
 class ImagemAtrativoTrilha(SoftDeletion):
+    id = models.BigAutoField(primary_key=True)
     autor = models.CharField(max_length=200, null=True, blank=True,
                              verbose_name='Autor',
                              help_text='')
     imagem = models.ImageField(upload_to='atrativoimagens/')
-    atrativo = models.ForeignKey(AtrativoTrilha)
+    atrativo = models.ForeignKey(AtrativoTrilha, on_delete=models.CASCADE)
     
     class MetaSerializer:
         exclude_fields = ['created_at', 'deleted_at','user']
@@ -252,7 +259,8 @@ class ImagemAtrativoTrilha(SoftDeletion):
 
 
 class VideoAtrativoTrilha(SoftDeletion):
-    atrativo = models.ForeignKey(AtrativoTrilha)
+    id = models.BigAutoField(primary_key=True)
+    atrativo = models.ForeignKey(AtrativoTrilha, on_delete=models.CASCADE)
     nome = models.CharField(max_length=250, null=True, blank=True)
     autor = models.CharField(max_length=250, null=True, blank=True)
     url = models.URLField(null=True, blank=True)
