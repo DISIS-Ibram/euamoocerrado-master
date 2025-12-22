@@ -3,7 +3,7 @@ services:
   # INGRESS DO EUAMOCERRADO
 
   nginx:
-      container_name: eac-ngix
+      container_name: eac-nginx
       build: 
         context: nginx
         dockerfile: Dockerfile
