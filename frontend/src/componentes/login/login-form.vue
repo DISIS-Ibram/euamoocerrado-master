@@ -186,9 +186,10 @@ export default {
             this.showLogin = true;
         },
         login:async function(){
+            console.log(`Email: ${this.email} - Password: ${this.password}`)
             var res = await this.$store.dispatch('login',{email:this.email, password:this.password})
             this.erro = !res
-            console.log(res);
+            console.log('Tentativa de login: ', res);
         },
         register:async function(){
             var res = await this.$store.dispatch('register',{username:this.username, password:this.password, email:this.email, first_name:this.name})

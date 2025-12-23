@@ -28,12 +28,12 @@ services:
     env_file:
       - ./.env
     ports:
-      - "8585:80"
+      - "8585:8585"
     # volumes:
     # - ./data/media/:/app/media/
     # - ./backend:/app
     #  command: bash -c 'while !</dev/tcp/db/5432; do sleep 5; done; python manage.py runserver 0.0.0.0:8686'
-    command: ["/app/start.sh", "db:5432", "python", "manage.py", "runserver", "0.0.0.0:80"]  
+    command: ["/app/start.sh", "db:5432", "python", "manage.py", "runserver", "0.0.0.0:8585"]  
     #  command: python manage.py runserver 0.0.0.0:80
 
 
