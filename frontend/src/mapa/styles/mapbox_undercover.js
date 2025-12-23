@@ -19,9 +19,15 @@ export default {
                     // window.____MVTMAPSERVER_URL+ "b/{z}/{x}/{y}.vector.pbf",
                     // window.____MVTMAPSERVER_URL + "a/{z}/{x}/{y}.vector.pbf",
                     // window.____MVTMAPSERVER_URL + "b/{z}/{x}/{y}.vector.pbf",
-                    "https://b.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/{z}/{x}/{y}.vector.pbf?access_token=pk.eyJ1IjoibGVjZWxlcyIsImEiOiJjajUyZXBzbXEwZjYxMnFwOWFxeHd5ZDY3In0.dftZ4LdgXBkdZI0_l7pcNA",
-                    "https://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/{z}/{x}/{y}.vector.pbf?access_token=pk.eyJ1IjoibGVjZWxlcyIsImEiOiJjajUyZXBzbXEwZjYxMnFwOWFxeHd5ZDY3In0.dftZ4LdgXBkdZI0_l7pcNA",
-                    "https://b.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/{z}/{x}/{y}.vector.pbf?access_token=pk.eyJ1IjoibGVjZWxlcyIsImEiOiJjajUyZXBzbXEwZjYxMnFwOWFxeHd5ZDY3In0.dftZ4LdgXBkdZI0_l7pcNA"
+                    // "https://b.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/{z}/{x}/{y}.vector.pbf?access_token=pk.eyJ1IjoibGVjZWxlcyIsImEiOiJjajUyZXBzbXEwZjYxMnFwOWFxeHd5ZDY3In0.dftZ4LdgXBkdZI0_l7pcNA",
+                    "https://b.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/{z}/{x}/{y}.vector.pbf?access_token=pk.eyJ1IjoiZGFuaWVsZmlndWVpcmVkbzE5ODMiLCJhIjoiY21qaHpjam1kMTVvMzNlb2N4eW9xOG9rOCJ9.xx4iT3auhIg0c2mHcdTBfQ",
+
+                    // "https://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/{z}/{x}/{y}.vector.pbf?access_token=pk.eyJ1IjoibGVjZWxlcyIsImEiOiJjajUyZXBzbXEwZjYxMnFwOWFxeHd5ZDY3In0.dftZ4LdgXBkdZI0_l7pcNA",
+                    "https://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/{z}/{x}/{y}.vector.pbf?access_token=pk.eyJ1IjoiZGFuaWVsZmlndWVpcmVkbzE5ODMiLCJhIjoiY21qaHpjam1kMTVvMzNlb2N4eW9xOG9rOCJ9.xx4iT3auhIg0c2mHcdTBfQ",
+                    
+                    // "https://b.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/{z}/{x}/{y}.vector.pbf?access_token=pk.eyJ1IjoibGVjZWxlcyIsImEiOiJjajUyZXBzbXEwZjYxMnFwOWFxeHd5ZDY3In0.dftZ4LdgXBkdZI0_l7pcNA"
+                    "https://b.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/{z}/{x}/{y}.vector.pbf?access_token=pk.eyJ1IjoiZGFuaWVsZmlndWVpcmVkbzE5ODMiLCJhIjoiY21qaHpjam1kMTVvMzNlb2N4eW9xOG9rOCJ9.xx4iT3auhIg0c2mHcdTBfQ"
+
                 ],
                 "vector_layers": [{
                     "description": "",
@@ -348,7 +354,8 @@ export default {
                     "source": "mapbox.mapbox-streets-v7",
                     "source_name": "Mapbox Streets V7"
                 }],
-                "webpage": "https://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/page.html?access_token=pk.eyJ1IjoibGVjZWxlcyIsImEiOiJjajUyZXBzbXEwZjYxMnFwOWFxeHd5ZDY3In0.dftZ4LdgXBkdZI0_l7pcNA",
+                // "webpage": "https://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/page.html?access_token=pk.eyJ1IjoibGVjZWxlcyIsImEiOiJjajUyZXBzbXEwZjYxMnFwOWFxeHd5ZDY3In0.dftZ4LdgXBkdZI0_l7pcNA",
+                "webpage": "https://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/page.html?access_token=pk.eyJ1IjoiZGFuaWVsZmlndWVpcmVkbzE5ODMiLCJhIjoiY21qaHpjam1kMTVvMzNlb2N4eW9xOG9rOCJ9.xx4iT3auhIg0c2mHcdTBfQ",
                 "type": "vector"
             }
         

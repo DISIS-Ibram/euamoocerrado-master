@@ -1,7 +1,7 @@
 <template>
   <div id="mapaBaseLayer" class="map-layer">
     <VueMapbox
-      accessToken="pk.eyJ1IjoibGVjZWxlcyIsImEiOiJjajUyZXBzbXEwZjYxMnFwOWFxeHd5ZDY3In0.dftZ4LdgXBkdZI0_l7pcNA"
+      accessToken="pk.eyJ1IjoiZGFuaWVsZmlndWVpcmVkbzE5ODMiLCJhIjoiY21qaHpjam1kMTVvMzNlb2N4eW9xOG9rOCJ9.xx4iT3auhIg0c2mHcdTBfQ"
       :mapStyle="MAPBASESTYLE"
       height="100%"
       width="100%"
