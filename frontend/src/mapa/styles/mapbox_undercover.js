@@ -348,7 +348,7 @@ export default {
                     "source": "mapbox.mapbox-streets-v7",
                     "source_name": "Mapbox Streets V7"
                 }],
-                "webpage": "https://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/page.html?access_token=pk.eyJ1IjoibGVjZWxlcyIsImEiOiJjajUyZXBzbXEwZjYxMnFwOWFxeHd5ZDY3In0.dftZ4LdgXBkdZI0_l7pcNA",
+                "webpage": "https://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/page.html?access_token=pk.eyJ1IjoiZGFuaWVsZmlndWVpcmVkbzE5ODMiLCJhIjoiY21qaHpjam1kMTVvMzNlb2N4eW9xOG9rOCJ9.xx4iT3auhIg0c2mHcdTBfQ",
                 "type": "vector"
             }
         
