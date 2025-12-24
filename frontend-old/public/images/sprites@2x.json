@@ -1,0 +1,359 @@
+{
+  "Anfiteatro": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 328,
+    "y": 321
+  },
+  "Avistamento de Aves": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 0,
+    "y": 617
+  },
+  "Banheiro": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 176,
+    "y": 617
+  },
+  "Beira-Lago": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 352,
+    "y": 617
+  },
+  "Cachoeira": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 0,
+    "y": 793
+  },
+  "Campo de Futebol": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 176,
+    "y": 793
+  },
+  "Centro de Educação Ambiental": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 352,
+    "y": 793
+  },
+  "Chuveiros": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 0,
+    "y": 969
+  },
+  "Ciclovia": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 176,
+    "y": 969
+  },
+  "Circuito de Malhação": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 352,
+    "y": 969
+  },
+  "Coopervia": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 528,
+    "y": 617
+  },
+  "Deck": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 704,
+    "y": 617
+  },
+  "Esportes Aquáticos": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 880,
+    "y": 617
+  },
+  "Lagoa": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 1056,
+    "y": 617
+  },
+  "Lanchonete": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 528,
+    "y": 793
+  },
+  "Parque Infantil": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 704,
+    "y": 793
+  },
+  "Piscina Pública": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 880,
+    "y": 793
+  },
+  "Pista Downhill": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 1056,
+    "y": 793
+  },
+  "Pista de Skate": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 528,
+    "y": 969
+  },
+  "Ponto de Encontro Comunitário": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 704,
+    "y": 969
+  },
+  "Ponto de Encontro Comunitário - PEC": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 880,
+    "y": 969
+  },
+  "Ponto de Pesca": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 1056,
+    "y": 969
+  },
+  "Praia para Banho": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 504,
+    "y": 321
+  },
+  "Quadra Poliesportiva": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 680,
+    "y": 321
+  },
+  "Quadra de Areia": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 856,
+    "y": 321
+  },
+  "Sede Administrativa": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 1032,
+    "y": 321
+  },
+  "Trilha": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 654,
+    "y": 0
+  },
+  "Veredas": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 830,
+    "y": 0
+  },
+  "Vestiário": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 1006,
+    "y": 0
+  },
+  "Vista Panorâmica": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 0,
+    "y": 1145
+  },
+  "Viveiro": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 176,
+    "y": 1145
+  },
+  "ajr": {
+    "height": 142,
+    "pixelRatio": 4,
+    "width": 121,
+    "x": 544,
+    "y": 1321
+  },
+  "arvore": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 352,
+    "y": 1145
+  },
+  "arvore_1": {
+    "height": 152,
+    "pixelRatio": 4,
+    "width": 152,
+    "x": 392,
+    "y": 1321
+  },
+  "arvores_1": {
+    "height": 80,
+    "pixelRatio": 4,
+    "width": 78,
+    "x": 969,
+    "y": 1321
+  },
+  "arvores_2": {
+    "height": 321,
+    "pixelRatio": 4,
+    "width": 327,
+    "x": 0,
+    "y": 0
+  },
+  "ave": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 528,
+    "y": 1145
+  },
+  "fruto": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 704,
+    "y": 1145
+  },
+  "kms": {
+    "height": 132,
+    "pixelRatio": 4,
+    "width": 96,
+    "x": 665,
+    "y": 1321
+  },
+  "kms5by5": {
+    "height": 164,
+    "pixelRatio": 4,
+    "width": 100,
+    "x": 176,
+    "y": 1321
+  },
+  "largada": {
+    "height": 296,
+    "pixelRatio": 4,
+    "width": 112,
+    "x": 0,
+    "y": 321
+  },
+  "mamifero": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 880,
+    "y": 1145
+  },
+  "marker_km": {
+    "height": 126,
+    "pixelRatio": 4,
+    "width": 108,
+    "x": 861,
+    "y": 1321
+  },
+  "marker_km copy": {
+    "height": 131,
+    "pixelRatio": 4,
+    "width": 100,
+    "x": 761,
+    "y": 1321
+  },
+  "marker_km_cinza": {
+    "height": 184,
+    "pixelRatio": 4,
+    "width": 100,
+    "x": 228,
+    "y": 321
+  },
+  "marker_runner": {
+    "height": 160,
+    "pixelRatio": 4,
+    "width": 116,
+    "x": 276,
+    "y": 1321
+  },
+  "parques": {
+    "height": 321,
+    "pixelRatio": 4,
+    "width": 327,
+    "x": 327,
+    "y": 0
+  },
+  "peixe": {
+    "height": 72,
+    "pixelRatio": 4,
+    "width": 160,
+    "x": 1047,
+    "y": 1321
+  },
+  "pis": {
+    "height": 205,
+    "pixelRatio": 4,
+    "width": 116,
+    "x": 112,
+    "y": 321
+  },
+  "trilha-fim": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 1056,
+    "y": 1145
+  },
+  "trilha-inicio": {
+    "height": 176,
+    "pixelRatio": 4,
+    "width": 176,
+    "x": 0,
+    "y": 1321
+  }
+}

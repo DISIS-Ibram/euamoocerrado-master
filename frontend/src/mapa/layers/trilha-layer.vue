@@ -344,9 +344,6 @@
 </template>
 
 <script>
-
-console.log('trilha-layer.vue')
-
 export default {
   data() {
     return {};

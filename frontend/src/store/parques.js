@@ -136,8 +136,8 @@ export default function(data) {
           let queryFinal = QUERYES["parques"];
           let res = await graphQL(queryFinal.query, queryFinal.variables);
           parques = res.parques;
-          console.log("parques graphql");
-          console.log(parques);
+          // console.log("parques graphql");
+          // console.log(parques);
 
           // ctx.commit('setData', res)
           // return { error:false, data:res }
@@ -156,17 +156,12 @@ export default function(data) {
           parque.trilha_set = trilha_set;
         });
 
-
-        // TODO - Daniel ERRO Resolver
         graphQL(QUERYES["tipo_atrativos_benfeitorias"], {}).then(data => {
-            // console.log('tipo_atrativos_benfeitorias: ', tipo_atrativos_benfeitorias)
-            ctx.commit("setMutation", {
-                tipo_atrativo: _.keyBy(data.tipo_atrativo, "id"),
-                tipo_benfeitoria: _.keyBy(data.tipo_benfeitoria, "id"),
-              });
-            });
-        // TODO - Daniel ERRO Resolver
-
+          ctx.commit("setMutation", {
+            tipo_atrativo: _.keyBy(data.tipo_atrativo, "id"),
+            tipo_benfeitoria: _.keyBy(data.tipo_benfeitoria, "id"),
+          });
+        });
         // graphQL(QUERYES["tipo_benfeitorias"], {}).then(data => {
         //   ctx.commit("setMutation", {
         //     tipo_benfeitoria: _.keyBy(data.tipo_benfeitoria, "id")
@@ -472,25 +467,15 @@ export default function(data) {
         });
       },
 
-
+   
       loadStats: async function(ctx) {
-          console.log('loadStats')
-          console.log('ctx: ', ctx)
-          graphQL(QUERYES["stats"], {}).then(data => {
-
-          console.log('data:', data)
-
-
+        graphQL(QUERYES["stats"], {}).then(data => {
           var parquesStats = _.keyBy(data.parques?.[0]?.data, "parque_id");
           var trilhasStats = _.keyBy(data.trilhas?.[0]?.data, "trilha_id");
           var especiesStats = _.keyBy(data.especies?.[0]?.data, "especie_id");
           ctx.commit("setMutation", { parquesStats });
           ctx.commit("setMutation", { trilhasStats });
           ctx.commit("setMutation", { especiesStats });
-
-          console.log(parquesStats)
-          console.log(trilhasStats)
-          console.log(especiesStats)
         });
 
         // _.getJSON(urls.apibase + "obterstatsparque/", {}, data => {
@@ -511,43 +496,44 @@ export default function(data) {
         // });
       },
 
-    loadUserInfo: async function(ctx) {
-      var user = ctx.rootGetters.user;
-      if (!user?.pk) {
-        ctx.commit("setMutation", {
-          parquesvisitados: [],
-          trilhasvisitados: []
-        });
-        return;
-      }
-
-      graphQL(QUERYES["visitanteparque"], { visitanteid: user.pk }).then(
-        data => {
-          var parquesvisitados = _.keyBy(data?.visitantesparque, "parque");
-          var trilhasvisitados = _.keyBy(data?.trilhas, "trilha");
-          ctx.commit("setMutation", { parquesvisitados });
-          ctx.commit("setMutation", { trilhasvisitados });
+      loadUserInfo: async function(ctx) {
+        var user = ctx.rootGetters.user;
+        if (!user?.pk) {
+          ctx.commit("setMutation", {
+            parquesvisitados: [],
+            trilhasvisitados: []
+          });
+          return;
         }
-      );
 
-      // await _.getJSON(
-      //   urls.apiurl + "parque/visitanteparque/",
-      //   { visitante: user.pk },
-      //   data => {
-      //     ctx.commit("setMutation", {
-      //       parquesvisitados: _.keyBy(data.results, "parque")
-      //     });
-      //   }
-      // );
-     // await _.getJSON(
-      //   urls.apiurl + "trilha/visitantetrilha/",
-      //   { visitante: user.pk },
-      //   data => {
-      //     ctx.commit("setMutation", {
-      //       trilhasvisitados: _.keyBy(data.results, "trilha")
-      //     });
-      //   }
-      // );
+        graphQL(QUERYES["visitanteparque"], { visitanteid: user.pk }).then(
+          data => {
+            var parquesvisitados = _.keyBy(data?.visitantesparque, "parque");
+            var trilhasvisitados = _.keyBy(data?.trilhas, "trilha");
+            ctx.commit("setMutation", { parquesvisitados });
+            ctx.commit("setMutation", { trilhasvisitados });
+          }
+        );
+
+        // await _.getJSON(
+        //   urls.apiurl + "parque/visitanteparque/",
+        //   { visitante: user.pk },
+        //   data => {
+        //     ctx.commit("setMutation", {
+        //       parquesvisitados: _.keyBy(data.results, "parque")
+        //     });
+        //   }
+        // );
+
+        // await _.getJSON(
+        //   urls.apiurl + "trilha/visitantetrilha/",
+        //   { visitante: user.pk },
+        //   data => {
+        //     ctx.commit("setMutation", {
+        //       trilhasvisitados: _.keyBy(data.results, "trilha")
+        //     });
+        //   }
+        // );
       },
 
       currentParque: function(ctx, parqueID) {

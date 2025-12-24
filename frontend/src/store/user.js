@@ -50,10 +50,6 @@ export default function(data) {
 
         var body = JSON.stringify(resources);
         const token = getToken();
-        console.log('Token do dispatch login: ', token)
-        console.log('E-mail: ', resources.email)
-        console.log('Senha: ', resources.password)
-
         var response = await fetch(login, {
           method: "POST",
           body: body,

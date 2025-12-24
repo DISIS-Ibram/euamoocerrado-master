@@ -1,10 +1,8 @@
-# FROM node:14 as builder
-FROM node:18 AS builder
+FROM node:14 as builder
+
+
 
 WORKDIR /app
-
-# Habilita compatibilidade com OpenSSL legado
-ENV NODE_OPTIONS=--openssl-legacy-provider
 
 # Copiar arquivos de dependências primeiro para aproveitar o cache
 COPY package*.json ./

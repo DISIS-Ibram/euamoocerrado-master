@@ -1,4 +1,4 @@
-﻿COPY public.parque_atrativo (id, created_at, deleted_at, descricao, limitacao, geom, parque_id, tipo_atrativo_id, user_id, nome, cor) FROM stdin;
+COPY public.parque_atrativo (id, created_at, deleted_at, descricao, limitacao, geom, parque_id, tipo_atrativo_id, user_id, nome, cor) FROM stdin;
 84	2019-11-29 14:11:07.375065+00	\N	\N	\N	010100002042120000295DFA97A4E847C0C0CFB87020A42FC0	\N	6	\N	\N	\N
 86	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000A1BE654E97E747C0A036AAD381A42FC0	65	4	\N	\N	\N
 51	\N	\N	\N	\N	010100002042120000B982B712A7EA47C0BBA5F3BD48482FC0	6	5	1	\N	\N

@@ -1,0 +1,73 @@
+import theapi from '@/api.js'
+
+/* Baseado parcialmente em mapas.js e em percurso.js */
+
+export default function(data) {
+    var API_comentarios = theapi.comentarios;
+
+    var state = {
+        //comentarios: [{label: "teste", children: [{label: "resposta 1"}, {label: "resposta2"}]}, {label: "outro nó raiz!"}, {label:"terceiro nó raiz, esse com os filhos:", children:[{label: "sem netos"},{label:"com netos:", children:[{label: "neto1"}, {label:"neto2"}]},{label:"também sem netos"}]}]
+        comentarios: [],
+        comentario: {}
+    }
+    return {
+        state: state,
+        mutations: {
+            SET_COMENTARIOS: function(state, list) {
+                state.comentarios = list;
+            },
+            SET_COMENTARIO: function(state, comment) {
+                state.comentario = comment;
+            }
+        },
+        actions: 
+        {
+            fetchComments: function(context, url)
+            {
+                $.getJSON(API_comentarios, {url: url}, data => {
+                    context.commit('SET_COMENTARIOS', data);
+                });
+            },
+            sendComments: function(context, template)
+            {
+                alert(API_comentarios + template.url);
+                _.postJSON(API_comentarios, template, data => {
+                    context.commit('SET_COMENTARIO', data);
+                    //setTimeout(()=>context.dispatch('????????????????????'),400)
+                    window.data = data;
+                });
+                alert('sendComments chamado');
+            }
+        },
+        getters:
+        {
+            /* Obter e converter para o formato que o componente espera. */
+            comentarios: (state, getters) => {
+                window.comentarios = state.comentarios;
+                var tree = [];
+                var i;
+                var j;
+                for(i = 0; i < state.comentarios.count; i++)
+                {
+                    /* Passa pelos comentarios, vendo se tem pai: */
+                    if(!state.comentarios.results[i].ref_comentario)
+                    {
+                        tree.push({label: state.comentarios.results[i].conteudo + ": " + state.comentarios.results[i].ref_comentario, children: [], id: state.comentarios.results[i].id});
+                    }
+                    else
+                    {
+                        /* Se tem pai, então deve-se procurar onde colocá-lo: */
+                        for(j = 0; j < tree.length; j++)
+                        {
+                            if(tree[j].id == state.comentarios.results[i].ref_comentario)
+                            {
+                                tree[j].children.push({label: state.comentarios.results[i].conteudo + ": " + state.comentarios.results[i].ref_comentario, children: [], id: state.comentarios.results[i].id})
+                            }
+                        }
+                    }
+                }
+                return tree;
+            }
+        }
+    }
+}

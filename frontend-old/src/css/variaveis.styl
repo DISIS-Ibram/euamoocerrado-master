@@ -1,0 +1,461 @@
+
+
+//Corres =============
+    // cor-azul = #393F47;
+    cor-ciano = #02E9CE;
+    cor-amarelo = #EAAE40;
+    cor-verde = #5DC2C6;
+    cor-azul = #2E768E;
+    cor-roxo = #756193;
+    cor-azul-claro = #6F9FDD
+
+    color-green = hsl(64, 100%, 34%);
+    color-purple = #756193;
+    color-orange = hsl(28, 59%, 53%);
+    color-gray = #464354;
+    color-dark-gray = #4d4d5e;
+    // color-gray = #ea4f54;
+
+    //Cor Componente
+    content-color-bkg = color-dark-gray;
+    content-color-text = lighten(content-color-bkg, 80%);
+
+    
+    cor-fundo-popup = #333333;
+    cor-marca = cor-ciano;
+    cor-barralateral-fundo = cor-azul;
+
+
+
+
+fonte-titulo = 'Amaranth';
+font-title = 'Amaranth';
+font-subtitle = 'Amaranth';
+font-text = 'Open Sans';
+font-title-serif = 'Vollkorn';
+
+
+
+//COMPONENTES
+  barra-lateral-largura = 250px;
+  barra-lateral-largura-fechado = 40px ;
+
+
+
+
+//MIXENS
+
+/*
+# Mixen
+----
+*/
+checkPx(arg)
+  if unit(arg, 'px')
+    arg+0px
+  else
+    arg
+
+posabs(t,r,b,l)
+  position absolute
+  if t is defined || t != ""
+    top:t
+  if r is defined || r != ""
+    right:r
+  if b is defined || b != ""
+    bottom: b
+  if l is defined || l != ""
+    left: l
+    
+
+
+/*
+#box
+**box** t 0 b 0 r 0 l 0 w 0 h 0
+*/
+box(arg)
+  position absolute
+  i = 0
+  for num in arguments
+    i = i+1
+    val = arguments[i]
+    
+    if num == full
+      position absolute !important  
+      top 0
+      left 0
+      right 0
+      bottom 0
+    if num == abs
+      position absolute !important
+    if num == rel
+      position relative !important
+    if num == t 
+      top checkPx(val)
+    if num == b 
+      bottom checkPx(val)
+    if num == l 
+      left checkPx(val)
+    if num == r 
+      right checkPx(val)
+    if num == w 
+      width checkPx(val)
+    if num == h 
+      height checkPx(val)
+
+
+bcolor(cor)
+  .borda, .bd
+    border-color cor !important
+    &:after,&:before
+      border-color cor !important
+
+gpu()
+  transform translate3d(0, 0, 0)
+
+
+
+reset()
+  margin: 0
+  padding: 0
+  border: 0
+  outline: 0
+  min-height initial
+  min-width initial
+  max-height initial
+  max-width initial
+  
+
+  font-weight: inherit
+  font-style: inherit
+  // font-family: inherit //pq pode ser fonte de icone
+  font-size: 100%
+  vertical-align: baseline
+
+  line-height: 1
+  color: black;
+  
+  background none
+  border none
+  border-radius 0
+  outline:none
+  
+  word-wrap: break-word
+  box-shadow: none;
+
+
+
+
+seta(size,color,pos,offset = 50%)
+  content:''
+  width 0
+  height 0
+  sizeNeg = - size       
+  border checkPx(size) solid transparent;
+  if pos == "top"
+    border-bottom checkPx(size) solid color;
+    box abs t (2 * sizeNeg) l offset
+    margin-left: -(size)
+  if pos == "left"
+    border-right checkPx(size) solid color;
+    box abs t offset l (2 * sizeNeg)
+    margin-top: -(size)
+  if pos == "right"
+    border-left checkPx(size) solid color;
+    box abs t offset r (2 * sizeNeg)
+    margin-top: -(size)
+  if pos == "bottom"
+    border-top checkPx(size) solid color;
+    box abs b (2 * sizeNeg) l offset
+    margin-left: -(size)
+
+
+
+linear_gradient(origin, colors...)
+
+    fallback = colors[1][0]
+
+    colors = join(', ', colors)
+    colors = unquote(colors)
+
+    background-color: fallback
+    background-image: -webkit-linear-gradient(origin, colors) // Chrome, Safari
+    background-image:    -moz-linear-gradient(origin, colors) // Firefox (3.6 - 15)
+    background-image:     -ms-linear-gradient(origin, colors) // IE 10
+    background-image:      -o-linear-gradient(origin, colors) // Opera (11.1 - 12.0) 
+    background-image:         linear-gradient(origin, colors) // W3C
+
+
+
+
+
+base-font-size ?= 16px
+rasterise-media-queries ?= false
+
+rupture = {
+  rasterise-media-queries: rasterise-media-queries
+  mobile-cutoff: 576px
+  desktop-cutoff: 992px
+  hd-cutoff: 1200px
+  enable-em-breakpoints: false
+  base-font-size: base-font-size
+  anti-overlap: false
+  density-queries: 'dppx' 'webkit' 'moz' 'dpi'
+  retina-density: 1.5
+  use-device-width: false
+}
+
+rupture.scale = 0 (rupture.mobile-cutoff) 600px 800px (rupture.desktop-cutoff) (rupture.hd-cutoff)
+
+scale = 0 576px 768px 992px 1200px
+
+rupture.scale-names = 'xs' 'sm' 'md' 'lg' 'xl' 'hd'
+
+-is-string(val)
+  if typeof(val) is not 'unit'
+    if val is a 'string' or val is a 'ident'
+      true
+    else
+      false
+  else
+    false
+
+-get-scale-number(scale-name)
+  for list-item, i in rupture.scale-names
+    if list-item is scale-name
+      return i + 1
+  return false
+
+-convert-to(to-unit, value, context = rupture.base-font-size)
+  from-unit = unit(value)
+  return value if to-unit is from-unit
+  if to-unit in ('em' 'rem')
+    return value if from-unit in ('em' 'rem')
+    return unit((value / context), to-unit)
+  if to-unit is 'px'
+    return unit((value * context), 'px')
+
+-on-scale(n)
+  return unit(n) is ''
+
+-larger-than-scale(n)
+  return (n > (length(rupture.scale) - 1)) and -on-scale(n)
+
+-is-zero(n)
+  return n is 0
+
+-overlap-shift(anti-overlap, n)
+  shift-unit = unit(n)
+  anti-overlap = 0px unless anti-overlap
+  anti-overlap = 1px if anti-overlap is true
+  if length(anti-overlap) is 1
+    return -convert-to(shift-unit, anti-overlap)
+  for val in anti-overlap
+    return val if unit(val) is shift-unit
+
+-adjust-overlap(anti-overlap, n, side = 'min')
+  -shift = -overlap-shift(anti-overlap, n)
+  if (side is 'min' and -shift > 0) or (side is 'max' and -shift < 0)
+    n = n + -shift
+  return n
+
+-is-positive(n)
+  return n >= 0
+
+-density-queries(density)
+  if typeof(density) is not 'unit'
+    if not -is-string(density)
+      density = '%s' % density
+  density = rupture.retina-density if density is 'retina'
+  queries = ()
+  for query in rupture.density-queries
+    if query is 'webkit'
+      push(queries, '(-webkit-min-device-pixel-ratio: %s)' % (density))
+    else if query is 'moz'
+      push(queries, '(min--moz-device-pixel-ratio: %s)' % (density))
+    else if query is 'o'
+      push(queries, '(-o-min-device-pixel-ratio: %s/1)' % (density))
+    else if query is 'ratio'
+      push(queries, '(min-device-pixel-ratio: %s)' % (density))
+    else if query is 'dpi'
+      if -is-string(density)
+        density=convert(density)
+      push(queries, '(min-resolution: %sdpi)' % (round(density * 96, 1)))
+    else if query is 'dppx'
+      push(queries, '(min-resolution: %sdppx)' % (density))
+  return queries
+
+create-fallback-class(selected, class)
+  /{'' + class + ' ' + selected}
+    {block}
+
+// +between(min, max)
+// usage (scale can be mixed with custom values):
+//   - +between(1, 3) scale:scale
+//   - +between(0, 3) 0 width:scale
+//   - +between(200px, 500px) custom:custom
+//   - +between(0, 300px) 0 width:custom
+//   - +between(1, 300px) scale:custom
+//   - +between(200px, 4) custom:scale
+
+between(min, max, anti-overlap = rupture.anti-overlap, density = null, orientation = null, use-device-width = rupture.use-device-width, fallback-class = null)
+  selected = selector()
+
+  if -is-string(orientation)
+    orientation = convert(orientation)
+  if -is-string(density)
+    density = convert(density)
+  if -is-string(min)
+    min = -get-scale-number(min)
+  if -is-string(max)
+    max = -get-scale-number(max)
+
+  -min = rupture.scale[min - 1] unless -is-zero(min) or (not -on-scale(min))
+  -max = rupture.scale[max] unless not -on-scale(max)
+  -min ?= min
+  -max ?= max
+
+  if (rupture.rasterise-media-queries)
+    if not (density or -max or orientation)
+      {block}
+  else
+    condition = 'only screen'
+    use-device-width = use-device-width ? 'device-' : ''
+    unless -min is 0
+      -min = -convert-to('em', -min) if rupture.enable-em-breakpoints
+      -min = -adjust-overlap(anti-overlap, -min, side: 'min')
+      condition = condition + ' and (min-' + use-device-width + 'width: %s)' % (-min)
+    unless -larger-than-scale(max)
+      -max = -convert-to('em', -max) if rupture.enable-em-breakpoints
+      -max = -adjust-overlap(anti-overlap, -max, side: 'max')
+      condition = condition + ' and (max-' + use-device-width + 'width: %s)' % (-max)
+    if orientation
+      condition = condition + ' and (orientation: %s)' % (orientation)
+    if density
+      conditions = ()
+      for query in -density-queries(density)
+        push(conditions, condition + ' and %s' % (query))
+      condition = join(', ', conditions)
+    @media condition
+      {block}
+  if fallback-class
+    +create-fallback-class(selected, fallback-class)
+      {block}
+
+at(scale-point, anti-overlap = rupture.anti-overlap, density = null, orientation = null, use-device-width = rupture.use-device-width, fallback-class = null)
+  if -is-string(orientation)
+    orientation = convert(orientation)
+  if -is-string(density)
+    density = convert(density)
+  +between(scale-point, scale-point, anti-overlap, density, orientation, use-device-width, fallback-class)
+    {block}
+
+from-width(scale-point, anti-overlap = rupture.anti-overlap, density = null, orientation = null, use-device-width = rupture.use-device-width, fallback-class = null)
+  if -is-string(orientation)
+    orientation = convert(orientation)
+  if -is-string(density)
+    density = convert(density)
+  +between(scale-point, length(rupture.scale), anti-overlap, density, orientation, use-device-width, fallback-class)
+    {block}
+
+above = from-width
+
+to-width(scale-point, anti-overlap = rupture.anti-overlap, density = null, orientation = null, use-device-width = rupture.use-device-width, fallback-class = null)
+  if -is-string(orientation)
+    orientation = convert(orientation)
+  if -is-string(density)
+    density = convert(density)
+  +between(1, scale-point, anti-overlap, density, orientation, use-device-width, fallback-class)
+    {block}
+
+below = to-width
+
+mobile(anti-overlap = rupture.anti-overlap, density = null, orientation = null, use-device-width = rupture.use-device-width, fallback-class = null)
+  if -is-string(orientation)
+    orientation = convert(orientation)
+  if -is-string(density)
+    density = convert(density)
+  +below(rupture.mobile-cutoff, anti-overlap, density, orientation, use-device-width, fallback-class)
+    {block}
+
+tablet(anti-overlap = rupture.anti-overlap, density = null, orientation = null, use-device-width = rupture.use-device-width, fallback-class = null)
+  if -is-string(orientation)
+    orientation = convert(orientation)
+  if -is-string(density)
+    density = convert(density)
+  +between(rupture.mobile-cutoff, rupture.desktop-cutoff, anti-overlap, density, orientation, use-device-width, fallback-class)
+    {block}
+
+desktop(anti-overlap = rupture.anti-overlap, density = null, orientation = null, use-device-width = rupture.use-device-width, fallback-class = null)
+  if -is-string(orientation)
+    orientation = convert(orientation)
+  if -is-string(density)
+    density = convert(density)
+  +above(rupture.desktop-cutoff, anti-overlap, density, orientation, use-device-width, fallback-class)
+    {block}
+
+hd(anti-overlap = rupture.anti-overlap, density = null, orientation = null, use-device-width = rupture.use-device-width, fallback-class = null)
+  if -is-string(orientation)
+    orientation = convert(orientation)
+  if -is-string(density)
+    density = convert(density)
+  +above(rupture.hd-cutoff, anti-overlap, density, orientation, use-device-width, fallback-class)
+    {block}
+
+density(density, orientation = null, fallback-class = null)
+  selected = selector()
+  if not (rupture.rasterise-media-queries)
+    conditions = ()
+    for query in -density-queries(density)
+      condition = 'only screen and %s' % (query)
+      if orientation
+        condition = condition + ' and (orientation: %s)' % (orientation)
+      push(conditions, condition)
+    condition = join(', ', conditions)
+    @media condition
+      {block}
+    if fallback-class
+      +create-fallback-class(selected, fallback-class)
+        {block}
+
+pixel-ratio = density
+
+retina(orientation = null, fallback-class = null)
+  +density('retina', orientation, fallback-class)
+    {block}
+
+landscape(density = null, fallback-class = null)
+  selected = selector()
+  if not (rupture.rasterise-media-queries)
+    if -is-string(density)
+      density = convert(density)
+    if density
+      +pixel-ratio(density, orientation: landscape, fallback-class)
+        {block}
+    else
+      @media only screen and (orientation: landscape)
+        {block}
+      if fallback-class
+        +create-fallback-class(selected, fallback-class)
+          {block}
+
+portrait(density = null, fallback-class = null)
+  selected = selector()
+  if not (rupture.rasterise-media-queries)
+    if -is-string(density)
+      density = convert(density)
+    if density
+      +pixel-ratio(density, orientation: portrait, fallback-class)
+        {block}
+    else
+      @media only screen and (orientation: portrait)
+        {block}
+      if fallback-class
+        +create-fallback-class(selected, fallback-class)
+          {block}
+
+rupture-hover(density = null, orientation = null, fallback-class = null)
+  condition = "only screen and (hover: hover)";
+  @media ({condition})
+    {block}
+
+hover = rupture-hover

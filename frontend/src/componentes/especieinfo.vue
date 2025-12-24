@@ -93,7 +93,9 @@ export default {
 
   computed: {
     especie: function() {
+      console.log('Antes de computar o componentes especieinfo.vue');
       var especie = this.$store.getters.especieByID(this.id);
+      console.log('Espécie recebida no componente: ', especie);
       //    delete parque.geom;
       return especie;
     },

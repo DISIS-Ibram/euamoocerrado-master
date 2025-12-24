@@ -102,9 +102,6 @@
 </template>
 
 <script>
-
-console.log('atrativos-layer.vue')
-
 export default {
   data() {
     return {

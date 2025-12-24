@@ -34,11 +34,9 @@ let graphqlurl = window.____GRAPHQL_URL;
 
 let graphQL = async function(query, variables = {}) {
   if (query?.query) query = query?.query;
-
-  // debugger;
+  debugger;
   console.log("---------------");
-  console.log('graphQL em api.js')
-  console.log('graphqlurl: ', graphqlurl);
+  console.log(graphqlurl);
   console.log("---------------");
 
   return new Promise((resolve, reject) => {

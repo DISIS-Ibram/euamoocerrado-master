@@ -1,0 +1,6 @@
+/**@
+* #Sprite
+* @category Graphics
+* @trigger Change - when the sprites change
+* Component for using tiles in a sprite map.
+*/Crafty.c("Sprite",{__image:"",__tile:0,__tileh:0,__padding:null,__trim:null,img:null,ready:!1,init:function(){this.__trim=[0,0,0,0];var e=function(e){var t=e.co,n=e.pos,r=e.ctx;if(e.type==="canvas")r.drawImage(this.img,t.x,t.y,t.w,t.h,n._x,n._y,n._w,n._h);else if(e.type==="DOM"){this._element.style.background="url('"+this.__image+"') no-repeat -"+t.x+"px -"+t.y+"px";this._element.style.backgroundSize="cover"}};this.bind("Draw",e).bind("RemoveComponent",function(t){t==="Sprite"&&this.unbind("Draw",e)})},sprite:function(e,t,n,r){this.__coord=[e*this.__tile+this.__padding[0]+this.__trim[0],t*this.__tileh+this.__padding[1]+this.__trim[1],this.__trim[2]||n*this.__tile||this.__tile,this.__trim[3]||r*this.__tileh||this.__tileh];this.trigger("Change");return this},crop:function(e,t,n,r){var i=this._mbr||this.pos();this.__trim=[];this.__trim[0]=e;this.__trim[1]=t;this.__trim[2]=n;this.__trim[3]=r;this.__coord[0]+=e;this.__coord[1]+=t;this.__coord[2]=n;this.__coord[3]=r;this._w=n;this._h=r;this.trigger("Change",i);return this}});

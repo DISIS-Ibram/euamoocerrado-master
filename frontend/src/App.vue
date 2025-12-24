@@ -1,28 +1,3 @@
-<!-- ########################################################## -->
-
-<!-- <template>
-  <div class="container">
-    <h1>Olá, Vue!</h1>
-    <p>Este é um exemplo básico de aplicação Vue 3.</p>
-    <p>Adicionando mais coisas para testar</p>
-  </div>
-</template>
-
-<script>
-export default {
-  name: 'app'
-}
-</script>
-
-<style>
-.container {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-}
-</style> -->
-
-<!-- ########################################################## -->
-
 <template>
   <div>
     <div id="pagewrap">
