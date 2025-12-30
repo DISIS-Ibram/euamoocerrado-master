@@ -8,10 +8,9 @@
     </div>
     <div class="col-2 col-sm-4 col-md-3 col-lg-3">
       <img
+        v-if="imagemEspecie"
         style="max-height:115px;"
-        :src="
-          `${api.thumb}?url=${item.imagemespecie_set[0].imagem}&w=120&h=120`
-        "
+        :src="`${api.thumb}?url=${imagemEspecie}&w=120&h=120`"
       />
     </div>
     <div class=" col-7 col-sm-8  col-md-9  col-lg-7 ">
@@ -45,7 +44,8 @@
 export default {
   props: {
     item: {
-      default: {}
+      type: Object,
+      default: () => ({})
     }
   },
 
@@ -54,6 +54,29 @@ export default {
     hoverParque: function(parqueID) {
       this.$store.dispatch("currentParque", parqueID);
     }
-  }
-};
+  },
+
+
+  computed: {
+    imagemEspecie() {
+      return this.item?.imagemespecie_set?.[0]?.imagem || null
+    }
+  },
+
+  // DEBUG
+  // mounted() {
+    //   console.log('list-item-especie - Item no mounted:', this.item)
+    //   console.log('api:', this.api)
+    //   console.log('api.thumb:', this.api?.thumb)
+    // },
+    // watch: {
+      //     item(newVal) {
+        //       console.log('list-item-especie - Item atualizado:', newVal)
+        //     }
+        // }
+        // };
+  
+  // DEBUG
+
+}
 </script>

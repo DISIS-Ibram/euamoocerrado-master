@@ -88,7 +88,12 @@ export default {
     parque: function(val) {
       this.zoomEspecie();
       //  window.map.flyTo( {center:this.parque.center.coordinates, zoom:14.5, duration:2000 })
+    },
+
+    item(newVal) {
+      console.log('especieinfo - Item recebido:', newVal)
     }
+
   },
 
   computed: {

@@ -1,7 +1,0 @@
-/**@
-* #Text
-* @category Graphics
-* @trigger Change - when the text is changed
-* @requires Canvas or DOM
-* Component to draw text inside the body of an entity.
-*/Crafty.c("Text",{_text:"",_textFont:{type:"",weight:"",size:"",family:""},ready:!0,init:function(){this.requires("2D");this.bind("Draw",function(e){var t=this._textFont.type+" "+this._textFont.weight+" "+this._textFont.size+" "+this._textFont.family;if(e.type==="DOM"){var n=this._element,r=n.style;r.color=this._textColor;r.font=t;n.innerHTML=this._text}else if(e.type==="canvas"){var i=e.ctx,s=null;i.save();i.fillStyle=this._textColor||"rgb(0,0,0)";i.font=t;i.translate(this.x,this.y+this.h);i.fillText(this._text,0,0);s=i.measureText(this._text);this._w=s.width;i.restore()}})},text:function(e){if(typeof e=="undefined"||e===null)return this._text;typeof e=="function"?this._text=e.call(this):this._text=e;this.trigger("Change");return this},textColor:function(e,t){this._strength=t;this._textColor=Crafty.toRGB(e,this._strength);this.trigger("Change");return this},textFont:function(e,t){if(arguments.length===1){if(typeof e=="string")return this._textFont[e];if(typeof e=="object")for(propertyKey in e)this._textFont[propertyKey]=e[propertyKey]}else this._textFont[e]=t;this.trigger("Change");return this}});

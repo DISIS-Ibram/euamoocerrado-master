@@ -1,6 +1,0 @@
-**cria utilitarios automaticamente
-
-Se o arquivo começar com _ é adicionado ao lodash
-Se comecar com array_ é adicionado ao prototype
-Se nao comecar com nada é normal
-

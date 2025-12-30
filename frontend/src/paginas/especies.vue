@@ -138,18 +138,21 @@ export default {
 
   computed: {
     user: function() {
+      console.log('especies.vue - computed - usre: ', this.$store.getters.user)
       return this.$store.getters.user;
     },
     especiesItens: function() {
       var categoria = this.$route.params.id;
+      // console.log('especies.vue - computed - especiesItens - categoria: ', categoria)
       let especiesAll;
-
+      
       if (_.isEmpty(categoria)) {
         especiesAll = this.$store.getters.especies;
       } else {
         especiesAll = this.$store.getters.especiesByCategoria(categoria);
       }
-
+      
+      // console.log('especies.vue - computed - especiesItens - especiesAll: ', especiesAll)
       especiesAll = _.filter(especiesAll, item => {
         let res = true;
         if (this.userMode == true) {

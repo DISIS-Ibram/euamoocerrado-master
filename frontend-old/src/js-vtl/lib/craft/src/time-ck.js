@@ -1,4 +1,0 @@
-/**@
-* #Crafty Time
-* @category Utilities
-*/Crafty.c("Delay",{init:function(){this._delays=[];this.bind("EnterFrame",function(){var e=(new Date).getTime();for(var t in this._delays){var n=this._delays[t];if(!n.triggered&&n.start+n.delay+n.pause<e){n.triggered=!0;n.func.call(this)}}});this.bind("Pause",function(){var e=(new Date).getTime();for(var t in this._delays)this._delays[t].pauseBuffer=e});this.bind("Unpause",function(){var e=(new Date).getTime();for(var t in this._delays){var n=this._delays[t];n.pause+=e-n.pauseBuffer}})},delay:function(e,t){return this._delays.push({start:(new Date).getTime(),func:e,delay:t,triggered:!1,pauseBuffer:0,pause:0})}});

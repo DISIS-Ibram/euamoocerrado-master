@@ -21,19 +21,28 @@
 
 
 <script>
-    export default{
-        props:{
-            item:{
-                default:{}
-            },
+export default{
+    props:{
+        item:{
+            default:{}
         },
-        methods:{
-            selected:function(){
+    },
 
-            },
-            hoverParque:function(parqueID){
-                this.$store.dispatch('currentParque',parqueID)
-            },
+    mounted() {
+        console.log('list-item-especie-avis - Item no mounted:', this.item)
+    },
+    watch: {
+        item(newVal) {
+        console.log('list-item-especie-avis - Item atualizado:', newVal)
         }
-    }
+    },
+
+    methods:{
+        selected:function(){
+        },
+        hoverParque:function(parqueID){
+            this.$store.dispatch('currentParque',parqueID)
+        },
+    },
+} 
 </script>
