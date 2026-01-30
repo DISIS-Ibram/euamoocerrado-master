@@ -1,5 +1,13 @@
-#compilar o node
-FROM node:10 as node
-RUN apt-get update && apt-get install -y yarn
+# Teste para desenvolvimento - Rodar localmente
+FROM node:10
+
 WORKDIR /app
-#ADD ./ /app
+
+COPY package.json package-lock.json* ./
+RUN npm install
+
+COPY . .
+
+EXPOSE 8080
+
+CMD ["npm", "start"]

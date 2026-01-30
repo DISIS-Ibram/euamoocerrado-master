@@ -51,6 +51,34 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
 
+  #  frontend da Administração. Por problema de versão, o webpack-dev-server que fornece o servico.
+  admin:
+    container_name: eac-admin
+    build:
+      context: ./admin/
+      dockerfile: Dockerfile
+      target: node
+    #restart: always
+    env_file:
+      - ./.env
+    ports:
+      # - "${ADMIN_PORT}:8080"
+        # - "9898:8080"
+        - "8080:8080"
+    depends_on:
+      - backend
+    working_dir: /app
+    # command: sh -c 'yarn && yarn add webpack-dev-server@2.4.5 && npm run start'
+
+    # 👇 ADICIONE ISSO:
+    volumes:
+      - ./admin/src:/app/src # monta apenas o código fonte
+      - ./admin/public:/app/public # opcional (para refletir imagens/html)
+      - /app/node_modules # evita conflito do node_modules local
+    environment:
+      - CHOKIDAR_USEPOLLING=true # essencial para hot reload no Docker
+  #    command: yarn start                    # ou npm start, conforme seu projeto
+
 
   # BANCO DE DADOS - POSTGRES/POSTGIS
   db:
