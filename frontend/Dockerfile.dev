@@ -1,0 +1,14 @@
+FROM node:14
+
+WORKDIR /app
+
+# Copiar arquivos de dependências primeiro para aproveitar o cache
+COPY package*.json ./
+RUN npm install
+
+# NÃO copie o código aqui
+# Ele virá via volume
+
+# Porta 3000 para teste - Alterar a porta do Frontend no NGINX
+EXPOSE 3000
+CMD ["npm", "run", "dev"]

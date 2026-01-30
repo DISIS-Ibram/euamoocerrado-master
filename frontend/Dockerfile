@@ -1,7 +1,5 @@
 FROM node:14 as builder
 
-
-
 WORKDIR /app
 
 # Copiar arquivos de dependências primeiro para aproveitar o cache

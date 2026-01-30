@@ -1,0 +1,5 @@
+Rodar o projeto em modo desenvolvimento
+docker compose -f docker-compose-dev.yaml build
+docker compose -f docker-compose-dev.yaml up
+
+
