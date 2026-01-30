@@ -1338,142 +1338,95 @@ box.mousedown(function(e) {
 
 
 $(document).mousemove(function(e) {
-    if (drag.state) {
-        //drag.elem.style.backgroundColor = '#f0f';
-        drag.elem = "#cr-stage>div";
-        delta.x = e.pageX - drag.x;
-        delta.y = e.pageY - drag.y;
-
-       // $('#log').text(e.pageX + ' ' + e.pageY + ' ' + delta.x + ' ' + delta.y);
-
-        var cur_offset = $(drag.elem).offset();
-
-        $(drag.elem).offset({
-            left: (cur_offset.left + delta.x),
-            top: (cur_offset.top + delta.y)
-        });
-
-        drag.x = e.pageX;
-        drag.y = e.pageY;
-    }
+  if (drag.state) {
+      //drag.elem.style.backgroundColor = '#f0f';
+      drag.elem = "#cr-stage>div";
+      delta.x = e.pageX - drag.x;
+      delta.y = e.pageY - drag.y;
+    // $('#log').text(e.pageX + ' ' + e.pageY + ' ' + delta.x + ' ' + delta.y);
+     var cur_offset = $(drag.elem).offset();
+     $(drag.elem).offset({
+          left: (cur_offset.left + delta.x),
+          top: (cur_offset.top + delta.y)
+      });
+     drag.x = e.pageX;
+      drag.y = e.pageY;
+  }
 });
 
 
 $(document).mouseup(function() {
-    if (drag.state) {
-       // drag.elem.style.backgroundColor = '#808';
-        drag.state = false;
+  if (drag.state) {
+     // drag.elem.style.backgroundColor = '#808';
+      drag.state = false;
+  }
+
+  var ent,barcos;
+
+
+  $(function() {
+    // ct = Controlador;
+    // ct.setup("RAPHAEL", "lago", 2057, 1865);
+
+    // ct.cenario.setup();
+    // ct.cenario.carregaPercurso("themes/voltaaolago_theme/js/percurso_gps.js");
+    // ct.camera.setup();
+
+    Crafty.init();
+    Crafty.viewport.clampToEntities = false;
+    //  Crafty.viewport.mouselook(true);
+    //  // ent = Crafty.e("2D, DOM, Image2").attr({w: 2057, h: 1865}).image2("themes/voltaaolago_theme/images/mapa_final.png");
+    mapa = Crafty.e("2D, DOM, Raphael").attr({oriW: 2057, oriH: 1865,w: 2057, h: 1865}).importSVG("themes/voltaaolago_theme/models/mapa_final.svg");
+    // // catedral = Crafty.e("2D, DOM, Raphael").attr({w: 100, h: 100, x:0,y:100}).importSVG("themes/voltaaolago_theme/models/catedral.svg");
+    barcos = [];
+    for(i=0;i<29;i++){
+        x = Math.random()*20;
+        y = Math.random()*20;
+        barco = Crafty.e("2D, DOM, Raphael").attr({oriW:1024,oriH:1024,x:x, y:y, w: 50, h: 50}).importSVG("themes/voltaaolago_theme/models/barco_simples_animado.svg");
+        barcos.push(barco);
     }
-
-
-
-
- var ent,barcos;
-
-
-
-$(function() {
-
-
- // ct = Controlador;
- // ct.setup("RAPHAEL", "lago", 2057, 1865);
-
- // ct.cenario.setup();
- // ct.cenario.carregaPercurso("themes/voltaaolago_theme/js/percurso_gps.js");
- // ct.camera.setup();
-
-
-
-
-   Crafty.init();
-     Crafty.viewport.clampToEntities = false;
- //  Crafty.viewport.mouselook(true);
-  //  // ent = Crafty.e("2D, DOM, Image2").attr({w: 2057, h: 1865}).image2("themes/voltaaolago_theme/images/mapa_final.png");
-
-
-  mapa = Crafty.e("2D, DOM, Raphael").attr({oriW: 2057, oriH: 1865,w: 2057, h: 1865}).importSVG("themes/voltaaolago_theme/models/mapa_final.svg");
-
-  // // catedral = Crafty.e("2D, DOM, Raphael").attr({w: 100, h: 100, x:0,y:100}).importSVG("themes/voltaaolago_theme/models/catedral.svg");
-
-
-
-barcos = [];
-for(i=0;i<29;i++){
-    x = Math.random()*20;
-     y = Math.random()*20;
-    barco = Crafty.e("2D, DOM, Raphael").attr({oriW:1024,oriH:1024,x:x, y:y, w: 50, h: 50}).importSVG("themes/voltaaolago_theme/models/barco_simples_animado.svg");
-    barcos.push(barco);
-}
-
-
-   // barcos.anima();
-
-  //Crafty.viewport.follow(catedral, 0, 0);
-
-//  TweenMax.to(catedral,3,{left:2000,yoyo:true,repeat:-1});
-
-
-//    barco = Crafty.e("Raphael").
-
-//    percurso = Crafty.e("Raphael").
-
-
-
-
-     Crafty.sprite(126, "themes/voltaaolago_theme/models/barco.png", {
-         PlayerSprite: [0,0,0,0]
-     })
-
-
-// for(i=0;i<5;i++){
-
-//    barcoimg =   Crafty.e("2D, DOM, SpriteAnimation, PlayerSprite").attr({scale:0.1})
-//          .animate('PlayerRunning', 0,0,19)
-//          .animate('PlayerRunning', 80, -1) // start animation
-//         barcos.push(barcoimg);
-
-// }
-
-// Load our sprite map image
- // Crafty.load(['themes/voltaaolago_theme/models/barco.png'], function(){
+    // barcos.anima();
+    //Crafty.viewport.follow(catedral, 0, 0);
+    //  TweenMax.to(catedral,3,{left:2000,yoyo:true,repeat:-1});
+    //    barco = Crafty.e("Raphael").
+    //    percurso = Crafty.e("Raphael").
+    Crafty.sprite(126, "themes/voltaaolago_theme/models/barco.png", {
+        PlayerSprite: [0,0,0,0]
+    })
+    // for(i=0;i<5;i++){
+    //    barcoimg =   Crafty.e("2D, DOM, SpriteAnimation, PlayerSprite").attr({scale:0.1})
+    //          .animate('PlayerRunning', 0,0,19)
+    //          .animate('PlayerRunning', 80, -1) // start animation
+    //         barcos.push(barcoimg);
+    // }
+    // Load our sprite map image
+    // Crafty.load(['themes/voltaaolago_theme/models/barco.png'], function(){
     // Once the image is loaded...
-
     // Define the individual sprites in the image
     // Each one (spr_tree, etc.) becomes a component
     // These components' names are prefixed with "spr_"
     //  to remind us that they simply cause the entity
-
-
- // });
-
-
-
-
-
-
-
-
-
-// //ent = Crafty.e("2D, DOM, Raphael").attr({w: 20, h: 20}).importSVG("themes/voltaaolago_theme/js/mapa_final.svg");
-      $('#page').bind('mousewheel', function(event, delta) {
-            //var dir = delta > 0 ? 'Up' : 'Down',
-             //   vel = Math.abs(delta);
-            //$(this).text(dir + ' at a velocity of ' + vel);
-        var ev = window.event;
-        if(ev){
+    // });
+    // //ent = Crafty.e("2D, DOM, Raphael").attr({w: 20, h: 20}).importSVG("themes/voltaaolago_theme/js/mapa_final.svg");
+    $('#page').bind('mousewheel', function(event, delta) {
+          //var dir = delta > 0 ? 'Up' : 'Down',
+          //   vel = Math.abs(delta);
+          //$(this).text(dir + ' at a velocity of ' + vel);
+      var ev = window.event;
+      if(ev){
         if (ev.wheelDelta) { /* IE/Opera. */
             delta = delta / 120;
         } else if (ev.detail) { /** Mozilla case. */  /** In Mozilla, sign of delta is different than in I * Also, delta is multiple of 3. */
             delta = -delta / 3;
         }
       }
-           console.log(delta);
-           val = 1+delta;
-            Crafty.viewport.zoom(val,0,0,0);
-            return false;
-        });
+      console.log(delta);
+        val = 1+delta;
+        Crafty.viewport.zoom(val,0,0,0);
+        return false;
+    });
 
-
+  });
 });
 
 
@@ -1849,3 +1802,4 @@ function animaBarcos(){
 //       lat = 180 / Math.PI * (2 * Math.atan(Math.exp(lat * Math.PI / 180)) - Math.PI / 2);
 //       return [lon, lat];
 //   }
+//

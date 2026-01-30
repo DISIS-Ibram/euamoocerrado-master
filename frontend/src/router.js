@@ -121,6 +121,10 @@ routes.push({
 });
 
 const router = new VueRouter({
+  // Remover a # do endereço no navegador
+  mode: "history",
+  // Remover a # do endereço no navegador
+
   routes: routes, // short for `routes: routes`,
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };
