@@ -16,11 +16,10 @@
     "url": "https://github.com/catalin-luntraru/redux-minimal"
   },
   "scripts": {
-    "start": "webpack-dev-server --inline --hot --config webpack.dev.config.js --history-api-fallback",
+    "start": "webpack-dev-server --config webpack.dev.config.js --host 0.0.0.0",
+
     "build-dev": "webpack --config webpack.dll.js; webpack --config webpack.prod.config.js",
-
     "build-prod": "webpack --config webpack.dll.prod.js && webpack --config webpack.prod.config.js",
-
     "test": "mocha --compilers js:babel-register --recursive",
     "test-watch": "npm test -- --watch",
     "size": "webpack --profile --json > stats.json",
