@@ -25,6 +25,7 @@ export default function(data) {
         var register = urls.register;
 
         var body = JSON.stringify(data);
+        console.log('Resgister frontend: ', body)
         var response = await fetch(register, {
           method: "POST",
           body: body,

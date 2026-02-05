@@ -34,7 +34,7 @@ let graphqlurl = window.____GRAPHQL_URL;
 
 let graphQL = async function(query, variables = {}) {
   if (query?.query) query = query?.query;
-  debugger;
+  // debugger;
   // console.log("---------------");
   // console.log(graphqlurl);
   // console.log("---------------");

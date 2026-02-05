@@ -22,55 +22,72 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = '__all__'
+        fields = (
+            'id',
+            'email',
+            'password',
+            'first_name',
+            'last_name',
+        )
 
     def is_valid(self, raise_exception=False):
-        if 'password_new' in self.initial_data:
-            self.initial_data['password'] = self.initial_data['password_new']
         if 'email' in self.initial_data:
-            self.initial_data["username"] = self.initial_data["email"]
-        if 'is_superuser' in self.initial_data:
-            self.initial_data['is_staff'] = self.initial_data['is_superuser']
-        return super(serializers.ModelSerializer, self).is_valid(raise_exception)
+            self.initial_data['username'] = self.initial_data['email']
+        return super(UserSerializer, self).is_valid(raise_exception=raise_exception)
 
     def create(self, validated_data):
-        # send_email("Boas Vindas", mensagem_boas_vindas,
-        #            validated_data["email"])
-        validated_data["username"] = validated_data["email"]
-        user = super(UserSerializer, self).create(validated_data)
-        user.set_password(validated_data['password'])
+        password = validated_data.pop('password')
+        validated_data['username'] = validated_data['email']
+
+        user = User.objects.create(**validated_data)
+        user.set_password(password)
         user.save()
-        try:
-            group = Group.objects.get(id=2)
+
+        group = Group.objects.filter(id=2).first()
+        if group:
             user.groups.add(group)
-        except:
-            print('Erro na criação do usuário')
+
         return user
 
     def update(self, instance, validated_data):
-        if 'first_name' in validated_data:
-            instance.first_name = validated_data['first_name']
-        if 'email' in validated_data:
-            instance.email = validated_data['email']
-            instance.username = validated_data['email']
+        validated_data.pop('is_superuser', None)
+        validated_data.pop('is_staff', None)
+        validated_data.pop('groups', None)
+
         if 'password' in validated_data:
-            instance.set_password(validated_data['password'])
-        if 'is_superuser' in validated_data:
-            instance.is_superuser = validated_data['is_superuser']
-        instance.save()
-        return instance
+            instance.set_password(validated_data.pop('password'))
+
+        return super(UserSerializer, self).update(instance, validated_data)
 
 
-@csrf_exempt
+
+# ######################################################
 @api_view(['POST'])
 @permission_classes((AllowAny,))
 def create_user(request):
+    print("REQUEST DATA:", request.data)
+
     serialized = UserSerializer(data=request.data)
+
     if serialized.is_valid():
-        serialized.save()
+        user = serialized.save()
+        print("USER CREATED:", user.id)
         return Response(serialized.data, status=status.HTTP_201_CREATED)
     else:
-        return Response(serialized._errors, status=status.HTTP_400_BAD_REQUEST)
+        print("SERIALIZER ERRORS:", serialized.errors)
+        return Response(serialized.errors, status=status.HTTP_400_BAD_REQUEST)
+
+# @csrf_exempt
+# @api_view(['POST'])
+# @permission_classes((AllowAny,))
+# def create_user(request):
+#     serialized = UserSerializer(data=request.data)
+#     if serialized.is_valid():
+#         serialized.save()
+#         return Response(serialized.data, status=status.HTTP_201_CREATED)
+#     else:
+#         return Response(serialized._errors, status=status.HTTP_400_BAD_REQUEST)
+# ######################################################
 
 
 # # Serializers define the API representation.
