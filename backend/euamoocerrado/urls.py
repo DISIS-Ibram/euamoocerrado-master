@@ -64,8 +64,15 @@ urlpatterns += [
     # URLs that do not require a session or valid token
     re_path(r'^api/password/reset/$', views.SI3RCPasswordResetView,
         name='rest_password_reset'),
-    re_path(r'^api/password-reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
-        views.SI3RCPasswordResetConfirmView,  name='password_reset_confirm'),
+
+    # re_path(r'^api/password-reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+    #     views.SI3RCPasswordResetConfirmView,  name='password_reset_confirm'),
+    re_path(
+        r'^api/password-reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>.+)/$',
+        views.SI3RCPasswordResetConfirmView,
+        name='password_reset_confirm'
+    ),
+
     re_path(r'^api/login/$', LoginView.as_view(), name='rest_login'),
     # URLs that require a user to be logged in with a valid session / token.
     re_path(r'^api/logout/$', LogoutView.as_view(), name='rest_logout'),

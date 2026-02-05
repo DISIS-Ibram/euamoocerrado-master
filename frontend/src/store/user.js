@@ -113,7 +113,6 @@ export default function(data) {
       },
 
       recoverPasswordRequest: async (ctx, { email }) => {
-        //
         var resetPassword = urls.resetPassword;
         var resources = { email: email };
 
@@ -137,29 +136,37 @@ export default function(data) {
       },
 
       newPasswordRequest: async (ctx, { id, token, password }) => {
-        //
-        var url =
+        const url =
           urls.apibase + "password-reset/confirm/" + id + "/" + token + "/";
-        var resources = {
+
+        const resources = {
           new_password1: password,
           new_password2: password
         };
-        var body = JSON.stringify(resources);
-        var response = await fetch(url, {
+
+        const response = await fetch(url, {
           method: "POST",
-          body: body,
+          body: JSON.stringify(resources),
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json"
           }
         });
+
+        const data = await response.json();
+
         if (!response.ok) {
-          return false;
+          // 🔴 ESSENCIAL: lançar erro
+          throw {
+            status: response.status,
+            data
+          };
         }
 
-        var resFinal = await response.json();
-        return resFinal;
+        return data;
       }
+
+
     },
 
     //--GETTERS

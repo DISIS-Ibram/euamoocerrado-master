@@ -19,10 +19,11 @@
                                 v-model="password2">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <div class="col-sm-12 mt2" v-if="error!==false">
-                            {{ error }}
-                        </div>
+
+                    <div class="form-group row" v-if="error">
+                    <div class="col-sm-12 mt2 text-danger">
+                        {{ error }}
+                    </div>
                     </div>
 
                     <div>
@@ -53,22 +54,53 @@
         }
     },
 
-    methods:{
-        newPasswordRequest:async function(){
-            this.error = false
-            if(this.password1 != this.password2){
-                this.error = "Senhas não são identicas"
-                return false;
-            }
+    // methods:{
+    //     newPasswordRequest:async function(){
+    //         this.error = false
+    //         if(this.password1 != this.password2){
+    //             this.error = "Senhas não são identicas"
+    //             return false;
+    //         }
          
-            var res = await this.$store.dispatch('newPasswordRequest',{id:this.$route.params.id, token:this.$route.params.token,password:this.password1})
+    //         var res = await this.$store.dispatch('newPasswordRequest',{id:this.$route.params.id, token:this.$route.params.token,password:this.password1})
 
-            if(!res)
-                this.error = "Ocorreu um erro"
+    //         if(!res)
+    //             this.error = "Ocorreu um erro"
 
+    //         this.$router.push('/')
+    //     },
+    // }
+
+    methods: {
+        async newPasswordRequest() {
+            this.error = false
+
+            if (this.password1 !== this.password2) {
+                this.error = "Senhas não são idênticas"
+            return
+            }
+
+            try {
+            await this.$store.dispatch('newPasswordRequest', {
+                id: this.$route.params.id,
+                token: this.$route.params.token,
+                password: this.password1
+            })
+
+            // sucesso
             this.$router.push('/')
-        },
+
+            } catch (err) {
+            // erro vindo do backend
+            if (err.response && err.response.data) {
+                this.error = err.response.data.detail || "Erro ao redefinir a senha"
+            } else {
+                this.error = "Erro ao redefinir a senha"
+            }
+            }
+        }
     }
+
 
  }
 

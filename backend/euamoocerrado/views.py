@@ -1,79 +1,96 @@
-from django.core.mail import send_mail
-from rest_framework.exceptions import ValidationError
-from django.utils.encoding import force_str
-from django.utils.http import urlsafe_base64_decode as uid_decoder
-import ast
-from rest_framework.permissions import AllowAny
-from django.http.response import JsonResponse
-from rest_framework import mixins, views
-from django.contrib.sites.shortcuts import get_current_site
-from django.utils.encoding import force_bytes
-from django.contrib.auth.tokens import default_token_generator
-from django.utils.http import urlsafe_base64_encode
-from django.core.files.storage import default_storage
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
-from django.core import serializers
-from django.core.files.base import ContentFile
-from django.views.decorators.csrf import csrf_exempt
-from django import forms
-from curupira_rest_api.utils import clean_name
-from parque.models import Parque, Benfeitoria, Atrativo
-from especie.models import Ocorrencia
-
-from django.http.response import JsonResponse, HttpResponse
-from django.db import connection
-
 import os
 import json
 
-from django.http import HttpResponseRedirect
+from django.http import (
+    JsonResponse,
+    HttpResponse,
+    HttpResponseRedirect
+)
 from django.shortcuts import render
-from django.contrib.gis.geos import GEOSGeometry
-from euamoocerrado.settings import MEDIA_ROOT
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.tokens import default_token_generator
+from django.contrib.sites.shortcuts import get_current_site
+from django.core.mail import send_mail
+from django.core import serializers
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
+from django.db import connection
+from django import forms
+from django.views.decorators.csrf import csrf_exempt
 
-# from rest_auth.views import UserDetailsView
+from django.utils.encoding import force_bytes, force_str
+from django.utils.http import (
+    urlsafe_base64_encode,
+    urlsafe_base64_decode
+)
+
+from rest_framework.response import Response
+from rest_framework import status
 from dj_rest_auth.views import UserDetailsView
 
 from django.apps import apps
-from euamoocerrado.settings import INSTALLED_APPS
-from rest_framework.response import Response
-from rest_framework import status
+from django.contrib.gis.geos import GEOSGeometry
+
+from euamoocerrado.settings import (
+    MEDIA_ROOT,
+    INSTALLED_APPS
+)
+
+from curupira_rest_api.utils import clean_name
+from parque.models import Parque, Benfeitoria, Atrativo
+from especie.models import Ocorrencia
 
 
 methods = ['add', 'change', 'delete']
 
 
 class UserDetailsViewSI3RC(UserDetailsView):
+
     def get(self, request, *args, **kwargs):
         user = self.get_object()
-        data = {}
         permissions_dic = {}
+
         for app_name in INSTALLED_APPS:
             app = apps.get_app_config(app_name.split('.')[-1])
-            if user.is_superuser:
-                for model in app.get_models():
-                    model_name = model.__name__.lower()
-                    permissions_dic[model_name] = {i: True for i in methods}
-            else:
-                for model in app.get_models():
-                    model_name = model.__name__.lower()
-                    permission_set = set()
-                    permission_set.update([i.codename.split('_')[0]
-                                           for i in user.user_permissions.all().filter(content_type__model=model_name)])
+
+            for model in app.get_models():
+                model_name = model.__name__.lower()
+
+                if user.is_superuser:
+                    permissions_dic[model_name] = {m: True for m in methods}
+                else:
+                    perms = set()
+                    perms.update(
+                        p.codename.split('_')[0]
+                        for p in user.user_permissions.filter(
+                            content_type__model=model_name
+                        )
+                    )
+
                     for group in user.groups.all():
-                        permission_set.update([i.codename.split(
-                            '_')[0] for i in group.permissions.all().filter(content_type__model=model_name)])
+                        perms.update(
+                            p.codename.split('_')[0]
+                            for p in group.permissions.filter(
+                                content_type__model=model_name
+                            )
+                        )
 
                     permissions_dic[model_name] = {
-                        i: i in permission_set for i in methods}
+                        m: m in perms for m in methods
+                    }
 
-        data['user'] = {"pk": user.pk,
-                        "username": user.username,
-                        "email": user.email,
-                        "first_name": user.first_name,
-                        "last_name": user.first_name}
-        data['permissions'] = permissions_dic
+        data = {
+            "user": {
+                "pk": user.pk,
+                "username": user.username,
+                "email": user.email,
+                "first_name": user.first_name,
+                "last_name": user.last_name,
+            },
+            "permissions": permissions_dic,
+        }
+
         return Response(data, status=status.HTTP_200_OK)
 
 
@@ -86,85 +103,118 @@ lyr_json = '{"type": "FeatureCollection", \
 
 @csrf_exempt
 def SI3RCPasswordResetView(request):
-    # Create a serializer with request.data
+    try:
+        params = json.loads(request.body.decode("utf-8"))
+        email = params.get("email")
+    except Exception:
+        return JsonResponse(
+            {"msg": "JSON inválido"},
+            status=status.HTTP_400_BAD_REQUEST
+        )
 
-    json_acceptable_string = request.body.decode("utf-8").replace("'", "\"")
+    user = User.objects.filter(email=email).first()
 
-    params = json.loads(json_acceptable_string)
-    email = params["email"]
-    
-    user = User.objects.filter(email=email)
     if not user:
-        return JsonResponse({"msg": "Usuário para esse email não existe"}, status=status.HTTP_412_PRECONDITION_FAILED  , safe=False)
-    
-    user = user[0]
-   
+        return JsonResponse(
+            {"msg": "Usuário para esse email não existe"},
+            status=status.HTTP_412_PRECONDITION_FAILED
+        )
+
     current_site = get_current_site(request)
-    site_name = current_site.name
-    domain = current_site.domain
+
     context = {
-        'email': user.email,
-        'domain': domain,
-        'site_name': site_name,
-        'uid': urlsafe_base64_encode(force_bytes(user.pk)).decode("utf-8"),
-        'token': default_token_generator.make_token(user),
-        'protocol': 'http',
+        "email": user.email,
+        "domain": current_site.domain,
+        "site_name": current_site.name,
+        "uid": urlsafe_base64_encode(force_bytes(user.pk)),
+        "token": default_token_generator.make_token(user),
+        "protocol": "http",
     }
-    
-    emailsent = send_email(context)
-    print(emailsent)
-    return JsonResponse({"msg": "Um Link para recuperar a senha foi enviado para: %s" % user.email}, status=status.HTTP_200_OK, safe=False)
+
+    send_email(context)
+
+    return JsonResponse(
+        {"msg": f"Um link para recuperar a senha foi enviado para: {user.email}"},
+        status=status.HTTP_200_OK
+    )
 
 
 @csrf_exempt
 def SI3RCPasswordResetConfirmView(request, uidb64, token):
-    # Create a serializer with request.data
-    user = None
-    # Decode the uidb64 to uid to get User object
     try:
-        uid = force_str(uid_decoder(uidb64))
-        user = User._default_manager.get(pk=uid)
-    except (TypeError, ValueError, OverflowError, User.DoesNotExist):
-        return JsonResponse({'uid': ['Invalid value']}, status=status.HTTP_412_PRECONDITION_FAILED, safe=False)
+        uid = force_str(urlsafe_base64_decode(uidb64))
+        user = User.objects.get(pk=uid)
+    except Exception:
+        return JsonResponse(
+            {"uid": ["Invalid value"]},
+            status=status.HTTP_400_BAD_REQUEST
+        )
 
-    # if not default_token_generator.check_token(user, token):
-    #     return JsonResponse({'token': ['Invalid value']}, status=status.HTTP_200_OK, safe=False)
+    if not default_token_generator.check_token(user, token):
+        return JsonResponse(
+            {"token": ["Invalid or expired token"]},
+            status=status.HTTP_400_BAD_REQUEST
+        )
 
-    json_acceptable_string = request.body.decode("utf-8").replace("'", "\"")
-    params = json.loads(json_acceptable_string)
+    try:
+        params = json.loads(request.body.decode("utf-8"))
+        pw1 = params.get("new_password1")
+        pw2 = params.get("new_password2")
+    except Exception:
+        return JsonResponse(
+            {"msg": "JSON inválido"},
+            status=status.HTTP_400_BAD_REQUEST
+        )
 
-    new_password1 = params["new_password1"]
-    new_password2 = params["new_password2"]
+    if pw1 != pw2:
+        return JsonResponse(
+            {"msg": "Passwords não conferem"},
+            status=status.HTTP_400_BAD_REQUEST
+        )
 
-    password = new_password1 if new_password1 == new_password2 else None
-    if password:
-        from django.contrib.auth import password_validation
-        password_validation.validate_password(password, user)
-        user.set_password(password)
-        user.save()
-        return JsonResponse({"Msg": "Password alterado com sucesso"}, status=status.HTTP_200_OK, safe=False)
-    else:
-        return JsonResponse({"Msg": "Password não pode ser alterado"}, status=status.HTTP_412_PRECONDITION_FAILED, safe=False)
+    from django.contrib.auth.password_validation import validate_password
+    from django.core.exceptions import ValidationError
+
+    try:
+        validate_password(pw1, user)
+    except ValidationError as e:
+        return JsonResponse(
+            {"password": e.messages},
+            status=status.HTTP_400_BAD_REQUEST,
+            safe=False
+        )
+
+    user.set_password(pw1)
+    user.save()
+
+    return JsonResponse(
+        {"msg": "Password alterado com sucesso"},
+        status=status.HTTP_200_OK
+    )
 
 
 def send_email(data):
+    subject = "Eu amo o Cerrado - Recuperação de SENHA"
 
-    subject = 'Eu amo o Cerrado - Recuperação de SENHA'
-    msg = 'Você está recebendo este email porque solicitou a redefinição da senha da sua conta em: %s\n' % data['domain'].split(':')[
-        0]
-    msg += 'Por favor, acesse a seguinte página e escolha uma nova senha:\n\n'
-    msg += '%s://%s/recoverypassword/%s/%s/' % (
-        data['protocol'], data['domain'].split(':')[0], data['uid'], data['token'])
-    msg += '\n\n'
+    msg = (
+        f"Você solicitou a redefinição da senha da sua conta em "
+        f"{data['domain']}\n\n"
+        f"Acesse o link abaixo:\n\n"
+        f"{data['protocol']}://{data['domain']}/recoverypassword/"
+        f"{data['uid']}/{data['token']}/\n\n"
+    )
 
-    res = send_mail(
+    print('send_email: ', msg)
+
+    return send_mail(
         subject,
         msg,
-        'naoresponda@euamocerrado.com.br',
-        [data['email']],
+        # "naoresponda@euamocerrado.com.br",
+        "dmecatronica83@gmail.com",
+        [data["email"]],
         fail_silently=False,
     )
-    return res
+
 
 
 @csrf_exempt

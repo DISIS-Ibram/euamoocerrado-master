@@ -10,7 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -177,13 +180,19 @@ LEAFLET_CONFIG = {
 
 #CONFIG EMAIL
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'mail.euamocerrado.com.br'
-EMAIL_USE_TLS = True
+# EMAIL_HOST = 'mail.euamocerrado.com.br'
+EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'naoresponda@euamocerrado.com.br'
-EMAIL_HOST_PASSWORD = '+ot%EM@YgE1e'
-EMAIL_DEST = ['ibram.educ@gmail.com']
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 
+# EMAIL_HOST_USER = 'naoresponda@euamocerrado.com.br'
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+# EMAIL_HOST_PASSWORD = '+ot%EM@YgE1e'
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+# EMAIL_DEST = ['ibram.educ@gmail.com']
+EMAIL_DEST = os.getenv("EMAIL_HOST_USER")
+DEFAULT_FROM_EMAIL = "Eu amo o Cerrado <dmecatronica83@gmail.com>"
 
 
 # Static files (CSS, JavaScript, Images)

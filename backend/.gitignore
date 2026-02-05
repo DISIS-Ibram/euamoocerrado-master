@@ -6,3 +6,4 @@ media/
 .vscode/settings.json
 eac_venv/
 venv
+.env

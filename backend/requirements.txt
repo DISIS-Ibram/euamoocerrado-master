@@ -33,6 +33,7 @@ psycopg2-binary==2.9.10
 pycryptodome==3.22.0
 pylint==3.3.6
 pyparsing==3.2.3
+python-dotenv==1.2.1
 python-pptx==0.6.23
 six==1.12.0
 sortedcontainers==2.4.0
