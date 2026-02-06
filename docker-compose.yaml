@@ -33,7 +33,8 @@ services:
     - ./data/media/:/app/media/
     # - ./backend:/app
     #  command: bash -c 'while !</dev/tcp/db/5432; do sleep 5; done; python manage.py runserver 0.0.0.0:8686'
-    command: ["/app/start.sh", "db:5432", "python", "manage.py", "runserver", "0.0.0.0:8585"]  
+    # command: ["/app/start.sh", "db:5432", "python", "manage.py", "runserver", "0.0.0.0:8585"]  
+    command: ["/app/start.sh"]  
     #  command: python manage.py runserver 0.0.0.0:80
 
 

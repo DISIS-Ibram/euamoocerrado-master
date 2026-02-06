@@ -25,15 +25,22 @@ services:
     container_name: eac-backend
     build: ./backend
     restart: always
-    env_file:
-      - ./.env
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      EMAIL_HOST_USER: ${EMAIL_HOST_USER}
+      EMAIL_HOST_PASSWORD: ${EMAIL_HOST_PASSWORD}
     ports:
       - "8585:8585"
     volumes:
     - ./data/media/:/app/media/
     # - ./backend:/app
     #  command: bash -c 'while !</dev/tcp/db/5432; do sleep 5; done; python manage.py runserver 0.0.0.0:8686'
-    command: ["/app/start.sh", "db:5432", "python", "manage.py", "runserver", "0.0.0.0:8585"]  
+    # command: ["/app/start.sh", "db:5432", "python", "manage.py", "runserver", "0.0.0.0:8585"]  
+    command: ["/app/start.sh"]  
     #  command: python manage.py runserver 0.0.0.0:80
 
 
@@ -86,8 +93,10 @@ services:
       image: postgis/postgis:15-3.4
       # image: mdillon/postgis
       restart: always
-      env_file:
-      - ./.env
+      environment:
+        POSTGRES_DB: ${POSTGRES_DB}
+        POSTGRES_USER: ${POSTGRES_USER}
+        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       volumes:
       - ./data/pgdata:/var/lib/postgresql/data
       - ./db-backup:/db-backup

@@ -106,16 +106,13 @@ WSGI_APPLICATION = 'euamoocerrado.wsgi.application'
 
 # RODANDO DOCKER com BD DOCKER'
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'euamoocerrado',
-        'USER': 'postgres',
-        'PASSWORD': 'r00t05',
-        # 'PASSWORD': '123456', # WSL2 - IBRAM
-        'HOST': 'db',
-        # 'HOST': '172.30.60.250', # WSL2 - IBRAM
-        # 'HOST': '172.30.60.250',
-        'PORT': '5432',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.getenv("POSTGRES_DB"),
+        "USER": os.getenv("POSTGRES_USER"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
+        "HOST": os.getenv("DB_HOST"),
+        "PORT": os.getenv("DB_PORT", "5432"),
     }
 }
 
@@ -180,11 +177,12 @@ LEAFLET_CONFIG = {
 
 #CONFIG EMAIL
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 # EMAIL_HOST = 'mail.euamocerrado.com.br'
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
+# EMAIL_USE_SSL = False
 
 # EMAIL_HOST_USER = 'naoresponda@euamocerrado.com.br'
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
