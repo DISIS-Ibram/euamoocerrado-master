@@ -2289,7 +2289,449 @@ COPY public.administracao_comentario (id, oficial, publico, created_at, deleted_
 -- Data for Name: administracao_contact; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.administracao_contact (id, created_at, deleted_at, name, email, message, user_id) FROM stdin;
+COPY public.administracao_contact (id, name, email, message, created_at, deleted_at, user_id) FROM stdin;
+1	asdf	asdf@gmail.com	asdf	2018-11-21 19:08:52.224115+00	\N	1
+2	asdf	asdf@gmail.com	asdf	2018-11-21 19:09:23.524307+00	\N	1
+3	mari	marianadosanjos@gmail.com	Teste. Gostaria de saber como faz marcação das espécies no sistema	2018-11-22 13:23:25.28733+00	\N	1
+4	Eduardo Gomes de Assis	eduardogassis@gmail.com	Bom dia. excelente a iniciativa de vcs. Muito bom os posteres. estamos divulgado. Gostaria de saber se podem me enviar os arquivos de lata resolução para impressão e maior tamanho.   Eduardo Gomes - Instituto Grande sertão-IGS - Montes Claros-MG	2018-12-08 13:01:34.495742+00	\N	1
+5	mariana	marianadosanjos@gmail.com	Mensagem teste	2018-12-10 15:54:09.950675+00	\N	1
+6	Diego	moreriea@gmail.com	envio de email	2018-12-18 13:32:03.019602+00	\N	1
+7	cadastrador	leandroceles@gmail.com	\\ pasd fnasdnf paosfd spad	2018-12-18 14:13:26.459169+00	\N	1
+8	cadastrador	leandroceles@gmail.com	\\ pasd fnasdnf paosfd spad	2018-12-18 14:14:23.289819+00	\N	1
+9	cadastrador	leandroceles@gmail.com	\\ pasd fnasdnf paosfd spad	2018-12-18 14:17:06.524844+00	\N	1
+10	Diego	leandroceles@gmail.com	Testando aplicação que envia email	2018-12-18 17:07:16.842888+00	\N	1
+11	Diego	leandroceles@gmail.com	Testando aplicação que envia email	2018-12-18 17:08:33.72307+00	\N	1
+12	Diego sdfs	leandroceles@gmail.com	Testando aplicação que envia email	2018-12-18 17:10:44.713066+00	\N	1
+13	Diego Moreira	moreira.geo@gmail.com	O site de vocês é muito bom, não precisa mudar nada.	2018-12-20 14:01:27.9158+00	\N	1
+14	Diego Moreira Carvalho	moreira.geo@gmail.com	Teste O site de vocês é muito bom, não precisa mudar nada.	2018-12-20 14:06:54.286267+00	\N	1
+15	Diego	moreira.geo@gmail.com	Teste 1 O site de vocês é muito bom, não precisa mudar nada.	2018-12-20 14:08:22.038192+00	\N	1
+16	Diego	moreira.geo@gmail.com	Teste 1 O site de vocês é muito bom, não precisa mudar nada.	2018-12-20 14:11:09.764036+00	\N	1
+17	Diego	moreira.geo@gmail.com	Enviando Mensagem pelo site	2018-12-20 16:19:00.429438+00	\N	1
+18	Diego	moreira.geo@gmail.com	Este site é bem legal!!!	2018-12-20 17:18:39.928576+00	\N	1
+19	Diego	moreira.geo@gmail.com	Este site é bem legal!!!	2018-12-20 17:22:21.943982+00	\N	1
+20	Diego	moreira.geo@gmail.com	Este site é bem lega 1l!!!	2018-12-20 17:22:52.023869+00	\N	1
+21	Felicidade	leandroceles@gmail.com	Este site é bem lega asdfsdf asdfl!!!	2018-12-20 17:24:44.171243+00	\N	1
+22	Leandro	leandroceles@gmail.com	Tá legal	2018-12-20 17:28:26.161145+00	\N	1
+23	Leandro	leandroceles@gmail.com	Tá legal	2018-12-20 17:29:04.235062+00	\N	1
+24	Leandro Souza Celes	leandroceles@gmail.com	mensagem  das 15:41	2018-12-20 17:41:03.193297+00	\N	1
+25	mariana	ibram.educ@gmail.com	teste site	2019-01-14 19:01:25.080757+00	\N	1
+27	Marcio	bitbiker@gmail.com	Mariana\nParabéns pelo projeto e pelo belo trabalho.\nJá fiz meu cadastro e pretendo colaborar com vocês no que for possível. Pode contar comigo.\nAbraço	2019-03-26 19:05:55.136519+00	\N	1
+30	mariana	marianadosanjos@gmail.com	teste mariana	2019-08-01 14:48:58.209805+00	\N	1
+26	Diego Henriques	diego.henriques@outlook.com.br	Boa tarde,\n\nGostaria, primeiramente, de parabenizá-los pelo incrível projeto. Sou Gestor Ambiental pelo CEFET-RJ e tenho muito interesse em poder contribuir. \n\nExiste alguma oportunidade de trabalho no "Eu Amo o Cerrado"?\n\nDesde já, muito obrigado pela atenção.\nDiego Henriques\n\nLinkedin: https://www.linkedin.com/in/diego-henriques-2236a3100/	2019-01-31 15:49:41.236394+00	\N	1
+28	flavia frota	flaviasfrota@gmail.com	Compareci à semana do cerrado que ocorreu na Unb na última quarta-feira (19) e fiquei deslumbrada com os posteres da flora e da fauna do cerrado que estavam em exposição. Gostaria de saber onde posso adquirir exemplares desses posteres, seria possível disponibilizar o poster físico? Estou ciente que existem pdf's de cada um, mas gostaria de coloca-los em exposição para maior conhecimento de outros.	2019-06-21 21:43:18.476423+00	\N	1
+29	Asher Lessels	alessels@gmail.com	Bom dia! \nGostaria de ter uma copia do cartaz: "Aves dos Parques do Distrito Federal – Bioma Cerrado".\nSerá possivel enviar para meu endereço? Ou tem onde posso procura-lo? \nAsher Lessels\nSQN403, bloco C, apt. 301\n70835-030.\nAbraços!\nAsher	2019-07-14 13:28:16.691436+00	\N	1
+31	clebiane	cleibianeanjos@hotmail.com	teste 2	2019-08-01 14:51:48.643764+00	\N	1
+32	Paredes	falcaoparedes@gmail.com	Estou aqui treinando e conhecendo o site. Parabéns Mari	2019-08-29 02:54:47.1054+00	\N	1
+33	Guilherme	felixxguilherme@gmail.com	Testando	2019-09-04 18:40:25.891908+00	\N	\N
+34	Guilherme Felix	felixxguilherme@gmail.com	testando reply email	2019-09-04 18:41:18.119169+00	\N	\N
+35	Carlos Trindade	carlosptrindade@bol.com.br	Boa noite. \nEstamos iniciando um projeto ecológico e gostaríamos de obter imagens de animais, árvores, frutos, paisagens do cerrado, para produção de estampas de camisetas. \nComo podemos ter acesso a imagens para o projeto?	2019-09-09 23:20:46.683993+00	\N	\N
+36	Luiza Parca	luiza.parca@gmail.com	Na semana passada SUPRIMIRAM toda a vegetação de CERRADO ao lado do INMET, baseado numa liminar que ainda está sendo questionada em outras instâncias da Justiça, para a maldita invasao de area publica e construcao de uma "quadra" que nunca foi planejada para o Sudoeste. Nós, moradores do bairro, somos e seremos contra essa ideia absurda! A vegetação ja está no chão, os troncos foram cortados e estão sendo transportados em caminhões e o resto foi queimado. Sim, nós amamos o Cerrado!!! Mas, depois disso, Como FESTEJAR A SEMANA DO CERRADO?	2019-09-11 13:52:34.23454+00	\N	\N
+37	Maria Lucia Pereira	marialucinhapereirapereira@gmail.com	Parabéns equipe criadora deste projeto. Tenho a convicção de por intermédio deste conhecerei mais o meio ambiente em que vivo. Conhecendo amarei e cuidarei para todos hoje e para o amanha. Me coloco a disposição como colaboradora voluntária.	2019-09-12 01:10:19.090294+00	\N	\N
+38	Mônica Gonçalves Miranda	monicamiranda808@gmail.com	Boa tarde!\n\nDesejo conhecer melhor o projeto.\n\nAgradeço.	2019-10-18 17:34:20.830797+00	\N	\N
+39	ana carolina formiga	carolinaformiga95@gmail.com	teste	2019-10-23 17:27:05.946898+00	\N	\N
+40	ana carolina formiga	carolinaformiga95@gmail.com	teste	2019-10-23 17:27:06.033234+00	\N	\N
+41	Halcyrklej	halcyrklejmroczny@gmail.com	Gostaria de parabenizar toda essa equipe que está realizando esse trabalho, com clareza e efetividade mostrando o quão importante são as frutas e os animais (peixes de 2cm hah) encontrados nesta região, conheci coisas que desconhecia obviamente que achei muito interessante, uma explicação com clareza que me fez encantar! Parabéns ao grupo e ao projeto!	2019-10-25 13:51:15.00745+00	\N	\N
+42	JESSICA DE OLIVEIRA RAMOS	rossi.nanda0@gmail.com	GOSTEI MUITO DO PROJETO EU AMO O CERRADO PELO FATO DE SABER MAIS SOBRE AS SEMENTES E PLANTAS DO NOSSO CERRADO ACHEI MUITO IMPORTANTE O USO DO SITE ARA DESCOBRIR MAIS DE BRASILIA AMEIIIIIIII	2019-10-25 18:08:29.062132+00	\N	\N
+43	JESSICA DE OLIVEIRA RAMOS	rossi.nanda0@gmail.com	GOSTEI MUITO DO PROJETO EU AMO O CERRADO PELO FATO DE SABER MAIS SOBRE AS SEMENTES E PLANTAS DO NOSSO CERRADO ACHEI MUITO IMPORTANTE O USO DO SITE ARA DESCOBRIR MAIS DE BRASILIA AMEIIIIIIII	2019-10-25 18:08:31.252659+00	\N	\N
+44	kauan ajarilla	kauanbsb@bol.com.br	O SITE ESTA MUITO INTERESSANTE POIS MOSTRA TODOS OS PARQUES DE BSB, O ESTANDE ESTA BEM EXPLICATIVO SOBRE O NOSSO CERRADO	2019-10-25 18:08:55.708058+00	\N	\N
+87	Anna Julia	anna351813@estudante.se.df.gov.br	Meu sonho e conhecer o cerrado	2021-05-03 20:13:09.888295+00	\N	\N
+45	kauan ajarilla	kauanbsb@bol.com.br	O SITE ESTA MUITO INTERESSANTE POIS MOSTRA TODOS OS PARQUES DE BSB, O ESTANDE ESTA BEM EXPLICATIVO SOBRE O NOSSO CERRADO	2019-10-25 18:09:01.812005+00	\N	\N
+46	kauan ajarilla	kauanbsb@bol.com.br	O SITE ESTA MUITO INTERESSANTE POIS MOSTRA TODOS OS PARQUES DE BSB, O ESTANDE ESTA BEM EXPLICATIVO SOBRE O NOSSO CERRADO	2019-10-25 18:09:03.744323+00	\N	\N
+47	RAYSSA	RAYSSAHAYWANI@GMAIL.COM	AMAMOS O SITE É BEM COMPLETO E COM CERTEZA SERÁ DE MUITO APOIO PARA O NOSSO PROJETO DE CRIAÇÃO DE BIO JÓIAS A PARTIR DA BIODIVERSIDADE DO CERRADO	2019-10-25 18:30:46.819602+00	\N	\N
+48	Erika	erikapaolabio@gmail.com	O site está bem bacana. Como sugestão, poderiam fazer um filtro a mais, selecionando as trilhas específicas para fazer de bicicleta. Obrigada!	2019-10-26 15:29:25.641358+00	\N	\N
+49	Laura Bandeira	lauramfsb@gmail.com	Excelente projeito, explicação clara e site com fácil acesso. PARABÉNS!	2019-10-26 17:15:05.613764+00	\N	\N
+50	JAQUELINE PAZ	jaquelinepaz@gmail.com	Parabéns pelo site! Está incrível! Só senti falta do contato para fazer o agendamento de visitas aos parques. Um grande abraço a tod@s!	2019-11-08 15:19:50.30101+00	\N	\N
+51	Laura Berelstone	Laura@webcontentzone.com	Article Placement Inquiry on Euamocerrado.com.br\n\nHi Team at Euamocerrado \n\nHow are you?\n\nDo you offer article placements on your site: \nEuamocerrado.com.br\n- We would get the article written which will fit the nature/topic of your site.\n- In the article there is a good chance there will be a link going to a gaming/betting review site, which will be very well integrated.\n- Payment can be made via Paypal or bank transfer.\n\nWhat are your rates for such a placement?\n\nThank you.\n\n\nKind Regards,\n\nLaura - Media Manager\nWebcontentzone\n\n\nIf you would prefer not to receive any further requests of this nature, please reply "not interested".	2019-11-30 23:13:14.057874+00	\N	\N
+52	Laura Berelstone	Laura@webcontentzone.com	Article Placement Inquiry on Euamocerrado.com.br\n\nHi Team at Euamocerrado \n\nHow are you?\n\nDo you offer article placements on your site: \nEuamocerrado.com.br\n- We would get the article written which will fit the nature/topic of your site.\n- In the article there is a good chance there will be a link going to a gaming/betting review site, which will be very well integrated.\n- Payment can be made via Paypal or bank transfer.\n\nWhat are your rates for such a placement?\n\nThank you.\n\n\nKind Regards,\n\nLaura - Media Manager\nWebcontentzone\n\n\nIf you would prefer not to receive any further requests of this nature, please reply "not interested".	2019-11-30 23:13:24.760484+00	\N	\N
+53	Laura Berelstone	Laura@webcontentzone.com	Article Placement Inquiry on Euamocerrado.com.br\n\nHi Team at Euamocerrado \n\nHow are you?\n\nDo you offer article placements on your site: \nEuamocerrado.com.br\n- We would get the article written which will fit the nature/topic of your site.\n- In the article there is a good chance there will be a link going to a gaming/betting review site, which will be very well integrated.\n- Payment can be made via Paypal or bank transfer.\n\nWhat are your rates for such a placement?\n\nThank you.\n\n\nKind Regards,\n\nLaura - Media Manager\nWebcontentzone\n\n\nIf you would prefer not to receive any further requests of this nature, please reply "not interested".	2019-11-30 23:13:24.978332+00	\N	\N
+54	Laura Berelstone	Laura@webcontentzone.com	Article Placement Inquiry on Euamocerrado.com.br\n\nHi Team at Euamocerrado \n\nHow are you?\n\nDo you offer article placements on your site: \nEuamocerrado.com.br\n- We would get the article written which will fit the nature/topic of your site.\n- In the article there is a good chance there will be a link going to a gaming/betting review site, which will be very well integrated.\n- Payment can be made via Paypal or bank transfer.\n\nWhat are your rates for such a placement?\n\nThank you.\n\n\nKind Regards,\n\nLaura - Media Manager\nWebcontentzone\n\n\nIf you would prefer not to receive any further requests of this nature, please reply "not interested".	2019-11-30 23:13:25.221232+00	\N	\N
+55	Laura Berelstone	Laura@webcontentzone.com	Article Placement Inquiry on Euamocerrado.com.br\n\nHi Team at Euamocerrado \n\nHow are you?\n\nDo you offer article placements on your site: \nEuamocerrado.com.br\n- We would get the article written which will fit the nature/topic of your site.\n- In the article there is a good chance there will be a link going to a gaming/betting review site, which will be very well integrated.\n- Payment can be made via Paypal or bank transfer.\n\nWhat are your rates for such a placement?\n\nThank you.\n\n\nKind Regards,\n\nLaura - Media Manager\nWebcontentzone\n\n\nIf you would prefer not to receive any further requests of this nature, please reply "not interested".	2019-11-30 23:13:27.92473+00	\N	\N
+56	Laura Berelstone	Laura@webcontentzone.com	Article Placement Inquiry on Euamocerrado.com.br\n\nHi Team at Euamocerrado \n\nHow are you?\n\nDo you offer article placements on your site: \nEuamocerrado.com.br\n- We would get the article written which will fit the nature/topic of your site.\n- In the article there is a good chance there will be a link going to a gaming/betting review site, which will be very well integrated.\n- Payment can be made via Paypal or bank transfer.\n\nWhat are your rates for such a placement?\n\nThank you.\n\n\nKind Regards,\n\nLaura - Media Manager\nWebcontentzone\n\n\nIf you would prefer not to receive any further requests of this nature, please reply "not interested".	2019-11-30 23:13:28.137427+00	\N	\N
+57	Laura Berelstone	Laura@webcontentzone.com	Article Placement Inquiry on Euamocerrado.com.br\n\nHi Team at Euamocerrado \n\nHow are you?\n\nDo you offer article placements on your site: \nEuamocerrado.com.br\n- We would get the article written which will fit the nature/topic of your site.\n- In the article there is a good chance there will be a link going to a gaming/betting review site, which will be very well integrated.\n- Payment can be made via Paypal or bank transfer.\n\nWhat are your rates for such a placement?\n\nThank you.\n\n\nKind Regards,\n\nLaura - Media Manager\nWebcontentzone\n\n\nIf you would prefer not to receive any further requests of this nature, please reply "not interested".	2019-11-30 23:13:29.486395+00	\N	\N
+58	Keyla	keylapaula21@gmail.com	Olá! Hoje dia 07/01/20 passei pelo parque das copaíbas já próximo de 9hs e não estava aberto. Tem algum motivo ou obra sendo realizada?	2020-01-07 12:55:40.399546+00	\N	\N
+59	Vitória	virobertasoares@gmail.com	Boa tarde, sou estudante de Biologia e estou fazendo um trabalho sobre o fluxo de fauna nos parques ecológicos de Brasília. Gostaria de saber quais são os principais animais vistoriados nas seguintes regiões: Parque Ecológico Sucupira, o Refúgio de Vida Silvestre Mestre D'Armas, o Parque Ecológico do DER, o Parque Ecológico Lagoa Joaquim de Medeiros, o Refúgio de Vida Silvestre Vale do Amanhecer, a Área de Relevante Interesse Ecológico - ARIE - Cachoeira do Pipiripau, o Parque Distrital dos Pequizeiros e o Parque Distrital do Retirinho). Gostaria muita de saber a distribuição dessas espécies, pois esse trabalho tem como objetivo a implementação de um novo corredor ecológico.  Grata pela atenção!	2021-03-16 16:21:33.875839+00	\N	\N
+88	Anna Julia	anna351813@estudante.se.df.gov.br	Meu sonho e conhecer o cerrado	2021-05-03 20:13:15.176307+00	\N	\N
+89	Anna Julia	anna351813@estudante.se.df.gov.br	Meu sonho e conhecer o cerrado	2021-05-03 20:13:15.839003+00	\N	\N
+90	Anna Julia	anna351813@estudante.se.df.gov.br	Meu sonho e conhecer o cerrado	2021-05-03 20:13:16.583728+00	\N	\N
+91	Anna Julia	anna351813@estudante.se.df.gov.br	Meu sonho e conhecer o cerrado	2021-05-03 20:13:16.986818+00	\N	\N
+92	Anna Julia	anna351813@estudante.se.df.gov.br	Meu sonho e conhecer o cerrado	2021-05-03 20:13:17.116083+00	\N	\N
+93	Anna Julia	anna351813@estudante.se.df.gov.br	Meu sonho e conhecer o cerrado	2021-05-03 20:13:17.265512+00	\N	\N
+60	Vitória	virobertasoares@gmail.com	Boa tarde, sou estudante de Biologia e estou fazendo um trabalho sobre o fluxo de fauna nos parques ecológicos de Brasília. Gostaria de saber quais são os principais animais vistoriados nas seguintes regiões: Parque Ecológico Sucupira, o Refúgio de Vida Silvestre Mestre D'Armas, o Parque Ecológico do DER, o Parque Ecológico Lagoa Joaquim de Medeiros, o Refúgio de Vida Silvestre Vale do Amanhecer, a Área de Relevante Interesse Ecológico - ARIE - Cachoeira do Pipiripau, o Parque Distrital dos Pequizeiros e o Parque Distrital do Retirinho). Gostaria muita de saber a distribuição dessas espécies, pois esse trabalho tem como objetivo a implementação de um novo corredor ecológico.  Grata pela atenção!	2021-03-16 16:21:39.289413+00	\N	\N
+61	Vitória	virobertasoares@gmail.com	Boa tarde, sou estudante de Biologia e estou fazendo um trabalho sobre o fluxo de fauna nos parques ecológicos de Brasília. Gostaria de saber quais são os principais animais vistoriados nas seguintes regiões: Parque Ecológico Sucupira, o Refúgio de Vida Silvestre Mestre D'Armas, o Parque Ecológico do DER, o Parque Ecológico Lagoa Joaquim de Medeiros, o Refúgio de Vida Silvestre Vale do Amanhecer, a Área de Relevante Interesse Ecológico - ARIE - Cachoeira do Pipiripau, o Parque Distrital dos Pequizeiros e o Parque Distrital do Retirinho). Gostaria muita de saber a distribuição dessas espécies, pois esse trabalho tem como objetivo a implementação de um novo corredor ecológico.  Grata pela atenção!	2021-03-16 16:21:39.750735+00	\N	\N
+62	Vitória	virobertasoares@gmail.com	Boa tarde, sou estudante de Biologia e estou fazendo um trabalho sobre o fluxo de fauna nos parques ecológicos de Brasília. Gostaria de saber quais são os principais animais vistoriados nas seguintes regiões: Parque Ecológico Sucupira, o Refúgio de Vida Silvestre Mestre D'Armas, o Parque Ecológico do DER, o Parque Ecológico Lagoa Joaquim de Medeiros, o Refúgio de Vida Silvestre Vale do Amanhecer, a Área de Relevante Interesse Ecológico - ARIE - Cachoeira do Pipiripau, o Parque Distrital dos Pequizeiros e o Parque Distrital do Retirinho). Gostaria muita de saber a distribuição dessas espécies, pois esse trabalho tem como objetivo a implementação de um novo corredor ecológico.  Grata pela atenção!	2021-03-16 16:21:48.213054+00	\N	\N
+63	Vitória	virobertasoares@gmail.com	Boa tarde, sou estudante de Biologia e estou fazendo um trabalho sobre o fluxo de fauna nos parques ecológicos de Brasília. Gostaria de saber quais são os principais animais vistoriados nas seguintes regiões: Parque Ecológico Sucupira, o Refúgio de Vida Silvestre Mestre D'Armas, o Parque Ecológico do DER, o Parque Ecológico Lagoa Joaquim de Medeiros, o Refúgio de Vida Silvestre Vale do Amanhecer, a Área de Relevante Interesse Ecológico - ARIE - Cachoeira do Pipiripau, o Parque Distrital dos Pequizeiros e o Parque Distrital do Retirinho). Gostaria muita de saber a distribuição dessas espécies, pois esse trabalho tem como objetivo a implementação de um novo corredor ecológico.  Grata pela atenção!	2021-03-16 16:21:56.078409+00	\N	\N
+64	Vitória	virobertasoares@gmail.com	Boa tarde, sou estudante de Biologia e estou fazendo um trabalho sobre o fluxo de fauna nos parques ecológicos de Brasília. Gostaria de saber quais são os principais animais vistoriados nas seguintes regiões: Parque Ecológico Sucupira, o Refúgio de Vida Silvestre Mestre D'Armas, o Parque Ecológico do DER, o Parque Ecológico Lagoa Joaquim de Medeiros, o Refúgio de Vida Silvestre Vale do Amanhecer, a Área de Relevante Interesse Ecológico - ARIE - Cachoeira do Pipiripau, o Parque Distrital dos Pequizeiros e o Parque Distrital do Retirinho). Gostaria muita de saber a distribuição dessas espécies, pois esse trabalho tem como objetivo a implementação de um novo corredor ecológico.  Grata pela atenção!	2021-03-16 16:21:56.504933+00	\N	\N
+65	Vitória	virobertasoares@gmail.com	Boa tarde, sou estudante de Biologia e estou fazendo um trabalho sobre o fluxo de fauna nos parques ecológicos de Brasília. Gostaria de saber quais são os principais animais vistoriados nas seguintes regiões: Parque Ecológico Sucupira, o Refúgio de Vida Silvestre Mestre D'Armas, o Parque Ecológico do DER, o Parque Ecológico Lagoa Joaquim de Medeiros, o Refúgio de Vida Silvestre Vale do Amanhecer, a Área de Relevante Interesse Ecológico - ARIE - Cachoeira do Pipiripau, o Parque Distrital dos Pequizeiros e o Parque Distrital do Retirinho). Gostaria muita de saber a distribuição dessas espécies, pois esse trabalho tem como objetivo a implementação de um novo corredor ecológico.  Grata pela atenção!	2021-03-16 16:21:56.743701+00	\N	\N
+66	Vitória	virobertasoares@gmail.com	Boa tarde, sou estudante de Biologia e estou fazendo um trabalho sobre o fluxo de fauna nos parques ecológicos de Brasília. Gostaria de saber quais são os principais animais vistoriados nas seguintes regiões: Parque Ecológico Sucupira, o Refúgio de Vida Silvestre Mestre D'Armas, o Parque Ecológico do DER, o Parque Ecológico Lagoa Joaquim de Medeiros, o Refúgio de Vida Silvestre Vale do Amanhecer, a Área de Relevante Interesse Ecológico - ARIE - Cachoeira do Pipiripau, o Parque Distrital dos Pequizeiros e o Parque Distrital do Retirinho). Gostaria muita de saber a distribuição dessas espécies, pois esse trabalho tem como objetivo a implementação de um novo corredor ecológico.  Grata pela atenção!	2021-03-16 16:22:42.211885+00	\N	\N
+67	Vitória	virobertasoares@gmail.com	Boa tarde, sou estudante de Biologia e estou fazendo um trabalho sobre o fluxo de fauna nos parques ecológicos de Brasília. Gostaria de saber quais são os principais animais vistoriados nas seguintes regiões: Parque Ecológico Sucupira, o Refúgio de Vida Silvestre Mestre D'Armas, o Parque Ecológico do DER, o Parque Ecológico Lagoa Joaquim de Medeiros, o Refúgio de Vida Silvestre Vale do Amanhecer, a Área de Relevante Interesse Ecológico - ARIE - Cachoeira do Pipiripau, o Parque Distrital dos Pequizeiros e o Parque Distrital do Retirinho). Gostaria muita de saber a distribuição dessas espécies, pois esse trabalho tem como objetivo a implementação de um novo corredor ecológico.  Grata pela atenção!	2021-03-16 16:22:42.592773+00	\N	\N
+68	Vitória	virobertasoares@gmail.com	Boa tarde, sou estudante de Biologia e estou fazendo um trabalho sobre o fluxo de fauna nos parques ecológicos de Brasília. Gostaria de saber quais são os principais animais vistoriados nas seguintes regiões: Parque Ecológico Sucupira, o Refúgio de Vida Silvestre Mestre D'Armas, o Parque Ecológico do DER, o Parque Ecológico Lagoa Joaquim de Medeiros, o Refúgio de Vida Silvestre Vale do Amanhecer, a Área de Relevante Interesse Ecológico - ARIE - Cachoeira do Pipiripau, o Parque Distrital dos Pequizeiros e o Parque Distrital do Retirinho). Gostaria muita de saber a distribuição dessas espécies, pois esse trabalho tem como objetivo a implementação de um novo corredor ecológico.  Grata pela atenção!	2021-03-16 16:22:43.276013+00	\N	\N
+69	Vitória	virobertasoares@gmail.com	Boa tarde, sou estudante de Biologia e estou fazendo um trabalho sobre o fluxo de fauna nos parques ecológicos de Brasília. Gostaria de saber quais são os principais animais vistoriados nas seguintes regiões: Parque Ecológico Sucupira, o Refúgio de Vida Silvestre Mestre D'Armas, o Parque Ecológico do DER, o Parque Ecológico Lagoa Joaquim de Medeiros, o Refúgio de Vida Silvestre Vale do Amanhecer, a Área de Relevante Interesse Ecológico - ARIE - Cachoeira do Pipiripau, o Parque Distrital dos Pequizeiros e o Parque Distrital do Retirinho). Gostaria muita de saber a distribuição dessas espécies, pois esse trabalho tem como objetivo a implementação de um novo corredor ecológico.  Grata pela atenção!	2021-03-16 16:22:43.57286+00	\N	\N
+70	Vitória	virobertasoares@gmail.com	Boa tarde, sou estudante de Biologia e estou fazendo um trabalho sobre o fluxo de fauna nos parques ecológicos de Brasília. Gostaria de saber quais são os principais animais vistoriados nas seguintes regiões: Parque Ecológico Sucupira, o Refúgio de Vida Silvestre Mestre D'Armas, o Parque Ecológico do DER, o Parque Ecológico Lagoa Joaquim de Medeiros, o Refúgio de Vida Silvestre Vale do Amanhecer, a Área de Relevante Interesse Ecológico - ARIE - Cachoeira do Pipiripau, o Parque Distrital dos Pequizeiros e o Parque Distrital do Retirinho). Gostaria muita de saber a distribuição dessas espécies, pois esse trabalho tem como objetivo a implementação de um novo corredor ecológico.  Grata pela atenção!	2021-03-16 16:24:45.034514+00	\N	\N
+71	Guilherme	guigas11k@gmail.com	Muito obrigado por esse site, maravilhoso ter acesso fácil a essas informações, poder visitar e conhecer melhor o DF	2021-03-30 22:39:01.969406+00	\N	\N
+72	Guilherme	guigas11k@gmail.com	Muito obrigado por esse site, maravilhoso ter acesso fácil a essas informações, poder visitar e conhecer melhor o DF	2021-03-30 22:39:12.104555+00	\N	\N
+73	Guilherme	guigas11k@gmail.com	Muito obrigado por esse site, maravilhoso ter acesso fácil a essas informações, poder visitar e conhecer melhor o DF	2021-03-30 22:39:23.094693+00	\N	\N
+74	Felipe Dall	felipedall85@gmail.com	Alô GDF, Brasília ambiental: A sinalização do parque das copaíbas precisa ser melhorada! Fui lá pela 1 vez ontem e as trilhas têm incontáveis bifurcações sem sinalização. A grande maioria das pessoas estavam perdidas. Além disso, na entrada do estacionamento há uma placa que diz ser proibido o trânsito de veículos. Como chegaremos ao estacionamento se não podemos entrar com os carros na rua de acesso? Por favor peço que Arrumem isso urgente	2021-04-26 15:48:00.369887+00	\N	\N
+75	Felipe Dall	felipedall85@gmail.com	Alô GDF, Brasília ambiental: A sinalização do parque das copaíbas precisa ser melhorada! Fui lá pela 1 vez ontem e as trilhas têm incontáveis bifurcações sem sinalização. A grande maioria das pessoas estavam perdidas. Além disso, na entrada do estacionamento há uma placa que diz ser proibido o trânsito de veículos. Como chegaremos ao estacionamento se não podemos entrar com os carros na rua de acesso? Por favor peço que Arrumem isso urgente	2021-04-26 15:48:24.487763+00	\N	\N
+76	Felipe Dall	felipedall85@gmail.com	Alô GDF, Brasília ambiental: A sinalização do parque das copaíbas precisa ser melhorada! Fui lá pela 1 vez ontem e as trilhas têm incontáveis bifurcações sem sinalização. A grande maioria das pessoas estavam perdidas. Além disso, na entrada do estacionamento há uma placa que diz ser proibido o trânsito de veículos. Como chegaremos ao estacionamento se não podemos entrar com os carros na rua de acesso? Por favor peço que Arrumem isso urgente	2021-04-26 15:48:35.280582+00	\N	\N
+77	Felipe Dall	felipedall85@gmail.com	Alô GDF, Brasília ambiental: A sinalização do parque das copaíbas precisa ser melhorada! Fui lá pela 1 vez ontem e as trilhas têm incontáveis bifurcações sem sinalização. A grande maioria das pessoas estavam perdidas. Além disso, na entrada do estacionamento há uma placa que diz ser proibido o trânsito de veículos. Como chegaremos ao estacionamento se não podemos entrar com os carros na rua de acesso? Por favor peço que Arrumem isso urgente	2021-04-26 15:48:39.390827+00	\N	\N
+78	Felipe Dall	felipedall85@gmail.com	Alô GDF, Brasília ambiental: A sinalização do parque das copaíbas precisa ser melhorada! Fui lá pela 1 vez ontem e as trilhas têm incontáveis bifurcações sem sinalização. A grande maioria das pessoas estavam perdidas. Além disso, na entrada do estacionamento há uma placa que diz ser proibido o trânsito de veículos. Como chegaremos ao estacionamento se não podemos entrar com os carros na rua de acesso? Por favor peço que Arrumem isso urgente	2021-04-26 15:48:39.81063+00	\N	\N
+79	Felipe Dall	felipedall85@gmail.com	Alô GDF, Brasília ambiental: A sinalização do parque das copaíbas precisa ser melhorada! Fui lá pela 1 vez ontem e as trilhas têm incontáveis bifurcações sem sinalização. A grande maioria das pessoas estavam perdidas. Além disso, na entrada do estacionamento há uma placa que diz ser proibido o trânsito de veículos. Como chegaremos ao estacionamento se não podemos entrar com os carros na rua de acesso? Por favor peço que Arrumem isso urgente	2021-04-26 15:48:39.947724+00	\N	\N
+80	Felipe Dall	felipedall85@gmail.com	Alô GDF, Brasília ambiental: A sinalização do parque das copaíbas precisa ser melhorada! Fui lá pela 1 vez ontem e as trilhas têm incontáveis bifurcações sem sinalização. A grande maioria das pessoas estavam perdidas. Além disso, na entrada do estacionamento há uma placa que diz ser proibido o trânsito de veículos. Como chegaremos ao estacionamento se não podemos entrar com os carros na rua de acesso? Por favor peço que Arrumem isso urgente	2021-04-26 15:48:45.062572+00	\N	\N
+81	Felipe Dall	felipedall85@gmail.com	Alô GDF, Brasília ambiental: A sinalização do parque das copaíbas precisa ser melhorada! Fui lá pela 1 vez ontem e as trilhas têm incontáveis bifurcações sem sinalização. A grande maioria das pessoas estavam perdidas. Além disso, na entrada do estacionamento há uma placa que diz ser proibido o trânsito de veículos. Como chegaremos ao estacionamento se não podemos entrar com os carros na rua de acesso? Por favor peço que Arrumem isso urgente	2021-04-26 15:48:45.219955+00	\N	\N
+82	Felipe Dall	felipedall85@gmail.com	Alô GDF, Brasília ambiental: A sinalização do parque das copaíbas precisa ser melhorada! Fui lá pela 1 vez ontem e as trilhas têm incontáveis bifurcações sem sinalização. A grande maioria das pessoas estavam perdidas. Além disso, na entrada do estacionamento há uma placa que diz ser proibido o trânsito de veículos. Como chegaremos ao estacionamento se não podemos entrar com os carros na rua de acesso? Por favor peço que Arrumem isso urgente	2021-04-26 15:48:45.45106+00	\N	\N
+83	Felipe Dall	felipedall85@gmail.com	Alô GDF, Brasília ambiental: A sinalização do parque das copaíbas precisa ser melhorada! Fui lá pela 1 vez ontem e as trilhas têm incontáveis bifurcações sem sinalização. A grande maioria das pessoas estavam perdidas. Além disso, na entrada do estacionamento há uma placa que diz ser proibido o trânsito de veículos. Como chegaremos ao estacionamento se não podemos entrar com os carros na rua de acesso? Por favor peço que Arrumem isso urgente	2021-04-26 15:48:45.527882+00	\N	\N
+84	Felipe Dall	felipedall85@gmail.com	Alô GDF, Brasília ambiental: A sinalização do parque das copaíbas precisa ser melhorada! Fui lá pela 1 vez ontem e as trilhas têm incontáveis bifurcações sem sinalização. A grande maioria das pessoas estavam perdidas. Além disso, na entrada do estacionamento há uma placa que diz ser proibido o trânsito de veículos. Como chegaremos ao estacionamento se não podemos entrar com os carros na rua de acesso? Por favor peço que Arrumem isso urgente	2021-04-26 15:48:47.549952+00	\N	\N
+85	Felipe Dall	felipedall85@gmail.com	Alô GDF, Brasília ambiental: A sinalização do parque das copaíbas precisa ser melhorada! Fui lá pela 1 vez ontem e as trilhas têm incontáveis bifurcações sem sinalização. A grande maioria das pessoas estavam perdidas. Além disso, na entrada do estacionamento há uma placa que diz ser proibido o trânsito de veículos. Como chegaremos ao estacionamento se não podemos entrar com os carros na rua de acesso? Por favor peço que Arrumem isso urgente	2021-04-26 15:48:47.717255+00	\N	\N
+86	Anna Julia	anna351813@estudante.se.df.gov.br	Meu sonho e conhecer o cerrado	2021-05-03 20:13:03.667976+00	\N	\N
+94	Anna Julia	anna351813@estudante.se.df.gov.br	Meu sonho e conhecer o cerrado	2021-05-03 20:13:17.432214+00	\N	\N
+95	Anna Julia	anna351813@estudante.se.df.gov.br	Meu sonho e conhecer o cerrado	2021-05-03 20:13:25.803906+00	\N	\N
+96	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:11.33079+00	\N	\N
+97	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:12.163693+00	\N	\N
+98	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:13.149987+00	\N	\N
+99	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:13.5172+00	\N	\N
+100	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:13.63097+00	\N	\N
+101	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:14.755285+00	\N	\N
+102	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:14.964139+00	\N	\N
+103	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:15.189194+00	\N	\N
+104	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:18.188924+00	\N	\N
+105	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:18.371069+00	\N	\N
+106	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:18.548263+00	\N	\N
+107	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:18.746153+00	\N	\N
+108	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:18.933618+00	\N	\N
+109	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:19.134434+00	\N	\N
+110	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:19.588436+00	\N	\N
+111	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:19.765493+00	\N	\N
+112	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:19.956814+00	\N	\N
+113	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:20.190595+00	\N	\N
+114	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:22.184545+00	\N	\N
+115	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:22.442157+00	\N	\N
+116	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:22.633306+00	\N	\N
+117	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:22.896098+00	\N	\N
+118	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:23.060789+00	\N	\N
+119	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:23.201418+00	\N	\N
+120	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:30.869795+00	\N	\N
+121	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:31.105972+00	\N	\N
+122	William César Figueredo Leite	william998096@estudante.se.df.gov.br	Eu amo toda a vegetação do Cerrado!	2021-05-04 16:17:31.300405+00	\N	\N
+123	Rafaella Pereira Guedes	rafaella553296@estudante.se.df.gov	Gostei muito do park	2021-05-04 16:25:36.138705+00	\N	\N
+124	Rafaella Pereira Guedes	rafaella553296@estudante.se.df.gov	Gostei muito do park	2021-05-04 16:25:38.074497+00	\N	\N
+125	Rafaella Pereira Guedes	rafaella553296@estudante.se.df.gov	Gostei muito do park	2021-05-04 16:25:44.847031+00	\N	\N
+126	Maria Eduarda	mariaeduardamoura269@gmail.com	como faço para participar do projeto?	2021-05-24 14:27:00.765183+00	\N	\N
+127	Maria Eduarda	mariaeduardamoura269@gmail.com	como faço para participar do projeto?	2021-05-24 14:27:02.969968+00	\N	\N
+128	Letícia P	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:19:50.028137+00	\N	\N
+129	Letícia P	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:19:58.47053+00	\N	\N
+130	Letícia P	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:20:02.160153+00	\N	\N
+131	Letícia P	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:20:18.423732+00	\N	\N
+132	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:23:42.803741+00	\N	\N
+133	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:23:46.226408+00	\N	\N
+134	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:23:46.467229+00	\N	\N
+135	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:23:46.485399+00	\N	\N
+136	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:23:46.713792+00	\N	\N
+137	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:23:46.818799+00	\N	\N
+216	Manoel Felix Neto	felixneto.manoel@gmail.com	Como devo proceder para fazer a limpeza do córrego que fica atrás da minha casa?	2022-03-13 15:44:11.689624+00	\N	\N
+138	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:24:15.472426+00	\N	\N
+139	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:24:20.438766+00	\N	\N
+140	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:24:20.631367+00	\N	\N
+141	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:24:20.815708+00	\N	\N
+142	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:24:20.946915+00	\N	\N
+143	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:24:21.106999+00	\N	\N
+144	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:26:00.034708+00	\N	\N
+145	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:26:00.235267+00	\N	\N
+146	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:26:00.412415+00	\N	\N
+147	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:26:00.61065+00	\N	\N
+148	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:26:00.714887+00	\N	\N
+149	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 13:26:00.813326+00	\N	\N
+150	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 14:42:30.890796+00	\N	\N
+151	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 14:42:30.981501+00	\N	\N
+152	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 14:42:31.019408+00	\N	\N
+153	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 14:42:31.12863+00	\N	\N
+154	Letícia Padilha	anjosdaguarda.educ@gmail.com	Gostaria de saber se vocês fazem parceria com escolas particulares de educação infantil para dar aulinha sobre educação ambiental? Se sim, estamos interessados em saber qual o procedimento para fechar parceria.	2021-06-02 14:42:31.338114+00	\N	\N
+155	Aldimar Araujo Ramalho	aldimararaujo@bol.com.br	Boa tarde!\ngostaria de saber como eu consigo um exemplar de NA TRILHA caminhos pelo meio ambiente do DF.\n\nOBRIGADO!	2021-06-19 17:26:40.765303+00	\N	\N
+156	Aldimar Araujo Ramalho	aldimararaujo@bol.com.br	Boa tarde!\ngostaria de saber como eu consigo um exemplar de NA TRILHA caminhos pelo meio ambiente do DF.\n\nOBRIGADO!	2021-06-19 17:26:58.755169+00	\N	\N
+157	Aldimar Araujo Ramalho	aldimararaujo@bol.com.br	Boa tarde!\ngostaria de saber como eu consigo um exemplar de NA TRILHA caminhos pelo meio ambiente do DF.\n\nOBRIGADO!	2021-06-19 17:27:22.18542+00	\N	\N
+158	Aldimar Araujo Ramalho	aldimararaujo@bol.com.br	Boa tarde!\ngostaria de saber como eu consigo um exemplar de NA TRILHA caminhos pelo meio ambiente do DF.\n\nOBRIGADO!	2021-06-19 17:27:23.355158+00	\N	\N
+159	Aldimar Araujo Ramalho	aldimararaujo@bol.com.br	Boa tarde!\ngostaria de saber como eu consigo um exemplar de NA TRILHA caminhos pelo meio ambiente do DF.\n\nOBRIGADO!	2021-06-19 17:27:23.617512+00	\N	\N
+160	Aldimar Araujo Ramalho	aldimararaujo@bol.com.br	Boa tarde!\ngostaria de saber como eu consigo um exemplar de NA TRILHA caminhos pelo meio ambiente do DF.\n\nOBRIGADO!	2021-06-19 17:28:55.508243+00	\N	\N
+161	DANILO GUSTAVO RODRIGUES DE OLIVEIRA	danilo.gustavo@gmail.com	Prezados,\n    Gostei muito do site e gostaria de parabenizá-los pela iniciativa de fazer essa ferramenta. Será muito útil para divulgar sobre os parques do DF.\n    Gostaria de saber se vocês poderiam disponibilizar um arquivo shapefile ou em outro formato GIS com as informações aqui presentes. Isso seria importante para um projeto de educação ambiental que pretendemos desenvolver.\n    Agradeço a disposição e fico no aguardo de ser atendido.\nAtt,\nDanilo Gustavo	2021-09-14 23:14:51.808975+00	\N	\N
+162	DANILO GUSTAVO RODRIGUES DE OLIVEIRA	danilo.gustavo@gmail.com	Prezados,\n    Gostei muito do site e gostaria de parabenizá-los pela iniciativa de fazer essa ferramenta. Será muito útil para divulgar sobre os parques do DF.\n    Gostaria de saber se vocês poderiam disponibilizar um arquivo shapefile ou em outro formato GIS com as informações aqui presentes. Isso seria importante para um projeto de educação ambiental que pretendemos desenvolver.\n    Agradeço a disposição e fico no aguardo de ser atendido.\nAtt,\nDanilo Gustavo	2021-09-14 23:30:43.235707+00	\N	\N
+184	REJANE JOSE BESERRA	rebeautiful2015@gmail.com	Boa tarde! estou maravilhada com esse projeto, vocês estão de parabéns nossa cidade precisa conhecer mais sobre a beleza da nossa fauna e flora, a beleza que está escondida muitas vezes por falta de divulgação e de conhecimento . Vou repassar para os grupos que participo de pessoas que amam a natureza .	2022-01-26 19:15:06.873924+00	\N	\N
+163	DANILO GUSTAVO RODRIGUES DE OLIVEIRA	danilo.gustavo@gmail.com	Prezados,\n    Gostei muito do site e gostaria de parabenizá-los pela iniciativa de fazer essa ferramenta. Será muito útil para divulgar sobre os parques do DF.\n    Gostaria de saber se vocês poderiam disponibilizar um arquivo shapefile ou em outro formato GIS com as informações aqui presentes. Isso seria importante para um projeto de educação ambiental que pretendemos desenvolver.\n    Agradeço a disposição e fico no aguardo de ser atendido.\nAtt,\nDanilo Gustavo	2021-09-14 23:31:34.889955+00	\N	\N
+164	Raiza Toledo Rodrigues	raiza1312@gmail.com	Olá, bom dia!\ngostaria de ter acesso ao pdf do mapa de unidades de conservação do DF. Seria possível acessa-lo?\nAtenciosamente, \n Raiza	2021-10-08 13:31:50.294813+00	\N	\N
+165	Júlia	jalkmim7@gmail.com	Boa tarde, eu estou com uma Arara em minha casa e gostaria de saber se poderia levá-la para seu estabelecimento. Ela caiu no meu quintal e parece estar machucada. O bando dela está rodeando o lugar, mas não sei o que fazer porque ela não está conseguindo voar. Como faço para entrar em contato?	2021-10-26 18:04:01.618309+00	\N	\N
+166	Júlia	jalkmim7@gmail.com	Boa tarde, eu estou com uma Arara em minha casa e gostaria de saber se poderia levá-la para seu estabelecimento. Ela caiu no meu quintal e parece estar machucada. O bando dela está rodeando o lugar, mas não sei o que fazer porque ela não está conseguindo voar. Como faço para entrar em contato?	2021-10-26 18:04:03.431676+00	\N	\N
+167	Júlia	jalkmim7@gmail.com	Boa tarde, eu estou com uma Arara em minha casa e gostaria de saber se poderia levá-la para seu estabelecimento. Ela caiu no meu quintal e parece estar machucada. O bando dela está rodeando o lugar, mas não sei o que fazer porque ela não está conseguindo voar. Como faço para entrar em contato?	2021-10-26 18:04:04.795942+00	\N	\N
+168	Júlia	jalkmim7@gmail.com	Boa tarde, eu estou com uma Arara em minha casa e gostaria de saber se poderia levá-la para seu estabelecimento. Ela caiu no meu quintal e parece estar machucada. O bando dela está rodeando o lugar, mas não sei o que fazer porque ela não está conseguindo voar. Como faço para entrar em contato?	2021-10-26 18:04:06.70986+00	\N	\N
+169	Júlia	jalkmim7@gmail.com	Boa tarde, eu estou com uma Arara em minha casa e gostaria de saber se poderia levá-la para seu estabelecimento. Ela caiu no meu quintal e parece estar machucada. O bando dela está rodeando o lugar, mas não sei o que fazer porque ela não está conseguindo voar. Como faço para entrar em contato?	2021-10-26 18:04:09.06653+00	\N	\N
+170	Júlia	jalkmim7@gmail.com	Boa tarde, eu estou com uma Arara em minha casa e gostaria de saber se poderia levá-la para seu estabelecimento. Ela caiu no meu quintal e parece estar machucada. O bando dela está rodeando o lugar, mas não sei o que fazer porque ela não está conseguindo voar. Como faço para entrar em contato?	2021-10-26 18:04:09.667042+00	\N	\N
+171	Júlia	jalkmim7@gmail.com	Boa tarde, eu estou com uma Arara em minha casa e gostaria de saber se poderia levá-la para seu estabelecimento. Ela caiu no meu quintal e parece estar machucada. O bando dela está rodeando o lugar, mas não sei o que fazer porque ela não está conseguindo voar. Como faço para entrar em contato?	2021-10-26 18:04:15.094486+00	\N	\N
+172	Júlia	jalkmim7@gmail.com	Boa tarde, eu estou com uma Arara em minha casa e gostaria de saber se poderia levá-la para seu estabelecimento. Ela caiu no meu quintal e parece estar machucada. O bando dela está rodeando o lugar, mas não sei o que fazer porque ela não está conseguindo voar. Como faço para entrar em contato?	2021-10-26 18:05:13.521802+00	\N	\N
+173	Júlia	jalkmim7@gmail.com	Boa tarde, eu estou com uma Arara em minha casa e gostaria de saber se poderia levá-la para seu estabelecimento. Ela caiu no meu quintal e parece estar machucada. O bando dela está rodeando o lugar, mas não sei o que fazer porque ela não está conseguindo voar. Como faço para entrar em contato?	2021-10-26 18:05:15.009669+00	\N	\N
+174	Júlia	jalkmim7@gmail.com	Boa tarde, eu estou com uma Arara em minha casa e gostaria de saber se poderia levá-la para seu estabelecimento. Ela caiu no meu quintal e parece estar machucada. O bando dela está rodeando o lugar, mas não sei o que fazer porque ela não está conseguindo voar. Como faço para entrar em contato?	2021-10-26 18:05:15.888133+00	\N	\N
+175	Júlia	jalkmim7@gmail.com	Boa tarde, eu estou com uma Arara em minha casa e gostaria de saber se poderia levá-la para seu estabelecimento. Ela caiu no meu quintal e parece estar machucada. O bando dela está rodeando o lugar, mas não sei o que fazer porque ela não está conseguindo voar. Como faço para entrar em contato?	2021-10-26 18:05:17.394987+00	\N	\N
+176	Júlia	jalkmim7@gmail.com	Boa tarde, eu estou com uma Arara em minha casa e gostaria de saber se poderia levá-la para seu estabelecimento. Ela caiu no meu quintal e parece estar machucada. O bando dela está rodeando o lugar, mas não sei o que fazer porque ela não está conseguindo voar. Como faço para entrar em contato?	2021-10-26 18:05:19.193804+00	\N	\N
+177	REJANE JOSE BESERRA	rebeautiful2015@gmail.com	Boa tarde! estou maravilhada com esse projeto, vocês estão de parabéns nossa cidade precisa conhecer mais sobre a beleza da nossa fauna e flora, a beleza que está escondida muitas vezes por falta de divulgação e de conhecimento . Vou repassar para os grupos que participo de pessoas que amam a natureza .	2022-01-26 19:14:05.451719+00	\N	\N
+178	REJANE JOSE BESERRA	rebeautiful2015@gmail.com	Boa tarde! estou maravilhada com esse projeto, vocês estão de parabéns nossa cidade precisa conhecer mais sobre a beleza da nossa fauna e flora, a beleza que está escondida muitas vezes por falta de divulgação e de conhecimento . Vou repassar para os grupos que participo de pessoas que amam a natureza .	2022-01-26 19:14:06.554829+00	\N	\N
+179	REJANE JOSE BESERRA	rebeautiful2015@gmail.com	Boa tarde! estou maravilhada com esse projeto, vocês estão de parabéns nossa cidade precisa conhecer mais sobre a beleza da nossa fauna e flora, a beleza que está escondida muitas vezes por falta de divulgação e de conhecimento . Vou repassar para os grupos que participo de pessoas que amam a natureza .	2022-01-26 19:14:08.602106+00	\N	\N
+180	REJANE JOSE BESERRA	rebeautiful2015@gmail.com	Boa tarde! estou maravilhada com esse projeto, vocês estão de parabéns nossa cidade precisa conhecer mais sobre a beleza da nossa fauna e flora, a beleza que está escondida muitas vezes por falta de divulgação e de conhecimento . Vou repassar para os grupos que participo de pessoas que amam a natureza .	2022-01-26 19:14:10.668022+00	\N	\N
+181	REJANE JOSE BESERRA	rebeautiful2015@gmail.com	Boa tarde! estou maravilhada com esse projeto, vocês estão de parabéns nossa cidade precisa conhecer mais sobre a beleza da nossa fauna e flora, a beleza que está escondida muitas vezes por falta de divulgação e de conhecimento . Vou repassar para os grupos que participo de pessoas que amam a natureza .	2022-01-26 19:14:12.662966+00	\N	\N
+182	REJANE JOSE BESERRA	rebeautiful2015@gmail.com	Boa tarde! estou maravilhada com esse projeto, vocês estão de parabéns nossa cidade precisa conhecer mais sobre a beleza da nossa fauna e flora, a beleza que está escondida muitas vezes por falta de divulgação e de conhecimento . Vou repassar para os grupos que participo de pessoas que amam a natureza .	2022-01-26 19:14:15.758494+00	\N	\N
+183	REJANE JOSE BESERRA	rebeautiful2015@gmail.com	Boa tarde! estou maravilhada com esse projeto, vocês estão de parabéns nossa cidade precisa conhecer mais sobre a beleza da nossa fauna e flora, a beleza que está escondida muitas vezes por falta de divulgação e de conhecimento . Vou repassar para os grupos que participo de pessoas que amam a natureza .	2022-01-26 19:14:19.585303+00	\N	\N
+185	REJANE JOSE BESERRA	rebeautiful2015@gmail.com	Boa tarde! estou maravilhada com esse projeto, vocês estão de parabéns nossa cidade precisa conhecer mais sobre a beleza da nossa fauna e flora, a beleza que está escondida muitas vezes por falta de divulgação e de conhecimento . Vou repassar para os grupos que participo de pessoas que amam a natureza .	2022-01-26 19:15:08.877878+00	\N	\N
+186	REJANE JOSE BESERRA	rebeautiful2015@gmail.com	Boa tarde! estou maravilhada com esse projeto, vocês estão de parabéns nossa cidade precisa conhecer mais sobre a beleza da nossa fauna e flora, a beleza que está escondida muitas vezes por falta de divulgação e de conhecimento . Vou repassar para os grupos que participo de pessoas que amam a natureza .	2022-01-26 19:15:10.90333+00	\N	\N
+187	REJANE JOSE BESERRA	rebeautiful2015@gmail.com	Boa tarde! estou maravilhada com esse projeto, vocês estão de parabéns nossa cidade precisa conhecer mais sobre a beleza da nossa fauna e flora, a beleza que está escondida muitas vezes por falta de divulgação e de conhecimento . Vou repassar para os grupos que participo de pessoas que amam a natureza .	2022-01-26 19:15:12.930148+00	\N	\N
+188	REJANE JOSE BESERRA	rebeautiful2015@gmail.com	Boa tarde! estou maravilhada com esse projeto, vocês estão de parabéns nossa cidade precisa conhecer mais sobre a beleza da nossa fauna e flora, a beleza que está escondida muitas vezes por falta de divulgação e de conhecimento . Vou repassar para os grupos que participo de pessoas que amam a natureza .	2022-01-26 19:15:16.040972+00	\N	\N
+189	REJANE JOSE BESERRA	rebeautiful2015@gmail.com	Boa tarde! estou maravilhada com esse projeto, vocês estão de parabéns nossa cidade precisa conhecer mais sobre a beleza da nossa fauna e flora, a beleza que está escondida muitas vezes por falta de divulgação e de conhecimento . Vou repassar para os grupos que participo de pessoas que amam a natureza .	2022-01-26 19:15:19.836536+00	\N	\N
+190	REJANE JOSE BESERRA	rebeautiful2015@gmail.com	Boa tarde! estou maravilhada com esse projeto, vocês estão de parabéns nossa cidade precisa conhecer mais sobre a beleza da nossa fauna e flora, a beleza que está escondida muitas vezes por falta de divulgação e de conhecimento . Vou repassar para os grupos que participo de pessoas que amam a natureza .	2022-01-26 19:16:07.20399+00	\N	\N
+191	REJANE JOSE BESERRA	rebeautiful2015@gmail.com	Boa tarde! estou maravilhada com esse projeto, vocês estão de parabéns nossa cidade precisa conhecer mais sobre a beleza da nossa fauna e flora, a beleza que está escondida muitas vezes por falta de divulgação e de conhecimento . Vou repassar para os grupos que participo de pessoas que amam a natureza .	2022-01-26 19:16:09.160951+00	\N	\N
+192	REJANE JOSE BESERRA	rebeautiful2015@gmail.com	Boa tarde! estou maravilhada com esse projeto, vocês estão de parabéns nossa cidade precisa conhecer mais sobre a beleza da nossa fauna e flora, a beleza que está escondida muitas vezes por falta de divulgação e de conhecimento . Vou repassar para os grupos que participo de pessoas que amam a natureza .	2022-01-26 19:16:11.174227+00	\N	\N
+193	REJANE JOSE BESERRA	rebeautiful2015@gmail.com	Boa tarde! estou maravilhada com esse projeto, vocês estão de parabéns nossa cidade precisa conhecer mais sobre a beleza da nossa fauna e flora, a beleza que está escondida muitas vezes por falta de divulgação e de conhecimento . Vou repassar para os grupos que participo de pessoas que amam a natureza .	2022-01-26 19:16:13.191895+00	\N	\N
+194	REJANE JOSE BESERRA	rebeautiful2015@gmail.com	Boa tarde! estou maravilhada com esse projeto, vocês estão de parabéns nossa cidade precisa conhecer mais sobre a beleza da nossa fauna e flora, a beleza que está escondida muitas vezes por falta de divulgação e de conhecimento . Vou repassar para os grupos que participo de pessoas que amam a natureza .	2022-01-26 19:16:16.316425+00	\N	\N
+195	REJANE JOSE BESERRA	rebeautiful2015@gmail.com	Boa tarde! estou maravilhada com esse projeto, vocês estão de parabéns nossa cidade precisa conhecer mais sobre a beleza da nossa fauna, flora e cerrado, a beleza que está escondida muitas vezes por falta de divulgação e de conhecimento . Vou repassar para os grupos que participo de pessoas que amam a natureza .	2022-01-26 19:16:20.125685+00	\N	\N
+196	Gabriel Seven	gabri.rabelo@gmail.com	Pessoal, emocionante trabalho. Quero ajudar como puder. Sou um guardião do cerrado de alma. Quero doar tbm meu trabalho.	2022-02-14 16:46:47.889416+00	\N	\N
+197	Gabriel Seven	gabri.rabelo@gmail.com	Pessoal, emocionante trabalho. Quero ajudar como puder. Sou um guardião do cerrado de alma. Quero doar tbm meu trabalho.	2022-02-14 16:46:57.833637+00	\N	\N
+198	Gabriel Seven	gabri.rabelo@gmail.com	Pessoal, emocionante trabalho. Quero ajudar como puder. Sou um guardião do cerrado de alma. Quero doar tbm meu trabalho.	2022-02-14 17:37:54.544636+00	\N	\N
+199	Gabriel Seven	gabri.rabelo@gmail.com	Pessoal, emocionante trabalho. Quero ajudar como puder. Sou um guardião do cerrado de alma. Quero doar tbm meu trabalho.	2022-02-14 17:38:01.377275+00	\N	\N
+200	Manoel Felix Neto	felixneto.manoel@gmail.com	Boa tarde.\nDesejo fazer parte de grupos de voluntários de cuidados com o cerrado. \nAguardo resposta.	2022-03-07 19:45:33.711793+00	\N	\N
+201	Manoel Felix Neto	felixneto.manoel@gmail.com	Boa tarde.\nDesejo fazer parte de grupos de voluntários de cuidados com o cerrado. \nAguardo resposta.	2022-03-07 19:45:47.436422+00	\N	\N
+202	Manoel Felix Neto	felixneto.manoel@gmail.com	Boa tarde.\nDesejo fazer parte de grupos de voluntários de cuidados com o cerrado. \nAguardo resposta.	2022-03-07 19:46:02.521148+00	\N	\N
+203	Manoel Felix Neto	felixneto.manoel@gmail.com	Boa tarde.\nDesejo fazer parte de grupos de voluntários de cuidados com o cerrado. \nAguardo resposta.	2022-03-07 19:46:03.458139+00	\N	\N
+204	Manoel Felix Neto	felixneto.manoel@gmail.com	Boa tarde.\nDesejo fazer parte de grupos de voluntários de cuidados com o cerrado. \nAguardo resposta.	2022-03-07 19:49:16.628401+00	\N	\N
+205	Manoel Felix Neto	felixneto.manoel@gmail.com	Boa tarde.\nDesejo fazer parte de grupos de voluntários de cuidados com o cerrado. \nAguardo resposta.	2022-03-07 19:49:33.410283+00	\N	\N
+206	Manoel Felix Neto	felixneto.manoel@gmail.com	Boa tarde.\nDesejo fazer parte de grupos de voluntários de cuidados com o cerrado. \nAguardo resposta.	2022-03-07 19:49:54.444617+00	\N	\N
+207	Manoel Felix Neto	felixneto.manoel@gmail.com	Boa tarde.\nDesejo fazer parte de grupos de voluntários de cuidados com o cerrado. \nAguardo resposta.	2022-03-07 19:49:55.245474+00	\N	\N
+208	Manoel Felix Neto	felixneto.manoel@gmail.com	Boa tarde.\nDesejo fazer parte de grupos de voluntários de cuidados com o cerrado. \nAguardo resposta.	2022-03-07 19:49:55.508583+00	\N	\N
+209	Manoel Felix Neto	felixneto.manoel@gmail.com	Desejo ser voluntário.	2022-03-07 20:02:09.826895+00	\N	\N
+210	Manoel Felix Neto	felixneto.manoel@gmail.com	Desejo ser voluntário.	2022-03-07 20:02:17.821143+00	\N	\N
+211	Manoel Felix Neto	felixneto.manoel@gmail.com	Desejo ser voluntário.	2022-03-07 20:02:26.227393+00	\N	\N
+212	Manoel Felix Neto	felixneto.manoel@gmail.com	tenho vontade de limpar parte do córrego que passa atrás da minha casa. Como devo proceder?	2022-03-13 15:41:53.721836+00	\N	\N
+213	Manoel Felix Neto	felixneto.manoel@gmail.com	tenho vontade de limpar parte do córrego que passa atrás da minha casa. Como devo proceder?	2022-03-13 15:41:58.946777+00	\N	\N
+214	Manoel Felix Neto	felixneto.manoel@gmail.com	tenho vontade de limpar parte do córrego que passa atrás da minha casa. Como devo proceder?	2022-03-13 15:42:10.383476+00	\N	\N
+215	Manoel Felix Neto	felixneto.manoel@gmail.com	Como devo proceder para fazer a limpeza do córrego que fica atrás da minha casa?	2022-03-13 15:44:10.794339+00	\N	\N
+217	Manoel Felix Neto	felixneto.manoel@gmail.com	Como devo proceder para fazer a limpeza do córrego que fica atrás da minha casa?	2022-03-13 15:44:12.856294+00	\N	\N
+218	Manoel Felix Neto	felixneto.manoel@gmail.com	Como devo proceder para fazer a limpeza do córrego que fica atrás da minha casa?	2022-03-13 15:44:13.665653+00	\N	\N
+219	Manoel Felix Neto	felixneto.manoel@gmail.com	Como devo proceder para fazer a limpeza do córrego que fica atrás da minha casa?	2022-03-13 15:44:54.354039+00	\N	\N
+220	Manoel Felix Neto	felixneto.manoel@gmail.com	Como devo proceder para fazer a limpeza do córrego que fica atrás da minha casa?	2022-03-13 15:44:55.539332+00	\N	\N
+221	Manoel Felix Neto	felixneto.manoel@gmail.com	Como devo proceder para fazer a limpeza do córrego que fica atrás da minha casa?	2022-03-13 15:44:58.964577+00	\N	\N
+222	Maíra de Oliveira Valadares	mairavaladares@gmail.com	Boa tarde. Espero que se encontrem bem. Sou Voluntária no Clube Trilheiras de Brasília e buscamos formação constante com a finalidade de transformar a vida das Mulheres a partir do ecoturismo. Essa transformação só é possível com a interação, colaboração e o respeito com a natureza. Gostaria de saber se o Projeto Eu Amo Cerrado pode fornecer ações de formação relacionada ao Meio Ambiente. Se possível, me encaminhe um contato telefônico para discutirmos melhor. Obrigada.	2022-05-02 16:23:48.994107+00	\N	\N
+223	Maíra de Oliveira Valadares	mairavaladares@gmail.com	Boa tarde. Espero que se encontrem bem. Sou Voluntária no Clube Trilheiras de Brasília e buscamos formação constante com a finalidade de transformar a vida das Mulheres a partir do ecoturismo. Essa transformação só é possível com a interação, colaboração e o respeito com a natureza. Gostaria de saber se o Projeto Eu Amo Cerrado pode fornecer ações de formação relacionada ao Meio Ambiente. Se possível, me encaminhe um contato telefônico para discutirmos melhor. Obrigada.	2022-05-02 16:23:54.727707+00	\N	\N
+224	Maíra de Oliveira Valadares	mairavaladares@gmail.com	Boa tarde. Espero que se encontrem bem. Sou Voluntária no Clube Trilheiras de Brasília e buscamos formação constante com a finalidade de transformar a vida das Mulheres a partir do ecoturismo. Essa transformação só é possível com a interação, colaboração e o respeito com a natureza. Gostaria de saber se o Projeto Eu Amo Cerrado pode fornecer ações de formação relacionada ao Meio Ambiente. Se possível, me encaminhe um contato telefônico para discutirmos melhor. Obrigada.	2022-05-02 16:24:05.80696+00	\N	\N
+225	Maíra de Oliveira Valadares	mairavaladares@gmail.com	Boa tarde. Espero que se encontrem bem. Sou Voluntária no Clube Trilheiras de Brasília e buscamos formação constante com a finalidade de transformar a vida das Mulheres a partir do ecoturismo. Essa transformação só é possível com a interação, colaboração e o respeito com a natureza. Gostaria de saber se o Projeto Eu Amo Cerrado pode fornecer ações de formação relacionada ao Meio Ambiente. Se possível, me encaminhe um contato telefônico para discutirmos melhor. Obrigada.	2022-05-02 16:24:06.363517+00	\N	\N
+226	Maíra de Oliveira Valadares	mairavaladares@gmail.com	Boa tarde. Espero que se encontrem bem. Sou Voluntária no Clube Trilheiras de Brasília e buscamos formação constante com a finalidade de transformar a vida das Mulheres a partir do ecoturismo. Essa transformação só é possível com a interação, colaboração e o respeito com a natureza. Gostaria de saber se o Projeto Eu Amo Cerrado pode fornecer ações de formação relacionada ao Meio Ambiente. Se possível, me encaminhe um contato telefônico para discutirmos melhor. Obrigada.	2022-05-02 16:24:06.702887+00	\N	\N
+227	Maíra de Oliveira Valadares	mairavaladares@gmail.com	Sou Voluntária no Clube Trilheiras de Brasília e buscamos formação constante com a finalidade de transformar a vida das Mulheres a partir do ecoturismo. Essa transformação só é possível com a interação, colaboração e o respeito com a natureza. Gostaria de saber se o Projeto Eu Amo Cerrado pode fornecer ações de formação relacionada ao Meio Ambiente. Se possível, me encaminhe um contato telefônico para discutirmos melhor. Obrigada.	2022-05-02 16:24:29.588398+00	\N	\N
+228	Maíra de Oliveira Valadares	mairavaladares@gmail.com	Sou Voluntária no Clube Trilheiras de Brasília e buscamos formação constante com a finalidade de transformar a vida das Mulheres a partir do ecoturismo. Essa transformação só é possível com a interação, colaboração e o respeito com a natureza. Gostaria de saber se o Projeto Eu Amo Cerrado pode fornecer ações de formação relacionada ao Meio Ambiente. Se possível, me encaminhe um contato telefônico para discutirmos melhor. Obrigada.	2022-05-02 16:24:30.681316+00	\N	\N
+229	Maira de Oliveira Valadares	mairavaladares@gmail.com	Sou Voluntária no Clube Trilheiras de Brasília e buscamos formação constante com a finalidade de transformar a vida das Mulheres a partir do ecoturismo. Essa transformação só é possível com a interação, colaboração e o respeito com a natureza. Gostaria de saber se o Projeto Eu Amo Cerrado pode fornecer ações de formação relacionada ao Meio Ambiente. Se possível, me encaminhe um contato telefônico para discutirmos melhor. Obrigada.	2022-05-02 16:24:35.194212+00	\N	\N
+230	Sebastiao Cardoso Stellet	cardstellet@gmail.com	Uma iniciativa brilhante e tenho certeza vai ajudar muito a preservar o cerrado .	2022-06-27 01:20:01.488247+00	\N	\N
+231	Flávia Lima de Souza	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:19:56.155808+00	\N	\N
+232	Flávia Lima de Souza	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:20:03.814495+00	\N	\N
+233	Flávia Lima de Souza	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:20:20.788516+00	\N	\N
+234	Flávia Lima de Souza	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:20:21.124377+00	\N	\N
+235	Flávia Lima de Souza	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:20:21.855404+00	\N	\N
+236	Flávia Lima de Souza	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:20:22.648584+00	\N	\N
+237	Flávia Lima de Souza	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:20:22.864809+00	\N	\N
+238	Flávia Lima de Souza	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:20:23.139427+00	\N	\N
+239	Flávia Lima de Souza	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:20:30.358015+00	\N	\N
+240	Flávia Lima de Souza	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:20:30.408836+00	\N	\N
+241	Flávia Lima de Souza	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:20:30.443309+00	\N	\N
+242	Flávia Lima de Souza	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:20:32.192152+00	\N	\N
+243	Flávia Lima de Souza	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:21:19.700459+00	\N	\N
+244	Flávia Lima de Souza	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:21:23.132396+00	\N	\N
+245	Flávia Lima	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:23:08.945159+00	\N	\N
+246	Flávia Lima	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:23:12.890091+00	\N	\N
+247	Flávia Lima	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:23:13.568153+00	\N	\N
+248	Flávia Lima	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:23:14.84439+00	\N	\N
+249	Flávia Lima	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:23:42.869714+00	\N	\N
+250	Flávia Lima	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:23:52.645929+00	\N	\N
+251	Flávia Lima	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:24:16.597513+00	\N	\N
+252	Flávia Lima	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:24:35.52089+00	\N	\N
+253	Flávia Lima	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:24:35.692706+00	\N	\N
+254	Flávia Lima	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:24:42.52262+00	\N	\N
+255	Flávia Lima	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:24:44.458656+00	\N	\N
+256	Flávia Lima	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:24:44.607857+00	\N	\N
+257	Flávia Lima	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:24:45.265907+00	\N	\N
+258	Flávia Lima	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:24:51.116443+00	\N	\N
+259	Flávia Lima	fla.lim.souza4@gmail.com	Boa tarde, não conhecia esse projeto, gostaria de conhecer melhor, quicá fazer parte. Tem como?	2022-06-30 18:24:51.293775+00	\N	\N
+260	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastante didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:07:41.245588+00	\N	\N
+261	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastante didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:07:43.917759+00	\N	\N
+262	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastante didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:07:49.134409+00	\N	\N
+263	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastante didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:07:49.802676+00	\N	\N
+264	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastante didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:07:54.835958+00	\N	\N
+265	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastante didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:08:01.730327+00	\N	\N
+266	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastante didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:08:07.476135+00	\N	\N
+267	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastante didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:09:40.00054+00	\N	\N
+268	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastante didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:09:40.010422+00	\N	\N
+269	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastante didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:09:40.112636+00	\N	\N
+270	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastante didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:09:49.719623+00	\N	\N
+271	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastante didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:09:49.721581+00	\N	\N
+272	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu amo o cerrado'. Achei perfeito. Bastante didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:09:54.017617+00	\N	\N
+273	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu amo o cerrado'. Achei perfeito. Bastante didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:09:58.281639+00	\N	\N
+274	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastante didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:10:04.961531+00	\N	\N
+275	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastant\ne didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:10:14.861787+00	\N	\N
+276	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastant\ne didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:10:17.365616+00	\N	\N
+277	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastant\ne didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:10:25.116348+00	\N	\N
+278	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastant\ne didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:11:12.500782+00	\N	\N
+279	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastant\ne didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:11:12.507184+00	\N	\N
+280	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastant\ne didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:11:14.61814+00	\N	\N
+281	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastant\ne didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:11:22.316898+00	\N	\N
+282	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastant\ne didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:11:22.972058+00	\N	\N
+283	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastant\ne didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:11:23.635989+00	\N	\N
+284	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastant\ne didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:11:32.01179+00	\N	\N
+285	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastant\ne didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:11:32.447552+00	\N	\N
+286	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastant\ne didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:11:32.483631+00	\N	\N
+287	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastant\ne didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:12:00.791335+00	\N	\N
+288	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastant\ne didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:12:01.05048+00	\N	\N
+289	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastant\ne didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:12:01.257929+00	\N	\N
+290	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastant\ne didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:12:10.043798+00	\N	\N
+291	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastant\ne didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:12:10.589943+00	\N	\N
+292	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastant\ne didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:12:11.009356+00	\N	\N
+293	FERNANDA RODRIGUES DA SILVA	fernandarodriguess@gmail.com	Boa tarde! \nGostaria de adquirir a coleção de cartazes 'eu 🧡 o cerrado'. Achei perfeito. Bastant\ne didático. Um professor na escola onde trabalho, tem. Amei!	2022-07-05 18:12:19.726618+00	\N	\N
+294	thais	thais.watanabe@iesb.edu.br	Gostaria de receber os pdf/imagens das publicações sobre as flores do cerrado. O site permitiu abrir somente a imagem de flores amarelas e a imagem de flores roxas e azuis. Vocês podem me encaminhar por e-mail todas as publicações sobre flores? Muito obrigada!	2022-08-08 12:00:26.356069+00	\N	\N
+295	thais	thais.watanabe@iesb.edu.br	Gostaria de receber os pdf/imagens das publicações sobre as flores do cerrado. O site permitiu abrir somente a imagem de flores amarelas e a imagem de flores roxas e azuis. Vocês podem me encaminhar por e-mail todas as publicações sobre flores? Muito obrigada!	2022-08-08 12:00:40.669727+00	\N	\N
+296	thais	thais.watanabe@iesb.edu.br	Gostaria de receber os pdf/imagens das publicações sobre as flores do cerrado. O site permitiu abrir somente a imagem de flores amarelas e a imagem de flores roxas e azuis. Vocês podem me encaminhar por e-mail todas as publicações sobre flores? Muito obrigada!	2022-08-08 12:01:09.272482+00	\N	\N
+297	thais	thais.watanabe@iesb.edu.br	Gostaria de receber os pdf/imagens das publicações sobre as flores do cerrado. O site permitiu abrir somente a imagem de flores amarelas e a imagem de flores roxas e azuis. Vocês podem me encaminhar por e-mail todas as publicações sobre flores? Muito obrigada!	2022-08-08 12:01:10.231655+00	\N	\N
+298	thais	thais.watanabe@iesb.edu.br	Gostaria de receber os pdf/imagens das publicações sobre as flores do cerrado. O site permitiu abrir somente a imagem de flores amarelas e a imagem de flores roxas e azuis. Vocês podem me encaminhar por e-mail todas as publicações sobre flores? Muito obrigada!	2022-08-08 12:01:10.967207+00	\N	\N
+299	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:39:41.041888+00	\N	\N
+300	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:39:47.377732+00	\N	\N
+301	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:39:53.254611+00	\N	\N
+401	DEOMAR ROSADO	deomar.rosado@gmail.com	Bom.\nEstava querendo falar com o Marcus Paredes ou alguém da Educação Ambiental. Estamos planejando um grande evento junto ao Tempo de Plantar na área do PAN 6 no Lago Norte e queria incluir uma base ou oficina ligado ao Eu Amo o Cerrado!! meu telefone 999055512	2022-11-08 12:56:30.833633+00	\N	\N
+302	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:39:53.715582+00	\N	\N
+303	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:00.705931+00	\N	\N
+304	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:01.561502+00	\N	\N
+305	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:01.814746+00	\N	\N
+306	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:04.257225+00	\N	\N
+307	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:09.732377+00	\N	\N
+308	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:10.334381+00	\N	\N
+309	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:10.575227+00	\N	\N
+310	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:10.848841+00	\N	\N
+311	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:23.339957+00	\N	\N
+312	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:23.873006+00	\N	\N
+313	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:24.088062+00	\N	\N
+402	DEOMAR ROSADO	deomar.rosado@gmail.com	Bom.\nEstava querendo falar com o Marcus Paredes ou alguém da Educação Ambiental. Estamos planejando um grande evento junto ao Tempo de Plantar na área do PAN 6 no Lago Norte e queria incluir uma base ou oficina ligado ao Eu Amo o Cerrado!! meu telefone 999055512	2022-11-08 12:56:33.254212+00	\N	\N
+314	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:24.26211+00	\N	\N
+315	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:24.468801+00	\N	\N
+316	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:24.665439+00	\N	\N
+317	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:32.341182+00	\N	\N
+318	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:32.348627+00	\N	\N
+319	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:33.59719+00	\N	\N
+320	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:33.591994+00	\N	\N
+321	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:33.618125+00	\N	\N
+322	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:33.614946+00	\N	\N
+323	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:47.709396+00	\N	\N
+324	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:40:48.836853+00	\N	\N
+325	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:10.573653+00	\N	\N
+403	DEOMAR ROSADO	deomar.rosado@gmail.com	Bom.\nEstava querendo falar com o Marcus Paredes ou alguém da Educação Ambiental. Estamos planejando um grande evento junto ao Tempo de Plantar na área do PAN 6 no Lago Norte e queria incluir uma base ou oficina ligado ao Eu Amo o Cerrado!! meu telefone 999055512	2022-11-08 12:56:34.036689+00	\N	\N
+326	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:10.86648+00	\N	\N
+327	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:11.1479+00	\N	\N
+328	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:11.429746+00	\N	\N
+329	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:11.712865+00	\N	\N
+330	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:11.975677+00	\N	\N
+331	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:19.035827+00	\N	\N
+332	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:19.042326+00	\N	\N
+333	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:20.058261+00	\N	\N
+334	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:20.070209+00	\N	\N
+335	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:20.09805+00	\N	\N
+336	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:21.015181+00	\N	\N
+337	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:28.379336+00	\N	\N
+404	DEOMAR ROSADO	deomar.rosado@gmail.com	Bom.\nEstava querendo falar com o Marcus Paredes ou alguém da Educação Ambiental. Estamos planejando um grande evento junto ao Tempo de Plantar na área do PAN 6 no Lago Norte e queria incluir uma base ou oficina ligado ao Eu Amo o Cerrado!! meu telefone 999055512	2022-11-08 12:56:34.247426+00	\N	\N
+338	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:28.385395+00	\N	\N
+339	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:29.005461+00	\N	\N
+340	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:29.02938+00	\N	\N
+341	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:29.0373+00	\N	\N
+342	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:29.987058+00	\N	\N
+343	Fernanda Pinheiro	pinheirofernanda79@gmail.com	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:38.707901+00	\N	\N
+344	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:48.778322+00	\N	\N
+345	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:49.220566+00	\N	\N
+346	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:49.369469+00	\N	\N
+347	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:49.539717+00	\N	\N
+348	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:49.733982+00	\N	\N
+349	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:49.895642+00	\N	\N
+405	DEOMAR ROSADO	deomar.rosado@gmail.com	Bom.\nEstava querendo falar com o Marcus Paredes ou alguém da Educação Ambiental. Estamos planejando um grande evento junto ao Tempo de Plantar na área do PAN 6 no Lago Norte e queria incluir uma base ou oficina ligado ao Eu Amo o Cerrado!! meu telefone 999055512	2022-11-08 12:56:34.374978+00	\N	\N
+350	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:41:57.370155+00	\N	\N
+351	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:43:25.586345+00	\N	\N
+352	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:43:26.275499+00	\N	\N
+353	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:43:26.52393+00	\N	\N
+354	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:43:26.772414+00	\N	\N
+355	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:43:27.019855+00	\N	\N
+356	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-20 23:43:30.86795+00	\N	\N
+357	Fernanda Pinheiro	fernanda.moreira@edu.se.df.gov.br	Olá ! Sou Fernanda , professora da Secretaria de Educação e trabalho no Centro de Educação Infantil Águas Claras com turma de 5 anos. Estou trabalhando um projeto sobre o Cerrado e encontrei este trabalho de vocês que achei interessantíssimo. Faremos uma exposição de artes no próximo mês e por isso gostaria de saber se vocês disponibilizam materiais de preferência com fotos e caso tenham se poderiam nos doar para agregar a este projeto ? Caso o tenham eu poderia ir buscá-lo o quanto antes! Desde já agradeço o contato!	2022-08-21 01:12:50.410239+00	\N	\N
+358	Adriana Budal	adrianabudal@gmail.com	Boa noite.\nMe chamo Adriana, sou mestranda em Recursos Naturais do Cerrado, pela Universidade Estadual do Goiás.\nTenho como objetos de estudo as Unidades de Conservação de Proteção Integral do D.F.\nAcessei o site do IBRAM bem como esse site "eu amo cerrado", mas me pareceu que algumas informações estão divergindo.\nGostaria de obter a relação das Unidades de Conservação Integral do Distrito Federal.\nDesde já agradeço a atenção.\nAdriana Budal	2022-09-09 00:19:27.756492+00	\N	\N
+359	Adriana Budal	adrianabudal@gmail.com	Boa noite.\nMe chamo Adriana, sou mestranda em Recursos Naturais do Cerrado, pela Universidade Estadual do Goiás.\nTenho como objetos de estudo as Unidades de Conservação de Proteção Integral do D.F.\nAcessei o site do IBRAM bem como esse site "eu amo cerrado", mas me pareceu que algumas informações estão divergindo.\nGostaria de obter a relação das Unidades de Conservação Integral do Distrito Federal.\nDesde já agradeço a atenção.\nAdriana Budal	2022-09-09 00:19:35.51746+00	\N	\N
+360	Adriana Budal	adrianabudal@gmail.com	Boa noite.\nMe chamo Adriana, sou mestranda em Recursos Naturais do Cerrado, pela Universidade Estadual do Goiás.\nTenho como objetos de estudo as Unidades de Conservação de Proteção Integral do D.F.\nAcessei o site do IBRAM bem como esse site "eu amo cerrado", mas me pareceu que algumas informações estão divergindo.\nGostaria de obter a relação das Unidades de Conservação Integral do Distrito Federal.\nDesde já agradeço a atenção.\nAdriana Budal	2022-09-09 00:19:44.397249+00	\N	\N
+361	Adriana Budal	adrianabudal@gmail.com	Boa noite.\nMe chamo Adriana, sou mestranda em Recursos Naturais do Cerrado, pela Universidade Estadual do Goiás.\nTenho como objetos de estudo as Unidades de Conservação de Proteção Integral do D.F.\nAcessei o site do IBRAM bem como esse site "eu amo cerrado", mas me pareceu que algumas informações estão divergindo.\nGostaria de obter a relação das Unidades de Conservação Integral do Distrito Federal.\nDesde já agradeço a atenção.\nAdriana Budal	2022-09-09 00:19:44.603191+00	\N	\N
+362	Adriana Budal	adrianabudal@gmail.com	Boa noite.\nMe chamo Adriana, sou mestranda em Recursos Naturais do Cerrado, pela Universidade Estadual do Goiás.\nTenho como objetos de estudo as Unidades de Conservação de Proteção Integral do D.F.\nAcessei o site do IBRAM bem como esse site "eu amo cerrado", mas me pareceu que algumas informações estão divergindo.\nGostaria de obter a relação das Unidades de Conservação Integral do Distrito Federal.\nDesde já agradeço a atenção.\nAdriana Budal	2022-09-09 00:19:44.792757+00	\N	\N
+437	Rota	narotadainovacao@gmail.com	Boa tarde, estou com um projeto chamado Na Rota da Inovação e gostaríamos de convida-los para o espaço de debates para falar sobre o projeto "eu amo o cerrado". Acontecerá nos dias 16 e 17 dezembro.	2022-12-07 18:08:16.104035+00	\N	\N
+363	Adriana Budal	adrianabudal@gmail.com	Boa noite.\nMe chamo Adriana, sou mestranda em Recursos Naturais do Cerrado, pela Universidade Estadual do Goiás.\nTenho como objetos de estudo as Unidades de Conservação de Proteção Integral do D.F.\nAcessei o site do IBRAM bem como esse site "eu amo cerrado", mas me pareceu que algumas informações estão divergindo.\nGostaria de obter a relação das Unidades de Conservação Integral do Distrito Federal.\nDesde já agradeço a atenção.\nAdriana Budal	2022-09-09 00:19:44.973935+00	\N	\N
+364	Adriana Budal	adrianabudal@gmail.com	Boa noite.\nMe chamo Adriana, sou mestranda em Recursos Naturais do Cerrado, pela Universidade Estadual do Goiás.\nTenho como objetos de estudo as Unidades de Conservação de Proteção Integral do D.F.\nAcessei o site do IBRAM bem como esse site "eu amo cerrado", mas me pareceu que algumas informações estão divergindo.\nGostaria de obter a relação das Unidades de Conservação Integral do Distrito Federal.\nDesde já agradeço a atenção.\nAdriana Budal	2022-09-09 00:19:45.18257+00	\N	\N
+365	Adriana Budal	adrianabudal@gmail.com	Boa noite.\nMe chamo Adriana, sou mestranda em Recursos Naturais do Cerrado, pela Universidade Estadual do Goiás.\nTenho como objetos de estudo as Unidades de Conservação de Proteção Integral do D.F.\nAcessei o site do IBRAM bem como esse site "eu amo cerrado", mas me pareceu que algumas informações estão divergindo.\nGostaria de obter a relação das Unidades de Conservação Integral do Distrito Federal.\nDesde já agradeço a atenção.\nAdriana Budal	2022-09-09 00:19:52.120228+00	\N	\N
+366	Gabriela Campos Fronzaglia	gabriela.fronzaglia@gmail.com	Tenho interesse em realizar as trilhas e conhecer as atividades ecopedagógicas. Qual o procedimento?	2022-10-28 14:16:29.318016+00	\N	\N
+367	Gabriela Campos Fronzaglia	gabriela.fronzaglia@gmail.com	Tenho interesse em realizar as trilhas e conhecer as atividades ecopedagógicas. Qual o procedimento?	2022-10-28 14:16:35.040125+00	\N	\N
+368	Gabriela Campos Fronzaglia	gabriela.fronzaglia@gmail.com	Tenho interesse em realizar as trilhas e conhecer as atividades ecopedagógicas. Qual o procedimento?	2022-10-28 14:16:41.497635+00	\N	\N
+369	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Sou professora da SEE DF, Bióloga e Pedagoga. Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora? Meu telefone é 61 98207-1566. Desde já agradeço.	2022-10-31 23:06:46.409176+00	\N	\N
+370	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Sou professora da SEE DF, Bióloga e Pedagoga. Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora? Meu telefone é 61 98207-1566. Desde já agradeço.	2022-10-31 23:07:01.494464+00	\N	\N
+371	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Sou professora da SEE DF, Bióloga e Pedagoga. Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora? Meu telefone é 61 98207-1566. Desde já agradeço.	2022-10-31 23:07:03.10948+00	\N	\N
+372	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Sou professora da SEE DF, Bióloga e Pedagoga. Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora? Meu telefone é 61 98207-1566. Desde já agradeço.	2022-10-31 23:07:07.915194+00	\N	\N
+373	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Sou professora da SEE DF, Bióloga e Pedagoga. Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora? Meu telefone é 61 98207-1566. Desde já agradeço.	2022-10-31 23:07:20.875827+00	\N	\N
+374	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Sou professora da SEE DF, Bióloga e Pedagoga. Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora?	2022-10-31 23:07:31.89209+00	\N	\N
+375	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Sou professora da SEE DF, Bióloga e Pedagoga. Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora?	2022-10-31 23:07:33.347194+00	\N	\N
+376	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Sou professora da SEE DF, Bióloga e Pedagoga. Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora?	2022-10-31 23:07:39.158343+00	\N	\N
+377	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Sou professora da SEE DF, Bióloga e Pedagoga. Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora?	2022-10-31 23:07:39.735098+00	\N	\N
+378	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora?	2022-10-31 23:07:50.812963+00	\N	\N
+379	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora?	2022-10-31 23:07:52.274545+00	\N	\N
+380	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora?	2022-10-31 23:07:53.026487+00	\N	\N
+381	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora?	2022-10-31 23:07:53.250397+00	\N	\N
+382	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora?	2022-10-31 23:07:53.453927+00	\N	\N
+383	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora?	2022-10-31 23:07:53.663491+00	\N	\N
+384	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora?	2022-10-31 23:07:59.33145+00	\N	\N
+385	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora?	2022-10-31 23:08:05.585083+00	\N	\N
+386	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora?	2022-10-31 23:08:06.131407+00	\N	\N
+387	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora?	2022-10-31 23:08:06.328479+00	\N	\N
+388	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá! Gostaria de saber como faço para ingressar no IBRAM e exercer a função de professora?	2022-10-31 23:08:06.484958+00	\N	\N
+389	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá!	2022-10-31 23:08:20.402324+00	\N	\N
+390	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá!	2022-10-31 23:08:21.544286+00	\N	\N
+391	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá!	2022-10-31 23:08:21.71416+00	\N	\N
+392	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá!	2022-10-31 23:08:21.904913+00	\N	\N
+393	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá!	2022-10-31 23:08:22.055879+00	\N	\N
+394	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá!	2022-10-31 23:08:22.243411+00	\N	\N
+395	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá!	2022-10-31 23:08:29.456045+00	\N	\N
+396	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá!	2022-10-31 23:08:30.334794+00	\N	\N
+397	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá!	2022-10-31 23:08:30.350532+00	\N	\N
+398	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá!	2022-10-31 23:08:30.363012+00	\N	\N
+399	Cibele Barbosa Rodrigues	bioci@hotmail.com	Olá!	2022-10-31 23:08:31.326681+00	\N	\N
+400	DEOMAR ROSADO	deomar.rosado@gmail.com	Bom.\nEstava querendo falar com o Marcus Paredes ou alguém da Educação Ambiental. Estamos planejando um grande evento junto ao Tempo de Plantar na área do PAN 6 no Lago Norte e queria incluir uma base ou oficina ligado ao Eu Amo o Cerrado!!	2022-11-08 12:56:14.181422+00	\N	\N
+406	DEOMAR ROSADO	deomar.rosado@gmail.com	Bom.\nEstava querendo falar com o Marcus Paredes ou alguém da Educação Ambiental. Estamos planejando um grande evento junto ao Tempo de Plantar na área do PAN 6 no Lago Norte e queria incluir uma base ou oficina ligado ao Eu Amo o Cerrado!! meu telefone 999055512	2022-11-08 12:56:34.52054+00	\N	\N
+407	DEOMAR ROSADO	deomar.rosado@gmail.com	Bom.\nEstava querendo falar com o Marcus Paredes ou alguém da Educação Ambiental. Estamos planejando um grande evento junto ao Tempo de Plantar na área do PAN 6 no Lago Norte e queria incluir uma base ou oficina ligado ao Eu Amo o Cerrado!! meu telefone 999055512	2022-11-08 12:56:39.976276+00	\N	\N
+408	DEOMAR ROSADO	deomar.rosado@gmail.com	Bom.\nEstava querendo falar com o Marcus Paredes ou alguém da Educação Ambiental. Estamos planejando um grande evento junto ao Tempo de Plantar na área do PAN 6 no Lago Norte e queria incluir uma base ou oficina ligado ao Eu Amo o Cerrado!! meu telefone 999055512	2022-11-08 12:56:41.949673+00	\N	\N
+409	DEOMAR ROSADO	deomar.rosado@gmail.com	Bom.\nEstava querendo falar com o Marcus Paredes ou alguém da Educação Ambiental. Estamos planejando um grande evento junto ao Tempo de Plantar na área do PAN 6 no Lago Norte e queria incluir uma base ou oficina ligado ao Eu Amo o Cerrado!! meu telefone 999055512	2022-11-08 12:56:43.037417+00	\N	\N
+410	DEOMAR ROSADO	deomar.rosado@gmail.com	Bom.\nEstava querendo falar com o Marcus Paredes ou alguém da Educação Ambiental. Estamos planejando um grande evento junto ao Tempo de Plantar na área do PAN 6 no Lago Norte e queria incluir uma base ou oficina ligado ao Eu Amo o Cerrado!! meu telefone 999055512	2022-11-08 12:56:43.043491+00	\N	\N
+411	DEOMAR ROSADO	deomar.rosado@gmail.com	Bom.\nEstava querendo falar com o Marcus Paredes ou alguém da Educação Ambiental. Estamos planejando um grande evento junto ao Tempo de Plantar na área do PAN 6 no Lago Norte e queria incluir uma base ou oficina ligado ao Eu Amo o Cerrado!! meu telefone 999055512	2022-11-08 12:56:43.063149+00	\N	\N
+412	DEOMAR ROSADO	deomar.rosado@gmail.com	Bom.\nEstava querendo falar com o Marcus Paredes ou alguém da Educação Ambiental. Estamos planejando um grande evento junto ao Tempo de Plantar na área do PAN 6 no Lago Norte e queria incluir uma base ou oficina ligado ao Eu Amo o Cerrado!! meu telefone 999055512	2022-11-08 12:59:03.897729+00	\N	\N
+413	DEOMAR ROSADO	deomar.rosado@gmail.com	Bom.\nEstava querendo falar com o Marcus Paredes ou alguém da Educação Ambiental. Estamos planejando um grande evento junto ao Tempo de Plantar na área do PAN 6 no Lago Norte e queria incluir uma base ou oficina ligado ao Eu Amo o Cerrado!! meu telefone 999055512	2022-11-08 12:59:05.66148+00	\N	\N
+414	DEOMAR ROSADO	deomar.rosado@gmail.com	Bom.\nEstava querendo falar com o Marcus Paredes ou alguém da Educação Ambiental. Estamos planejando um grande evento junto ao Tempo de Plantar na área do PAN 6 no Lago Norte e queria incluir uma base ou oficina ligado ao Eu Amo o Cerrado!! meu telefone 999055512	2022-11-08 12:59:05.851981+00	\N	\N
+415	DEOMAR ROSADO	deomar.rosado@gmail.com	Bom.\nEstava querendo falar com o Marcus Paredes ou alguém da Educação Ambiental. Estamos planejando um grande evento junto ao Tempo de Plantar na área do PAN 6 no Lago Norte e queria incluir uma base ou oficina ligado ao Eu Amo o Cerrado!! meu telefone 999055512	2022-11-08 12:59:07.631434+00	\N	\N
+416	Gustavo	gbediaga@gmail.com	Bom dia. Onde posso adquirir um cartaz das 167 aves do cerrado?	2022-11-17 14:23:05.259807+00	\N	\N
+417	Gustavo	gbediaga@gmail.com	Bom dia. Onde posso adquirir um cartaz das 167 aves do cerrado?	2022-11-17 14:23:32.882638+00	\N	\N
+418	Gustavo	gbediaga@gmail.com	Bom dia. Onde posso adquirir um cartaz das 167 aves do cerrado?	2022-11-17 14:23:38.160096+00	\N	\N
+419	Gustavo	gbediaga@gmail.com	Bom dia. Onde posso adquirir um cartaz das 167 aves do cerrado?	2022-11-17 14:23:44.221933+00	\N	\N
+420	JULIANA Beatriz Oliveira E SILVA	jugugui@gmail.com	Gostaria de receber material inpresso para mostrar para meus alunoa, pois muitos não tem acesso a internet	2022-11-18 13:23:06.188142+00	\N	\N
+421	JULIANA Beatriz Oliveira E SILVA	jugugui@gmail.com	Gostaria de receber material inpresso para mostrar para meus alunoa, pois muitos não tem acesso a internet	2022-11-18 13:23:07.754056+00	\N	\N
+422	JULIANA Beatriz Oliveira E SILVA	jugugui@gmail.com	Gostaria de receber material inpresso para mostrar para meus alunoa, pois muitos não tem acesso a internet	2022-11-18 13:23:12.816134+00	\N	\N
+423	JULIANA Beatriz Oliveira E SILVA	jugugui@gmail.com	Gostaria de receber material inpresso para mostrar para meus alunoa, pois muitos não tem acesso a internet	2022-11-18 13:23:20.336838+00	\N	\N
+424	JULIANA Beatriz Oliveira E SILVA	jugugui@gmail.com	Gostaria de receber material inpresso para mostrar para meus alunoa, pois muitos não tem acesso a internet	2022-11-18 13:23:22.828031+00	\N	\N
+425	JULIANA Beatriz Oliveira E SILVA	jugugui@gmail.com	Gostaria de receber material inpresso para mostrar para meus alunoa, pois muitos não tem acesso a internet	2022-11-18 13:23:23.875791+00	\N	\N
+426	Larissa Moreira	Larissamoreira.sillva@outlook.com	Prezados, boa tarde!\n\nGostaria de receber o material didático do projeto em PDF ou algum formato para impressão. É possível?	2022-11-18 14:42:36.208401+00	\N	\N
+427	Larissa Moreira	Larissamoreira.sillva@outlook.com	Prezados, boa tarde!\n\nGostaria de receber o material didático do projeto em PDF ou algum formato para impressão. É possível?	2022-11-18 14:42:40.232609+00	\N	\N
+428	Larissa Moreira	Larissamoreira.sillva@outlook.com	Prezados, boa tarde!\n\nGostaria de receber o material didático do projeto em PDF ou algum formato para impressão. É possível?	2022-11-18 14:42:47.671347+00	\N	\N
+429	Larissa Moreira	Larissamoreira.sillva@outlook.com	Prezados, boa tarde!\n\nGostaria de receber o material didático do projeto em PDF ou algum formato para impressão. É possível?	2022-11-18 14:46:39.925687+00	\N	\N
+430	Corina Oliveira	corina1960@gmail.com	Parabéns pelo projeto. Eu também amo o cerrado e fico feliz de saber que há outras pessoas que o amam e o querem preservado. Desejo saber quando houver outras caminhadas, pois quero muito conhecer melhor a fauna e a flora do cerrado.	2022-11-18 16:32:20.968584+00	\N	\N
+431	Asher Lessels	alessels@gmail.com	Boa tarde,\nPergunto se tem copias do cartaz: aves do cerrado? Vejo que tem disponível o pdf, mas pergunto se têm cópias impressas? \nUm abraço,\nAsher	2022-11-26 20:11:34.813023+00	\N	\N
+432	Asher Lessels	alessels@gmail.com	Boa tarde,\nPergunto se tem copias do cartaz: aves do cerrado? Vejo que tem disponível o pdf, mas pergunto se têm cópias impressas? \nUm abraço,\nAsher	2022-11-26 20:11:52.773714+00	\N	\N
+433	Asher Lessels	alessels@gmail.com	Boa tarde,\nPergunto se tem copias do cartaz: aves do cerrado? Vejo que tem disponível o pdf, mas pergunto se têm cópias impressas? \nUm abraço,\nAsher	2022-11-26 20:12:50.398418+00	\N	\N
+434	Rota	narotadainovacao@gmail.com	Boa tarde, estou com um projeto chamado Na Rota da Inovação e gostaríamos de convida-los para o espaço de debates para falar sobre o projeto "eu amo o cerrado". Acontecerá nos dias 16 e 17 dezembro.	2022-12-07 18:08:05.397072+00	\N	\N
+435	Rota	narotadainovacao@gmail.com	Boa tarde, estou com um projeto chamado Na Rota da Inovação e gostaríamos de convida-los para o espaço de debates para falar sobre o projeto "eu amo o cerrado". Acontecerá nos dias 16 e 17 dezembro.	2022-12-07 18:08:14.56487+00	\N	\N
+436	Rota	narotadainovacao@gmail.com	Boa tarde, estou com um projeto chamado Na Rota da Inovação e gostaríamos de convida-los para o espaço de debates para falar sobre o projeto "eu amo o cerrado". Acontecerá nos dias 16 e 17 dezembro.	2022-12-07 18:08:15.453503+00	\N	\N
+438	Rota	narotadainovacao@gmail.com	Boa tarde, estou com um projeto chamado Na Rota da Inovação e gostaríamos de convida-los para o espaço de debates para falar sobre o projeto "eu amo o cerrado". Acontecerá nos dias 16 e 17 dezembro.	2022-12-07 18:08:20.264683+00	\N	\N
+439	Rota	narotadainovacao@gmail.com	Boa tarde, estou com um projeto chamado Na Rota da Inovação e gostaríamos de convida-los para o espaço de debates para falar sobre o projeto "eu amo o cerrado". Acontecerá nos dias 16 e 17 dezembro.	2022-12-07 18:08:20.843695+00	\N	\N
+440	Rota	narotadainovacao@gmail.com	Boa tarde, estou com um projeto chamado Na Rota da Inovação e gostaríamos de convida-los para o espaço de debates para falar sobre o projeto "eu amo o cerrado". Acontecerá nos dias 16 e 17 dezembro.	2022-12-07 18:08:21.175042+00	\N	\N
+441	Rota	narotadainovacao@gmail.com	Boa tarde, estou com um projeto chamado Na Rota da Inovação e gostaríamos de convida-los para o espaço de debates para falar sobre o projeto "eu amo o cerrado". Acontecerá nos dias 16 e 17 dezembro.	2022-12-07 18:08:57.950325+00	\N	\N
+442	Rota	narotadainovacao@gmail.com	Boa tarde, estou com um projeto chamado Na Rota da Inovação e gostaríamos de convida-los para o espaço de debates para falar sobre o projeto "eu amo o cerrado". Acontecerá nos dias 16 e 17 dezembro.	2022-12-07 18:08:59.336932+00	\N	\N
 \.
 
 
@@ -2298,6 +2740,9 @@ COPY public.administracao_contact (id, created_at, deleted_at, name, email, mess
 --
 
 COPY public.administracao_textohome (id, created_at, deleted_at, titulo, texto, user_id, identificador) FROM stdin;
+3	2019-09-05 20:46:25.772251+00	\N	Tutorial	<div class="text-box">\n                   <h3> Veja o que é possível fazer por aqui </h3>\n                </div>\n\n                <div>\n                    <h3> Conhecer o Cerrado! </h3>\n                        <p>\n                                           Nas abas Árvores, Aves, Frutos, Mamíferos ou Peixes você encontra informações gerais sobre as espécies mais avistadas nos Parques do DF e os locais onde são frequentemente avistadas pelos usuários do site.\n                        </p>\n\n                    <h3> Descobrir os Parques do DF </h3>\n                        <p>\n                        No link Parques você encontra fotos, localização, limites aproximados, horário de funcionamento, informações gerais, atrativos e benfeitorias dos parques geridos pelo Brasília Ambiental e outras unidades abertas ao público no DF. Também vai ver quais os locais mais visitados pelos demais usuários.\n                        </p>\n\n                    <h3 class="header"> Explorar as Trilhas de caminhada </h3>\n                        <p>\nNavegue pelas trilhas de caminhada já sinalizadas nos Parques e trilhas enviadas pela comunidade. Aqui você pode ver os comentários e avaliações feitos por outros usuários e também deixar suas marcas! Fez uma trilha legal? Compartilhe no site e deixe seus comentários para que outras pessoas possam ver as belezas que você viu!                         </p>\n\n                    <h3 class="header">Acessar nosso acervo</h3>\n                        <p>\n No menu do no canto esquerdo do site é possível ter mais informações sobre projeto, enviar mensagem, ter acesso às publicações da coleção em em PDF e navegar clicando nos assuntos do menu.                        </p>\n\n                    <h3>Pronto para amar o cerrado?</h3>\n                        <p>\nFaça seu login para ter acesso às funções de marcar os locais visitados e espécies avistadas. E comece sua aventura!                        </p>\n                </div>\n\n                <div class="link-ibram"> <b>Visite Também:</b>\n                    <a class="white" href="http://www.ibram.df.gov.br/" target="_blank">Brasília Ambiental</a>\n                </div>\n                <hr>\n                <p>\n                <b>Idealização e Coordenação Geral:</b><br>\n                Unidade de Educação Ambiental – Educ do Instituto Brasília Ambiental – Ibram<br>\n             \n                </p><br>	1	tutorial
+1	2019-09-05 20:44:31.504846+00	\N	Sobre o projeto	<p><br></p><p><br></p><div style="text-align: center;">\n                    <img class="" src="/images/euamocerrado.png" width="250" style="width: 214px; height: 181px;"></div><p style="text-align: center;"><br></p><div>\n                </div>\n\n                <p><i><b>Eu Amo Cerrado</b> – Conhecer para preservar: cuida quem ama e ama quem conhece</i></p>\n\n                <p style="text-align: left;">O Cerrado é a Savana mais rica do mundo no quesito biodiversidade, abriga milhares de espécies vegetais e animais. Muitas delas exclusivas nesse bioma, várias em risco de extinção. Precisamos buscar estratégias mais eficientes para preservar o cerrado, mas primeiro precisamos conhecê-lo melhor. A coleção Eu Amo Cerrado é uma iniciativa da Unidade de Educação Ambiental – Educ do Instituto Brasília Ambiental - Ibram, órgão governamental que tem como missão juntamente com a população de proteger o patrimônio natural do Distrito Federal-DF. A coleção catalogou algumas espécies presentes nas Unidades de Conservação (tipo Parques) de: aves, mamíferos, árvores, frutos e peixes. Para enriquecer a experiência, nada melhor do que entrar em contato com as nossas belas unidades de conservação realizando trilhas em meio à natureza. O projeto parte da perspectiva de que só cuida quem ama e só ama quem conhece. Assim, espera-se que, por meio dessa ferramenta cada vez mais pessoas conheçam e dediquem a cuidar do meio ambiente e incentivem outras pessoas no contato com a natureza.\n                </p>\n                <p>\n                <strong>Idealização e Coordenação Geral:</strong><br>\n                Unidade de Educação Ambiental – Educ do Instituto Brasília Ambiental – Ibram<br>\n             \n                </p><p><br></p>	1	sobreoprojeto
+2	2019-09-05 20:45:53.679312+00	\N	Links Cerrado	<p><br></p> <p><strong>Mais informações Sobre Bioma Cerrado:</strong></p> <p><a href="https://museucerrado.com.br/">Museu Cerrado</a></p> <p><a href="https://www.wwf.org.br/natureza_brasileira/areas_prioritarias/cerrado/">WWF Brasil Cerrado</a></p> <p><a href="https://www.embrapa.br/cerrados/colecao-entomologica/bioma-cerrado">Embrapa Cerrados</a></p> <p><a href="https://www.oeco.org.br/dicionario-ambiental/28602-o-que-e-o-bioma-cerrado/">((o))eco: o que é o bioma Cerrado</a></p> <p><a href="http://www.mma.gov.br/biomas/cerrado">Ministério do Meio Ambiente: bioma Cerrado</a></p> <p><a href="http://www.invivo.fiocruz.br/cgi/cgilua.exe/sys/start.htm?infoid=961&amp;sid=2">Invivo: bioma Cerrado</a></p> <p><a href="http://www.brasil.gov.br/noticias/meio-ambiente/2018/07/cerrado-e-um-dos-biomas-mais-vulneraveis-durante-a-estacao-seca">Governo do Brasil</a></p> <p><a href="https://pt.wikipedia.org/wiki/Cerrado">Wikipedia: Cerrado</a></p> <p><a href="https://brasilescola.uol.com.br/brasil/a-acao-fogo-no-cerrado.htm">Brasil Escola: ação do fogo no Cerrado</a></p> <p><a href="https://www.todamateria.com.br/cerrado/">Toda Matéria: Cerrado</a></p> <p><a href="https://escolakids.uol.com.br/geografia/cerrado.htm">Escola Kids Uol: Cerrado</a></p> <p><br></p> <p><strong>Algumas Iniciativas de Apoio e Valorização do Bioma Cerrado:</strong></p> <p><a href="https://benfeitoria.com/encontroefeirapovosdocerrado?ref=benfeitoria-pesquisa-projetos">Encontro dos Povos do Cerrado</a></p> <p><a href="https://redecerrado.org.br/tratado-dos-cerrados/?preview=true">Rede Cerrado: tratado dos cerrados</a></p> <p><a href="http://www.rsc.org.br/">Rede Sementes do Cerrado</a></p> <p><a href="http://www.jardimbotanico.df.gov.br/pesquisa/saberes-do-cerrado/">Projeto - Sabores do Cerrado</a></p> <p><a href="http://www.mma.gov.br/biomas/cerrado/programa-cerrado-sustentavel.html">Programa Cerrado Sustentável</a></p> <p><a href="https://www.ifb.edu.br/riachofundo/18581-pesquisadores-do-ifb-se-unem-em-torno-de-livro-de-receitas-e-manifesto-para-valorizacao-do-cerrado">IFB Brasília: receitas e manifesto</a></p> <p><a href="http://conexaoplaneta.com.br/blog/rede-caatinga-cerrado-valoriza-a-sociobiodiversidade-dos-biomas-brasileiros/">Conexão Planeta inspiração para ação: Rede Caatinga e Cerrado</a></p> <p><br></p> <p><strong>Algumas Iniciativas em Defesa do Bioma Cerrado&nbsp;</strong></p> <p><a href="https://www.mma.gov.br/informma/item/8666-em-defesa-do-cerrado">Ministério do Meio Ambiente: em defesa do cerrado</a></p> <p><a href="https://www.wwf.org.br/natureza_brasileira/areas_prioritarias/cerrado/salveocerrado/">WWF: Salve o Cerrado</a></p> <p><a href="https://maiscerrado.wordpress.com/">Fundação mais Cerrado</a></p> <p><a href="https://redecerrado.org.br/nossa-atuacao/defesa-do-cerrado/">Rede Cerrado: Defesa do Cerrado</a></p> <p><a href="https://semcerrado.org.br/">Sem Cerrado, Água Vida: Campanha Nacional em Defesa do Cerrado</a></p> <p><a href="https://www.revistaplaneta.com.br/em-defesa-do-cerrado/">Revista Planeta em defesa do cerrado</a></p> <p><a href="https://www.asibram.org.br/">Associação de Servidores do Ibram</a></p> <p><a href="https://b-m.facebook.com › aficamdf">Associação Dos Auditores Fiscais de Controle Ambiental do Df - Aficam</a></p> <p><a href="https://b-m.facebook.com/aficamdf/?_ft_=top_level_post_id.1801495759862702%3Atl_objid.1801495759862702%3Athrowback_story_fbid.1801495759862702%3Apage_id.502821806396777%3Apage_insights.%7B%22502821806396777%22%3A%7B%22role%22%3A1%2C%22page_id%22%3A502821806396777%2C%22post_context%22%3A%7B%22story_fbid%22%3A1801495759862702%2C%22publish_time%22%3A1513621213%2C%22story_name%22%3A%22EntStatusCreationStory%22%2C%22object_fbtype%22%3A266%7D%2C%22actor_id%22%3A502821806396777%2C%22psn%22%3A%22EntStatusCreationStory%22%2C%22sl%22%3A4%2C%22targets%22%3A%5B%7B%22page_id%22%3A502821806396777%2C%22actor_id%22%3A502821806396777%2C%22role%22%3A1%2C%22post_id%22%3A1801495759862702%2C%22share_id%22%3A0%7D%5D%7D%7D%3Athid.502821806396777%3A306061129499414%3A2%3A0%3A1514793599%3A1509061651472289771&amp;__tn__=C-R=top_level_post_id.1801495759862702%3Atl_objid.1801495759862702%3Athrowback_story_fbid.1801495759862702%3Apage_id.502821806396777%3Apage_insights.%7B%22502821806396777%22%3A%7B%22role%22%3A1%2C%22page_id%22%3A502821806396777%2C%22post_context%22%3A%7B%22story_fbid%22%3A1801495759862702%2C%22publish_time%22%3A1513621213%2C%22story_name%22%3A%22EntStatusCreationStory%22%2C%22object_fbtype%22%3A266%7D%2C%22actor_id%22%3A502821806396777%2C%22psn%22%3A%22EntStatusCreationStory%22%2C%22sl%22%3A4%2C%22targets%22%3A%5B%7B%22page_id%22%3A502821806396777%2C%22actor_id%22%3A502821806396777%2C%22role%22%3A1%2C%22post_id%22%3A1801495759862702%2C%22share_id%22%3A0%7D%5D%7D%7D%3Athid.502821806396777%3A306061129499414%3A2%3A0%3A1514793599%3A1509061651472289771&amp;__tn__=C-R" target="_self"></a></p>	1	linkscerrado
 \.
 
 
@@ -6007,6 +6452,165 @@ COPY public.linha (id, geom, ben_id) FROM stdin;
 --
 
 COPY public.parque_atrativo (id, created_at, deleted_at, descricao, limitacao, geom, parque_id, tipo_atrativo_id, user_id, nome, cor) FROM stdin;
+86	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000A1BE654E97E747C0A036AAD381A42FC0	65	4	\N	\N	\N
+51	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000B982B712A7EA47C0BBA5F3BD48482FC0	6	5	1	\N	\N
+52	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200004263C667A3EA47C002DF47E22C4A2FC0	6	7	1	\N	\N
+53	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200003C8321BA7BEA47C003AA6A662B482FC0	6	9	1	\N	\N
+58	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200004457143B38F447C0DD9AC7F19F9A2FC0	43	5	1	\N	\N
+59	2019-11-29 14:25:51.58655+00	\N	\N	\N	01010000204212000023C5B05A05F447C02420D8BD3F9A2FC0	43	5	1	\N	\N
+60	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000F67B91870FF447C0E0B01286879A2FC0	43	7	1	\N	\N
+61	2019-11-29 14:25:51.58655+00	\N	\N	\N	01010000204212000094C191CFE5F347C0E8B1EF3A129A2FC0	43	7	1	\N	\N
+44	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200007AFA1BB46BED47C07017FAF468A82FC0	12	3	1	\N	\N
+45	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200001A81F10F86ED47C041E245FCBCA72FC0	12	7	1	\N	\N
+46	2019-11-29 14:25:51.58655+00	\N	\N	\N	01010000204212000050A9883EB9ED47C0F20AF5787BA72FC0	12	8	1	\N	\N
+47	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200003E73A836E3ED47C00AD51C8B7EA72FC0	12	6	1	\N	\N
+48	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200005E1545C178ED47C07340B9A5D9A72FC0	12	9	1	\N	\N
+49	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000DC88F679CBEC47C03C4F1DA2D7E82FC0	20	7	1	\N	\N
+40	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200004C3CF57FD1EE47C0C1AED23687AC2FC0	85	9	1	\N	\N
+41	2019-11-29 14:25:51.58655+00	\N	\N	\N	01010000204212000088EEFBAF88EE47C0BF4EFC940AAD2FC0	85	8	1	\N	\N
+42	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000DCF4154C57EE47C07595FB75EEAB2FC0	85	7	1	\N	\N
+17	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000E8297D85BA0948C014B5DF9FA7A22FC0	30	9	1	\N	\N
+18	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200003625EA57C00948C031E7FF8569A22FC0	30	5	1	\N	\N
+19	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200006C23B28FC20948C002FEC93E4DA22FC0	30	4	1	\N	\N
+20	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000BAD6644BD20948C046D3903282A22FC0	30	7	1	\N	\N
+34	2019-11-29 14:25:51.58655+00	\N	\N	\N	01010000204212000019C4615F55CE47C0B240046A26602FC0	19	4	1	\N	\N
+35	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200007BA9A29059CE47C0D8B3167911602FC0	19	7	1	\N	\N
+54	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000E4B316EE940C48C079AEB7AE75DE2FC0	10	4	1	\N	\N
+55	2019-11-29 14:25:51.58655+00	\N	\N	\N	01010000204212000057FD3CAFAB0B48C0681783A2B4DA2FC0	10	5	1	\N	\N
+56	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200003210DB56980B48C0D8E61ECAF6DA2FC0	10	7	1	\N	\N
+57	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200003B2E420C470C48C0D9F8E8A50DD72FC0	10	5	1	\N	\N
+36	2019-11-29 14:25:51.58655+00	\N	\N	\N	01010000204212000067FF1DBF320748C0161F7AD93C0B30C0	53	4	1	\N	\N
+37	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200004EB96918380748C0322B5908290B30C0	53	7	1	\N	\N
+23	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000191EBA2FEE0648C0F294F141DEB02FC0	72	7	1	\N	\N
+12	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000D368760EDEF447C091983C26ADAC2FC0	13	5	1	\N	\N
+13	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000B775445EE9F447C004FB5800C4AC2FC0	13	7	1	\N	\N
+2	2019-11-29 14:25:51.58655+00	\N	\N	\N	01010000204212000010868AEB9FE747C09E61B1ACBE982FC0	70	9	1	\N	\N
+3	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000D38CB5EAB9E747C07649CAA0DD972FC0	70	7	1	\N	\N
+4	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200006FB4C49AB0E747C0A87CA55E8B972FC0	70	3	1	\N	\N
+5	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000F01764F8EBE747C0CC7849C82C982FC0	70	8	1	\N	\N
+6	2019-11-29 14:25:51.58655+00	\N	\N	\N	01010000204212000087233006A3E747C0C407A69956972FC0	70	2	1	\N	\N
+7	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200005745592FBEE747C0D605784EA7972FC0	70	6	1	\N	\N
+8	2019-11-29 14:25:51.58655+00	\N	\N	\N	01010000204212000024415061C30348C0984C6421DBA92FC0	39	5	1	\N	\N
+9	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200007312137BA10348C002CF5578D9A92FC0	39	7	1	\N	\N
+24	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200002165BB6E4BF247C0703FCF0B80752FC0	66	3	1	\N	\N
+25	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200004160E0100EF247C0AD034A379A752FC0	66	8	1	\N	\N
+62	2018-10-14 17:09:22.059176+00	\N	\N	\N	010100002042120000BEB085932EEB47C02639D09BACBE2FC0	81	5	1	\N	\N
+63	2018-10-14 17:09:22.059176+00	\N	\N	\N	010100002042120000CE8FAA7C22EB47C0BA884C3897BE2FC0	81	9	1	\N	\N
+64	2018-10-14 17:09:22.059176+00	\N	\N	\N	01010000204212000079F968B8D4EA47C0D573D45256BF2FC0	81	7	1	\N	\N
+65	2018-10-14 17:20:26.117665+00	\N	\N	\N	01010000204212000056B808C10EFD47C0353D398665572FC0	76	5	1	\N	\N
+66	2018-10-14 17:20:26.117665+00	\N	\N	\N	0101000020421200001E58FD10C3F647C05BC9FA7CBC772FC0	76	5	1	\N	\N
+67	2018-10-14 17:20:26.117665+00	\N	\N	\N	0101000020421200006DC3E65BA7F647C0E8506E2BEB792FC0	76	7	1	\N	\N
+68	2018-10-14 17:20:26.117665+00	\N	\N	\N	0101000020421200004798B724C2F547C09F880337F1792FC0	76	7	1	\N	\N
+26	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000066CF57B28F247C0DB922758A0752FC0	66	6	1	\N	\N
+27	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200009501C081EFF147C0186568E17F752FC0	66	7	1	\N	\N
+14	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200003699B80386FB47C081D1975AF6AA2FC0	64	7	1	\N	\N
+15	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000DB520FF26BE547C0A7F7870DC3472FC0	9	7	1	\N	\N
+43	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000E453A03863F647C089842CDD58972FC0	61	7	1	\N	\N
+38	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000F082ACE5F1E347C0AB4D72EAC3922FC0	16	7	1	\N	\N
+39	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200003803780217E447C084F619BFD4912FC0	16	9	1	\N	\N
+21	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200005C0FD048D20D48C03C2A25639CBE2FC0	54	7	1	\N	\N
+22	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200004381649ADE0D48C0A3628736BFBE2FC0	54	9	1	\N	\N
+16	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000143C83A2281948C0BC761EB10D582FC0	15	7	1	\N	\N
+29	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200003BFEA6CB47EA47C0DD06294B058B2FC0	2	2	1	\N	\N
+30	2019-11-29 14:25:51.58655+00	\N	\N	\N	01010000204212000009F61B5653EA47C02EDB77BA708B2FC0	2	8	1	\N	\N
+31	2019-11-29 14:25:51.58655+00	\N	\N	\N	0101000020421200001D0B1CFD5CEA47C0B4CEA416A38B2FC0	2	6	1	\N	\N
+32	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000F29D8F2968EA47C035795B782F8B2FC0	2	9	1	\N	\N
+33	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000B82EF9CE53EA47C0E4A40C09C48A2FC0	2	7	1	\N	\N
+10	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000FD7E878E31F147C07D4448C7AD7B2FC0	17	5	1	\N	\N
+11	2019-11-29 14:25:51.58655+00	\N	\N	\N	010100002042120000E1E1A55331F147C045C1AE11CA7B2FC0	17	7	1	\N	\N
+69	2019-03-08 19:31:13.752494+00	\N	\N	\N	010400002042120000010000000101000000F4E02F9AF50648C061BAD93064B12FC0	72	10	1	\N	\N
+70	2019-03-08 19:31:13.752494+00	\N	\N	\N	010400002042120000010000000101000000FC4E47B5F10648C06C2B3E8682B12FC0	72	10	1	\N	\N
+71	2019-03-08 19:31:13.752494+00	\N	\N	\N	01040000204212000001000000010100000085118711F00648C032BB82ADA1B12FC0	72	10	1	\N	\N
+72	2019-03-08 19:31:13.752494+00	\N	\N	\N	010400002042120000010000000101000000C900E2CAE80648C041B67434AFB12FC0	72	10	1	\N	\N
+73	2019-04-24 18:25:53.461113+00	\N	teste	teste	01010000204212000000000000008046C00000000000002EC0	84	3	1	\N	\N
+74	2019-04-24 18:44:24.529195+00	\N	teste	teste	0101000020421200006CE2AB07CCDB47C0D8E63F67D64F2FC0	35	2	1	\N	\N
+75	2019-06-18 18:50:27.327371+00	2019-06-24 13:06:22.682844+00	\N	\N	010100002042120000117349D5760348C0D97C5C1B2AB62FC0	1	5	1	\N	\N
+76	2019-06-18 18:50:28.463248+00	2019-07-04 19:06:01.743662+00	\N	\N	010100002042120000276728EE780348C0E50E9BC8CCB52FC0	1	5	1	\N	\N
+78	2019-07-04 19:03:00.555986+00	2019-07-04 19:06:09.46738+00	\N	\N	0101000020421200004084B872F60248C079CE16105AB72FC0	1	5	1	\N	\N
+85	2019-11-29 14:13:05.537143+00	\N	\N	\N	01010000204212000024B891B245E847C03D484F9143A42FC0	65	9	\N	\N	\N
+88	2021-05-03 22:18:54.587563+00	2021-05-03 22:19:10.7511+00	\N	\N	0101000020421200007EE02A4F20F247C09B012EC896752FC0	66	6	\N	\N	\N
+28	2021-05-03 22:18:54.587563+00	2021-05-04 13:13:36.014446+00	\N	\N	0101000020421200009330328F4FEA47C0DEE6A3E9388B2FC0	2	3	1	\N	\N
+89	2021-05-04 13:16:57.939659+00	\N	\N	\N	01010000204212000017D34CF73AF147C00DFAD2DB9F7B2FC0	17	9	\N	\N	\N
+90	2021-05-04 13:48:23.854353+00	\N	\N	\N	01010000204212000044F7AC6BB4EA47C06B10E6762FF72FC0	26	4	\N	\N	\N
+91	2021-05-04 13:48:45.423893+00	\N	\N	\N	0101000020421200007A5567B5C0EA47C0AA81E673EEF62FC0	26	9	\N	\N	\N
+92	2021-05-04 13:48:51.239766+00	\N	\N	\N	01010000204212000095EF1989D0EA47C0E013EB54F9F62FC0	26	7	\N	\N	\N
+87	2021-05-03 22:17:44.861911+00	\N	\N	\N	01010000204212000097C79A9141EA47C037C478CDAB8A2FC0	2	6	\N	\N	\N
+93	2021-05-04 13:49:14.891414+00	\N	\N	\N	01010000204212000044C362D4B5EA47C04276DEC666F72FC0	26	2	\N	\N	\N
+94	2021-05-04 13:58:01.031643+00	\N	\N	\N	010100002042120000D93D7958A8E747C036751E15FF972FC0	70	9	\N	\N	\N
+95	2021-05-04 13:58:03.139327+00	\N	\N	\N	0101000020421200006C425A63D0E747C02BA4FCA4DA972FC0	70	9	\N	\N	\N
+96	2021-05-04 19:03:08.303377+00	\N	\N	\N	010100002042120000789CA223B9D847C0C3633F8BA5282FC0	79	5	\N	\N	\N
+97	2021-05-04 19:07:47.496716+00	\N	\N	\N	01010000204212000059FD118601D947C0E78BBD175F2C2FC0	79	9	\N	\N	\N
+98	2021-05-04 19:07:52.124724+00	\N	\N	\N	0101000020421200000E4B033FAAD947C0A4DFBE0E9C2B2FC0	79	7	\N	\N	\N
+99	2021-05-04 19:08:05.881174+00	\N	\N	\N	010100002042120000705B5B785ED847C0F88C4468042B2FC0	79	6	\N	\N	\N
+100	2021-05-04 19:08:05.931822+00	\N	\N	\N	010100002042120000990E9D9E77D947C02D0ABB287A282FC0	79	6	\N	\N	\N
+101	2021-05-04 19:08:14.824424+00	\N	\N	\N	010100002042120000A9F57EA31DD947C0CDAB3AAB05262FC0	79	10	\N	\N	\N
+102	2021-05-04 19:08:28.452475+00	\N	\N	\N	01010000204212000036B05582C5D147C0530438BD8B272FC0	79	10	\N	\N	\N
+103	2021-05-04 19:08:30.235921+00	\N	\N	\N	010100002042120000EF3B86C77ED447C04A253CA1D7272FC0	79	10	\N	\N	\N
+104	2021-05-04 19:28:05.561716+00	\N	\N	\N	0101000020421200004679E6E5B0CF47C08B53AD8559202FC0	79	11	\N	\N	\N
+105	2021-05-04 20:01:13.028814+00	\N	\N	\N	01010000204212000069A9BC1DE1CC47C025E82FF488212FC0	79	12	\N	\N	\N
+106	2021-05-04 20:01:26.056098+00	\N	\N	\N	0101000020421200003CA41820D1C647C086FF740305162FC0	79	12	\N	\N	\N
+107	2021-05-04 20:01:28.13714+00	\N	\N	\N	0101000020421200000648348122C847C07E350708E6182FC0	79	12	\N	\N	\N
+108	2021-05-04 20:01:29.399363+00	\N	\N	\N	0101000020421200006D3CD862B7C947C035D07CCEDD162FC0	79	12	\N	\N	\N
+109	2021-05-04 20:01:30.207521+00	\N	\N	\N	010100002042120000F4FE3F4E98CA47C0BB287AE063182FC0	79	12	\N	\N	\N
+110	2021-05-04 20:01:31.501417+00	\N	\N	\N	01010000204212000040F67AF7C7CB47C072C3EFA65B162FC0	79	12	\N	\N	\N
+111	2021-05-04 20:01:33.99029+00	\N	\N	\N	010100002042120000F7915B936EC747C08E5C37A5BC0E2FC0	79	12	\N	\N	\N
+112	2021-05-04 20:01:39.63285+00	\N	\N	\N	0101000020421200006747AAEFFCCE47C0E78BBD175F2C2FC0	79	12	\N	\N	\N
+113	2021-05-04 20:01:40.81833+00	\N	\N	\N	01010000204212000010ECF82F10D247C0143FC6DCB52C2FC0	79	12	\N	\N	\N
+114	2021-05-04 20:01:44.455256+00	\N	\N	\N	010100002042120000DA8F149161D347C08E3A3AAE46262FC0	79	12	\N	\N	\N
+115	2021-05-04 20:01:45.397033+00	\N	\N	\N	010100002042120000B890477023D547C0CBD93BA3AD2A2FC0	79	12	\N	\N	\N
+116	2021-05-04 20:01:46.207827+00	\N	\N	\N	010100002042120000AE49B72572D547C0143FC6DCB52C2FC0	79	12	\N	\N	\N
+117	2021-05-04 20:15:49.135276+00	\N	\N	\N	010100002042120000B6D8EDB3CAEE47C0E31934F44FA82FC0	12	11	\N	\N	\N
+119	2021-05-05 19:08:29.727569+00	\N	\N	\N	010100002042120000412E71E481E847C0B4722F302BA42FC0	65	6	\N	\N	\N
+120	2021-05-05 19:08:43.441619+00	\N	\N	\N	0101000020421200008C4D2B8540E847C04A0B9755D8A42FC0	65	10	\N	\N	\N
+121	2021-05-05 19:08:54.104653+00	\N	\N	\N	010100002042120000DFDE35E84BE747C0CD920035B5A42FC0	65	12	\N	\N	\N
+123	2021-05-05 19:10:33.808279+00	\N	\N	\N	0101000020421200005663096B63E847C01FD61BB5C2A42FC0	65	7	\N	\N	\N
+125	2021-05-11 20:22:43.90711+00	\N	\N	\N	01010000204212000074B680D07AD447C02AE3DF675C382FC0	40	13	\N	\N	\N
+126	2021-05-12 09:40:20.810933+00	\N	\N	\N	010100002042120000058C2E6F0EF147C046D1031F837D2FC0	17	11	\N	\N	\N
+128	2021-05-12 13:28:52.022665+00	\N	\N	\N	0101000020421200003DBB7CEBC3EA47C04985B18520F72FC0	26	11	\N	\N	\N
+130	2021-05-12 13:35:39.805411+00	\N	\N	\N	01010000204212000002F2255470EA47C0AA9CF6949C8B2FC0	2	11	\N	\N	\N
+131	2021-05-25 19:42:47.405441+00	\N	\N	\N	0101000020421200003B1C5DA5BBF147C08542041C42752FC0	66	11	\N	\N	\N
+132	2021-05-25 19:44:05.048099+00	\N	\N	\N	01010000204212000019A9F7544EE747C0034356B77A962FC0	70	11	\N	\N	\N
+133	2021-05-25 19:45:34.6674+00	\N	\N	\N	010100002042120000C32973F38DCE47C0A9D898D7115F2FC0	19	11	\N	\N	\N
+134	2021-05-25 19:47:23.789465+00	\N	\N	\N	01010000204212000054E0641BB8E747C0B308C556D0A42FC0	65	11	\N	\N	\N
+135	2021-05-25 19:52:38.1927+00	\N	\N	\N	010100002042120000BADC60A8C3EE47C0D0D1AA9674AC2FC0	85	11	\N	\N	\N
+137	2021-05-25 19:53:15.775811+00	\N	\N	\N	01010000204212000083177D0569EE47C0B0389CF9D5AC2FC0	85	6	\N	\N	\N
+138	2021-05-25 19:53:27.7712+00	\N	\N	\N	0101000020421200003480B74082EE47C0FFEA71DF6AAD2FC0	85	2	\N	\N	\N
+139	2021-05-25 20:06:29.430286+00	\N	\N	\N	010100002042120000EE7BD45FAF0248C025B20FB22CA82FC0	39	12	\N	\N	\N
+140	2021-05-25 20:08:04.459404+00	\N	\N	\N	010100002042120000B3B45373B90348C0E63C635FB2A92FC0	39	12	\N	\N	\N
+141	2021-05-25 20:08:27.787201+00	\N	\N	\N	01010000204212000088687407B10348C0605969520AAA2FC0	39	13	\N	\N	\N
+142	2021-05-25 20:09:22.005134+00	\N	\N	\N	0101000020421200002EAEF199EC0348C0257497C459A92FC0	39	13	\N	\N	\N
+143	2021-05-27 11:41:23.120249+00	\N	\N	\N	0101000020421200003FAA61BF270848C0CB147310740030C0	8	12	\N	\N	\N
+144	2021-05-27 11:41:28.155203+00	\N	\N	\N	0101000020421200001EA4A7C8210848C0A0DFF76F5E0030C0	8	10	\N	\N	\N
+50	2021-05-27 11:41:28.155203+00	2021-05-28 13:37:47.227297+00	\N	\N	0101000020421200005BA047B7ECEC47C06188BEC725E82FC0	20	4	1	\N	\N
+129	2021-05-12 13:34:25.092283+00	2021-05-28 13:40:02.112265+00	\N	\N	01010000204212000077A04E7974ED47C0902DCBD765E82FC0	20	11	\N	\N	\N
+127	2021-05-12 09:51:01.660171+00	2021-05-28 17:42:59.873681+00	\N	\N	010100002042120000C59107228BF447C0882AFC19DEAC2FC0	13	13	\N	\N	\N
+145	2021-06-09 14:49:39.961506+00	\N	\N	\N	01010000204212000087FD9E58A7E447C0CBF78C4468942FC0	92	9	\N	\N	\N
+146	2021-06-09 14:49:46.246022+00	\N	\N	\N	0101000020421200000AB952CF82E447C02D7C7DAD4B952FC0	92	6	\N	\N	\N
+147	2021-06-09 14:49:57.672578+00	\N	\N	\N	0101000020421200000AB952CF82E447C0A88AA9F413962FC0	92	2	\N	\N	\N
+148	2021-06-09 14:58:49.218393+00	\N	\N	\N	010100002042120000F834272F32E547C006BD378600982FC0	93	9	\N	\N	\N
+149	2021-06-09 14:59:06.458467+00	\N	\N	\N	010100002042120000EB1D6E8786E547C01AF9BCE2A9972FC0	93	11	\N	\N	\N
+152	2021-06-12 21:52:00.479806+00	\N	\N	\N	010100002042120000327381CB63E547C0309C6B98A1992FC0	93	14	\N	\N	\N
+153	2021-06-12 21:54:56.7187+00	\N	\N	\N	0101000020421200000875914259F047C0FF25A94C31A72FC0	94	14	\N	\N	\N
+154	2021-06-12 21:55:02.80833+00	\N	\N	\N	0101000020421200003FA9F6E978F047C0A9FA95CE87A72FC0	94	11	\N	\N	\N
+155	2021-06-12 22:12:03.765409+00	\N	\N	\N	010100002042120000048E041A6CFE47C0D5415E0F268D2FC0	101	14	\N	\N	\N
+156	2021-06-12 22:17:12.26973+00	\N	\N	\N	0101000020421200005E64027E8D0048C0D4298F6E848D2FC0	102	14	\N	\N	\N
+157	2021-06-12 22:19:43.813283+00	\N	\N	\N	010100002042120000C4D155BABBFE47C0EA059FE6E4D52FC0	86	14	\N	\N	\N
+158	2021-06-12 22:19:56.487078+00	\N	\N	\N	010100002042120000BE66B96C74E447C063D34A2190932FC0	92	14	\N	\N	\N
+159	2021-06-12 22:23:07.177256+00	\N	\N	\N	010100002042120000FA0B3D62F40C48C0D908C4EBFAB52FC0	96	14	\N	\N	\N
+161	2021-06-12 22:29:37.35442+00	\N	\N	\N	010100002042120000C520B07268F547C00762D9CC21812FC0	107	14	\N	\N	\N
+162	2021-06-12 22:30:30.257576+00	\N	\N	\N	010100002042120000EA3D95D39EF847C07BBB253960B72FC0	109	14	\N	\N	\N
+163	2021-06-12 22:31:38.439167+00	\N	\N	\N	010100002042120000882AFC19DEE247C09E5F94A0BFC82FC0	111	14	\N	\N	\N
+164	2021-06-12 22:32:32.484646+00	\N	\N	\N	0101000020421200006A6B44300ECC47C0C05FCC96AC522FC0	23	14	\N	\N	\N
+165	2021-06-12 23:16:53.993283+00	\N	\N	\N	010100002042120000639CBF0985F847C090F7AA9509B72FC0	109	14	\N	\N	\N
+160	2021-06-12 22:25:38.633255+00	2021-06-12 23:29:10.543285+00	\N	\N	0101000020421200003CF9F4D896F147C0A46FD234286A2FC0	106	14	\N	\N	\N
+166	2021-06-12 23:31:17.849334+00	\N	\N	\N	01010000204212000055A52DAEF10B48C003081F4AB4B42FC0	96	14	\N	\N	\N
+167	2021-06-12 23:31:54.470785+00	\N	\N	\N	01010000204212000047054EB681F147C00E68E90AB6692FC0	106	14	\N	\N	\N
+168	2021-06-12 23:33:48.276845+00	\N	\N	\N	010100002042120000D3A0681EC0F847C04568041BD7B72FC0	109	14	\N	\N	\N
+170	2021-06-12 23:38:06.309817+00	\N	\N	\N	01010000204212000021C9ACDEE1F847C03BC8EBC1A4B82FC0	109	14	\N	\N	\N
+171	2021-06-12 23:39:12.903848+00	\N	\N	\N	010100002042120000E35295B6B8E247C09D9E776341C92FC0	111	14	\N	\N	\N
+172	2021-07-16 17:10:02.913186+00	2021-06-09 18:28:56+00	\N	\N	0101000020421200006344A2D0B20248C0E2E995B20CB92FC0	1	14	\N	\N	#53ca1c
+174	2021-09-30 19:31:23.155006+00	\N	\N	\N	0101000020421200009D2B4A09C10248C065C8B1F50CB92FC0	1	4	\N	\N	\N
+175	2021-09-30 19:32:12.543943+00	2021-09-30 19:32:33.351291+00	\N	\N	010100002042120000A6F27684D3E047C0F6083543AAD02FC0	3	5	\N	\N	\N
 \.
 
 
@@ -6015,6 +6619,413 @@ COPY public.parque_atrativo (id, created_at, deleted_at, descricao, limitacao, g
 --
 
 COPY public.parque_benfeitoria (id, created_at, deleted_at, descricao, geom, parque_id, tipo_benfeitoria_id, user_id) FROM stdin;
+379	2019-09-08 03:05:24.357302+00	\N	\N	010100002042120000CB2E185C73F147C08E942D92767B2FC0	17	3	\N
+384	2019-09-08 03:54:30.381956+00	\N	\N	010100002042120000AF7B2B12130848C035ECF7C43A0130C0	8	6	\N
+389	2019-09-10 19:25:26.527277+00	\N	\N	0101000020421200005C3D27BD6FF647C0340F60915F772FC0	76	6	\N
+392	2019-11-29 14:14:00.321913+00	\N	\N	01010000204212000089D4B48B69E847C0E0641BB803A52FC0	65	17	\N
+380	2019-09-08 03:21:31.79314+00	\N	\N	010100002042120000195932C7F2E447C0309B00C3F2472FC0	9	20	\N
+385	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200002D793C2D3F0848C0D74D29AF950C30C0	53	6	\N
+390	2019-09-10 19:25:30.175749+00	\N	\N	01010000204212000066F6798CF2F647C00806103E94782FC0	76	6	\N
+120	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200007BF811E9BB0248C05A5222D75BB92FC0	1	18	1
+121	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000B1E847C8C60248C0F5E3DA3854B92FC0	1	2	1
+381	2019-09-08 03:32:12.042282+00	\N	\N	0101000020421200004FAC53E57BF647C0BA2C26361F972FC0	61	6	\N
+386	2019-09-08 03:58:20.073658+00	\N	\N	01010000204212000098DC28B2D60248C0BD1AA034D4B82FC0	1	6	\N
+391	2019-09-16 17:45:30.133036+00	2019-09-16 17:45:39.620845+00	\N	01010000204212000097917A4FE50248C0BC2363B5F9B72FC0	1	20	\N
+382	2019-09-08 03:34:28.270447+00	\N	\N	010100002042120000226FB9FAB10D48C0996725ADF8BE2FC0	54	6	\N
+387	2019-09-08 04:03:26.599973+00	\N	\N	010100002042120000D21A834E080548C09CC1DF2F66C32FC0	32	6	\N
+167	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000069B615B20EF347C0747BD9A6B1952FC0	43	12	1
+168	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000CA6F6D4936F347C0DD8F205DF5952FC0	43	16	1
+169	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000F0BB847E32F347C08C59AE8AB0952FC0	43	16	1
+170	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000110AECF432F347C0FCF9F7BF72952FC0	43	16	1
+171	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000D8F54A701FF347C0C76CA7EEC1952FC0	43	9	1
+172	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200005C2EE84921F347C08418AA8284952FC0	43	10	1
+173	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200004D797C9862F347C0E19A94CD2B972FC0	43	16	1
+174	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000D03DE75C5AF347C05A7F0F01A9962FC0	43	3	1
+175	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000A8A6D1B00BF447C0DB460F742C992FC0	43	2	1
+176	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000045F634580FF447C0243C7D3E45992FC0	43	5	1
+177	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200003EBF93AF10F447C0A531C6CE16992FC0	43	14	1
+178	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200005301DE5CCEF447C048AE9B1B6A9A2FC0	43	17	1
+179	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000AB20920EB2F447C0B4F3F531109A2FC0	43	14	1
+180	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000D5F3F9F610F547C0C7A3E4AB3B9A2FC0	43	3	1
+181	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200000F93C04518F547C0BE8FE958589A2FC0	43	3	1
+182	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000069DD2D6B40F547C012E31085A19C2FC0	43	14	1
+183	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000050FC2B91B2F547C0D4EADFEC0A9C2FC0	43	11	1
+184	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200008CCA806A8FF547C02F928C72539C2FC0	43	14	1
+185	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000826B87A059F647C063443CCB2A9D2FC0	43	12	1
+186	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000FD7ABB471BF647C0322DA3E4109D2FC0	43	14	1
+112	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200001D8825BAD8EE47C0AE83FFB4FCA72FC0	12	9	1
+113	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200009C8D37AF6EEE47C0B032B57C1EA82FC0	12	10	1
+114	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000111C7E1882ED47C0A1D356E7D2A82FC0	12	4	1
+115	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000BC24692CBFEC47C075A78D021EE82FC0	20	17	1
+105	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000B8C60DD975EE47C08DE90EE205AC2FC0	85	17	1
+68	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200009EB562A5D30948C0151ACEFEAF9F2FC0	30	18	1
+69	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000C48353CAE90948C025DCF1F239A12FC0	30	17	1
+70	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000067A0D34DC60948C0CEDAC79C3BA12FC0	30	4	1
+71	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000EC9B47D9CB0948C04F42BA177E9F2FC0	30	6	1
+72	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000CE9A243CCD0948C0124074DD809F2FC0	30	14	1
+73	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000EC6F0CBF630948C05DD035CD85A22FC0	30	10	1
+74	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000932A92B0B90948C043D151B184A22FC0	30	3	1
+75	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000076AA0ED4B90948C07FC283FD96A22FC0	30	8	1
+97	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200009542D9BC5ECE47C08C2EFB17EA5F2FC0	19	17	1
+116	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000828C5852E60B48C0D6CB2A4E28DB2FC0	10	3	1
+79	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000967050D6080748C0E273D0D865B12FC0	72	7	1
+80	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000451D5C4DFB0648C0BA3C57928EB12FC0	72	18	1
+81	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000082FA2964F60648C08E7ADC3ADBB12FC0	72	18	1
+82	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000D928D569EA0648C029F6586405B22FC0	72	18	1
+83	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200008A3DADFBEF0648C0856FF75FE3B12FC0	72	16	1
+84	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000776F61BFE20648C04297EBBE08B22FC0	72	16	1
+85	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200005EB27F86DE0648C0C3FD1B3FE4B02FC0	72	3	1
+86	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000152E9AECCE0648C0F8F341CAF0B12FC0	72	18	1
+33	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000FEE1941D2AF547C013FED9B6F6AB2FC0	13	2	1
+34	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000B567FFD218F547C0949DE00BFCAB2FC0	13	6	1
+35	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000B1C2119A27F547C0413F50DEEEAB2FC0	13	5	1
+37	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000A021EFB80BF547C0707F72710AAC2FC0	13	3	1
+3	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000060B6494F93E747C0CAB10A0DB6972FC0	70	9	1
+4	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200001FA131AC6DE747C0158D1CF313982FC0	70	10	1
+5	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000038D7DBD2D6E747C097B74C395F982FC0	70	15	1
+6	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000E1E07995DEE747C03A17868807982FC0	70	4	1
+7	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000D23703318AE747C0BB7AD3B8A9982FC0	70	14	1
+8	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000E918A43490E747C04EA3790E78982FC0	70	6	1
+9	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000CA38F13F95E747C08C2AC20D17982FC0	70	17	1
+11	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000A949019A5F0348C0F7A2F7AE6FAA2FC0	39	17	1
+12	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200008C75BF7C5B0348C04F1FBD06ACA92FC0	39	9	1
+13	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000014FE4705B40248C0E26A769B77A82FC0	39	3	1
+14	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200002A66C7ABC50248C04F98F3DAB7A82FC0	39	12	1
+15	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000067ABD212A10248C0B3D81B945FA82FC0	39	18	1
+16	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200005761E4FDB20248C0706E99A2D4A82FC0	39	16	1
+17	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000010C8FA8C10248C0B3D81B94E3A82FC0	39	16	1
+18	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200006ED049DDA50248C02D0417B16DA82FC0	39	18	1
+19	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200009447D4F3B60248C0FE671510ADA82FC0	39	13	1
+20	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000ACB63993A10248C009CF5538BEA82FC0	39	10	1
+21	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000338B3E36AC0248C06E2CD0049FA82FC0	39	5	1
+22	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200009347D4B3AE0248C05C41FDA0A6A82FC0	39	8	1
+23	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000006EF3CD5BC0248C06407597A55A82FC0	39	2	1
+24	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000E85A606B8B0248C0411461DF96A82FC0	39	6	1
+25	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000324975D8940248C04ADABCB8C9A82FC0	39	14	1
+88	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000085D362264EF247C0D278255AE4742FC0	66	6	1
+89	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000009A1303D61F247C006556EE249752FC0	66	9	1
+90	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000448446CC43F247C0BB02598867752FC0	66	11	1
+91	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000E640E87E59F247C069EC1A4676752FC0	66	4	1
+92	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000DD7CBF964AF247C0EB46FFE27E752FC0	66	4	1
+93	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000E09CF44A4BF247C0045C51912C752FC0	66	3	1
+94	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000AD0CF5CA4DF247C0938F0723EC742FC0	66	14	1
+95	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000067E1F7D34EF247C07209415239752FC0	66	8	1
+96	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200005242C95518F247C0307E242729712FC0	66	17	1
+38	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200009EA001DC0AFC47C009B434268BAB2FC0	64	8	1
+39	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000AEBCEE7BF0FB47C01F063FB91BAB2FC0	64	18	1
+40	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000A9A32FBEE6FB47C054163F0A1BAB2FC0	64	18	1
+41	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000071D80CE804FC47C0F0B289CB8EAB2FC0	64	16	1
+42	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000044854F06E8FB47C09DAAD751DEAB2FC0	64	9	1
+43	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000018ECA6B1D1FB47C0FEB7DB91B2AB2FC0	64	10	1
+44	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000EDB0969B9AFB47C07BFDB91152AB2FC0	64	17	1
+45	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000021B2E252FFFB47C03F6F8D7666AB2FC0	64	5	1
+46	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000F31057B809FC47C0D27608209CAB2FC0	64	3	1
+47	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000B19F8C4C07FC47C07806B3439DAB2FC0	64	2	1
+48	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000078FBCED5EDFB47C0D6FB09B88BAB2FC0	64	6	1
+49	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000056F12E43EEFB47C074C68A2C83AB2FC0	64	14	1
+50	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000B6CF8AEAEFE447C05CA215D315482FC0	9	6	1
+51	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000203458120CE547C0A7A1D60E0B482FC0	9	5	1
+52	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000724503BE07E547C0142F2B7D13482FC0	9	11	1
+53	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200002F77AE0B02E547C0CB012C9A0A482FC0	9	3	1
+54	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000B31A2DBE10E547C039222C3C09482FC0	9	18	1
+55	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000735DB089EDE447C0DCBF80FB10482FC0	9	14	1
+56	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000E9B603F502E547C0A91CD5761B482FC0	9	2	1
+57	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000066F9BB8656E547C0707A33F0B9472FC0	9	17	1
+106	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000CDC46D9195F647C0AF72CA627A972FC0	61	9	1
+107	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000016A6DBAD71F647C08F32030A81972FC0	61	3	1
+108	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000067C5934596F647C0BC2E0D2F46972FC0	61	18	1
+109	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000068E430EA68F647C045716C5842972FC0	61	18	1
+110	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200006AC851CA99F647C05097CFFE89972FC0	61	5	1
+111	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200007244D68E87F647C09EED0B1082972FC0	61	5	1
+117	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000BEB5F266BF0248C09486CD513EB92FC0	1	3	1
+118	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000E3FA7ED4C50248C086914A5A30B92FC0	1	3	1
+119	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000A21B9D29CE0248C05646747F19B92FC0	1	16	1
+123	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200004BD4005763F647C06F810194B49E2FC0	43	14	1
+124	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200007EA6F5B248F647C0CD0EC3020D9F2FC0	43	14	1
+125	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000032CACADE1DF647C0CF6CDF17B89E2FC0	43	18	1
+126	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200004436BDEE16F647C072F48B88BC9E2FC0	43	18	1
+127	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000B01C53CF0FF647C072F48B88BC9E2FC0	43	18	1
+128	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000C56F02E91AF647C099849F27EB9E2FC0	43	18	1
+129	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000E44ADF6A13F647C099849F27EB9E2FC0	43	18	1
+130	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000F6B6D17A0CF647C005DF671DEE9E2FC0	43	18	1
+131	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000048C03A9808F647C028593028359F2FC0	43	18	1
+132	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000D5F437EF01F647C0AB91CD01379F2FC0	43	18	1
+133	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200009A5571A0FAF547C094B3F81D389F2FC0	43	18	1
+134	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000ADC163B0F3F547C017EC95F7399F2FC0	43	18	1
+135	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200008AE8D66FFFF547C0D497988BFC9E2FC0	43	18	1
+136	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200009D54C97FF8F547C0BCB9C3A7FD9E2FC0	43	18	1
+137	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000035F8B048F1F547C0DB08D33E009F2FC0	43	18	1
+138	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000C21413CAFEF547C012F1122FCD9E2FC0	43	18	1
+139	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200005BB8FA92F7F547C09529B008CF9E2FC0	43	18	1
+140	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000014AA49D2F0F547C0B478BF9FD19E2FC0	43	18	1
+141	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000AD4D319BE9F547C09D9AEABBD29E2FC0	43	18	1
+142	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000414F00E504F647C0CC11F0F89B9E2FC0	43	18	1
+143	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000AD3596C5FDF547C0672862B69C9E2FC0	43	18	1
+144	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000093E436EDF6F547C0386CB8EE9E9E2FC0	43	18	1
+145	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000EE4FFA2636F647C069CB22567C9E2FC0	43	18	1
+146	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200005A3690072FF647C024BCC974739E2FC0	43	18	1
+147	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000BAAD3B7628F647C0F78A4577699E2FC0	43	18	1
+148	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000749F8AB521F647C0B020FD76449E2FC0	43	18	1
+149	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000860B7DC51AF647C035E4BF1A3A9E2FC0	43	18	1
+150	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000999C9A00BCF547C0144F2F44789E2FC0	43	14	1
+151	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000E4E2948AC3F547C0F2E9D4188E9E2FC0	43	5	1
+152	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000024A3FF7B1F547C018AA1E63949E2FC0	43	12	1
+153	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200000B48244A36F547C0D29DF2771A9E2FC0	43	14	1
+154	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000081DA6A9DC2F447C05D12AF69B89B2FC0	43	14	1
+155	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200000F1295EA4AF447C04E90A659609B2FC0	43	9	1
+156	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000013F8A9D35AF447C0F14DE3615A9A2FC0	43	10	1
+157	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200006531499C2EF447C02BACDA3CBE992FC0	43	17	1
+158	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000FA1DAA06EDF347C067449F7EA59A2FC0	43	12	1
+159	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000022F5E605DDF347C057D7044EAA9A2FC0	43	12	1
+160	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000001F9B36FCDF347C015B33D8D449A2FC0	43	5	1
+161	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000050B64299F6F247C0EFC957EC89962FC0	43	3	1
+162	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000DA4B5467A1F247C08B9B251F56962FC0	43	3	1
+163	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000063746989E0F247C0D5A82EBF5A962FC0	43	16	1
+164	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000067CEB087FAF247C03251B8F92D962FC0	43	8	1
+165	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000EC79D85504F347C0A5EC84F75C962FC0	43	8	1
+166	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000077AF7DCDFFF247C0BF557FA54F962FC0	43	8	1
+98	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000B627CECBE4E347C08F6133AADC932FC0	16	18	1
+187	2018-10-14 17:08:37.311354+00	\N	\N	01010000204212000094E54911DAEA47C0C639461B24BF2FC0	81	3	1
+188	2018-10-14 17:08:37.311354+00	\N	\N	0101000020421200007CCB077212EB47C0D7909B6E6FBF2FC0	81	12	1
+189	2018-10-14 17:08:37.311354+00	\N	\N	01010000204212000081BBFCC50AEB47C0CF28E230D6BF2FC0	81	3	1
+190	2018-10-14 17:08:37.311354+00	\N	\N	010100002042120000D806AAA7C6EA47C0056BE79D73BF2FC0	81	9	1
+191	2018-10-14 17:08:37.311354+00	\N	\N	01010000204212000060858289CBEA47C03C35BCA0B9BE2FC0	81	10	1
+192	2018-10-14 17:08:37.311354+00	\N	\N	010100002042120000FE9503B54AEB47C01F4882096EBF2FC0	81	17	1
+193	2018-10-14 17:08:37.311354+00	\N	\N	010100002042120000818E2AFEE9EA47C011D1EE5E80C02FC0	81	17	1
+194	2018-10-14 17:13:25.46151+00	\N	\N	010100002042120000DAD41F976E0748C06D55DB8BEC922FC0	78	6	1
+195	2018-10-14 17:13:25.46151+00	\N	\N	01010000204212000045C4651D5B0748C09046F90A858F2FC0	78	17	1
+196	2018-10-14 17:13:25.46151+00	\N	\N	010100002042120000D395CF74050A48C0CA623F07FA892FC0	78	17	1
+197	2018-10-14 17:13:25.46151+00	\N	\N	01010000204212000041E855B16C0748C01DC6A2BFEA922FC0	78	14	1
+198	2018-10-14 17:20:30.850694+00	\N	\N	01010000204212000053FBC8C8BEF647C05037116D0D7A2FC0	76	14	1
+199	2018-10-14 17:20:30.850694+00	\N	\N	01010000204212000041EEA6D7B5F647C0445FD6CCB9792FC0	76	12	1
+200	2018-10-14 17:20:30.850694+00	\N	\N	01010000204212000001221D7159F747C0135043532C782FC0	76	17	1
+201	2018-10-14 17:20:30.850694+00	\N	\N	010100002042120000CDB0F08C9FF647C078814FE6097A2FC0	76	7	1
+202	2018-10-14 17:20:30.850694+00	\N	\N	010100002042120000874A1F03D2F547C091935E91DD792FC0	76	7	1
+203	2018-10-14 17:20:30.850694+00	\N	\N	010100002042120000C503EED0B7F547C0007D7457BF792FC0	76	12	1
+204	2018-10-14 17:20:30.850694+00	\N	\N	010100002042120000CC44FEC3C1F547C07A329C1BA0792FC0	76	14	1
+205	2018-10-14 17:39:32.819261+00	\N	\N	010100002042120000EF5D50B92DEA47C05B3BC283A1B82FC0	81	19	1
+207	2018-10-14 17:40:43.7845+00	\N	\N	010100002042120000DD35B9C3DF0248C07B6BA2FFFEB82FC0	1	19	1
+210	2018-10-14 17:43:27.116244+00	\N	\N	010100002042120000D7682C607BE947C078C92C7AF94D2FC0	46	19	1
+211	2018-10-14 17:43:27.116244+00	\N	\N	01010000204212000062A233C530E947C05499BC79EE4D2FC0	46	19	1
+212	2018-10-14 17:46:52.026148+00	\N	\N	010100002042120000CA5EFC0013E747C08DEDC741DC842FC0	73	19	1
+213	2018-10-14 17:48:29.303927+00	\N	\N	010100002042120000176200CD9CCC47C080D39CF9B1512FC0	23	19	1
+214	2018-10-14 17:49:41.701844+00	\N	\N	010100002042120000461F7C17A3EB47C087EA6F9179772FC0	22	19	1
+215	2018-10-14 17:49:41.701844+00	\N	\N	01010000204212000014055F1368EB47C09E1309462D772FC0	22	19	1
+219	2018-10-14 17:51:45.304619+00	\N	\N	010100002042120000D801BC8A4EEB47C02E5E3064C6942FC0	21	19	1
+220	2018-10-14 17:51:45.304619+00	\N	\N	010100002042120000730440C651EB47C0E22DFAC505972FC0	21	19	1
+221	2018-10-14 17:51:45.304619+00	\N	\N	010100002042120000269EAC7D10EC47C0A4B453A5EA982FC0	21	19	1
+222	2018-10-14 17:51:45.304619+00	\N	\N	010100002042120000DFA97E091FEC47C0244D2A902C972FC0	21	19	1
+223	2018-10-14 17:52:52.577929+00	\N	\N	010100002042120000D9C638E202EE47C01CCAC3EB9DE62FC0	20	19	1
+224	2018-10-14 17:52:52.577929+00	\N	\N	01010000204212000073B0649699EC47C011146BD9C7E82FC0	20	19	1
+225	2018-10-14 17:52:52.577929+00	\N	\N	010100002042120000E46B2E9252EC47C01D24AD4ACFE72FC0	20	19	1
+226	2018-10-14 17:53:25.038974+00	\N	\N	010100002042120000ADBC83108AEA47C0AD793A482E8A2FC0	2	19	1
+227	2018-10-14 17:53:25.038974+00	\N	\N	010100002042120000E2EDCC5A9AEA47C0CFCC5997AB8A2FC0	2	19	1
+228	2018-10-14 17:55:10.879232+00	\N	\N	010100002042120000437A3B2B38CE47C07079E9C4C85B2FC0	19	19	1
+229	2018-10-14 17:55:10.879232+00	\N	\N	01010000204212000052296ACBA1CE47C06C70E3D67B602FC0	19	19	1
+230	2018-10-14 17:56:23.216941+00	\N	\N	010100002042120000760DF2C834ED47C0EEFDCF948D8A2FC0	18	19	1
+231	2018-10-14 17:56:23.216941+00	\N	\N	010100002042120000A2E91E5564ED47C0E82A70975A8B2FC0	18	19	1
+232	2018-10-14 17:57:06.942185+00	\N	\N	010100002042120000D26BAAE674F147C04897A6899D7C2FC0	17	19	1
+233	2018-10-14 17:57:06.942185+00	\N	\N	0101000020421200005F242B5384F147C0DE3492D7817B2FC0	17	19	1
+234	2018-10-14 17:57:06.942185+00	\N	\N	0101000020421200006438C02909F147C007CC2B014D7E2FC0	17	19	1
+235	2018-10-14 17:59:46.447335+00	\N	\N	0101000020421200007C3B4AB125E447C07FF4A006CC922FC0	16	19	1
+236	2018-10-14 17:59:46.447335+00	\N	\N	0101000020421200004D5ED428A1E347C05E07CCAF55922FC0	16	19	1
+237	2018-10-14 18:00:09.728472+00	\N	\N	010100002042120000504B6F07721948C05EA2C0511F582FC0	15	19	1
+238	2018-10-14 18:01:02.566882+00	\N	\N	010100002042120000E61A41DE90EF47C02F68F72ED3692FC0	14	19	1
+239	2018-10-14 18:01:02.566882+00	\N	\N	01010000204212000019B6246538F047C0C56890D9DB682FC0	14	19	1
+240	2018-10-14 18:01:58.580222+00	\N	\N	01010000204212000015D6216B1AF547C08AB2B13EB9AB2FC0	13	19	1
+241	2018-10-14 18:01:58.580222+00	\N	\N	0101000020421200005E401C252DF547C0F7869FEC18AC2FC0	13	19	1
+242	2018-10-14 18:01:58.580222+00	\N	\N	010100002042120000DD46D4A0AAF447C0A4C094B857AE2FC0	13	19	1
+243	2018-10-14 18:03:08.22379+00	\N	\N	0101000020421200005C02CF3E84ED47C07263C6DE11A82FC0	12	19	1
+244	2018-10-14 18:03:36.833146+00	\N	\N	01010000204212000046A943458AE347C00EF7AD892BA22FC0	11	19	1
+245	2018-10-14 18:04:00.026416+00	\N	\N	0101000020421200000D8AA7076E0C48C031EA0A096AD92FC0	10	19	1
+246	2018-10-14 18:05:10.681587+00	\N	\N	010100002042120000B6D04D00DFE447C01B7E0E1A21482FC0	9	19	1
+247	2018-10-14 18:05:10.681587+00	\N	\N	010100002042120000FAA0BA90DE0848C0E4A7CC047D0130C0	8	19	1
+248	2018-10-14 18:05:46.936775+00	\N	\N	010100002042120000E2FB7719E8CD47C0BB3F321423312FC0	79	19	1
+249	2018-10-14 18:06:13.861423+00	\N	\N	01010000204212000017350F726A0748C036C3D9CAA4942FC0	78	19	1
+250	2018-10-14 18:06:51.134719+00	\N	\N	010100002042120000300CE8D164F547C0F1915317A97A2FC0	76	19	1
+251	2018-10-14 18:07:12.228912+00	\N	\N	010100002042120000DA96583F3C1D48C029927522A7932FC0	75	19	1
+252	2018-10-14 18:07:41.617194+00	\N	\N	01010000204212000015BBB23B5EE347C0F6EE535E20932FC0	74	19	1
+253	2018-10-14 18:08:29.06706+00	\N	\N	01010000204212000088A8EC22CC0648C0BD4FB7735FB02FC0	72	19	1
+254	2018-10-14 18:10:11.63183+00	\N	\N	010100002042120000EE04589187E747C0F2924A3AC7982FC0	70	19	1
+255	2018-10-14 18:12:25.571014+00	\N	\N	0101000020421200006E08927B38FF47C0A1D078A44FE52FC0	7	19	1
+256	2018-10-14 18:12:25.571014+00	\N	\N	010100002042120000E4FAC1C237EF47C0D0512D7993B92FC0	69	19	1
+257	2018-10-14 18:13:06.223523+00	\N	\N	010100002042120000CBD339B0941448C044907679F59B2FC0	68	19	1
+258	2018-10-14 18:13:06.223523+00	\N	\N	010100002042120000B2CA8181C7EF47C0BC2C57EF559F2FC0	67	19	1
+259	2018-10-14 18:13:06.223523+00	\N	\N	0101000020421200009A4480D8DBEE47C0EEB448F9E89E2FC0	67	19	1
+332	2018-10-14 18:38:58.814064+00	\N	\N	010100002042120000293C24E5C7EA47C04C8E88AC8CF72FC0	26	19	1
+333	2018-10-14 18:39:44.002973+00	\N	\N	0101000020421200002DC059308CF147C0E0A312E089682FC0	25	19	1
+334	2018-10-14 18:40:25.321311+00	\N	\N	01010000204212000011ED9087EAFB47C096169CA968B32FC0	24	19	1
+99	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000BF97676FE9E347C0B90BE6AF9A932FC0	16	16	1
+100	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000028957284F4E347C001D3FFADB0932FC0	16	3	1
+101	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200004A9F9FE6E6E347C01BC20ECC23942FC0	16	10	1
+102	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000050B1BE3B08E447C0F2A83B07FF932FC0	16	9	1
+103	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000094F1DCB4EFE347C09080AFAD57932FC0	16	14	1
+104	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200003EA4E272EFE347C0A1A730D651932FC0	16	6	1
+76	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200005EEE7B42CD0D48C00BC702CC19BF2FC0	54	18	1
+77	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000E29C669BCD0D48C062AF876749BF2FC0	54	3	1
+78	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000789D1504F00D48C0CF0BFA96D3BE2FC0	54	9	1
+58	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000C26716ED971848C019D10FA807572FC0	15	18	1
+59	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000C7C86147E41848C05E61552897562FC0	15	17	1
+60	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200007B796468141948C065CF8B49BB592FC0	15	18	1
+61	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000EB521BBC441948C0B6C415C11B582FC0	15	10	1
+62	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000579ED969D11848C0A60ED8DB1B572FC0	15	3	1
+63	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000008038701571948C089523173B5582FC0	15	13	1
+64	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200002484BC446F1948C04C739E4362582FC0	15	16	1
+65	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000D266CFE16D1948C0FD34624026582FC0	15	8	1
+66	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000038D42DF3661948C0E21B691AF8572FC0	15	6	1
+67	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200009494EB20691948C0FE252A1B35582FC0	15	14	1
+26	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000022C564506EF147C00989D6FB9C7C2FC0	17	14	1
+27	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000BB317EC778F147C0ADBDEFB8607C2FC0	17	10	1
+28	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000BC7DD3FD6CF147C0B8627CD4D67C2FC0	17	5	1
+29	2019-09-08 03:57:19.35888+00	\N	\N	010100002042120000257EAC6675F147C062F5A622757C2FC0	17	2	1
+30	2019-09-08 03:57:19.35888+00	\N	\N	01010000204212000013EB04C56BF147C0A62EA3796B7C2FC0	17	8	1
+31	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200006A68821B35F147C0A221C1CADD7B2FC0	17	17	1
+32	2019-09-08 03:57:19.35888+00	\N	\N	0101000020421200001C7A1E456FF147C07886CAEFB07C2FC0	17	6	1
+260	2018-10-14 18:13:38.777215+00	\N	\N	010100002042120000ADB59B9700F247C00D5A076199712FC0	66	19	1
+261	2018-10-14 18:14:23.534896+00	\N	\N	0101000020421200008A9BFAD545E847C079D57AE4C8A52FC0	65	19	1
+262	2018-10-14 18:14:23.534896+00	\N	\N	01010000204212000026561BF766E847C0664CA2C56BA52FC0	65	19	1
+263	2018-10-14 18:14:46.472392+00	\N	\N	0101000020421200003076B3E01FFC47C065F14FC8ADAB2FC0	64	19	1
+264	2018-10-14 18:15:11.663033+00	\N	\N	0101000020421200005B746242440648C0D5E68DD96BB82FC0	63	19	1
+265	2018-10-14 18:15:54.159242+00	\N	\N	01010000204212000050A69485C8F947C091947A155BB12FC0	62	19	1
+266	2018-10-14 18:17:24.168549+00	\N	\N	010100002042120000341852189BF647C03763B31C06972FC0	61	19	1
+267	2018-10-14 18:17:24.168549+00	\N	\N	010100002042120000937851759AF647C0E2AD96ECB9972FC0	61	19	1
+268	2018-10-14 18:17:24.168549+00	\N	\N	010100002042120000B1396D8482F647C08C8C934A1F982FC0	61	19	1
+269	2018-10-14 18:17:24.168549+00	\N	\N	010100002042120000824DF8673FF647C0AD2E477734972FC0	61	19	1
+270	2018-10-14 18:17:24.168549+00	\N	\N	01010000204212000015FA1C14C9F347C027BB5F29878B2FC0	60	19	1
+271	2018-10-14 18:18:09.42962+00	\N	\N	01010000204212000025401E5468EA47C05F1FACB38F472FC0	6	19	1
+272	2018-10-14 18:18:09.42962+00	\N	\N	0101000020421200000E47000873EA47C0D49C459315472FC0	6	19	1
+273	2018-10-14 18:18:31.547533+00	\N	\N	01010000204212000033C731BDCBED47C011604057219A2FC0	58	19	1
+274	2018-10-14 18:20:15.074067+00	\N	\N	010100002042120000048D87A2E90648C0451FA59B58A62FC0	56	19	1
+275	2018-10-14 18:20:15.074067+00	\N	\N	0101000020421200000E86E1BEB20648C0AC750E5AFDA52FC0	56	19	1
+276	2018-10-14 18:20:15.074067+00	\N	\N	0101000020421200006AC3BEB5390748C0C19CF8B71AA32FC0	56	19	1
+277	2018-10-14 18:20:15.074067+00	\N	\N	01010000204212000000B623D8E80648C0338AE85888A22FC0	56	19	1
+278	2018-10-14 18:20:15.074067+00	\N	\N	010100002042120000D45745A7510748C02786600BA1A12FC0	56	19	1
+279	2018-10-14 18:20:15.074067+00	\N	\N	0101000020421200001A606B03610748C0F45830B2AD9E2FC0	56	19	1
+280	2018-10-14 18:20:15.074067+00	\N	\N	0101000020421200004C47F9EE320748C022079184B29A2FC0	56	19	1
+281	2018-10-14 18:20:35.950775+00	\N	\N	01010000204212000048EE5812F6E247C0D7B7B5AF2C472FC0	55	19	1
+282	2018-10-14 18:20:58.594033+00	\N	\N	01010000204212000096D3F120970D48C0B72BCA6795BF2FC0	54	19	1
+283	2018-10-14 18:21:40.98769+00	\N	\N	010100002042120000BAE914E8700648C013E2178E660930C0	53	19	1
+284	2018-10-14 18:22:47.855329+00	\N	\N	010100002042120000F25B1FFAF9FE47C0387EA29961EC2FC0	51	19	1
+285	2018-10-14 18:22:47.855329+00	\N	\N	010100002042120000D1DAF6F3ADFE47C0365D6B8DA6F22FC0	51	19	1
+286	2018-10-14 18:23:21.852333+00	\N	\N	010100002042120000834A9B23BBE747C0911613AB6AAB2FC0	50	19	1
+287	2018-10-14 18:24:26.424977+00	\N	\N	0101000020421200004CC9BA8B0ED747C0A22DD7A2313F2FC0	5	19	1
+288	2018-10-14 18:24:26.424977+00	\N	\N	0101000020421200008BF8F020D6D647C022574C0FD3412FC0	5	19	1
+289	2018-10-14 18:25:11.522782+00	\N	\N	010100002042120000B429D138BD0B48C09FE45EE2AA0030C0	48	19	1
+290	2018-10-14 18:26:17.059278+00	\N	\N	0101000020421200005CC727EBFD1148C0E1F906005EC52FC0	47	19	1
+291	2018-10-14 18:26:17.059278+00	\N	\N	0101000020421200005F6A85B5B2E947C0FAD304BE1C4E2FC0	46	19	1
+292	2018-10-14 18:27:00.346742+00	\N	\N	01010000204212000050FCF94434D747C06FE1948726382FC0	45	19	1
+293	2018-10-14 18:27:44.637944+00	\N	\N	010100002042120000ADBF4B9A83D047C0718C0611ED3E2FC0	44	19	1
+294	2018-10-14 18:27:44.637944+00	\N	\N	010100002042120000937ABCB5CED047C0C213B93FFF342FC0	44	19	1
+295	2018-10-14 18:30:10.634296+00	\N	\N	01010000204212000056187B80BBF347C0DCB7DC062D942FC0	43	19	1
+296	2018-10-14 18:30:10.634296+00	\N	\N	010100002042120000DCB517E6F7F347C069AB1620BA932FC0	43	19	1
+297	2018-10-14 18:30:10.634296+00	\N	\N	0101000020421200005C6B5A7798F447C09A556066BB972FC0	43	19	1
+298	2018-10-14 18:30:10.634296+00	\N	\N	01010000204212000059D788F196F547C0C71A0E95949A2FC0	43	19	1
+299	2018-10-14 18:30:10.634296+00	\N	\N	0101000020421200002A60E79770F647C01C64D98A839C2FC0	43	19	1
+300	2018-10-14 18:30:10.634296+00	\N	\N	0101000020421200003C82D1DFC7F647C01126E202979D2FC0	43	19	1
+301	2018-10-14 18:30:10.634296+00	\N	\N	010100002042120000887C24F30AF647C03B7D4C52BBA02FC0	43	19	1
+302	2018-10-14 18:30:10.634296+00	\N	\N	010100002042120000D9EFE4A377F547C09B13A0A23CA02FC0	43	19	1
+303	2018-10-14 18:30:10.634296+00	\N	\N	0101000020421200003C858F9C3BF547C046BB43DAA79F2FC0	43	19	1
+304	2018-10-14 18:30:10.634296+00	\N	\N	010100002042120000380C22FF11F547C0F362E711139F2FC0	43	19	1
+305	2018-10-14 18:30:10.634296+00	\N	\N	0101000020421200000C29522BEDF447C0010F2279B49D2FC0	43	19	1
+306	2018-10-14 18:30:10.634296+00	\N	\N	0101000020421200005C9C12DC59F447C01497E39EBF9B2FC0	43	19	1
+307	2018-10-14 18:30:10.634296+00	\N	\N	01010000204212000012BC7A5931F447C01DDEEF7F6A9C2FC0	43	19	1
+308	2018-10-14 18:30:10.634296+00	\N	\N	0101000020421200001127B10FA3F247C09357B21536972FC0	43	19	1
+309	2018-10-14 18:30:10.634296+00	\N	\N	010100002042120000BFE5511BB5F247C0067A7D0CC3952FC0	43	19	1
+310	2018-10-14 18:31:31.304326+00	\N	\N	010100002042120000A43FE4CE3BFF47C01F455B4CFE8C2FC0	42	19	1
+311	2018-10-14 18:31:31.304326+00	\N	\N	010100002042120000B9DD343395F847C0B95840686CAE2FC0	41	19	1
+312	2018-10-14 18:31:31.304326+00	\N	\N	010100002042120000C66F8D7604D547C01B3D9EABD0302FC0	40	19	1
+313	2018-10-14 18:31:31.304326+00	\N	\N	0101000020421200002377D09081FD47C0F303FAEAFBB12FC0	4	19	1
+314	2018-10-14 18:31:31.304326+00	\N	\N	010100002042120000DE6EAD8690FD47C0777A94B43EB22FC0	4	19	1
+315	2018-10-14 18:31:31.304326+00	\N	\N	0101000020421200004C6B7510B8FD47C00D187875B6B12FC0	4	19	1
+317	2018-10-14 18:32:49.355347+00	\N	\N	0101000020421200001AF5C47F320348C02925288C7BAC2FC0	39	19	1
+319	2018-10-14 18:33:17.829716+00	\N	\N	010100002042120000CE14C794CF0F48C082D8C9E7CA912FC0	38	19	1
+320	2018-10-14 18:33:17.829716+00	\N	\N	01010000204212000054C004FF53F647C070251A5963902FC0	37	19	1
+321	2018-10-14 18:34:34.307821+00	\N	\N	010100002042120000ED50E842A1DB47C03DBD6BE231462FC0	35	19	1
+322	2018-10-14 18:34:34.307821+00	\N	\N	010100002042120000576D5E22DEEE47C007AECEE95AAC2FC0	85	19	1
+323	2018-10-14 18:34:54.38602+00	\N	\N	0101000020421200002A315933A2FA47C096779C8535BA2FC0	33	19	1
+324	2018-10-14 18:35:18.347507+00	\N	\N	010100002042120000E4580B95110548C0A736A47146C22FC0	32	19	1
+325	2018-10-14 18:35:41.797325+00	\N	\N	010100002042120000E3F32E08B1D247C0E56DC0957C572FC0	31	19	1
+326	2018-10-14 18:36:20.369763+00	\N	\N	010100002042120000942BEC21FA0948C015AD67C24DA22FC0	30	19	1
+327	2018-10-14 18:37:08.392586+00	\N	\N	010100002042120000EFD344AFE7E047C024976A028FD02FC0	3	19	1
+328	2018-10-14 18:38:00.652064+00	\N	\N	010100002042120000E02DC241D6FE47C04A0A37BB62F32FC0	29	19	1
+329	2018-10-14 18:38:00.652064+00	\N	\N	0101000020421200004AE477E3EBE747C014854377114B2FC0	28	19	1
+330	2018-10-14 18:38:00.652064+00	\N	\N	010100002042120000630454DEE7E747C034DCA56CC64A2FC0	28	19	1
+331	2018-10-14 18:38:21.848033+00	\N	\N	010100002042120000CA79B20BB70048C03936F1F7DF0330C0	27	19	1
+36	2019-09-08 03:57:19.35888+00	2018-12-20 17:11:51.387405+00	\N	010100002042120000980F41281AF547C0DC24674D01AC2FC0	13	14	1
+336	2019-03-08 14:59:49.052137+00	\N	\N	0104000020421200000100000001010000005E1B11D3D50648C0577FFE9EA7B02FC0	72	6	1
+337	2019-03-08 14:59:49.052137+00	\N	\N	0104000020421200000100000001010000003E25BDAAF10648C074FB4CD2D0B02FC0	72	20	1
+338	2019-03-08 14:59:49.052137+00	\N	\N	0104000020421200000100000001010000005E39AE22DB0648C0204C81C107B22FC0	72	13	1
+339	2019-03-08 14:59:49.052137+00	\N	\N	010400002042120000010000000101000000F7C7F5DFF90648C00B981A5C1FB12FC0	72	12	1
+340	2019-03-08 14:59:49.052137+00	\N	\N	01040000204212000001000000010100000083FAF8B3FE0648C032C3535F28B12FC0	72	14	1
+341	2019-03-08 14:59:49.052137+00	\N	\N	010400002042120000010000000101000000E81F60D4FF0648C0FCD1E70020B12FC0	72	12	1
+342	2019-03-08 14:59:49.052137+00	\N	\N	010400002042120000010000000101000000374AAFBEDC0648C00BF7919CD3B12FC0	72	22	1
+343	2019-03-08 14:59:49.052137+00	\N	\N	0104000020421200000100000001010000006DCF3706D60648C0055CE132D3B12FC0	72	14	1
+344	2019-03-08 14:59:49.052137+00	\N	\N	010400002042120000010000000101000000DAF8DE6DEF0648C0DF5F82DB3CB12FC0	72	3	1
+345	2019-03-08 14:59:49.052137+00	\N	\N	010400002042120000010000000101000000F80024BBEA0648C0B117729E66B12FC0	72	3	1
+346	2019-03-08 14:59:49.052137+00	\N	\N	010400002042120000010000000101000000847B6E92060748C0D2CBDEE2C3B12FC0	72	23	1
+347	2019-03-08 15:00:46.829404+00	\N	\N	0105000020421200000100000001020000000B00000061115C47CB0648C03768FEFED9B02FC08DD4AAE4FE0648C0D00A43753BB12FC0F6294C0E010748C0E438AB2E4CB12FC04F249135020748C02D234FBF6AB12FC012E00413030748C04151B7787BB12FC0405DA7A6030748C0E2A63C1F84B12FC08BFC8FCB030748C09E69C3C2AAB12FC0405DA7A6030748C0C5363024B5B12FC08C681D58010748C0C6C59335CCB12FC024137C2EFF0648C01A10A32AD7B12FC019903A45F90648C0DAF3FBEEDCB12FC0	72	10	1
+348	2019-03-08 15:00:46.829404+00	\N	\N	01050000204212000001000000010200000003000000B60DA5D2060748C03EBF4869B3B12FC0ACF6F075FE0648C0AF7964598DB12FC013E00413030748C06ECE590C7CB12FC0	72	10	1
+349	2019-03-08 15:00:46.829404+00	\N	\N	0105000020421200000100000001020000000200000055D4C667F80648C0DCF606ED8DB12FC02AC3B160F50648C07D4C8C9396B12FC0	72	10	1
+350	2019-03-08 15:00:46.829404+00	\N	\N	01050000204212000001000000010200000008000000BA514D78FF0648C00D21D4B4D3B12FC027EB9647FA0648C05FDC7F98C7B12FC055D4C667F80648C006E23A71C6B12FC0A59481ADD70648C08C59222CC8B12FC0819F2F65C80648C0A28A95E389B12FC0B1F4EC11C40648C0F96613E85CB12FC0A12D0383C50648C04354C2762CB12FC016727322CB0648C091624326DBB02FC0	72	10	1
+351	2019-03-08 15:00:46.829404+00	\N	\N	0105000020421200000100000001020000000A000000B412B434F20648C0325FDD04C7B12FC00CA16BCFF50648C031D079F3AFB12FC0EE7E253EF60648C0D0969B88A1B12FC0C10183AAF50648C07C4C8C9396B12FC022188B90EA0648C0A83ACB1580B12FC06ADF589CEF0648C072EF2B2D5BB12FC095F06DA3F20648C00656E25D60B12FC067073E83F40648C0789F615F51B12FC00A35DE42F80648C0BE6B3ECD41B12FC0711EF2DFFC0648C0C31B74FF37B12FC0	72	10	1
+352	2019-03-08 15:00:46.829404+00	\N	\N	010500002042120000010000000102000000060000006ADF589CEF0648C072EF2B2D5BB12FC003F644FFEA0648C0B8BB089B4BB12FC0169549A7E40648C084FFCCC33DB12FC0DBBC4A11E30648C023C6EE582FB12FC060C8A43FE70648C0E8CA193E14B12FC0AB678D64E70648C0AE5EA83410B12FC0	72	10	1
+353	2019-03-08 15:00:46.829404+00	\N	\N	01050000204212000001000000010200000005000000ADD31AF1E40648C057822A303DB12FC0A150D907DF0648C0B62CA58934B12FC01C457FD9DA0648C016D71FE32BB12FC0FF8EC6D4D80648C002A9B7291BB12FC03A67C56ADA0648C053D5FFFBF7B02FC0	72	10	1
+354	2019-03-08 15:00:46.829404+00	\N	\N	0105000020421200000100000001020000000200000077AB518DD90648C0A8AE72021AB12FC0637DE9D3C80648C00D09238E07B12FC0	72	10	1
+355	2019-03-08 15:00:46.829404+00	\N	\N	01050000204212000001000000010200000005000000A59481ADD70648C03F4EAC7ACAB12FC07917DF19D70648C0A319F9F4A0B12FC0C4B6C73ED70648C014D414E57AB12FC0B4EFDDAFD80648C0314421E049B12FC0FF8EC6D4D80648C0D52B15961AB12FC0	72	10	1
+356	2019-03-08 15:00:46.829404+00	\N	\N	0105000020421200000100000001020000000600000003F644FFEA0648C0A83ACB1580B12FC01801D733E20648C05B2F556482B12FC0DF00F3B6DB0648C088ACF7F782B12FC000FB5361D60648C04E4086EE7EB12FC0DC050219C70648C061DF8A9678B12FC06950F58AD80648C03E33F0554DB12FC0	72	10	1
+357	2019-03-08 19:22:36.641508+00	\N	\N	010400002042120000010000000101000000209BEE6BD80648C0B5939EAB4EB12FC0	72	10	1
+358	2019-04-24 19:57:10.103972+00	\N	teste	010100002042120000D0CA5A7EB4EE47C0387E302FDDA82FC0	12	18	1
+359	2019-04-24 19:57:55.018182+00	\N	teste	010100002042120000FC8A981317EF47C0206CCF3D86A82FC0	12	18	1
+361	2019-06-18 18:50:35.499445+00	2019-06-24 13:06:22.676915+00	\N	010100002042120000E9F010C64F0348C0A759A0DD21B52FC0	1	24	1
+363	2019-07-04 18:23:47.96735+00	2019-07-04 18:24:05.084555+00	\N	01010000204212000088307E1AF70248C067F3380CE6B72FC0	1	17	1
+362	2019-07-04 18:23:41.249652+00	2019-07-04 18:24:05.085777+00	\N	010100002042120000548B8862F20248C01AC40776FCB72FC0	1	17	1
+364	2019-07-04 18:28:11.715623+00	\N	\N	01010000204212000079CE16105A0948C06F2F698CD6A12FC0	30	25	1
+372	2019-07-16 14:44:46.710719+00	2019-07-16 14:45:00.190158+00	\N	0101000020421200006E30D461850348C0CA1AF5108DB62FC0	1	4	1
+373	2019-07-16 14:45:51.045338+00	2019-07-16 14:46:38.361327+00	\N	010100002042120000ED444948A40348C069705B5B78B62FC0	1	7	1
+374	2019-08-01 13:44:23.823466+00	\N	\N	0101000020421200005E2BA1BB240848C043AA285E650130C0	8	18	1
+375	2019-08-01 13:44:23.887212+00	\N	\N	0101000020421200005E2BA1BB240848C043AA285E650130C0	8	18	1
+376	2019-08-01 14:23:28.043254+00	\N	\N	010100002042120000E560360186ED47C0F33977BB5E9A2FC0	58	10	1
+366	2019-07-04 19:47:50.943965+00	2019-08-28 14:10:56.641173+00	\N	010100002042120000E09F5225CA0248C0A7EB89AE0BB72FC0	1	25	1
+122	2019-09-08 03:57:19.35888+00	2019-08-28 14:11:34.21816+00	\N	01010000204212000060284FD2CB0248C0480141D6E0B82FC0	1	9	1
+206	2018-10-14 17:40:43.7845+00	2019-08-28 14:11:34.226262+00	\N	0101000020421200009CB2BA8FEF0248C0309378D688B82FC0	1	19	1
+371	2019-07-10 21:09:49.203538+00	2019-08-28 14:11:34.248491+00	\N	010100002042120000F67B629D2A0348C093E2E313B2B32FC0	1	3	1
+365	2019-07-04 19:03:39.802508+00	2019-08-28 14:11:34.254627+00	\N	010100002042120000E013EB54F90248C004CB113290B72FC0	1	8	1
+377	2019-08-28 18:34:16.493402+00	2019-08-28 18:35:04.488343+00	\N	01010000204212000087C1FC15320348C0A10F96B1A1B32FC0	1	24	1
+383	2019-09-08 03:42:57.718016+00	\N	\N	0101000020421200009D66817687D447C0639CBF0985382FC0	40	6	\N
+388	2019-09-10 18:49:30.635638+00	\N	\N	01010000204212000017D7F84CF6D347C0D8497D59DA292FC0	79	6	\N
+393	2021-05-04 13:49:39.255939+00	\N	\N	01010000204212000099F38C7DC9EA47C01841632651F72FC0	26	17	\N
+394	2021-05-04 13:51:23.217127+00	\N	\N	010100002042120000639CBF0985EA47C045F12A6B9B8A2FC0	2	2	\N
+395	2021-05-04 13:51:46.721582+00	\N	\N	010100002042120000AFEE586C93EA47C0AA9CF6949C8B2FC0	2	18	\N
+396	2021-05-04 13:52:11.184585+00	\N	\N	0101000020421200005C8E57207AEA47C040A374E95F8A2FC0	2	14	\N
+397	2021-05-04 13:52:55.067967+00	\N	\N	010100002042120000473CD9CD8CEA47C0705B5B785E8A2FC0	2	6	\N
+398	2021-05-04 13:53:15.122148+00	\N	\N	0101000020421200002502D53F88EA47C065C405A0518A2FC0	2	14	\N
+399	2021-05-04 13:56:33.431902+00	\N	\N	010100002042120000130EBDC5C3E747C0A7E7DD5850982FC0	70	20	\N
+400	2021-05-04 13:57:01.145821+00	\N	\N	010100002042120000B329577897E747C0FA2AF9D85D982FC0	70	22	\N
+401	2021-05-04 13:57:49.203562+00	\N	\N	01010000204212000074ED0BE885E747C0C03C64CA87982FC0	70	12	\N
+402	2021-05-04 13:59:18.265192+00	\N	\N	010100002042120000CB85CABF96E747C0FC51D4997B982FC0	70	21	\N
+403	2021-05-04 19:06:23.179989+00	\N	\N	010100002042120000DD06B5DFDAD747C0079B3A8F8A2F2FC0	79	22	\N
+404	2021-05-04 19:06:33.168628+00	\N	\N	010100002042120000F12A6B9BE2D747C0BD0166BE832F2FC0	79	14	\N
+405	2021-05-04 20:17:09.660828+00	\N	\N	010100002042120000F646AD307DED47C0E99C9FE238A82FC0	12	14	\N
+406	2021-05-04 20:17:17.285042+00	\N	\N	010100002042120000F4DE180280ED47C09CA73AE466A82FC0	12	2	\N
+407	2021-05-04 20:18:10.893288+00	\N	\N	0101000020421200006919A9F754EE47C055F65D11FCA72FC0	12	9	\N
+408	2021-05-11 20:22:12.780844+00	\N	\N	010100002042120000AA7CCF4884D447C03EEAAF5758382FC0	40	22	\N
+409	2021-05-11 20:23:01.736384+00	\N	\N	010100002042120000C9E6AA798ED447C0CC423BA759382FC0	40	21	\N
+410	2021-05-11 20:23:24.743068+00	\N	\N	010100002042120000C9E6AA798ED447C08BAA5FE97C382FC0	40	26	\N
+411	2021-05-11 20:24:16.295381+00	\N	\N	0101000020421200005DC2A1B778D447C022E2E65432382FC0	40	18	\N
+412	2021-05-11 20:24:25.964894+00	\N	\N	010100002042120000F9D85DA0A4D447C00EDB166536382FC0	40	10	\N
+413	2021-05-11 20:24:33.436494+00	\N	\N	010100002042120000BD38F1D58ED447C044A2D0B2EE372FC0	40	17	\N
+378	2019-09-03 17:44:04.134301+00	\N	\N	010100002042120000C4EC65DB69F147C00038F6ECB97C2FC0	17	21	1
+414	2021-05-25 19:45:26.667893+00	\N	\N	0101000020421200001406651A4DD047C0139CFA40F2562FC0	19	17	\N
+415	2021-05-25 19:53:32.44155+00	\N	\N	0101000020421200005F984C158CEE47C059A7CAF78CAC2FC0	85	10	\N
+416	2021-05-25 19:53:35.778826+00	\N	\N	010100002042120000103CBEBD6BEE47C0E2E6543200AC2FC0	85	9	\N
+417	2021-05-25 20:08:35.034491+00	\N	\N	0101000020421200007E569929AD0348C0A4DE5339EDA92FC0	39	22	\N
+418	2021-05-25 20:09:01.526002+00	\N	\N	010100002042120000460A65E1EB0348C0AB5CA8FC6BA92FC0	39	22	\N
+419	2021-05-25 20:09:05.719828+00	\N	\N	010100002042120000FAB7CB7EDD0348C0834E081D74A92FC0	39	23	\N
+420	2021-05-25 20:09:54.209078+00	\N	\N	01010000204212000032755776C10248C0AA2B9FE579A82FC0	39	21	\N
+421	2021-05-27 11:40:50.380722+00	\N	\N	0101000020421200000A4CA7751B0848C08C4AEA04340130C0	8	21	\N
+422	2021-05-27 11:40:58.222154+00	\N	\N	010100002042120000529ACDE3300848C00DDE57E5420130C0	8	10	\N
+423	2021-05-27 11:41:13.629659+00	\N	\N	01010000204212000018963FDF160848C0FA97A432C50030C0	8	17	\N
+424	2021-06-09 14:58:59.744278+00	\N	\N	010100002042120000AA0CE36E10E547C00876FC17089A2FC0	93	17	\N
 \.
 
 
@@ -6022,7 +7033,37 @@ COPY public.parque_benfeitoria (id, created_at, deleted_at, descricao, geom, par
 -- Data for Name: parque_contatoparque; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.parque_contatoparque (id, created_at, deleted_at, endereco, email, telefone, responsavel, parque_id, user_id) FROM stdin;
+COPY public.parque_contatoparque (id, created_at, deleted_at, endereco, email, telefone, parque_id, user_id, responsavel) FROM stdin;
+1	2018-10-12 17:59:29+00	\N	AE- Taguatinga Sul		(61) 3352-2102	72	1	
+2	2018-10-12 18:07:58+00	\N	SHIS QL 30 - Lago Sul		(61) 3367-4965	70	1	
+3	2018-10-12 18:10:55+00	\N	Módulo I - CA SHIN Lago Norte		(61) 3468-5769	66	1	
+4	2018-10-12 18:12:39+00	\N	QE 23, Guará II		(61) 3382-7176	64	1	
+5	2018-10-12 18:14:59+00	\N	2ª/4ª Avenidas Sudoeste		(061)3214-5642	61	1	
+6	2018-10-12 18:21:18+00	\N	Quadras 609 à 611 Samambaia		(61) 3459-2806	54	1	
+7	2018-10-12 18:22:55+00	\N	Boa Vista - DVO - Gama		(61) 9951-2016	53	1	
+8	2018-10-12 18:28:54+00	\N	Eixo Monumental		(61) 3325-1092	43	1	
+9	2018-10-12 18:30:12+00	\N	Estrutural		(061) 3214-5642	42	1	
+10	2018-10-12 18:34:48+00	\N	Planaltina		(061) 3214-5642	40	1	
+11	2018-10-12 19:52:02+00	\N	Av. Castanheiras - Centro		(61) 3436-7229	39	1	
+12	2018-10-12 19:54:41+00	\N	Setor O		(061) 3214-5642	38	1	
+13	2018-10-12 19:58:30+00	\N	SHIS QL 14 - Lago Sul		(061) 3214-5642	34	1	
+14	2018-10-12 20:00:30+00	\N	Riacho Fundo		(061) 3214-5642	32	1	
+15	2018-10-12 20:01:59+00	\N	QNF/QNL Taguatinga		(61) 3354-0651	30	1	
+16	2018-10-12 20:09:27+00	\N	BR 251/DF 140		(061) 3214-5642	20	1	
+17	2018-10-12 20:11:23+00	\N	Núcleo Rural Santos Dumont - Planaltina		(61) 9909-3918	19	1	
+18	2018-10-12 20:16:30+00	\N	SQN 413/414		(61) 3349-5793	17	1	
+19	2018-10-12 20:17:48+00	\N	Quadras 02 e 03 Paranoá		(61) 3369-8502	16	1	
+20	2018-10-12 20:19:22+00	\N	Entre as Quadras 3 e 12 - Brazlândia		(61) 3391-6471	15	1	
+21	2018-10-12 20:21:02+00	\N	SGAS 613/614		(61) 3345-4859	13	1	
+22	2018-10-12 20:22:09+00	\N	SHIS QL 12 - Lago Sul		(061) 3214-5642	12	1	
+23	2018-10-12 20:24:56+00	\N	Quadra 311 Recanto das Emas		(061) 3214-5642	10	1	
+24	2018-10-12 20:26:07+00	\N	Quadra 10/11, Av. do Contorno - Sobradinho		(61) 3591-4049	9	1	
+25	2018-10-12 20:27:20+00	\N	Gama		(061) 3214-5642	8	1	
+26	2018-10-12 20:28:39+00	\N	Área Especial 3 - Núcleo Urbano - Fazenda Sobradinho		(061) 3214-5642	6	1	
+27	2018-10-12 20:31:53+00	\N	São Sebastião		(061) 3214-5642	3	1	
+28	2018-10-12 20:32:22+00	\N	QI 15/16 - Lago Norte		(061) 3214-5642	2	1	
+29	2018-10-12 20:33:20+00	\N	Quadras QS6/QS8 - Taguatinga		(061) 3214-5642	1	1	
+30	2018-10-14 16:42:46+00	\N	Setor de Mansões Dom Bosco, Área Especial, Lago Sul		(61) 3366-5597	81	1	
 \.
 
 
@@ -6031,14 +7072,67 @@ COPY public.parque_contatoparque (id, created_at, deleted_at, endereco, email, t
 --
 
 COPY public.parque_imagematrativoparque (id, created_at, deleted_at, autor, imagem, atrativo_id, user_id) FROM stdin;
-\.
-
+1	2021-07-16 17:37:41.795933+00	\N	\N	atrativoimagens/icon_xieIqTs.jpg	172	\N
 
 --
 -- Data for Name: parque_imagemparque; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.parque_imagemparque (id, created_at, deleted_at, autor, imagem, parque_id, user_id) FROM stdin;
+2	2019-05-22 17:28:22.415273+00	2019-07-10 20:53:37.633505+00		parque/ftagua_1.jpg	78	1
+1	2019-05-22 17:28:03.638438+00	2019-07-31 17:53:45.251806+00		parque/ftagua_0.jpg	78	1
+3	2019-09-03 20:21:51.730099+00	\N		parque/Jequitibas004.jpg	9	1
+4	2019-09-04 20:00:43.788509+00	2019-09-04 20:00:56.403005+00	\N	parque/onca_pintada.png	1	32
+5	2019-09-04 21:26:25.78343+00	2019-09-04 21:26:32.959516+00	\N	parque/arte.jpg	1	29
+6	2019-09-18 20:08:42.934961+00	2019-09-18 20:10:52.785081+00	desconhecido	parque/WhatsApp_Image_2019-07-10_at_12.17.12.jpeg	17	\N
+8	2019-10-09 13:43:24.7893+00	2019-10-09 13:43:36.414994+00	\N	parque/esquema-git.jpg	1	\N
+7	2019-09-18 20:11:16.240819+00	2019-10-18 17:24:09.136527+00	Brasília Ambiental	parque/WhatsApp_Image_2019-09-18_at_13.21.58.jpeg	17	\N
+9	2019-10-18 17:25:34.063402+00	\N	\N	parque/od.jpeg	17	\N
+10	2019-10-18 17:25:44.381934+00	\N	\N	parque/od2.jpeg	17	\N
+11	2019-10-18 17:25:55.957777+00	\N	\N	parque/od3.jpeg	17	\N
+12	2019-10-18 17:26:06.989754+00	\N	\N	parque/od4.jpeg	17	\N
+13	2019-10-18 17:26:20.301323+00	\N	\N	parque/od5.jpeg	17	\N
+14	2019-10-18 17:26:39.09392+00	\N	\N	parque/od6.jpeg	17	\N
+15	2019-10-18 17:26:56.062359+00	\N	\N	parque/od7.jpeg	17	\N
+16	2019-10-18 17:27:05.930269+00	\N	\N	parque/od8.jpeg	17	\N
+17	2019-10-18 17:27:18.489241+00	\N	\N	parque/od9.jpeg	17	\N
+18	2019-11-29 14:03:17.425114+00	\N	\N	parque/WhatsApp_Image_2019-11-22_at_22.04.58.jpeg	65	\N
+19	2019-11-29 14:03:34.358641+00	\N	\N	parque/WhatsApp_Image_2019-11-22_at_18.19.17.jpeg	65	\N
+20	2019-11-29 14:03:57.4351+00	\N	\N	parque/WhatsApp_Image_2019-11-26_at_21.36.47.jpeg	65	\N
+21	2019-11-29 14:04:12.317014+00	\N	\N	parque/WhatsApp_Image_2019-11-27_at_15.30.35.jpeg	65	\N
+22	2019-11-29 14:04:25.874967+00	\N	\N	parque/WhatsApp_Image_2019-11-22_at_18.31.18.jpeg	65	\N
+23	2019-11-29 14:04:37.582388+00	\N	\N	parque/WhatsApp_Image_2019-11-22_at_18.31.22.jpeg	65	\N
+24	2019-11-29 14:04:48.526578+00	\N	\N	parque/WhatsApp_Image_2019-11-26_at_18.05.00.jpeg	65	\N
+26	2019-12-11 19:39:30.81615+00	2019-12-11 19:40:32.480423+00	lalalaa	parque/72469498_2427396824142962_7693626933226666204_n.jpg	1	\N
+27	2021-03-24 18:46:57.663034+00	\N		parque/WhatsApp_Image_2021-03-19_at_16.37.14.jpeg	32	\N
+28	2021-03-24 18:47:15.436455+00	\N		parque/WhatsApp_Image_2021-03-19_at_16.37.13.jpeg	32	\N
+29	2021-03-24 18:47:52.264722+00	\N		parque/WhatsApp_Image_2021-03-19_at_16.37.11.jpeg	32	\N
+30	2021-03-24 18:48:19.462502+00	\N		parque/WhatsApp_Image_2021-03-19_at_16.37.10.jpeg	32	\N
+31	2021-03-24 18:48:33.380922+00	\N		parque/WhatsApp_Image_2021-03-19_at_16.37.09.jpeg	32	\N
+32	2021-03-24 18:48:47.477325+00	\N		parque/WhatsApp_Image_2021-03-19_at_16.37.07.jpeg	32	\N
+33	2021-03-24 18:49:15.189105+00	\N		parque/WhatsApp_Image_2021-03-19_at_16.37.06.jpeg	32	\N
+34	2021-03-24 18:49:34.402761+00	\N		parque/WhatsApp_Image_2021-03-19_at_16.37.05.jpeg	32	\N
+35	2021-03-24 18:49:48.5195+00	\N		parque/WhatsApp_Image_2021-03-19_at_16.37.04.jpeg	32	\N
+36	2021-03-24 18:50:03.872396+00	\N		parque/WhatsApp_Image_2021-03-19_at_16.37.02.jpeg	32	\N
+37	2021-03-24 18:50:27.384743+00	\N		parque/WhatsApp_Image_2021-03-19_at_16.37.01.jpeg	32	\N
+38	2021-03-24 18:50:41.118074+00	\N		parque/WhatsApp_Image_2021-03-19_at_16.37.00.jpeg	32	\N
+39	2021-03-24 18:50:55.296158+00	\N		parque/WhatsApp_Image_2021-03-19_at_16.36.59.jpeg	32	\N
+40	2021-05-03 19:21:04.995546+00	\N	\N	parque/Brasília_Circuito_das_Águas.png	2	\N
+41	2021-05-03 19:23:55.112305+00	2021-05-04 13:14:32.596873+00	\N	parque/Brasília_Circuito_das_Águas_eLyKjYW.png	2	\N
+42	2021-05-04 13:17:54.77999+00	\N	\N	parque/Brasília_Circuito_das_Águas_5ypKQ7Y.png	17	\N
+43	2021-05-04 13:49:58.694298+00	\N	\N	parque/Brasília_Circuito_ds_Águas_a1r5cXD.png	26	\N
+44	2021-05-04 13:55:36.732047+00	\N	\N	parque/Brasília_Circuito_das_Águas_5d6NZ5a.png	70	\N
+45	2021-05-04 19:09:26.1692+00	\N	\N	parque/Brasília_Circuito_das_Águas_jfDzZps.png	79	\N
+46	2021-05-04 20:15:42.145545+00	\N	\N	parque/Brasília_Circuito_das_Águas_HH8aEUw.png	12	\N
+25	2019-11-29 14:17:27.989753+00	2021-05-05 19:07:39.738584+00	\N	parque/WhatsApp_Image_2019-11-27_at_17.12.21.jpeg	65	\N
+47	2021-05-05 19:08:06.016265+00	2021-05-06 14:07:53.884631+00	\N	parque/WhatsApp_Image_2021-05-05_at_15.05.29.jpeg	65	\N
+48	2021-05-06 14:09:23.305059+00	\N	Marcus Paredes	parque/WhatsApp_Image_2021-05-06_at_10.43.17.jpeg	65	\N
+49	2021-05-06 14:10:27.489934+00	\N	\N	parque/Brasília_Circuito_das_Águas_jeX6e1F.png	65	\N
+50	2021-05-25 19:43:08.646401+00	\N	\N	parque/Brasília_Circuito_das_Águas_O9dV1DU.png	66	\N
+51	2021-05-25 19:45:48.824348+00	\N	\N	parque/Brasília_Circuito_das_Águas_o1Lrt4f.png	19	\N
+52	2021-05-25 19:54:13.419632+00	\N	\N	parque/Brasília_Circuito_das_Águas_WrRI9Pd.png	34	\N
+53	2021-06-09 14:49:29.266976+00	\N	\N	parque/Brasília_Circuito_das_Águas_1D7Ky5F.png	92	\N
+54	2021-06-09 14:59:44.36046+00	\N	\N	parque/Brasília_Circuito_das_Águas_MhUEAZM.png	93	\N
 \.
 
 
@@ -6216,6 +7310,10 @@ COPY public.parque_tipobenfeitoria (id, created_at, deleted_at, nome, icone, use
 --
 
 COPY public.parque_videoatrativoparque (id, created_at, deleted_at, nome, autor, url, atrativo_id, user_id) FROM stdin;
+2	2021-07-16 17:43:15.122191+00	\N	\N	\N	https://www.youtube.com/embed/Rj_N0U16xz0	172	\N
+1	2021-07-16 17:39:57.959218+00	2021-07-16 17:44:42.124226+00	\N	\N	\N	172	\N
+3	2021-07-16 17:45:12.310116+00	2021-07-16 17:45:17.479797+00	\N	\N	https://www.youtube.com/embed/Rj_N0U16xz0	172	\N
+4	2021-07-16 17:45:32.458371+00	\N	\N	\N	https://www.youtube.com/embed/Rj_N0U16xz0	172	\N
 \.
 
 
@@ -6673,6 +7771,7 @@ COPY public.spatial_ref_sys (srid, auth_name, auth_srid, srtext, proj4text) FROM
 --
 
 COPY public.trilha_atrativotrilha (id, created_at, deleted_at, descricao, limitacao, geom, tipo_atrativo_id, trilha_id, user_id, cor) FROM stdin;
+26	2021-09-30 19:30:28.747721+00	2021-09-30 19:33:08.305669+00	\N	\N	01010000204212000018946934B90648C0D07EA4880C2B2FC0	4	7	\N	#fffb00
 \.
 
 
@@ -6854,6 +7953,58 @@ COPY public.trilha_trilha_3d (id, created_at, deleted_at, nome, geom3d, user_id)
 --
 
 COPY public.trilha_trilha_atividades (id, trilha_id, tipoatividade_id) FROM stdin;
+1	48	5
+2	48	6
+3	48	7
+4	49	5
+5	49	6
+6	49	7
+7	50	5
+8	51	5
+9	47	5
+12	27	5
+13	27	6
+14	27	7
+15	27	8
+16	28	5
+17	11	5
+18	11	7
+19	16	5
+20	53	5
+21	54	5
+22	14	5
+23	15	5
+24	20	5
+25	23	5
+26	26	5
+27	30	5
+28	46	7
+29	17	5
+30	55	5
+31	56	5
+32	55	7
+33	29	5
+34	57	5
+35	58	5
+36	25	5
+37	59	5
+38	60	5
+39	60	6
+40	61	5
+41	61	6
+42	33	8
+43	33	5
+44	33	6
+45	33	7
+46	115	8
+47	115	5
+48	115	6
+49	115	7
+50	116	5
+51	116	6
+52	116	7
+53	119	9
+54	119	5
 \.
 
 
@@ -6862,6 +8013,331 @@ COPY public.trilha_trilha_atividades (id, trilha_id, tipoatividade_id) FROM stdi
 --
 
 COPY public.trilha_trilha_parques (id, trilha_id, parque_id) FROM stdin;
+280	7	76
+281	8	81
+282	9	78
+283	10	78
+284	11	17
+285	11	13
+286	13	70
+287	14	39
+288	15	30
+289	16	13
+290	17	64
+291	18	70
+292	19	78
+294	20	9
+295	21	76
+296	22	81
+297	25	54
+298	26	19
+299	27	86
+300	28	78
+301	29	78
+302	30	62
+303	31	78
+304	32	82
+305	33	76
+306	33	40
+307	33	79
+308	37	83
+309	37	76
+310	37	78
+311	38	83
+312	38	58
+313	38	16
+314	38	76
+315	38	78
+316	38	74
+317	38	65
+318	38	70
+319	40	76
+320	41	79
+321	46	70
+322	51	82
+323	51	84
+324	52	76
+325	52	82
+326	52	79
+327	52	46
+328	52	84
+329	55	76
+330	55	78
+331	57	65
+332	59	26
+333	62	78
+334	64	32
+335	64	60
+336	64	76
+337	64	86
+338	65	32
+339	65	76
+340	65	86
+341	65	60
+342	66	43
+343	66	29
+344	66	51
+345	66	26
+346	66	78
+347	66	64
+348	66	39
+349	66	81
+350	66	76
+351	67	78
+352	67	39
+353	67	81
+354	67	26
+355	67	29
+356	67	43
+357	67	51
+358	67	64
+359	67	76
+360	68	81
+361	68	69
+362	68	32
+363	68	60
+364	68	74
+365	68	72
+366	68	52
+367	68	76
+368	68	86
+369	68	20
+370	68	47
+371	69	72
+372	69	69
+373	69	47
+374	69	60
+375	69	20
+376	69	32
+377	69	76
+378	69	81
+379	69	74
+380	69	86
+381	69	52
+382	70	78
+383	70	56
+384	70	70
+385	70	42
+386	70	60
+387	70	75
+388	70	65
+389	70	63
+390	70	43
+391	70	21
+392	70	81
+393	70	37
+394	70	76
+395	70	67
+396	70	50
+397	71	62
+398	71	74
+399	71	56
+400	71	24
+401	71	76
+402	71	81
+403	71	78
+404	71	60
+405	71	73
+406	72	60
+407	72	74
+408	72	73
+409	72	24
+410	72	78
+411	72	81
+412	72	56
+413	72	76
+414	72	62
+415	73	40
+416	73	79
+417	73	76
+418	74	76
+419	74	40
+420	74	79
+421	75	1
+422	75	73
+423	75	75
+424	75	81
+425	75	76
+426	75	72
+427	75	78
+428	75	74
+429	76	73
+430	76	75
+431	76	1
+432	76	78
+433	76	76
+434	76	72
+435	76	81
+436	76	74
+437	77	41
+438	77	76
+439	78	17
+440	78	39
+441	78	76
+442	78	70
+443	78	81
+444	78	78
+445	78	60
+446	79	56
+447	79	71
+448	79	70
+449	79	62
+450	79	39
+451	79	17
+452	79	76
+453	79	65
+454	79	81
+455	80	12
+456	80	86
+457	80	54
+458	80	20
+459	80	50
+460	80	19
+461	80	78
+462	80	76
+463	80	66
+464	80	81
+465	80	36
+466	80	22
+467	81	39
+468	81	69
+469	81	76
+470	83	27
+471	83	42
+472	83	48
+473	83	32
+474	83	50
+475	83	70
+476	83	76
+477	83	1
+478	84	74
+479	84	60
+480	84	16
+481	84	76
+482	85	32
+483	85	76
+484	85	86
+485	85	54
+486	85	20
+487	85	81
+488	86	16
+489	86	86
+490	86	73
+491	86	66
+492	86	74
+493	86	52
+494	87	50
+495	87	25
+496	87	26
+497	87	10
+498	87	47
+499	87	76
+500	87	70
+501	88	43
+502	88	74
+503	88	60
+504	89	78
+505	89	65
+506	89	50
+507	89	37
+508	89	76
+509	89	43
+510	90	70
+511	90	43
+512	90	21
+513	90	78
+514	91	81
+515	91	18
+516	91	21
+517	91	20
+518	92	76
+519	92	50
+520	93	18
+521	93	50
+522	93	85
+523	93	76
+524	93	71
+525	93	73
+526	93	34
+527	93	74
+528	93	60
+529	93	16
+530	94	71
+531	94	41
+532	94	76
+533	95	11
+534	95	74
+535	98	50
+536	99	43
+537	99	67
+538	99	78
+539	100	81
+540	101	76
+541	101	78
+542	102	21
+543	102	70
+544	102	43
+545	103	71
+546	103	16
+547	103	65
+548	103	43
+549	103	73
+550	103	76
+551	103	50
+552	103	67
+553	103	81
+554	103	74
+555	103	69
+556	103	78
+557	104	60
+558	105	76
+559	105	32
+560	105	20
+561	105	1
+562	105	64
+563	105	86
+564	106	76
+565	106	41
+566	107	62
+567	107	64
+568	107	81
+569	107	78
+570	107	69
+571	108	64
+572	108	78
+573	108	3
+574	108	41
+575	108	81
+576	108	74
+577	108	69
+578	108	76
+579	109	23
+580	109	31
+581	109	79
+582	109	83
+583	109	76
+584	109	19
+585	109	40
+586	110	70
+587	110	62
+588	110	12
+589	110	83
+590	111	83
+591	111	62
+592	111	70
+593	111	12
+594	112	65
+595	112	70
+596	112	76
+597	112	2
+598	112	50
+599	112	20
+600	113	21
+601	114	21
+602	115	66
+603	115	2
+604	116	65
+605	119	32
 \.
 
 
@@ -6878,6 +8354,14 @@ COPY public.trilha_videoatrativotrilha (id, created_at, deleted_at, nome, autor,
 --
 
 COPY public.trilha_videoyoutubetrilha (id, created_at, deleted_at, nome, autor, url, trilha_id, user_id) FROM stdin;
+1	2021-06-18 21:21:00.583111+00	\N	\N	\N	https://www.youtube.com/embed/Rj_N0U16xz0	119	1
+2	2021-06-18 21:21:17.237567+00	\N	\N	\N	https://www.youtube.com/embed/E7FKbahXXBQ	119	1
+3	2021-06-18 21:21:33.829587+00	\N	\N	\N	https://www.youtube.com/embed/x9V9kbu3sbs	119	1
+4	2021-06-18 21:21:59.312913+00	\N	\N	\N	https://www.youtube.com/embed/BAq0biBH_WY	119	1
+5	2021-06-18 21:22:19.027025+00	\N	\N	\N	https://www.youtube.com/embed/nLUwmZCUefY	119	1
+6	2021-06-18 21:22:52.739928+00	\N	\N	\N	https://www.youtube.com/embed/7VoUIiusH1U	119	1
+7	2021-06-18 21:23:07.923915+00	\N	\N	\N	https://www.youtube.com/embed/U7HRt5aTkUg	119	1
+8	2021-10-07 17:58:56.875974+00	\N	Trilha Virtual do Ciclo da Água : Passo-a-passo Metodológico	Eduardo Santos, sobre orientação da pesquisa do Prof. Dr. Gustavo Baptista da UnB	https://www.youtube.com/watch?v=Rj_N0U16xz0	118	1
 \.
 
 
@@ -6886,6 +8370,116 @@ COPY public.trilha_videoyoutubetrilha (id, created_at, deleted_at, nome, autor, 
 --
 
 COPY public.trilha_visitantetrilha (id, created_at, deleted_at, trilha_id, user_id, visitante_id, oficial, publico) FROM stdin;
+34	2018-12-13 18:37:08.730286+00	2019-12-18 13:22:48.212522+00	8	1	\N	t	t
+30	2018-12-12 11:09:09.226778+00	2019-12-18 13:22:49.812843+00	8	1	\N	t	t
+15	2018-11-21 16:16:30.445356+00	2019-12-18 13:22:55.138515+00	8	1	1	t	t
+14	2018-11-21 16:16:16.505316+00	2019-12-18 13:22:57.537435+00	8	1	1	t	t
+13	2018-11-21 16:15:48.249345+00	2019-12-18 13:23:27.546522+00	8	1	1	t	t
+12	2018-11-21 16:15:45.98285+00	2019-12-18 13:23:30.198882+00	8	1	1	t	t
+8	2018-11-21 16:15:27.250392+00	2019-12-18 13:23:40.300843+00	8	1	1	t	t
+85	2019-12-18 13:23:56.935269+00	2019-12-18 13:23:59.487555+00	8	32	32	f	f
+86	2020-01-14 18:08:25.573057+00	2020-01-14 18:08:27.023689+00	30	302	302	f	f
+87	2020-01-14 18:08:29.503278+00	\N	30	302	302	f	f
+3	2018-10-15 11:44:57.720718+00	\N	27	1	1	t	t
+4	2018-10-15 11:45:04.118697+00	\N	12	1	1	t	t
+5	2018-10-16 17:01:00.62237+00	\N	12	1	3	t	t
+9	2018-11-21 16:15:33.705333+00	\N	7	1	1	t	t
+10	2018-11-21 16:15:39.008483+00	\N	12	1	1	t	t
+18	2018-11-21 16:19:03.658149+00	2018-11-21 16:23:54.555891+00	8	1	1	t	t
+17	2018-11-21 16:17:29.431771+00	2018-11-21 16:25:21.417411+00	8	1	1	t	t
+19	2018-11-21 16:25:27.0916+00	2018-11-21 16:25:36.144505+00	20	1	1	t	t
+20	2018-11-21 16:25:53.189169+00	2018-11-21 16:26:03.158515+00	19	1	1	t	t
+31	2018-12-13 09:29:09.200617+00	\N	12	1	\N	t	t
+36	2018-12-24 10:28:38.636821+00	2018-12-24 10:28:56.815654+00	8	1	9	t	t
+37	2018-12-24 10:28:57.853318+00	2018-12-24 10:29:01.11255+00	8	1	9	t	t
+41	2019-02-08 18:23:47.871242+00	\N	31	1	\N	t	t
+11	2018-11-21 16:15:44.123334+00	2019-02-14 16:28:01.998938+00	7	1	1	t	t
+42	2019-02-23 15:58:45.078715+00	\N	18	1	\N	t	t
+39	2019-01-13 09:47:50.470638+00	2019-03-04 15:09:12.195673+00	8	1	\N	t	t
+40	2019-01-16 17:18:27.671646+00	2019-03-04 17:09:34.324569+00	10	1	\N	t	t
+44	2019-03-26 19:08:44.651735+00	2019-03-26 19:08:50.19969+00	8	1	84	t	t
+45	2019-03-26 19:10:33.812884+00	\N	27	1	84	t	t
+46	2019-03-26 19:11:40.099999+00	\N	13	1	84	t	t
+47	2019-03-26 19:12:10.360073+00	\N	23	1	84	t	t
+48	2019-03-26 19:22:10.250679+00	\N	21	1	84	t	t
+51	2019-04-29 15:12:08.685764+00	\N	38	1	\N	t	t
+52	2019-05-07 19:59:10.165864+00	\N	25	1	\N	t	t
+53	2019-06-29 12:52:28.398391+00	\N	7	1	\N	t	t
+54	2019-06-29 12:52:30.602533+00	\N	7	1	\N	t	t
+55	2019-06-29 12:52:33.450324+00	\N	7	1	\N	t	t
+56	2019-06-29 12:52:35.433036+00	\N	7	1	\N	t	t
+58	2019-08-29 02:45:40.346152+00	\N	23	1	29	f	f
+59	2019-08-29 02:45:40.872868+00	\N	23	1	29	f	f
+72	2019-10-18 14:12:13.530823+00	\N	7	213	213	f	f
+73	2019-10-18 14:45:35.602223+00	\N	17	213	213	f	f
+74	2019-10-18 14:45:38.677149+00	\N	17	213	213	f	f
+75	2019-10-18 14:45:58.229058+00	\N	17	213	213	f	f
+76	2019-10-21 16:25:16.596387+00	\N	109	225	225	f	f
+77	2019-10-21 19:20:59.519364+00	\N	112	226	226	f	f
+71	2019-10-18 14:11:30.308412+00	2019-10-22 19:16:42.574523+00	8	213	213	f	f
+78	2019-11-11 13:24:09.180051+00	\N	115	282	282	f	f
+79	2019-11-11 13:24:09.354297+00	2019-11-11 13:24:10.634086+00	115	282	282	f	f
+7	2018-10-20 15:39:03.403903+00	2019-12-18 12:54:39.532264+00	30	1	3	t	t
+2	2018-10-15 11:44:51.377758+00	2019-12-18 12:54:42.752307+00	30	1	1	t	t
+1	2018-10-15 11:44:46.037687+00	2019-12-18 12:54:43.931031+00	30	1	1	t	t
+81	2019-12-18 12:55:00.032754+00	2019-12-18 12:55:04.421853+00	30	32	32	f	f
+82	2019-12-18 12:55:15.290526+00	2019-12-18 12:55:17.729123+00	28	32	32	f	f
+21	2018-11-21 16:30:01.063505+00	2019-12-18 13:15:44.587258+00	9	1	1	t	t
+80	2019-12-15 14:41:58.732167+00	2019-12-18 13:15:52.683364+00	116	293	293	f	f
+50	2019-04-25 15:13:39.609915+00	2019-12-18 13:16:28.831078+00	10	1	\N	t	t
+16	2018-11-21 16:16:43.578246+00	2019-12-18 13:16:35.579464+00	10	1	1	t	t
+6	2018-10-16 17:01:09.793603+00	2019-12-18 13:16:39.267738+00	10	1	3	t	t
+83	2019-12-18 13:16:40.609246+00	2019-12-18 13:16:43.159562+00	10	32	32	f	f
+84	2019-12-18 13:16:52.707154+00	\N	53	32	32	f	f
+70	2019-10-18 14:11:29.810276+00	2019-12-18 13:18:31.291315+00	8	213	213	f	f
+69	2019-10-18 14:11:28.996054+00	2019-12-18 13:18:35.59186+00	8	213	213	f	f
+68	2019-10-18 14:11:27.678649+00	2019-12-18 13:18:42.828021+00	8	213	213	f	f
+67	2019-10-18 14:11:26.93982+00	2019-12-18 13:18:44.202323+00	8	213	213	f	f
+66	2019-10-18 14:11:25.807344+00	2019-12-18 13:18:54.751624+00	8	213	213	f	f
+65	2019-10-18 14:11:23.855286+00	2019-12-18 13:19:10.828953+00	8	213	213	f	f
+64	2019-10-18 14:11:20.532584+00	2019-12-18 13:19:12.12648+00	8	213	213	f	f
+63	2019-10-18 14:11:18.944497+00	2019-12-18 13:19:40.218225+00	8	213	213	f	f
+62	2019-10-18 14:11:17.798011+00	2019-12-18 13:19:48.705227+00	8	213	213	f	f
+61	2019-08-29 02:58:18.016483+00	2019-12-18 13:20:03.985197+00	8	1	29	f	f
+60	2019-08-29 02:58:17.937752+00	2019-12-18 13:20:05.488211+00	8	1	29	f	f
+33	2018-12-13 09:30:17.92108+00	2019-12-18 13:20:20.655449+00	22	1	\N	t	t
+32	2018-12-13 09:29:45.580998+00	2019-12-18 13:20:22.446296+00	22	1	\N	t	t
+57	2019-06-30 01:04:44.037859+00	2019-12-18 13:20:34.900778+00	8	1	\N	t	t
+49	2019-04-08 16:11:52.370663+00	2019-12-18 13:20:36.742331+00	8	1	9	t	t
+43	2019-03-07 20:24:13.438012+00	2019-12-18 13:20:38.383396+00	8	1	38	t	t
+38	2019-01-13 09:47:45.726346+00	2019-12-18 13:20:40.639503+00	8	1	\N	t	t
+35	2018-12-17 15:52:17.862354+00	2019-12-18 13:20:53.523093+00	8	1	\N	t	t
+88	2021-03-18 01:57:23.714821+00	\N	8	308	308	f	f
+89	2021-03-18 01:57:24.131454+00	\N	8	308	308	f	f
+90	2021-03-18 01:57:26.098661+00	\N	8	308	308	f	f
+91	2021-03-18 01:57:26.332911+00	\N	8	308	308	f	f
+92	2021-03-18 01:57:27.962194+00	\N	8	308	308	f	f
+93	2021-03-18 01:57:28.104631+00	\N	8	308	308	f	f
+94	2021-03-18 01:57:28.380131+00	\N	8	308	308	f	f
+95	2021-03-18 01:57:29.087215+00	\N	8	308	308	f	f
+96	2021-03-18 01:57:29.295477+00	\N	8	308	308	f	f
+97	2021-04-29 17:19:01.872027+00	\N	14	332	332	f	f
+98	2021-09-23 12:46:26.188423+00	\N	18	383	383	f	f
+99	2021-09-23 12:46:31.526768+00	\N	18	383	383	f	f
+100	2021-09-23 12:46:35.029087+00	\N	18	383	383	f	f
+101	2021-09-23 12:46:55.422066+00	\N	18	383	383	f	f
+102	2021-11-02 18:52:10.223649+00	\N	28	406	406	f	f
+103	2021-11-02 18:52:10.21436+00	\N	28	406	406	f	f
+104	2021-11-02 18:52:12.443673+00	\N	28	406	406	f	f
+105	2021-11-02 18:52:12.544881+00	\N	28	406	406	f	f
+106	2021-11-02 18:52:16.33815+00	\N	28	406	406	f	f
+107	2021-11-02 18:52:16.49967+00	\N	28	406	406	f	f
+108	2021-11-02 18:52:18.389422+00	\N	28	406	406	f	f
+109	2022-01-08 02:32:57.914457+00	\N	9	420	420	f	f
+110	2022-01-08 02:33:00.799361+00	\N	9	420	420	f	f
+111	2022-01-08 02:33:08.454138+00	\N	9	420	420	f	f
+112	2022-01-10 00:04:37.861693+00	\N	119	384	384	f	f
+113	2022-01-10 00:04:38.253922+00	\N	119	384	384	f	f
+114	2022-07-02 18:27:21.360577+00	\N	116	481	481	f	f
+115	2022-07-02 18:27:22.157247+00	\N	116	481	481	f	f
+116	2022-07-02 18:27:22.813203+00	\N	116	481	481	f	f
+117	2022-08-08 20:54:17.597693+00	\N	116	499	499	f	f
+118	2022-11-18 16:35:54.605017+00	\N	46	540	540	f	f
 \.
 
 
