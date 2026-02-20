@@ -1,7 +1,7 @@
 <template>
   <div id="mapaBaseLayer" class="map-layer">
     <VueMapbox
-      :accessToken="import.meta.env.VITE_MAPBOX_TOKEN"
+      :accessToken="mapboxToken"
       :mapStyle="MAPBASESTYLE"
       height="100%"
       width="100%"
@@ -104,7 +104,8 @@ export default {
       MAPBASESTYLE,
       atrativo: true,
       trilha: true,
-      draw: null
+      draw: null,
+      mapboxToken: process.env.VUE_APP_MAPBOX_TOKEN
     };
   },
 

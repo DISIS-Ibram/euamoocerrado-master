@@ -1,3 +1,5 @@
+const token = process.env.VUE_APP_MAPBOX_TOKEN
+
 export default {
                 "attribution": "<a href=\"https://www.mapbox.com/about/maps/\" target=\"_blank\">&copy; Mapbox</a> <a href=\"http://www.openstreetmap.org/about/\" target=\"_blank\">&copy; OpenStreetMap</a> <a class=\"mapbox-improve-map\" href=\"https://www.mapbox.com/map-feedback/\" target=\"_blank\">Improve this map</a>",
                 "bounds": [-180, -85.0511, 180, 85.0511],
@@ -19,9 +21,9 @@ export default {
                     // window.____MVTMAPSERVER_URL+ "b/{z}/{x}/{y}.vector.pbf",
                     // window.____MVTMAPSERVER_URL + "a/{z}/{x}/{y}.vector.pbf",
                     // window.____MVTMAPSERVER_URL + "b/{z}/{x}/{y}.vector.pbf",
-                    "https://b.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/{z}/{x}/{y}.vector.pbf?access_token=pk.eyJ1IjoiZGFuaWVsZmlndWVpcmVkbzE5ODMiLCJhIjoiY21qaHpjam1kMTVvMzNlb2N4eW9xOG9rOCJ9.xx4iT3auhIg0c2mHcdTBfQ",
-                    "https://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/{z}/{x}/{y}.vector.pbf?access_token=pk.eyJ1IjoiZGFuaWVsZmlndWVpcmVkbzE5ODMiLCJhIjoiY21qaHpjam1kMTVvMzNlb2N4eW9xOG9rOCJ9.xx4iT3auhIg0c2mHcdTBfQ",
-                    "https://b.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/{z}/{x}/{y}.vector.pbf?access_token=pk.eyJ1IjoiZGFuaWVsZmlndWVpcmVkbzE5ODMiLCJhIjoiY21qaHpjam1kMTVvMzNlb2N4eW9xOG9rOCJ9.xx4iT3auhIg0c2mHcdTBfQ"
+                    `https://b.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/{z}/{x}/{y}.vector.pbf?access_token=${token}`,
+                    `https://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/{z}/{x}/{y}.vector.pbf?access_token=${token}`,
+                    `https://b.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/{z}/{x}/{y}.vector.pbf?access_token=${token}`
                 ],
                 "vector_layers": [{
                     "description": "",
@@ -348,7 +350,7 @@ export default {
                     "source": "mapbox.mapbox-streets-v7",
                     "source_name": "Mapbox Streets V7"
                 }],
-                "webpage": "https://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/page.html?access_token=pk.eyJ1IjoiZGFuaWVsZmlndWVpcmVkbzE5ODMiLCJhIjoiY21qaHpjam1kMTVvMzNlb2N4eW9xOG9rOCJ9.xx4iT3auhIg0c2mHcdTBfQ",
+                "webpage": `https://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/page.html?access_token=${token}`,
                 "type": "vector"
             }
         
