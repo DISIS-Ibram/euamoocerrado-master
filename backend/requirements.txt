@@ -14,7 +14,7 @@ django-cors-headers==4.7.0
 django-filter==24.3
 django-leaflet==0.31.0
 djangorestframework==3.15.2
-djangorestframework-gis==1.1
+djangorestframework-gis>=1.0,<2.0
 docx2txt==0.9
 ebcdic==1.1.1
 EbookLib==0.19

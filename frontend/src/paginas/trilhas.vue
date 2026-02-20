@@ -1,81 +1,78 @@
 <template>
-
-        <conteudo :ajax="false" color="rgb(113, 158, 3)">
-        
-                
-                <div v-show="!$route.params.id" class='list-wraper'>
-                    
-                    <div class="row mt5 mb3">
-                        <div class="col-12 col-md-7">
-                            <list-title  :title="title" />
-                        </div>
-                        <!-- <div class="col-12 col-md-5">
-                            <b-button variant="outline-warning" @click="showtrilha"> <i class='fa fa-arrow-up' /> Enviar trilha </b-button>
-                        </div> -->
-                    </div>
-
-
-
-
-                    <div class="row mx-0">
-                        
-                        <div class="col-5">
-                                <div class="ph4 mt1 mb3"> TOTAL: <b>{{ itens.length }}</b> </div>
-                        </div>
-
-                        <div class="col-6 filters d-flex justify-content-end">
-                            
-
-                                <div class="filter ">
-                                    <div class='label'> FILTROS:</div>
-                                    <div class='filter-button'>
-                                      
-                                        <i v-tooltip="'Mostrar só Trilhas Sinalizadas'" 
-                                            class='fa fa-map-signs' 
-                                            :class="{active:sinalizadaFilter ==true}"
-                                            @click="sinalizadaFilter = !sinalizadaFilter"
-                                            ></i>
-                                        <i v-tooltip="'Mostrar só Trilhas Oficiais'" 
-                                            class='vtl vtl-oficial' 
-                                            :class="{active:oficialFilter ==true}"
-                                            @click="oficialFilter = !oficialFilter"
-                                            ></i>
-                    
-                                        <eac-dropdown :options="filterOptions" v-model="dificuldadeFilter"> 
-                                                <i class="vtl vtl-dificuldade" 
-                                                :class="{active:dificuldadeFilter.value != ''}"> <span class='label-dificuldade'></span> </i>
-                                        </eac-dropdown>
-                                    </div>
-
-                                </div>
-                                <div class="sort ">
-                                    <eac-dropdown :options="options" v-model="sortingCriteria"> 
-                                        <i  v-if="sortingDirection == 'asc'" @click="sortingDirection='desc'" class='fa fa-sort-amount-asc sort-icon'></i>
-                                        <i  v-if="sortingDirection == 'desc'" @click="sortingDirection='asc'" class='fa fa-sort-amount-desc sort-icon'></i>
-                                        <div class='sortname'>  {{ sortingCriteria.label }} </div>
-                                    </eac-dropdown>
-                                   
-                                </div>
-
-                          
-
-                        </div>
-                    </div>
-
-                    
-                    <list :itens="itens" template="list-item-trilha" > </list>
-                
+    <conteudo :ajax="false" color="rgb(113, 158, 3)">
+        <div v-show="!$route.params.id" class='list-wraper'>
+            <div class="row mt5 mb3">
+                <div class="col-12 col-md-7">
+                    <list-title  :title="title" />
                 </div>
                 
-                <trilhasinfo v-if="$route.params.id" :id="$route.params.id" />
-        
-        </conteudo>
+                <div class="col-12 col-md-5">
+                    <b-button v-if="user" variant="outline-warning" @click="showtrilha">
+                        <i class='fa fa-arrow-up'> Enviar trilha </i>
+                    </b-button>
+                </div>
+                
+                <!-- <div class="col-12 col-md-5">
+                    <b-button variant="outline-warning" @click="showtrilha"> <i class='fa fa-arrow-up' /> Enviar trilha </b-button>
+                </div> -->
+            </div>
 
+            <div class="row mx-0">
+                <div class="col-5">
+                        <div class="ph4 mt1 mb3"> TOTAL: <b>{{ itens.length }}</b> </div>
+                </div>
+
+                <div class="col-6 filters d-flex justify-content-end">
+                    <div class="filter ">
+                        <div class='label'>
+                            FILTROS:
+                        </div>
+
+                        <div class='filter-button'>
+                            <i v-tooltip="'Mostrar só Trilhas Sinalizadas'" 
+                                class='fa fa-map-signs' 
+                                :class="{active:sinalizadaFilter ==true}"
+                                @click="sinalizadaFilter = !sinalizadaFilter"
+                            ></i>
+                            <i v-tooltip="'Mostrar só Trilhas Oficiais'" 
+                                class='vtl vtl-oficial' 
+                                :class="{active:oficialFilter ==true}"
+                                    @click="oficialFilter = !oficialFilter"
+                                ></i>
+            
+                                <eac-dropdown :options="filterOptions" v-model="dificuldadeFilter"> 
+                                        <i class="vtl vtl-dificuldade" 
+                                            :class="{active:dificuldadeFilter.value != ''}"
+                                        > 
+                                            <span class='label-dificuldade'></span> 
+                                        </i>
+                                    </eac-dropdown>
+                                </div>
+
+                        </div>
+
+                        <div class="sort ">
+                            <eac-dropdown :options="options" v-model="sortingCriteria"> 
+                                <i  v-if="sortingDirection == 'asc'" @click="sortingDirection='desc'" class='fa fa-sort-amount-asc sort-icon'></i>
+                                <i  v-if="sortingDirection == 'desc'" @click="sortingDirection='asc'" class='fa fa-sort-amount-desc sort-icon'></i>
+                                <div class='sortname'>  {{ sortingCriteria.label }} </div>
+                            </eac-dropdown>
+                        </div>
+                    </div>
+                </div>
+                <list :itens="itens" template="list-item-trilha" > </list>
+            </div>
+        <trilhasinfo v-if="$route.params.id" :id="$route.params.id" />
+        <!-- Renderiza o conteúdo do formulário de adicionar uma nova trilha -->
+        <envia-trilha-form />
+        <!-- Renderiza o conteúdo do formulário de adicionar uma nova trilha -->
+    </conteudo>
 </template>
 
 
 <script>
     import Conteudo from './conteudo.vue'
+    import EnviaTrilhaForm from '../componentes/envia-trilha-form.vue'
 
     export default {
         props:{
@@ -110,11 +107,8 @@
                     {value:'2', label: 'Difícil'},
                     {value:'3', label: 'Especialista'},
                 ],
-
-
             }
         },
-
 
         computed:{
             user:function(){
@@ -164,6 +158,7 @@
 
         components: {
             'conteudo': Conteudo,
+            EnviaTrilhaForm
         },
 
         methods: {
@@ -178,5 +173,4 @@
 
 <style lang="stylus">
     @import "../css/variaveis"
-
 </style>

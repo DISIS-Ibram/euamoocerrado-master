@@ -65,7 +65,12 @@ export default function(data) {
   };
 
   return {
-    state: state,
+    // state: state,
+    state: {
+      ...state,
+      drawMode: false,
+      novaTrilhaGeom: null
+    },
 
     //--MUTATIONS
     mutations: {
@@ -105,6 +110,14 @@ export default function(data) {
 
       parques: function(state, parques) {
         state.parques = parques;
+      },
+
+      setDrawMode(state, value) {
+        state.drawMode = value;
+      },
+
+      setNovaTrilhaGeom(state, geom) {
+        state.novaTrilhaGeom = geom;
       }
     },
 

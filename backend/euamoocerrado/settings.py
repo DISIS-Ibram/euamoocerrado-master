@@ -107,7 +107,8 @@ WSGI_APPLICATION = 'euamoocerrado.wsgi.application'
 # RODANDO DOCKER com BD DOCKER'
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
+        # "ENGINE": "django.db.backends.postgresql",
+        "ENGINE": "django.contrib.gis.db.backends.postgis",
         "NAME": os.getenv("POSTGRES_DB"),
         "USER": os.getenv("POSTGRES_USER"),
         "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
@@ -121,7 +122,8 @@ DATABASES = {
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 
-GDAL_LIBRARY_PATH = os.getenv("/usr/lib/x86_64-linux-gnu/libgdal.so")
+# GDAL_LIBRARY_PATH = os.getenv("/usr/lib/x86_64-linux-gnu/libgdal.so")
+GDAL_LIBRARY_PATH = os.getenv("GDAL_LIBRARY_PATH")
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

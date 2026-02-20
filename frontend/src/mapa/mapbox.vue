@@ -1,7 +1,7 @@
 <template>
   <div id="mapaBaseLayer" class="map-layer">
     <VueMapbox
-      accessToken="pk.eyJ1IjoiZGFuaWVsZmlndWVpcmVkbzE5ODMiLCJhIjoiY21qaHpjam1kMTVvMzNlb2N4eW9xOG9rOCJ9.xx4iT3auhIg0c2mHcdTBfQ"
+      :accessToken="import.meta.env.VITE_MAPBOX_TOKEN"
       :mapStyle="MAPBASESTYLE"
       height="100%"
       width="100%"
@@ -92,6 +92,8 @@
 import MAPBASESTYLE from "./styles/mapabase_style";
 import elevationControl from "./iControl/elevation";
 
+import MapboxDraw from "@mapbox/mapbox-gl-draw";
+
 export default {
   name: "mapbox",
 
@@ -102,7 +104,12 @@ export default {
       MAPBASESTYLE,
       atrativo: true,
       trilha: true,
+      draw: null
     };
+  },
+
+  mounted() {
+    console.log("MAPBOX MONTADO");
   },
 
   computed: {
@@ -110,9 +117,13 @@ export default {
       return this.$store.state.mapLoaded;
     },
 
+    drawMode() {
+      return this.$store.state.parques.drawMode;
+    },
+
     map: function() {
       return this.$options.map;
-    }
+    },
   },
 
   watch: {
@@ -140,13 +151,17 @@ export default {
       // }else{
       //     window.percurso.emit('hideAltimetria')
       // }
+    },
+
+    drawMode(val) {
+      console.log("drawMode mudou no mapa:", val);
+      if (val) {
+        this.iniciarDesenho();
+      }
     }
   },
 
   methods: {
-
-
-    
     mapHasLoaded: function(e, map) {
       this.$options.map = map;
 
@@ -220,6 +235,36 @@ export default {
           }, duration);
         }
       }, 100);
+    },
+
+    iniciarDesenho() {
+      console.log("Iniciando modo desenho");
+
+      if (!this.map) return;
+
+      if (!this.draw) {
+        this.draw = new MapboxDraw({
+          displayControlsDefault: false,
+          controls: {
+            line_string: true,
+            trash: true
+          }
+        });
+
+        this.map.addControl(this.draw);
+        this.map.on("draw.create", this.linhaCriada);
+      }
+
+      this.draw.changeMode("draw_line_string");
+    },
+
+    linhaCriada(e) {
+      const geometry = e.features[0];
+
+      this.$store.commit("setNovaTrilhaGeom", geometry);
+      this.$store.commit("setDrawMode", false);
+
+      this.draw.changeMode("simple_select");
     }
   }
 };

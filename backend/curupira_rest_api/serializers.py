@@ -40,7 +40,8 @@ class KhartesSerializer(ModelSerializer):
         function = get_serializer_funtion(self.Meta.model, 'is_valid')
         if function:
             return function(self, raise_exception)                
-        return super(KhartesSerializer, self).is_valid(raise_exception)
+        # return super(KhartesSerializer, self).is_valid(raise_exception)
+        return super().is_valid(raise_exception=raise_exception)
 
 
     def run_validation(self, data):
@@ -103,7 +104,8 @@ class KhartesSerializerGeoJson(GeoFeatureModelSerializer):
         function = get_serializer_funtion(self.Meta.model, 'is_valid')
         if function:
             return function(self, raise_exception)                
-        return super(KhartesSerializerGeoJson, self).is_valid(raise_exception)
+        # return super(KhartesSerializerGeoJson, self).is_valid(raise_exception)
+        return super().is_valid(raise_exception=raise_exception)
 
 
     def run_validation(self, data):

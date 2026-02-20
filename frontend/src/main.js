@@ -19,10 +19,10 @@ import {urls} from "./api.js";
 //Coloco o lodash global
 window._ = _;
 
+import App from "./App.vue";
 // import {i18n} from './in18-setup';
 // Vue.use(i18n)
 
-import App from "./App.vue";
 
 import VuexStore from "./store/store";
 import Elementos from "./elementos/index";
@@ -33,8 +33,14 @@ import "./helpers/index";
 // import "bootstrap-vue/dist/bootstrap-vue.css";
 // Vue.use(BootstrapVue);
 
-import { DropdownPlugin } from 'bootstrap-vue'
-Vue.use(DropdownPlugin)
+// import { DropdownPlugin } from 'bootstrap-vue'
+// Vue.use(DropdownPlugin)
+
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+Vue.use(BootstrapVue)
 
 // import VueDisqus from 'vue-disqus'
 
@@ -52,6 +58,8 @@ import router from "./router";
 // import VueTheMask from 'vue-the-mask'
 
 // Vue.use(VueTheMask)
+
+import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
 
 Vue.use(function(Vue) {
   Vue.prototype.$has = _.has;

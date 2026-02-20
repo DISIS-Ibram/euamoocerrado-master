@@ -111,14 +111,14 @@
     methods: {
 
         enter: function (el, done) {
-            console.log("***************** transition enter")
+            console.log("***************** transition enter - ./src/paginas/conteudo.vue")
             console.log(el)
             setTimeout(()=>this.show(),500);
             done()
         },
 
         beforeLeave: function (el, done) {
-            console.log("***************** transition before leave")
+            console.log("***************** transition before leave - ./src/paginas/conteudo.vue")
             //  console.log(el)
             this.hide()
             // done()
