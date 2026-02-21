@@ -1,20 +1,31 @@
 <template>
     <conteudo :ajax="false" color="rgb(113, 158, 3)">
         <div v-show="!$route.params.id" class='list-wraper'>
-            <div class="row mt5 mb3">
-                <div class="col-12 col-md-7">
-                    <list-title  :title="title" />
+            <div class="row mt5 mb3 d-flex justify-content-center align-items-center text-center">
+
+                <div class="col-12 col-md-4 d-flex justify-content-start">
+                    <list-title :title="title" />
                 </div>
-                
-                <div class="col-12 col-md-5">
-                    <b-button v-if="user" variant="outline-warning" @click="showtrilha">
-                        <i class='fa fa-arrow-up'> Enviar trilha </i>
+                            
+                <div class="col-12 col-md-8 d-flex justify-content-center">
+                    <b-button 
+                        v-if="user"
+                        variant="outline-warning"
+                        class="mr-2"
+                        @click="showtrilha"
+                    >
+                        <i class="fa fa-arrow-up"></i> Enviar trilha
+                    </b-button>
+
+                    <b-button 
+                        v-if="user && !userMode"
+                        variant="outline-warning"
+                        @click="showminhastrilha"
+                    >
+                        <i class="fa fa-list"></i> Minhas trilhas
                     </b-button>
                 </div>
-                
-                <!-- <div class="col-12 col-md-5">
-                    <b-button variant="outline-warning" @click="showtrilha"> <i class='fa fa-arrow-up' /> Enviar trilha </b-button>
-                </div> -->
+
             </div>
 
             <div class="row mx-0">
@@ -187,6 +198,12 @@
         methods: {
             showtrilha:function(){
                 window.UIEvents.$emit('enviaTrilha');
+            },
+           
+            showminhastrilha:function(){
+                console.log("Minhas trilhas")
+                this.$router.push('/minhastrilhas')
+                // window.UIEvents.$emit('enviaTrilha');
             }
            
         }
