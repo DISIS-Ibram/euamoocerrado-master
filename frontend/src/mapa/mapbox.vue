@@ -249,7 +249,23 @@ export default {
           controls: {
             line_string: true,
             trash: true
-          }
+          },
+          styles: [
+            {
+              id: "gl-draw-line",
+              type: "line",
+              filter: ["all", ["==", "$type", "LineString"]],
+              layout: {
+                "line-cap": "round",
+                "line-join": "round"
+              },
+              paint: {
+                "line-color": "#ff0000",
+                "line-width": 3,
+                "line-dasharray": ["literal", [0.2, 2]]
+              }
+            }
+          ]
         });
 
         this.map.addControl(this.draw);
