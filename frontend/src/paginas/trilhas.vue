@@ -112,12 +112,17 @@
 
         computed:{
             user:function(){
+                console.log('User - trilhas: ', this.$store.getters.user)
                 return this.$store.getters.user
             },
 
             itens:function(){
                 let itens =  this.$store.getters.trilhas;
+
+                if (!_.isArray(itens)) return []
+                console.log('itens trilhas: ', itens)
                 
+                // sorting
                 if(_.isArray(itens)){
                     if(this.sortingCriteria.value != ''){
                        itens = _.orderBy(itens,[this.sortingCriteria.value],[this.sortingDirection] )
@@ -127,25 +132,35 @@
                     return []
                 }
 
+                // filtros
                 itens = _.filter(itens, item => {                    
                     let res = true
+
+                    // 🔹 FILTRO USUÁRIO (minhas trilhas)
+                    if (this.userMode && this.user) {
+                        console.log('Item - trilhas: ', item)
+                        if (item.user_id !== this.user.pk) return false
+                    }
                     
+                    // 🔹 DIFICULDADE
                     if(this.dificuldadeFilter.value != '' ) {
                        res = (this.dificuldadeFilter.value == item.categoria)
                     }
                     if(res == false) return false
 
+                    // 🔹 OFICIAL
                     if(this.oficialFilter){
                          if(item.oficial != true ) return false 
                     }
 
+                    // 🔹 SINALIZADA
                     if(this.sinalizadaFilter == true) {
                         if(item.sinalizada != true) return false
                     }
 
-                    if( this.userMode == true){
-                          if( _.get(item,'user',  _.get(item,'user.id' ))  != _.get(this.user,'pk') ) return false
-                    }
+                    // if( this.userMode == true){
+                    //       if( _.get(item,'user',  _.get(item,'user.id' ))  != _.get(this.user,'pk') ) return false
+                    // }
 
 
 
@@ -153,7 +168,15 @@
 
                 })
                 return itens
-            }
+            },
+
+            trilhas:function(){
+                if (this.userMode) {
+                    return this.$store.getters.minhasTrilhas
+                }
+                return this.$store.state.trilhas
+            },
+
         },
 
         components: {

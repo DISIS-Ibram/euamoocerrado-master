@@ -223,7 +223,9 @@ export default function(data) {
 
 
         graphQL(QUERYES["trilhas"], {}).then(data => {
+          console.log('data - parques.js: ', data)
           let trilhas = data?.trilhas ?? [];
+          console.log('trilhas - parques.js: ', trilhas)
           trilhas = trilhas.map( trilha => {
             trilha.color = "hsl(" + _.random(0, 255, false) + ", 100%, 90%)";
             trilha.visitado = false;
@@ -790,7 +792,7 @@ export default function(data) {
 
         return options;
       },
-      
+
       bemfeitoriaOptionsFilter: state => {
         let options = [{ value: "", label: "Todos Benfeitorias" }];
 

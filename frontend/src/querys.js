@@ -68,6 +68,7 @@ export const QUERYES = {
       trilhas: trilha_trilha(where: {deleted_at: {_is_null: true}, publico: {_eq: true}}) {
         geom
         id
+        user_id
         nome
         oficial
         categoria

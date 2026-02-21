@@ -182,11 +182,13 @@ export default {
         showLoginWindow:function(){
             this.showLogin = true;
         },
+
         login:async function(){
             var res = await this.$store.dispatch('login',{email:this.email, password:this.password})
             this.erro = !res
             console.log('login-form - login - res: ', res);
         },
+        
         register:async function(){
             var res = await this.$store.dispatch('register',{username:this.username, password:this.password, email:this.email, first_name:this.name})
             console.log('login-form - register - res: ', res);
