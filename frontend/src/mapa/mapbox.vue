@@ -262,17 +262,80 @@ export default {
               paint: {
                 "line-color": "#ff0000",
                 "line-width": 3,
-                "line-dasharray": ["literal", [0.2, 2]]
+                "line-dasharray": ["literal", [2, 2]]
               }
             }
           ]
         });
 
         this.map.addControl(this.draw);
-        this.map.on("draw.create", this.linhaCriada);
+
+        map.on("click", (e) => {
+          console.log("CLICK NO MAPA: ",  e.lngLat);
+        });
+
+        this.map.on("draw.render", () => {
+          if (!this.draw) return;
+
+          const data = this.draw.getAll();
+
+          if (data.features.length > 0) {
+            console.log("COORDENADAS ATUAIS:", data.features[0].geometry.coordinates);
+          }
+        });
+
+        // Quando cria linha
+        this.map.on("draw.create", (e) => {
+          console.log("DRAW CREATE:", e.features);
+          this.linhaCriada(e);
+        });
+
+        // Quando edita linha
+        this.map.on("draw.update", (e) => {
+          console.log("DRAW UPDATE:", e.features);
+        });
+
+        // Quando apaga linha
+        this.map.on("draw.delete", (e) => {
+          console.log("DRAW DELETE");
+          this.$store.commit("setNovaTrilhaGeom", null);
+        });
+
+
+        // this.map.addControl(this.draw);
+        // this.map.on("draw.create", this.linhaCriada);
       }
 
       this.draw.changeMode("draw_line_string");
+    },
+
+
+    salvarLinha(e) {
+      if (!e.features.length) return;
+
+      const feature = e.features[0];
+
+      // Validação básica
+      if (
+        !feature.geometry ||
+        !feature.geometry.coordinates ||
+        feature.geometry.coordinates.length < 2
+      ) {
+        console.warn("Linha inválida");
+        return;
+      }
+
+      console.log("Linha salva:", feature.geometry.coordinates);
+
+      // Salva no Vuex
+      // this.$store.commit("setNovaTrilhaGeom", feature);
+      this.$store.commit("setNovaTrilhaGeom", feature);
+
+      // Sai do modo desenho
+      // this.$store.commit("setDrawMode", false);
+      this.$store.commit("setDrawMode", false);
+
+      this.draw.changeMode("simple_select");
     },
 
     linhaCriada(e) {
@@ -283,6 +346,8 @@ export default {
 
       this.draw.changeMode("simple_select");
     }
+
+
   }
 };
 </script>

@@ -9,11 +9,13 @@
                 </div>
 
                 <b-form-group label="Nome da trilha*" label-size="sm" label-cols-sm="2" label-align-sm="right">
-                    <b-form-input size="sm" required trim v-model="trilha.nome" placeholder="Nome da Trilha" :state="state" ></b-form-input>
+                    <!-- <b-form-input size="sm" required trim v-model="trilha.nome" placeholder="Nome da Trilha" :state="state" ></b-form-input> -->
+                    <b-form-input size="sm" required trim v-model="trilha.nome" placeholder="Nome da Trilha" ></b-form-input>
                 </b-form-group>
 
                 <b-form-group label="Descrição da trilha*" label-size="sm"  label-cols-sm="2" label-align-sm="right">
-                    <b-form-textarea required size="sm"  rows="1" max-rows="2" v-model="trilha.descricao" placeholder="Descrição" :state="state" trim> </b-form-textarea>
+                    <!-- <b-form-textarea required size="sm"  rows="1" max-rows="2" v-model="trilha.descricao" placeholder="Descrição" :state="state" trim> </b-form-textarea> -->
+                    <b-form-textarea required size="sm"  rows="1" max-rows="2" v-model="trilha.descricao" placeholder="Descrição" trim> </b-form-textarea>
                 </b-form-group>
                 
                 <b-form-group label="Dificuldade*" label-size="sm"  label-cols-sm="2" label-align-sm="right">
@@ -35,7 +37,8 @@
                         CANCELAR
                     </button>
 
-                    <button v-if='totalFeatures > 0' class='btn btn-primary'  >
+                    <!-- <button v-if='totalFeatures > 0' class='btn btn-primary'> -->
+                    <button v-if="novaTrilhaGeom && novaTrilhaGeom.geometry?.coordinates?.length > 1" class="btn btn-primary">
                         <span v-if='loading'> 
                             <i v-if='loading' class='fa fa-spinner fa-pulse fa-1x fa-fw'></i>
                                 ENVIANDO
@@ -108,8 +111,10 @@ export default {
         },
 
         novaTrilhaGeom(val) {
+            console.log('novaTrilhaGeom mudou:', val)
             if (val) {
-            this.showEnviaTrilhaWindow = true;
+                console.log('Geometry:', val.geometry)
+                this.showEnviaTrilhaWindow = true
             }
         },
     },
@@ -140,7 +145,7 @@ export default {
         },
 
         novaTrilhaGeom() {
-            return this.$store.state.novaTrilhaGeom;
+            return this.$store.state.parques.novaTrilhaGeom;
         },
     },
 
@@ -195,6 +200,7 @@ export default {
             console.log("ativando draw");
             this.$store.commit("setDrawMode", true);
             console.log("estado atual:", this.$store.state.parques.drawMode);
+            console.log('Teste hotReload')
         },
 
         enviarTrilha: async function () {
@@ -203,7 +209,9 @@ export default {
             let trilha = { ...this.trilha };
 
             // 🔴 1️⃣ Verifica se existe geometria desenhada
-            const novaTrilhaGeom = this.$store.state.novaTrilhaGeom;
+            console.log('Antes novaTrilhaGeom: ', novaTrilhaGeom)
+            const novaTrilhaGeom = this.$store.state.parques.novaTrilhaGeom;
+            console.log('Depois novaTrilhaGeom: ', novaTrilhaGeom)
 
             if (!novaTrilhaGeom || !novaTrilhaGeom.geometry) {
                 alert("Desenhe uma trilha no mapa antes de enviar.");
