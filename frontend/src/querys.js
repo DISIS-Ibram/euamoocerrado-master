@@ -202,6 +202,7 @@ export const QUERYES = {
         cor
         descricao
         id
+        user_id
         link
         nome
         nome_cientifico

@@ -80,11 +80,21 @@
         next();
     },
  
+    // beforeRouteLeave(to, from, next) {
+    //     console.log("*****************route beforeRouteLeave")
+    //     this.hide();
+    //     setTimeout(next,1000)
+    //     // next();
+    // },
     beforeRouteLeave(to, from, next) {
-        console.log("*****************route beforeRouteLeave")
+
+        // Se for mesma rota base (apenas mudou params), não animar
+        if (to.name === from.name) {
+            return next()
+        }
+
         this.hide();
         setTimeout(next,1000)
-        // next();
     },
 
     computed:{
@@ -93,19 +103,34 @@
         }
     },
 
+    // watch: {
+    //     // call again the method if the route changes
+    //     '$route':function (to, from) {
+    //         console.log('***********************router watch');
+    //         console.log(from);
+    //         var className = _.get(to,'meta.contentClass','col-11 col-md-4');
+    //         this.className = className;
+    //         var $conteudo = $(this.$refs.conteudo);
+    //         // $conteudo.attr('class',className);
+    //         this.show();
+    //     },
+    // },
+
     watch: {
-        // call again the method if the route changes
-        '$route':function (to, from) {
-            console.log('***********************router watch');
-            console.log(from);
+        '$route'(to, from) {
+
+            const baseFrom = from.path.split('/')[1]
+            const baseTo = to.path.split('/')[1]
+
+            // Só animar se mudou a página base
+            if (baseFrom !== baseTo) {
+                this.show()
+            }
+
             var className = _.get(to,'meta.contentClass','col-11 col-md-4');
             this.className = className;
-            var $conteudo = $(this.$refs.conteudo);
-            // $conteudo.attr('class',className);
-            this.show();
         },
     },
-
 
 
     methods: {

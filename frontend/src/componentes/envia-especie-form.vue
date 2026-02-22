@@ -1,69 +1,50 @@
 <template>
-
     <div>
- 
-          <div  class='enviatrilhaform'  v-if="showEnviaTrilhaWindow "    >
-
-               <form @submit.prevent="enviarEspecie" class="inline" @click.stop> 
-
+        <div  class='enviatrilhaform'  v-if="showEnviaTrilhaWindow "    >
+            <form @submit.prevent="enviarEspecie" class="inline" @click.stop> 
                 <h2 class='white font-title mb-2'>  Enviar uma Espécie? </h2>
-                    
-                     
-                    
-                                
-                    <div v-show="erro===true" class="alert alert-danger ph1 pv1" role="alert">
-                          Erro {{erromsg}}
-                    </div>
-                    
+                <div v-show="erro===true" class="alert alert-danger ph1 pv1" role="alert">
+                    Erro {{erromsg}}
+                </div>
 
-                     <b-form-group label="Imagens*" label-size="sm" label-cols-sm="2" label-align-sm="right">
-                            <b-form-file v-model="especie.imagens" accept="image/jpeg, image/png, image/gif" multiple></b-form-file>
-                            <small> Selecione uma ou mais imagens. Dê preferência com fundo transparente. </small>
-                            <b-form-input size="sm" placeholder="Autor das imagens" v-model="especie.autor" ></b-form-input>
-                     </b-form-group>
+                <b-form-group label="Imagens*" label-size="sm" label-cols-sm="2" label-align-sm="right">
+                    <b-form-file v-model="especie.imagens" accept="image/jpeg, image/png, image/gif" multiple></b-form-file>
+                    <small> Selecione uma ou mais imagens. Dê preferência com fundo transparente. </small>
+                    <b-form-input size="sm" placeholder="Autor das imagens" v-model="especie.autor" ></b-form-input>
+                </b-form-group>
 
-                    <b-form-group label="Nome*" label-size="sm" label-cols-sm="2" label-align-sm="right">
-                            <b-form-input size="sm" required trim v-model="especie.nome" placeholder="" :state="state" ></b-form-input>
-                    </b-form-group>
+                <b-form-group label="Nome*" label-size="sm" label-cols-sm="2" label-align-sm="right">
+                    <!-- <b-form-input size="sm" required trim v-model="especie.nome" placeholder="" :state="state" ></b-form-input> -->
+                    <b-form-input size="sm" required trim v-model="especie.nome" placeholder=""></b-form-input>
+                </b-form-group>
 
-                    <b-form-group label="Nome Cientifico*" label-size="sm" label-cols-sm="2" label-align-sm="right">
-                            <b-form-input size="sm" required trim v-model="especie.nome_cientifico" placeholder="" :state="state" ></b-form-input>
-                    </b-form-group>
+                <b-form-group label="Nome Cientifico*" label-size="sm" label-cols-sm="2" label-align-sm="right">
+                    <!-- <b-form-input size="sm" required trim v-model="especie.nome_cientifico" placeholder="" :state="state" ></b-form-input> -->
+                    <b-form-input size="sm" required trim v-model="especie.nome_cientifico" placeholder=""></b-form-input>
+                </b-form-group>
 
-                    <b-form-group label="Categoria*" label-size="sm"  label-cols-sm="2" label-align-sm="right">
-                        <b-form-select size="sm"  v-model="especie.categoria" :options="[ {value:'ave',text:'Ave'},{value:'arvore',text:'Árvore'},{value:'fruto',text:'Fruto'}, {value:'mamifero',text:'Mamífero'}, {value:'peixe',text:'Peixe'} ]"></b-form-select>
-                    </b-form-group>
+                <b-form-group label="Categoria*" label-size="sm"  label-cols-sm="2" label-align-sm="right">
+                    <b-form-select size="sm"  v-model="especie.categoria" :options="[ {value:'ave',text:'Ave'},{value:'arvore',text:'Árvore'},{value:'fruto',text:'Fruto'}, {value:'mamifero',text:'Mamífero'}, {value:'peixe',text:'Peixe'} ]"></b-form-select>
+                </b-form-group>
 
-                    <b-form-group label="Descrição*" label-size="sm"  label-cols-sm="2" label-align-sm="right">
-                            <b-form-textarea required size="sm"  rows="1" max-rows="2" v-model="especie.descricao" placeholder="Descrição" :state="state" trim> </b-form-textarea>
-                    </b-form-group>
+                <b-form-group label="Descrição*" label-size="sm"  label-cols-sm="2" label-align-sm="right">
+                    <!-- <b-form-textarea required size="sm"  rows="1" max-rows="2" v-model="especie.descricao" placeholder="Descrição" :state="state" trim> </b-form-textarea> -->
+                    <b-form-textarea required size="sm"  rows="1" max-rows="2" v-model="especie.descricao" placeholder="Descrição" trim> </b-form-textarea>
+                </b-form-group>
 
-                    <b-form-group label="Link com mais informações*" label-size="sm" label-cols-sm="2" label-align-sm="right">
-                            <b-form-input size="sm" required trim v-model="especie.link" placeholder="" :state="state" ></b-form-input>
-                    </b-form-group>
-
-
-                    
-                   
-                        
-                     <div class='tc'>
-
-                            <button class='btn  mt-2' @click="showEnviaTrilhaWindow=false"> CANCELAR </button>
-
-                     
-                            <button class='btn btn-primary mt-2'  >  <span v-if='loading'> <i v-if='loading' class='fa fa-spinner fa-pulse fa-1x fa-fw'>  </i>  ENVIANDO </span> <span v-else> ENVIAR </span> </button>
-                        
-                    </div>
-
-              </form>
+                <b-form-group label="Link com mais informações*" label-size="sm" label-cols-sm="2" label-align-sm="right">
+                    <!-- <b-form-input size="sm" required trim v-model="especie.link" placeholder="" :state="state" ></b-form-input> -->
+                    <b-form-input size="sm" required trim v-model="especie.link" placeholder=""></b-form-input>
+                </b-form-group>
+                      
+                <div class='tc'>
+                    <button class='btn  mt-2' @click="showEnviaTrilhaWindow=false"> CANCELAR </button>
+                    <button class='btn btn-primary mt-2'  >  <span v-if='loading'> <i v-if='loading' class='fa fa-spinner fa-pulse fa-1x fa-fw'>  </i>  ENVIANDO </span> <span v-else> ENVIAR </span> </button>
+                </div>
+            </form>
         </div>
-
-
-
     </div>
-  
 </template>
-
 <script>
 
 export default {
@@ -102,10 +83,7 @@ export default {
 
 
     created:function(){
-        
         window.UIEvents.$on('enviaEspecie',this.showMarcaAvistamentoWindow);
-
-        
     },
 
     watch:{
@@ -115,21 +93,15 @@ export default {
         password:function(){
             this.erro = false
         },
-       
-        
     },
 
     computed:{
         user:function(){
             return this.$store.getters.user
         },
-
-
     },
 
-
     methods:{
-
         showMarcaAvistamentoWindow:function(){
             if(this.user === false){
                 alert("Faço login para poder enviar uma trilha")
@@ -138,9 +110,6 @@ export default {
                 this.marcandoAvistamento = false;
             }
         },
-
-    
-
 
         marcaAvistamento: async function(item){
             this.especieSelecionada = item;
@@ -164,16 +133,11 @@ export default {
                 this.marcandoAvistamento = false;
         },
 
-
         enviarEspecie:async function(){
             let especie = {...this.especie};
-
             this.erro = false;
             this.loading = true
-
             let res = await this.$store.dispatch('enviarEspecie', especie )
-
-            
             
             if( _.has(res,'error') ){
                 this.loading = false;
@@ -184,8 +148,6 @@ export default {
                 this.showEnviaTrilhaWindow = false; 
                 this.$router.replace("/minhasespecies/")
             }
-
-
         },
     }
 
@@ -219,40 +181,29 @@ export default {
             left:20px;
             right:20px;
             bottom:20px;
-
             display: flex;
             flex-direction: column;
 
-             +between(1, 576px){
-                
+            +between(1, 576px){
                 padding:1em;
                 background hsl(21, 73%, 55%);
                 min-height calc(100% - 6px);
                 min-width:initial;
                 max-width:calc(100% - 6px);
                 margin-bottom:0rem;
-
                 top:5px;
                 left:5px;
                 right:5px;
                 bottom:5px;
-
-             }
-
-
-             .mapa-selected{
-                   flex-grow: 1;
-                   min-height: 250px;
-            
-              }
-
+            }
+            .mapa-selected{
+                flex-grow: 1;
+                min-height: 250px;
+            }
         }
-
     }
 
-
     .marcaavistamentoinfo{
-
         position:fixed;
         top:initial;
         bottom:10px;
@@ -272,10 +223,7 @@ export default {
                 font-size:12px;
             // }
         }
-
-
     }
-
 
     .listavistamento{
         max-height 40vh;
@@ -283,7 +231,5 @@ export default {
             max-height 60vh;
         }
         overflow auto
-
     }
-
 </style>

@@ -5,11 +5,12 @@
 
       <div class="row mt5 mb3">
         <div class="col-12 col-md-7">
-          <list-title :title="title + ' ' + getTitle($route.params.id)" />
+          <!-- <list-title :title="title + ' ' + getTitle($route.params.id)" /> -->
+          <list-title :title="title + ' ' + getTitle(categoriaAtual)" />
         </div>
-        <!-- <div class="col-12 col-md-5 ml-4"> -->
-        <!-- <b-button variant="outline-warning" @click="showEnviaEspecie"> <i class='fa fa-arrow-up' /> Enviar Espécie </b-button> -->
-        <!-- </div> -->
+        <div class="col-12 col-md-5 ml-4">
+          <b-button v-if="user && !userMode" variant="outline-warning" @click="showEnviaEspecie"> <i class='fa fa-arrow-up' /> Enviar Espécie </b-button>
+        </div>
       </div>
 
       <div class="row mx-0">
@@ -54,37 +55,25 @@
         </div>
       </div>
 
-      <div v-if="this.userMode == false" class="pv2 ph4 d-flex">
-        <a class="dib ph2 pv2 black" v-to="'/especies/ave'">
+      <!-- <div v-if="this.userMode == false" class="pv2 ph4 d-flex"> -->
+      <div class="pv2 ph4 d-flex">
+
+        <router-link
+          v-for="tipo in ['ave','mamifero','peixe','fruto','arvore']"
+          :key="tipo"
+          class="dib ph2 pv2 black"
+          :to="categoriaPath(tipo)"
+        >
           <i
-            class="vtl vtl-ave fa-2x"
-            :class="{ black: $route.path == '/especies/ave' }"
+            :class="[
+              'vtl',
+              'vtl-' + tipo,
+              'fa-2x',
+              { black: categoriaAtual === tipo }
+            ]"
           ></i>
-        </a>
-        <a class="dib ph2 pv2 black" v-to="'/especies/mamifero'">
-          <i
-            class="vtl vtl-mamifero fa-2x"
-            :class="{ black: $route.path == '/especies/mamifero' }"
-          ></i>
-        </a>
-        <a class="dib ph2 pv2 black" v-to="'/especies/peixe'">
-          <i
-            class="vtl vtl-peixe fa-2x"
-            :class="{ black: $route.path == '/especies/peixe' }"
-          ></i>
-        </a>
-        <a class="dib ph2 pv2 black" v-to="'/especies/fruto'">
-          <i
-            class="vtl vtl-fruto fa-2x"
-            :class="{ black: $route.path == '/especies/fruto' }"
-          ></i>
-        </a>
-        <a class="dib ph2 pv2 black" v-to="'/especies/arvore'">
-          <i
-            class="vtl vtl-arvore fa-2x"
-            :class="{ black: $route.path == '/especies/arvore' }"
-          ></i>
-        </a>
+        </router-link>
+
       </div>
 
       <list :itens="especiesItens" template="list-item-especie"> </list>
@@ -107,6 +96,7 @@ export default {
       default: false
     }
   },
+  
   data() {
     return {
       mudando: false,
@@ -141,40 +131,50 @@ export default {
       console.log('especies.vue - computed - usre: ', this.$store.getters.user)
       return this.$store.getters.user;
     },
-    especiesItens: function() {
-      var categoria = this.$route.params.id;
-      // console.log('especies.vue - computed - especiesItens - categoria: ', categoria)
-      let especiesAll;
-      
-      if (_.isEmpty(categoria)) {
-        especiesAll = this.$store.getters.especies;
+
+    especiesItens() {
+
+      let especiesAll
+
+      if (!this.categoriaAtual) {
+        especiesAll = this.$store.getters.especies
       } else {
-        especiesAll = this.$store.getters.especiesByCategoria(categoria);
+        especiesAll =
+          this.$store.getters.especiesByCategoria(this.categoriaAtual)
       }
-      
-      // console.log('especies.vue - computed - especiesItens - especiesAll: ', especiesAll)
-      especiesAll = _.filter(especiesAll, item => {
-        let res = true;
-        if (this.userMode == true) {
-          if (
-            _.get(item, "user", _.get(item, "user.id")) !=
-            _.get(this.user, "pk")
-          )
-            return false;
-        }
 
-        return res;
-      });
+      // 🔹 FILTRO POR USUÁRIO
+      if (this.userMode) {
 
-      return especiesAll;
-    }
+        if (!this.user) return []
+
+        especiesAll = especiesAll.filter(item => {
+          const itemUserId =
+            item.user_id ??
+            _.get(item, "user.id")
+
+          return itemUserId === this.user.pk
+        })
+      }
+
+      return especiesAll
+    },
+
+    categoriaAtual() {
+      return this.$route.params.tipo ||
+              this.$route.params.id ||
+              null
+    },
   },
 
   beforeDestroy: function() {
-    this.$store.commit("actualCourseLeg", false);
+    console.log("ESPECIES DESTROYED")
+    // this.$store.commit("actualCourseLeg", false);
   },
 
-  created: function() {},
+  created: function() {
+    console.log("ESPECIES CREATED");
+  },
 
   watch: {},
 
@@ -194,7 +194,14 @@ export default {
 
     showEnviaEspecie: function() {
       window.UIEvents.$emit("enviaEspecie");
-    }
+    },
+
+    categoriaPath(tipo) {
+      if (this.userMode) {
+        return `/minhasespecies/${tipo}`
+      }
+      return `/especies/${tipo}`
+    },
   }
 };
 </script>

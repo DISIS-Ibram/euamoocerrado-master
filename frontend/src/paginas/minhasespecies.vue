@@ -1,13 +1,11 @@
 <template>
-    <minhastrilhas title="Minhas " :userMode="true" />
+  <Especies title="Minhas Espécies" :userMode="true" />
 </template>
 
 <script>
-import minhastrilhas from './especies'
+import Especies from './especies.vue';
 
 export default {
-    components:{
-        'minhastrilhas': minhastrilhas,
-    }
+  components: { Especies }
 }
 </script>

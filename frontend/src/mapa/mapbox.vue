@@ -155,11 +155,14 @@ export default {
     },
 
     drawMode(val) {
-      console.log("drawMode mudou no mapa:", val);
       if (val) {
         this.iniciarDesenho();
+      } else {
+        if (this.draw) {
+          this.draw.changeMode("simple_select");
+        }
       }
-    }
+    },
   },
 
   methods: {
@@ -270,7 +273,7 @@ export default {
 
         this.map.addControl(this.draw);
 
-        map.on("click", (e) => {
+        this.map.on("click", (e) => {
           console.log("CLICK NO MAPA: ",  e.lngLat);
         });
 
@@ -284,10 +287,16 @@ export default {
           }
         });
 
-        // Quando cria linha
+        // // Quando cria linha
+        // this.map.on("draw.create", (e) => {
+        //   console.log("DRAW CREATE:", e.features);
+        //   this.linhaCriada(e);
+        // });
+
+        // Quando cria a trilha
         this.map.on("draw.create", (e) => {
           console.log("DRAW CREATE:", e.features);
-          this.linhaCriada(e);
+          this.salvarLinha(e);
         });
 
         // Quando edita linha
@@ -309,45 +318,29 @@ export default {
       this.draw.changeMode("draw_line_string");
     },
 
-
     salvarLinha(e) {
       if (!e.features.length) return;
 
       const feature = e.features[0];
 
-      // Validação básica
       if (
         !feature.geometry ||
         !feature.geometry.coordinates ||
         feature.geometry.coordinates.length < 2
       ) {
-        console.warn("Linha inválida");
         return;
       }
 
-      console.log("Linha salva:", feature.geometry.coordinates);
-
-      // Salva no Vuex
-      // this.$store.commit("setNovaTrilhaGeom", feature);
       this.$store.commit("setNovaTrilhaGeom", feature);
-
-      // Sai do modo desenho
-      // this.$store.commit("setDrawMode", false);
       this.$store.commit("setDrawMode", false);
 
-      this.draw.changeMode("simple_select");
+      // 🔥 força sair do modo desenho após o ciclo interno do draw
+      setTimeout(() => {
+        if (this.draw) {
+          this.draw.changeMode("simple_select");
+        }
+      }, 0);
     },
-
-    linhaCriada(e) {
-      const geometry = e.features[0];
-
-      this.$store.commit("setNovaTrilhaGeom", geometry);
-      this.$store.commit("setDrawMode", false);
-
-      this.draw.changeMode("simple_select");
-    }
-
-
   }
 };
 </script>

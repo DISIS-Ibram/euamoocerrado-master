@@ -1,17 +1,17 @@
 <template>
     <conteudo :ajax="false" color="rgb(113, 158, 3)">
         <div v-show="!$route.params.id" class='list-wraper'>
-            <div class="row mt5 mb3 d-flex justify-content-center align-items-center text-center">
+            <div class="row mt5 mb3 align-items-center text-center text-md-left">
 
-                <div class="col-12 col-md-4 d-flex justify-content-start">
+                <div class="col-12 col-md-4 mb-3 mb-md-0 d-flex justify-content-center justify-content-md-start">
                     <list-title :title="title" />
                 </div>
                             
-                <div class="col-12 col-md-8 d-flex justify-content-center">
+                <div class="col-12 col-md-8 d-flex justify-content-center justify-content-md-end flex-wrap gap-2">
                     <b-button 
                         v-if="user"
                         variant="outline-warning"
-                        class="mr-2"
+                        class="mb-2 mb-md-0 mr-md-2"
                         @click="showtrilha"
                     >
                         <i class="fa fa-arrow-up"></i> Enviar trilha

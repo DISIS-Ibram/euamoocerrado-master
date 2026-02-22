@@ -53,6 +53,7 @@ export default {
   watch: {
     // call again the method if the route changes
     $route: function(to, from) {
+      console.log("ROUTE CHANGE")
       this.checkPageClass(to);
     }
   },

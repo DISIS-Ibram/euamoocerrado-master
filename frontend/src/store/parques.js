@@ -81,6 +81,7 @@ export default function(data) {
       },
 
       setMutationAdd: function(state, data) {
+        console.log("ANTES:", state.trilhas.length);
         _.each(data, (v, k) => {
           let atual = state[k];
           if (_.isArray(atual)) {
@@ -96,6 +97,7 @@ export default function(data) {
             state["especiesByID"] = _.keyBy(atual, "id");
           }
         });
+        console.log("DEPOIS:", state.trilhas.length);
       },
 
       setCurrentParque: function(state, id) {
@@ -389,13 +391,14 @@ export default function(data) {
           });
 
           var trilhas = _.map([data], trilha => {
+            trilha.user_id = trilha.user;   // 🔥 normaliza aqui
             trilha.color = "hsl(" + _.random(0, 255, false) + ", 100%, 90%)";
             trilha.visitado = false;
             trilha.visitadoObj = false;
             return trilha;
           });
 
-          ctx.dispatch("loadStats");
+          await ctx.dispatch("loadStats");
 
           ctx.commit("setMutationAdd", { trilhas: trilhas });
 
@@ -855,16 +858,41 @@ export default function(data) {
         return { type: "FeatureCollection", features: features };
       },
 
-      trilhas: (state, getters) => {
-        var stats = state.trilhasStats;
-        var visitados = state.trilhasvisitados;
-        return _.map(state.trilhas, trilha => {
-          Vue.set(trilha, "status", stats[trilha.id]);
+      // trilhas: (state, getters) => {
+      //   var stats = state.trilhasStats;
+      //   var visitados = state.trilhasvisitados;
+      //   return _.map(state.trilhas, trilha => {
+      //     Vue.set(trilha, "status", stats[trilha.id]);
 
-          trilha.visitado = _.has(visitados, trilha.id) ? true : false;
-          trilha.visitadoObj = _.get(visitados, trilha.id);
-          trilha = { ...trilha, ...stats[trilha.id] };
-          return trilha;
+      //     trilha.visitado = _.has(visitados, trilha.id) ? true : false;
+      //     trilha.visitadoObj = _.get(visitados, trilha.id);
+      //     trilha = { ...trilha, ...stats[trilha.id] };
+      //     return trilha;
+      //   });
+      // },
+
+      trilhas: (state) => {
+        const stats = state.trilhasStats || {};
+        const visitados = state.trilhasvisitados || {};
+
+        if (!Array.isArray(state.trilhas)) return [];
+
+        return state.trilhas.map(trilha => {
+          const stat = stats[trilha.id] || {};
+
+          return {
+            ...trilha,
+
+            // status sempre como objeto
+            status: stat,
+
+            // flags derivadas
+            visitado: Object.prototype.hasOwnProperty.call(visitados, trilha.id),
+            visitadoObj: visitados[trilha.id] || null,
+
+            // espalha stats no objeto final (mantendo compatibilidade com ordenações)
+            ...stat
+          };
         });
       },
 

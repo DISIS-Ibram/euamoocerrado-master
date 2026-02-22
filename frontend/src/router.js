@@ -151,6 +151,7 @@ const routes = [
 
   {
     path: "/minhasespecies/:tipo?",
+    name: "minhasespecies",
     component: MinhasEspecies,
     meta: {
       requiresAuth: true,
