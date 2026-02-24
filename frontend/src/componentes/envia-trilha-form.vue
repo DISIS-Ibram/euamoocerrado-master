@@ -94,7 +94,7 @@ export default {
 
     created:function(){
         console.log("envia-trilha-form CREATED");
-        window.UIEvents.$on('enviaTrilha',this.showMarcaAvistamentoWindow);
+        window.UIEvents.$on('enviaTrilha', this.showMarcaAvistamentoWindow);
     },
 
     mounted() {

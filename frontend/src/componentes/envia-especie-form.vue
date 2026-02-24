@@ -83,7 +83,8 @@ export default {
 
 
     created:function(){
-        window.UIEvents.$on('enviaEspecie',this.showMarcaAvistamentoWindow);
+        console.log("envia-especie-form CREATED");
+        window.UIEvents.$on('enviaEspecie', this.showMarcaAvistamentoWindow);
     },
 
     watch:{
@@ -146,7 +147,7 @@ export default {
             }else{
                 this.loading = false;
                 this.showEnviaTrilhaWindow = false; 
-                this.$router.replace("/minhasespecies/")
+                await this.$router.replace("/minhasespecies/")
             }
         },
     }

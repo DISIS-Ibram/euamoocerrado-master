@@ -8,8 +8,23 @@
           <!-- <list-title :title="title + ' ' + getTitle($route.params.id)" /> -->
           <list-title :title="title + ' ' + getTitle(categoriaAtual)" />
         </div>
-        <div class="col-12 col-md-5 ml-4">
-          <b-button v-if="user && !userMode" variant="outline-warning" @click="showEnviaEspecie"> <i class='fa fa-arrow-up' /> Enviar Espécie </b-button>
+        <div class="col-12 col-md-8 d-flex justify-content-center justify-content-md-end flex-wrap gap-2">
+            <b-button 
+                v-if="user"
+                variant="outline-warning"
+                class="mb-2 mb-md-0 mr-md-2"
+                @click="showEspecie"
+            >
+                <i class="fa fa-arrow-up"></i> Enviar Espécie
+            </b-button>
+            
+            <b-button 
+                v-if="user && !userMode"
+                variant="outline-warning"
+                @click="showMinhasEspecies"
+            >
+                <i class="fa fa-list"></i> Minhas espécies
+            </b-button>
         </div>
       </div>
 
@@ -80,12 +95,14 @@
     </div>
 
     <especieinfo v-if="$route.params.especieid" :id="$route.params.especieid" />
+    <envia-especie-form />
   </conteudo>
 </template>
 
 <script>
 import Conteudo from "./conteudo.vue";
-// import marked from 'marked'
+import enviaEspecieForm from "../componentes/envia-especie-form.vue";
+import EnviaEspecieForm from "../componentes/envia-especie-form.vue";
 
 export default {
   props: {
@@ -123,7 +140,8 @@ export default {
   },
 
   components: {
-    conteudo: Conteudo
+    conteudo: Conteudo,
+    EnviaEspecieForm,
   },
 
   computed: {
@@ -145,7 +163,6 @@ export default {
 
       // 🔹 FILTRO POR USUÁRIO
       if (this.userMode) {
-
         if (!this.user) return []
 
         especiesAll = especiesAll.filter(item => {
@@ -192,10 +209,16 @@ export default {
       return a;
     },
 
-    showEnviaEspecie: function() {
+    showEspecie: function() {
+      console.log('Formulário para adcionar uma nova espécie')
       window.UIEvents.$emit("enviaEspecie");
     },
 
+    showMinhasEspecies:function(){
+      console.log("Minhas especies")
+      this.$router.push('/minhasespecies')
+    },
+  
     categoriaPath(tipo) {
       if (this.userMode) {
         return `/minhasespecies/${tipo}`

@@ -94,7 +94,8 @@ export default function(data) {
           }
           state[k] = atual;
           if (k == "especies") {
-            state["especiesByID"] = _.keyBy(atual, "id");
+            Vue.set(state, "especiesByID", _.keyBy(atual, "id"));
+            // state["especiesByID"] = _.keyBy(atual, "id");
           }
         });
         console.log("DEPOIS:", state.trilhas.length);
@@ -412,10 +413,12 @@ export default function(data) {
       enviarEspecie: async function(ctx, especie) {
         try {
           let especieFinal = { ...especie };
-
+          console.log('especieFinal - antes: ', especieFinal)
+          
           delete especieFinal.autor;
           delete especieFinal.imagens;
-
+          console.log('especieFinal - depois: ', especieFinal)
+          
           //send especie
           let res = await _.postJSON(
             urls.apiurl + "especie/tipoespecie/",
@@ -445,6 +448,10 @@ export default function(data) {
           let data = await _.getJSON(
             urls.apiurl + "especie/tipoespecie/" + res.id
           );
+
+          // 🔥 normaliza user_id
+          data.user_id = data.user?.id ?? data.user;
+
 
           ctx.commit("setMutationAdd", { especies: [data] });
           // ctx.commit('setMutationAdd', {especiesByID:_.keyBy([data],'id')});
@@ -902,18 +909,17 @@ export default function(data) {
         _.find(getters.trilhas, { id: parseInt(id, 10) }),
 
       especies: state => {
-        let especies = state.especies;
         let avistamentos = state.avistamentos;
-        // return especies
 
-        return _.map([...state.especies], especie => {
-          especie.parques = [];
-          _.each(avistamentos, avistamento => {
-            if (avistamento.especie == especie.id) {
-              especie.parques.push(avistamento.parque);
-            }
-          });
-          return especie;
+        return state.especies.map(especie => {
+          const parques = avistamentos
+            .filter(a => a.especie == especie.id)
+            .map(a => a.parque);
+
+          return {
+            ...especie,
+            parques
+          };
         });
       },
 

@@ -192,7 +192,7 @@
 
         components: {
             'conteudo': Conteudo,
-            EnviaTrilhaForm
+            EnviaTrilhaForm,
         },
 
         methods: {
@@ -203,7 +203,6 @@
             showminhastrilha:function(){
                 console.log("Minhas trilhas")
                 this.$router.push('/minhastrilhas')
-                // window.UIEvents.$emit('enviaTrilha');
             }
            
         }
