@@ -108,6 +108,7 @@ export const QUERYES = {
     }
     `
   },
+
   tipo_atrativos_benfeitorias: {
     query: `
     query tipoAtrativo {
@@ -126,6 +127,7 @@ export const QUERYES = {
     }
         `
   },
+
   atrativos_benfeitorias_parques: {
     query: `
     query MyQuery {
@@ -157,6 +159,7 @@ export const QUERYES = {
     }
         `
   },
+
   atrativos_trilhas: {
     query: `
     query MyQuery {
@@ -178,10 +181,10 @@ export const QUERYES = {
           url
         }
       }
-    }
-    
+    } 
         `
   },
+
   tipo_benfeitoria: {
     query: `
     query tipoBenfeitorias {
@@ -194,6 +197,19 @@ export const QUERYES = {
     }
    `
   },
+
+  tipo_atividades_trilha: {
+    query: `
+    query getTipoAtividadesTrilha {
+      trilha_tipoatividade(where:{deleted_at:{_is_null:true}}){
+        id
+        nome
+        icone
+      }
+    }
+    `
+  },
+
   especies_tipo: {
     query: `
     query getEspecies {
@@ -219,6 +235,7 @@ export const QUERYES = {
     }
    `
   },
+
   especies_ocorrencia: {
     query: `
     query getEspeciesOcorrencia {
@@ -234,6 +251,7 @@ export const QUERYES = {
     }
    `
   },
+
   stats: {
     query: `
     query getStats {
@@ -250,6 +268,7 @@ export const QUERYES = {
     
    `
   },
+
   visitanteparque: {
     query: `
     query getVisitantes($visitanteid: Int=0) {
@@ -371,6 +390,7 @@ export const QUERYES = {
     variables: {},
     order: null
   },
+
   estudosDeCasoLista: {
     query: `{
             estudosDeCasoLista: en_estudo_de_caso(where: {}) {
@@ -396,6 +416,7 @@ export const QUERYES = {
     variables: {},
     order: null
   },
+
   estudosDeCasoGeom: {
     query: `{
             estudosDeCasoGeom: en_estudo_de_caso(where: {estado: {}}) {
@@ -436,6 +457,7 @@ export const QUERYES = {
     variables: {},
     order: null
   },
+
   tipologia: {
     query: `  {
             tipologia: en_tipologia {

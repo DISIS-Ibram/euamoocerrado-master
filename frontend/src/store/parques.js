@@ -38,6 +38,7 @@ export default function(data) {
 
     trilhas: [],
     trilhasAtividades: [],
+    trilhaTipoAtividade: [],
     trilhasStats: [],
     trilhaSelectedID: false,
 
@@ -262,6 +263,11 @@ export default function(data) {
         });
 
 
+        graphQL(QUERYES["tipo_atividades_trilha"], {}).then(data => {
+          ctx.commit("setMutation", {
+            trilhaTipoAtividade: _.keyBy(data.trilha_tipoatividade, "id")
+          });
+        });
 
         // _.getJSON(
         //   urls.apiurl + "trilha/trilha/",
@@ -904,6 +910,8 @@ export default function(data) {
       },
 
       trilhasAtividades: state => state.trilhasAtividades,
+
+      trilhaTipoAtividade: state => state.trilhaTipoAtividade,
 
       trilhaByID: (state, getters) => id =>
         _.find(getters.trilhas, { id: parseInt(id, 10) }),

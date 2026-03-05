@@ -98,7 +98,8 @@
             return {
                 sortingCriteria: {label:'',value:''},
                 dificuldadeFilter: {label:'',value:''},
-                oficialFilter: false,
+                // oficialFilter: false,
+                oficialFilter: true,
                 sinalizadaFilter: false,
                 sortingDirection:'asc', //['asc','desc']
                 mudando: false,
@@ -159,9 +160,9 @@
                     }
                     if(res == false) return false
 
-                    // 🔹 OFICIAL
-                    if(this.oficialFilter){
-                         if(item.oficial != true ) return false 
+                    // 🔹 OFICIAL (não aplicar em modo usuário)
+                    if (!this.userMode && this.oficialFilter) {
+                        if (item.oficial !== true) return false
                     }
 
                     // 🔹 SINALIZADA

@@ -23,11 +23,17 @@
                 </b-form-group>
                  
                 <b-form-group label="Atividades" label-size="sm"  label-cols-sm="2" label-align-sm="right">
-                    <b-form-checkbox-group  id="checkbox-group-2" v-model="trilha.atividade" name="flavour-2">
-                        <b-form-checkbox  size="sm"  v-for="(atividade,id) in atividades" :value="atividade.id" :key='"atividade"+id'> 
+                    <b-form-checkbox-group  id="checkbox-group-2" v-model="trilha.atividades" name="flavour-2">
+                        <b-form-checkbox  size="sm"  v-for="atividade in atividades" :value="atividade.id" :key="atividade.id"> 
+                            <!-- {{atividade.icone}} -->
+                            
+                            <img
+                            :src="`/api/media/${atividade.icone}`"
+                            style="width:18px;height:18px;margin-right:6px;"
+                            >
                             {{atividade.nome}}
+
                         </b-form-checkbox >
-                         
                     </b-form-checkbox-group>
                 </b-form-group>
                 <!-- </b-form-group> -->
@@ -121,8 +127,13 @@ export default {
 
     computed:{
         atividades:function(){
-            return this.$store.getters.trilhasAtividades
+            return Object.values(this.$store.getters.trilhaTipoAtividade)
+            // return this.$store.getters.trilhasAtividades
         },
+
+        // tipoAtividades(){
+        //     return this.$store.getters.trilhaTipoAtividade
+        // },
 
         user:function(){
             return this.$store.getters.user
