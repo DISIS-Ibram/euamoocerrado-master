@@ -32,10 +32,7 @@ from dj_rest_auth.views import UserDetailsView
 from django.apps import apps
 from django.contrib.gis.geos import GEOSGeometry
 
-from euamoocerrado.settings import (
-    MEDIA_ROOT,
-    INSTALLED_APPS
-)
+from django.conf import settings
 
 from curupira_rest_api.utils import clean_name
 from parque.models import Parque, Benfeitoria, Atrativo
@@ -51,7 +48,7 @@ class UserDetailsViewSI3RC(UserDetailsView):
         user = self.get_object()
         permissions_dic = {}
 
-        for app_name in INSTALLED_APPS:
+        for app_name in settings.INSTALLED_APPS:
             app = apps.get_app_config(app_name.split('.')[-1])
 
             for model in app.get_models():
@@ -205,12 +202,12 @@ def send_email(data):
     )
 
     print('send_email: ', msg)
+    print("EMAIL DESTINO:", data["email"])
 
     return send_mail(
         subject,
         msg,
-        # "naoresponda@euamocerrado.com.br",
-        "dmecatronica83@gmail.com",
+        settings.DEFAULT_FROM_EMAIL,
         [data["email"]],
         fail_silently=False,
     )

@@ -180,20 +180,15 @@ LEAFLET_CONFIG = {
 #CONFIG EMAIL
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-# EMAIL_HOST = 'mail.euamocerrado.com.br'
-EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST = "relay.gdfnet.df.gov.br"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-# EMAIL_USE_SSL = False
 
-# EMAIL_HOST_USER = 'naoresponda@euamocerrado.com.br'
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
-# EMAIL_HOST_PASSWORD = '+ot%EM@YgE1e'
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
-# EMAIL_DEST = ['ibram.educ@gmail.com']
-EMAIL_DEST = os.getenv("EMAIL_HOST_USER")
-DEFAULT_FROM_EMAIL = "Eu amo o Cerrado <dmecatronica83@gmail.com>"
+EMAIL_HOST_USER = ""
+EMAIL_HOST_PASSWORD = ""
 
+DEFAULT_FROM_EMAIL = "Eu amo o Cerrado <euamocerrado@ibram.df.gov.br>"
+SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
