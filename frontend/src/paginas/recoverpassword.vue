@@ -9,7 +9,7 @@
                     <h2 class='white font-title mb-2'> Redefinição de Senha </h2>
                     <div class="form-group row">
                         <div class="col-sm-12 mt2">
-                            <input type="password" class="form-control" id="staticEmail" placeholder="Digite sua nova enha"
+                            <input type="password" class="form-control" id="staticEmail" placeholder="Digite sua nova senha"
                                 v-model="password1">
                         </div>
                     </div>

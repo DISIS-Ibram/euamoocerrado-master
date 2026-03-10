@@ -204,7 +204,8 @@ export default {
         },
 
         esqueceusenha:async function(){
-            var res = await this.$store.dispatch('recoverPasswordRequest',{email:this.email})
+            var res = await this.$store.dispatch('recoverPasswordRequest',{email:this.email});
+            console.log('login-form - res: ', res);
             this.esqueceuSenhaMsg = res
         },
     }
