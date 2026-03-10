@@ -184,8 +184,7 @@ EMAIL_HOST = "relay.gdfnet.df.gov.br"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = ""
-EMAIL_HOST_PASSWORD = ""
+EMAIL_DEST = ['euamocerra@ibram.df.gov.br']
 
 DEFAULT_FROM_EMAIL = "Eu amo o Cerrado <euamocerrado@ibram.df.gov.br>"
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
