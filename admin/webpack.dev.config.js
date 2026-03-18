@@ -9,7 +9,7 @@ module.exports.entry =  __dirname + '/src/index.js';
 
 //module.exports.devServer = {};  // doesn't seem to do anything
 //module.exports.devtool = 'cheap-module-source-map'; // doesn't seem to do anything
- module.exports.devtool = "source-map"
+module.exports.devtool = "source-map"
 // compress the js file
 module.exports.plugins = [
         new webpack.ProvidePlugin({
@@ -52,10 +52,11 @@ module.exports.plugins = [
 //       "react-dom": "preact-compat"
 //     }
 //   }
-//   module.exports.devServer = {
-//     historyApiFallback: true,
-//     contentBase: './public'
-//   }
+
+module.exports.devServer = {
+  historyApiFallback: true,
+  contentBase: './public'
+}
 
 // export css to a separate file
 // module.exports.module.loaders[1] = {

@@ -52,10 +52,11 @@ module.exports.plugins = [
 //       "react-dom": "preact-compat"
 //     }
 //   }
-//   module.exports.devServer = {
-//     historyApiFallback: true,
-//     contentBase: './public'
-//   }
+
+module.exports.devServer = {
+  historyApiFallback: true,
+  contentBase: './public'
+}
 
 // export css to a separate file
 // module.exports.module.loaders[1] = {
