@@ -1,5 +1,8 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import { IndexRoute, browserHistory } from 'react-router';
+
+// import { IndexRoute, browserHistory } from 'react-router';
+import { browserHistory, useRouterHistory } from 'react-router';
+
 import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form'
 import thunk from "redux-thunk";
@@ -190,25 +193,87 @@ const logger = store => next => action => {
 
 
 
+
 //crio o middleware de requisicoes api
 const apiMiddleware = createApiMiddleware(window.SI3CONFIG.url,{"Content-Type": "application/json"});
 
-//crio os MIddleware
-let middleware = applyMiddleware(routerMiddleware(browserHistory),logger,thunk,apiMiddleware);
-// ;
-if (process.env.NODE_ENV !== 'production') {
-    // middleware = compose(middleware, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-}
-    // middleware = compose(middleware, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-//Crio o redux Story
+// ===============================
+// HISTORY COM BASENAME
+// ===============================
+const appHistory = useRouterHistory(browserHistory)({
+  basename: '/admin'
+});
+
+// ===============================
+// MIDDLEWARE
+// ===============================
+const middleware = applyMiddleware(
+  routerMiddleware(appHistory),
+  logger,
+  thunk,
+  apiMiddleware
+);
+
+// ===============================
+// STORE
+// ===============================
 export const store = createStore(reducer, middleware);
 
 window.STORE = store;
 
-//verificar 
-export const history = syncHistoryWithStore(browserHistory, store);
-// const history = createHistory();
+// ===============================
+// HISTORY SINCRONIZADO
+// ===============================
+export const history = syncHistoryWithStore(appHistory, store);
+
+
+
+
+
+
+
+
+
+
+
+
+// //crio o middleware de requisicoes api
+// const apiMiddleware = createApiMiddleware(window.SI3CONFIG.url,{"Content-Type": "application/json"});
+
+// //crio os MIddleware
+// let middleware = applyMiddleware(routerMiddleware(browserHistory),logger,thunk,apiMiddleware);
+// // ;
+// if (process.env.NODE_ENV !== 'production') {
+//     // middleware = compose(middleware, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+// }
+//     // middleware = compose(middleware, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+// //Crio o redux Story
+// export const store = createStore(reducer, middleware);
+
+// window.STORE = store;
+
+// //verificar 
+// // export const history = syncHistoryWithStore(browserHistory, store);
+
+// // cria history com basename
+// const appHistory = useRouterHistory(browserHistory)({
+//   basename: '/admin'
+// });
+
+// // middleware usando o MESMO history
+// let middleware = applyMiddleware(
+//   routerMiddleware(appHistory),
+//   logger,
+//   thunk,
+//   apiMiddleware
+// );
+
+// // sync com store
+// export const history = syncHistoryWithStore(appHistory, store)
+
+// // const history = createHistory();
 
 
 

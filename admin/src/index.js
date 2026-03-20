@@ -45,6 +45,8 @@ ReactDOM.render(
 
             <Route path="/login" component={Login}/>
 
+
+
             <Route path="/" component={App}>
 
                 <IndexRoute component={Home}/>
@@ -54,7 +56,7 @@ ReactDOM.render(
 
                 <Route path="midias" component={MidiasPageList}/>
 
-{/* 
+                {/* 
                 <Route path="relato">
                         <IndexRoute component={RelatosPageList} />
                         <Route path="lista" component={RelatosPageList} />

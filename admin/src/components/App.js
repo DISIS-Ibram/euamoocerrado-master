@@ -5,7 +5,10 @@ import Topbar from './Topbar'
 import { connect } from 'react-redux';
 import { Header, Modal, Label, List, Icon, Accordion, Input, Dimmer, Loader, Image, Segment, Button } from 'semantic-ui-react';
 import { si3, si3Actions }  from 'actions/index';
-import { withRouter, Router, Route, IndexRoute, browserHistory,  Link } from 'react-router';
+
+// import { withRouter, Router, Route, IndexRoute, browserHistory,  Link } from 'react-router';
+import { withRouter, Link } from 'react-router';
+import { history } from 'configStore';
 
 import criaModal from 'components/ModalTypes';
 
@@ -87,8 +90,11 @@ class App extends React.Component
         console.log("USUARIO:%o",user);
         //usar o redux store
         if (user === false) {
-            browserHistory.replace("/login")
-        }else{
+            // browserHistory.replace("/login")
+            history.replace("/login")
+        }
+        
+        else{
             this.setState({user:user});
             _.forOwn(SI3RC_MODELS, (v, k) => {
                 this.props.loadOptions(k)

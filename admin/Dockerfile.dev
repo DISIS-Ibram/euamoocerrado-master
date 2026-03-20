@@ -1,5 +1,18 @@
-# Teste para desenvolvimento - Rodar localmente
-FROM node:10 AS node
+# # Teste para desenvolvimento - Rodar localmente
+# FROM node:10 AS node
+
+# WORKDIR /app
+
+# COPY package.json package-lock.json* ./
+# RUN npm install
+
+# COPY . .
+
+# EXPOSE 8686
+
+# CMD ["npm", "start"]
+
+FROM node:10
 
 WORKDIR /app
 
@@ -8,6 +21,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 8686
+EXPOSE 8080
 
 CMD ["npm", "start"]
